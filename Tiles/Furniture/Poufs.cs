@@ -12,11 +12,13 @@ namespace CFU.Tiles
     public class Poufs : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/Poufs";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/PoufsHighlight";
+        
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileLavaDeath[Type] = true;
-            // TileID.Sets.HasOutlines[Type] = true;
+            TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSatOnForNPCs[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
