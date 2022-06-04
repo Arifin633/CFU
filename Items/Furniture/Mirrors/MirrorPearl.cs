@@ -21,10 +21,10 @@ namespace CFU.Items
             Item.autoReuse = true;
             Item.useAnimation = 15;
             Item.useTime = 10;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.rare = 0;
+            Item.rare = ItemRarityID.White;
             Item.createTile = ModContent.TileType<Tiles.Mirrors>();
             Item.placeStyle = 6;
         }

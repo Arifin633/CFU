@@ -1,5 +1,6 @@
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
+using Terraria.ID;
 
 namespace CFU.Items
 {
@@ -21,10 +22,10 @@ namespace CFU.Items
 			Item.autoReuse = true;
 			Item.useAnimation = 15;
 			Item.useTime = 10;
-			Item.useStyle = 1;
+			Item.useStyle = ItemUseStyleID.Swing;
 			Item.consumable = true;
 			Item.value = 0;
-			Item.rare = 0;
+			Item.rare = ItemRarityID.White;
 			Item.createTile = ModContent.TileType<Tiles.WallClocks>();
 			Item.placeStyle = 7;
 		}

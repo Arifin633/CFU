@@ -1,5 +1,6 @@
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
+using Terraria.ID;
 
 namespace CFU.Items
 {
@@ -20,7 +21,7 @@ namespace CFU.Items
             Item.autoReuse = true;
             Item.useAnimation = 15;
             Item.useTime = 10;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 10000;
             Item.createTile = ModContent.TileType<Tiles.DeerHead>();
