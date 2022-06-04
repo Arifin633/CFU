@@ -64,6 +64,16 @@ namespace CFU.Tiles
             return true;
         }
 
+        public override void MouseOver(int i, int j)
+        {
+
+            Player player = Main.LocalPlayer;
+            player.cursorItemIconID = ModContent.ItemType<Items.AltSandstoneTorch>();
+            player.cursorItemIconText = "";
+            player.noThrow = 2;
+            player.cursorItemIconEnabled = true;
+        }
+        
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             CFUtils.DrawFlame(i, j, spriteBatch, "TorchesFlame", true);

@@ -29,8 +29,10 @@ In vanilla, doors will attempt to open towards the opposite direction the player
 is facing if the preferred direction is obstructed.  This behavior should be
 added the modded doors.
 
-* Sofa
-Can't sit on the center.
+* Poufs
+* Sofas
+The sitting positions aren't very good, TileRestingInfo.visualOffset can be used
+to make adjustments.
 
 * End Tables
 Royal and Rush end tables can't be stood on.
