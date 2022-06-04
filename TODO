@@ -1,0 +1,105 @@
+This file includes both known bugs and planned additions.
+The TODO file from the original Chad's Furniture is attached at the bottom.
+
+* Lanterns
+* Banners
+Add animation on touch.
+
+* Biome jars
+Drops two items(?).
+Add more biomes.
+Current ones: Forest, Hallow, Corruption, Crimson, Jungle.
+
+* Giant water fountain
+The water texture doesn't match the style of other fountains' water.
+
+* Ink
+Either associate this with the vanilla Black Ink item, or make a new one.
+
+* Mirrors
+Add one for each furniture type,
+Current ones: Wood, Boreal Wood, Palm Wood, Rich Mahogany, Shade Wood, Ebonwood,
+Pearlwood, Princess.
+
+* Chess Pieces
+No directional placement on Bishop and Knight.
+
+* Doors
+In vanilla, doors will attempt to open towards the opposite direction the player
+is facing if the preferred direction is obstructed.  This behavior should be
+added the modded doors.
+
+* Sofa
+Can't sit on the center.
+
+* End Tables
+Royal and Rush end tables can't be stood on.
+This is because they occupy the second row of styles in the texture file, and
+only the first row is capable of having a solid top.  No idea how to fix this.
+
+* Wall Clocks
+No highlight textures.
+
+* Dressers
+Highlight is broken.
+
+* End Tables
+* Wall Candelabras
+Add missing furniture types: Spider, Sandstone, Bamboo,  Lesion, Lunar stuff.
+
+* Items
+The following item textures don't match the corresponding tile:
+Bottle; all Mirrors; Mystic Bookcase; Mystic Bed; Mystic Clock;
+Mystic Wall Clock; Princess Bed; Princess Bookcase; Princess Chair;
+Princess Wall Clock.
+
+Aside from that, a lot of other item textures are just plain bad and/or don't
+match the game's style very well.
+
+* Dressers
+* Chests
+Renaming a modded chest or dresser to "" will not restore its default name.
+
+* Original Chad's Furniture TODO list
+Gardening Updates:
+General Improvements:
+        Make modded light sources toggleable
+Additions:
+        VODKA BOTTLE @ironysparkles
+        Firefly in a bottle placable on surface @ironysparkles
+        Wrought iron garden furniture @ironysparkles
+        Sprinkler @ShadowTiger
+        Marble planter box @Marney
+        Bushes @Lunatic Lobbyist
+                Clippers to shape bushes?
+        Better Critter Houses @Marney
+                Squirrel drey
+                Duck larder
+                Penguin igloo
+                Giant butterfly jar
+                Jungle terrarium
+                Snail & worm terrarium
+        Pet furniture @Marney
+        Mailbox
+        Buddleia
+                Spawns butterflies
+        Chicken coop
+                Spawns some chickens when opened maybe
+        Glass walls with water/clouds in the background @joffrecordan
+        Coralstone wall & pillar @joffrecordan
+        Chess set
+        Butterfly collection
+        
+Electronics Update:
+Additions:
+        TV @Unclechidori
+        
+Home Updates:
+Additions:
+        More Mirrors @Kefke
+        More Chimneys @Kefke
+        Wine Cabinet @Kefke
+
+;; Local Variables:
+;; mode: outline
+;; End:

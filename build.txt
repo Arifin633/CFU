@@ -1,0 +1,3 @@
+displayName = Chad's Furniture Updated
+author = Anonymous
+version = 0.1

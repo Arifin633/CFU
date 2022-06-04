@@ -1,0 +1,40 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
+
+namespace CFU.Items
+{
+    public class Bottle : ModItem
+    {public override string Texture =>"CFU/Textures/Items/Bottle";
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Bottle of Alcohol");
+            Tooltip.SetDefault("'Right-click after placing if you dislike the taste'");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+        }
+
+        public override void SetDefaults()
+        {
+            Item.width = 16;
+            Item.height = 14;
+            Item.maxStack = 99;
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.useAnimation = 15;
+            Item.useTime = 10;
+            Item.useStyle = 1;
+            Item.consumable = true;
+            Item.value = 0;
+            Item.createTile = ModContent.TileType<Tiles.Bottle>();
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddIngredient(ItemID.Bottle, 1)
+            .AddTile(TileID.Kegs)
+            .Register();
+        }
+    }
+}
