@@ -5,9 +5,9 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class SandstoneBrick : ModItem
+    public class AltSandstoneBrick : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Blocks/SandstoneBrick";
+        public override string Texture => "CFU/Textures/Items/Blocks/AltSandstoneBrick";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Sandstone Brick");

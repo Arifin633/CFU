@@ -31,7 +31,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 12)
+            .AddIngredient(ModContent.ItemType<Items.AltSandstoneBrick>(), 12)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

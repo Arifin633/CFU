@@ -107,19 +107,24 @@ namespace ChadsFurnitureUpdated
             }
         }
 
-        public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame)
+        public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame) {
+            DrawFlame(i, j, spriteBatch, flame, false);
+        }
+        
+        public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame, bool torch)
         {
             ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i);
             Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
-            int frameX = Main.tile[i, j].TileFrameX;
+            int frameX = (torch) ? (Main.tile[i, j].TileFrameX + 2) : Main.tile[i, j].TileFrameX;
             int frameY = Main.tile[i, j].TileFrameY;
+            int offsetY = (torch && (WorldGen.SolidTile(i, j - 1))) ? 2 : 0;
             for (int k = 0; k < 7; k++)
             {
                 float x = (float)Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
                 float y = (float)Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
                 spriteBatch.Draw(
                     ModContent.Request<Texture2D>("CFU/Textures/Tiles/Furniture/" + flame).Value,
-                    new Vector2((float)(i * 16 - (int)Main.screenPosition.X) + x, (float)(j * 16 - (int)Main.screenPosition.Y - 2) + y) + zero,
+                    new Vector2((float)(i * 16 - (int)Main.screenPosition.X) + x, (float)(j * 16 - (int)Main.screenPosition.Y + offsetY) + y) + zero,
                     new Rectangle(frameX, frameY, 16, 18), new Color(100, 100, 100, 0), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
             }
         }
