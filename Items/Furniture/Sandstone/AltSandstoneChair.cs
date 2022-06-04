@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneChair";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sandstone Chair");
+            DisplayName.SetDefault("Ancient Sandstone Chair");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

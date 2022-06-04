@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneLantern";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sandstone Lantern");
+            DisplayName.SetDefault("Ancient Sandstone Lantern");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

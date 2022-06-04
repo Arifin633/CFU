@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstonePlatform";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sandstone Platform");
+            DisplayName.SetDefault("Ancient Sandstone Platform");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
