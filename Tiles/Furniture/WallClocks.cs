@@ -6,17 +6,20 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
+using Terraria.GameContent.ObjectInteractions;
 
 namespace CFU.Tiles
 {
     public class WallClocks : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/WallClocks";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/WallClocksHighlight";
         
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileLavaDeath[Type] = true;
+            TileID.Sets.HasOutlines[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Width = 2;
@@ -29,6 +32,8 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) { return true; }
+        
         static bool SwingLeft = true;
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {

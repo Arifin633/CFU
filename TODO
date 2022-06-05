@@ -39,9 +39,6 @@ Royal and Rush end tables can't be stood on.
 This is because they occupy the second row of styles in the texture file, and
 only the first row is capable of having a solid top.  No idea how to fix this.
 
-* Wall Clocks
-No highlight textures.
-
 * Dressers
 Highlight is broken.
 
