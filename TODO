@@ -29,6 +29,7 @@ In vanilla, doors will attempt to open towards the opposite direction the player
 is facing if the preferred direction is obstructed.  This behavior should be
 added the modded doors.
 
+* Thrones
 * Poufs
 * Sofas
 The sitting positions aren't very good, TileRestingInfo.visualOffset can be used

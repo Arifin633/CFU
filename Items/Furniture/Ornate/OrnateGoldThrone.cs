@@ -4,19 +4,20 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class OrnateBookshelf : ModItem
+    public class OrnateGoldThrone : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Ornate/OrnateBookshelf";
+        public override string Texture => "CFU/Textures/Items/Furniture/Ornate/OrnateGoldThrone";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ornate Bookcase");
+            DisplayName.SetDefault("Tall Gold Throne");
+            Tooltip.SetDefault("'For the exceptionally regal and the exceptionally tall.'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
         {
             Item.width = 16;
-            Item.height = 8;
+            Item.height = 22;
             Item.maxStack = 99;
             Item.useTurn = true;
             Item.autoReuse = true;
@@ -25,15 +26,16 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.OrnateBookshelf>();
+            Item.createTile = ModContent.TileType<Tiles.OrnateThrones>();
+            Item.placeStyle = 0;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddRecipeGroup(RecipeGroupID.Wood, 30)
-            .AddIngredient(ItemID.Book, 15)
-            .AddTile(TileID.Sawmill)
+            .AddIngredient(ItemID.GoldBar, 15)
+            .AddIngredient(ItemID.Silk, 15)
+            .AddTile(TileID.Anvils)
             .Register();
         }
     }
