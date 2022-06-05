@@ -4,20 +4,20 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class LifeFruit : ModItem
+    public class Keg : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Plastic/LifeFruit";
+        public override string Texture => "CFU/Textures/Items/Kegs/Keg";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Decorative Life Fruit");
-            Tooltip.SetDefault("'*A plastic replica'");
+            DisplayName.SetDefault("Keg");
+            Tooltip.SetDefault("'May face either direction'\nUsed for brewing ale");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
         {
             Item.width = 16;
-            Item.height = 22;
+            Item.height = 8;
             Item.maxStack = 99;
             Item.useTurn = true;
             Item.autoReuse = true;
@@ -26,19 +26,18 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.LifeFruit>();
+            Item.createTile = ModContent.TileType<Tiles.Keg>();
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.LifeFruit, 1)
-            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddRecipeGroup(RecipeGroupID.Wood, 14)
+            .AddTile(TileID.Sawmill)
             .Register();
 
-            Mod.CreateRecipe(ItemID.LifeFruit)
-            .AddIngredient(this)
-            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            CreateRecipe()
+            .AddIngredient(ItemID.Keg)
             .Register();
         }
     }

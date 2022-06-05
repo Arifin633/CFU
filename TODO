@@ -46,6 +46,9 @@ Highlight is broken.
 * Wall Candelabras
 Add missing furniture types: Spider, Sandstone, Bamboo,  Lesion, Lunar stuff.
 
+* Keg
+Remove the vanilla Keg recipe.
+
 * Items
 The following item textures don't match the corresponding tile:
 Bottle; all Mirrors; Mystic Bookcase; Mystic Bed; Mystic Clock;
