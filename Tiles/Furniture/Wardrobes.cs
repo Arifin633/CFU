@@ -35,8 +35,8 @@ namespace CFU.Tiles
             name.SetDefault("Wadrdrobe");
             AddMapEntry(new Color(191, 142, 111), name);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-            // dustType = 0;
-            // disableSmartCursor = true;
+            DustType = 0;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Dressers };
         }
 
