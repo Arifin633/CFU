@@ -34,13 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.Wire, 10)
-            .AddIngredient(ItemID.IronBar, 3)
-            .AddTile(TileID.WorkBenches)
-            .Register();
-
-            CreateRecipe()
-            .AddIngredient(ItemID.Wire, 10)
-            .AddIngredient(ItemID.LeadBar, 3)
+            .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

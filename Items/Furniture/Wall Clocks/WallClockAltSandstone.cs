@@ -34,16 +34,11 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.AltSandstoneBrick>(), 5)
             .AddIngredient(ItemID.Glass, 6)
-            .AddIngredient(ItemID.IronBar, 3)
+            .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.AltSandstoneBrick>(), 5)
-            .AddIngredient(ItemID.Glass, 6)
-            .AddIngredient(ItemID.LeadBar, 3)
-            .AddTile(TileID.WorkBenches)
-            .Register();
+
         }
     }
 }

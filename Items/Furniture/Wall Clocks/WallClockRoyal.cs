@@ -34,7 +34,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.Wood, 5)
             .AddIngredient(ItemID.Glass, 6)
-            .AddIngredient(ItemID.IronBar, 3)
+            .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddTile(ModContent.TileType<Tiles.SpinningWheel>())
             .Register();
         }
