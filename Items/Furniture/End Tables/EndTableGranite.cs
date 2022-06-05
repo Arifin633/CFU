@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableGranite : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableGranite";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableGranite";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Granite End Table");

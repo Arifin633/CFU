@@ -5,13 +5,14 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Paper : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Paper";
+    {
+        public override string Texture => "CFU/Textures/Items/Paper";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Paper");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-	}
-		
+        }
+
         public override void SetDefaults()
         {
             Item.width = 16;

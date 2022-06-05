@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class RoyalPiano : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Royal/RoyalPiano";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalPiano";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Royal Piano");

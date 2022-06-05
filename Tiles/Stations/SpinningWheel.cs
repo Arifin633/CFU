@@ -8,7 +8,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     class SpinningWheel : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Stations/SpinningWheel";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Stations/SpinningWheel";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

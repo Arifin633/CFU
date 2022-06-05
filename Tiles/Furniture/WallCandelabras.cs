@@ -40,7 +40,7 @@ namespace CFU.Tiles
             else
                 CFUtils.ShiftTileY(i, j, 2, 2, 36, true, true);
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.WallCandelabraGold>(),

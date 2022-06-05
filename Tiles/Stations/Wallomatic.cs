@@ -7,7 +7,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     class Wallomatic : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Stations/Wallomatic";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Stations/Wallomatic";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

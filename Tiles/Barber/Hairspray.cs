@@ -9,7 +9,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Hairspray : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Barber/Hairspray";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Barber/Hairspray";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableBone : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableBone";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableBone";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bone End Table");

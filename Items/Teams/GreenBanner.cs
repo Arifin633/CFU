@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class GreenBanner : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Teams/GreenBanner";
+    {
+        public override string Texture => "CFU/Textures/Items/Teams/GreenBanner";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Vibrant Green Banner");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class BlueBannerLarge : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Teams/BlueBannerLarge";
+    {
+        public override string Texture => "CFU/Textures/Items/Teams/BlueBannerLarge";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Large Blue Banner");

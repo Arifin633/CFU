@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Wallomatic : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/Wallomatic";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/Wallomatic";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Wall-O-Matic");

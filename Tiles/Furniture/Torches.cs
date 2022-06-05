@@ -74,7 +74,7 @@ namespace CFU.Tiles
             player.noThrow = 2;
             player.cursorItemIconEnabled = true;
         }
-        
+
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             CFUtils.DrawFlame(i, j, spriteBatch, "TorchesFlame", true);

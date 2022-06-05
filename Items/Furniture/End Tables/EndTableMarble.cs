@@ -6,7 +6,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableMarble : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableMarble";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableMarble";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Marble End Table");

@@ -34,7 +34,7 @@ namespace ChadsFurnitureUpdated
                 {
                     if (skipwire)
                         Wiring.SkipWire(i + x, j + y);
-                    
+
                     if (reset)
                     {
                         Main.tile[i + x, j + y].TileFrameY = acc;
@@ -107,10 +107,11 @@ namespace ChadsFurnitureUpdated
             }
         }
 
-        public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame) {
+        public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame)
+        {
             DrawFlame(i, j, spriteBatch, flame, false);
         }
-        
+
         public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame, bool torch)
         {
             ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i);

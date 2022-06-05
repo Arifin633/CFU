@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Printer : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/Printer";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/Printer";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Printer");

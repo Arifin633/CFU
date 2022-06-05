@@ -11,7 +11,7 @@ namespace CFU.Tiles
     public class StglLunarPillars : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Stained Glass Windows/StglLunarPillars";
-        
+
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;

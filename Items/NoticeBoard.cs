@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class NoticeBoard : ModItem
-    {public override string Texture =>"CFU/Textures/Items/NoticeBoard";
+    {
+        public override string Texture => "CFU/Textures/Items/NoticeBoard";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Notice Board");

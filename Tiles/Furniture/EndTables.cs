@@ -9,7 +9,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class EndTables : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/EndTables";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/EndTables";
         public override void SetStaticDefaults()
         {
             Main.tileSolidTop[Type] = true;

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class HardsmithTitOri : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/HardsmithTitOri";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/HardsmithTitOri";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hardmode Blacksmith's Forge");

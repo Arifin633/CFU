@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class MysticWorkbench : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mystic/MysticWorkbench";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticWorkbench";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Work Bench");

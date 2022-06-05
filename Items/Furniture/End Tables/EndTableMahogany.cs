@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableMahogany : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableMahogany";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableMahogany";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Rich Mahogany End Table");

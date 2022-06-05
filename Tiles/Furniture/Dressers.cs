@@ -14,7 +14,7 @@ namespace CFU.Tiles
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/Dressers";
         public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/DressersHighlight";
-        
+
         public override void SetStaticDefaults()
         {
             Main.tileSolidTop[Type] = true;
@@ -36,7 +36,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-            
+
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Princess Dresser");
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
@@ -62,7 +62,7 @@ namespace CFU.Tiles
             width = 2;
             height = 2;
         }
-        
+
         public static string MapChestName(string name, int i, int j)
         {
             Tile tile = Main.tile[i, j];
@@ -79,7 +79,7 @@ namespace CFU.Tiles
 
             return name + ": " + Main.chest[chest].name;
         }
-        
+
         public override bool RightClick(int i, int j)
         {
             Player player = Main.LocalPlayer;

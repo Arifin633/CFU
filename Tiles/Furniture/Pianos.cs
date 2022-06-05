@@ -7,7 +7,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Pianos : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Pianos";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Pianos";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

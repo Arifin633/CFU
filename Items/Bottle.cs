@@ -6,7 +6,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Bottle : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Bottle";
+    {
+        public override string Texture => "CFU/Textures/Items/Bottle";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bottle of Alcohol");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class RoyalChair : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Royal/RoyalChair";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalChair";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Royal Dining Chair");

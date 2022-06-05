@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Bust : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Bust";
+    {
+        public override string Texture => "CFU/Textures/Items/Bust";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bust");

@@ -8,7 +8,8 @@ using Microsoft.Xna.Framework;
 namespace CFU.Tiles
 {
     public class Sinks : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Sinks";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Sinks";
         public override void SetStaticDefaults()
         {
             // Main.tileSolidTop[Type] = true;

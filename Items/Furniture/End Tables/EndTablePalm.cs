@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTablePalm : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTablePalm";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTablePalm";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Palm End Table");

@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class RookWhite : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Chess Pieces/RookWhite";
+    {
+        public override string Texture => "CFU/Textures/Items/Chess Pieces/RookWhite";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("White Rook");

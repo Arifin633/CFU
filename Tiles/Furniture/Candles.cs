@@ -10,7 +10,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Candles : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Candles";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Candles";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;
@@ -68,7 +69,7 @@ namespace CFU.Tiles
               ModContent.ItemType<Items.MysticCandle>(),
               ModContent.ItemType<Items.RoyalCandle>(),
               ModContent.ItemType<Items.AltSandstoneCandle>() };
-        
+
         public override void MouseOver(int i, int j)
         {
 

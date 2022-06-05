@@ -5,13 +5,14 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Lantern : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Lantern";
+    {
+        public override string Texture => "CFU/Textures/Items/Lantern";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hanging Lamp");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-	}	
-		
+        }
+
         public override void SetDefaults()
         {
             Item.width = 16;
@@ -36,7 +37,7 @@ namespace CFU.Items
                 .AddIngredient(ItemID.Glass, 3)
                 .AddTile(TileID.Anvils)
                 .Register();
-			
+
             CreateRecipe()
                 .AddIngredient(ItemID.LeadBar, 3)
                 .AddIngredient(ItemID.Torch, 1)

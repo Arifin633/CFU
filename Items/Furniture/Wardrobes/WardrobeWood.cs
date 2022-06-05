@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class WardrobeWood : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Wardrobes/WardrobeWood";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Wardrobes/WardrobeWood";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Wardrobe");
@@ -21,7 +22,7 @@ namespace CFU.Items
             Item.autoReuse = true;
             Item.useAnimation = 15;
             Item.useTime = 10;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
             Item.createTile = ModContent.TileType<Tiles.Wardrobes>();

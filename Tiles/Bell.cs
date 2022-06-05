@@ -14,7 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;	
+            Main.tileLavaDeath[Type] = true;
             Main.tileNoAttach[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Width = 4;
@@ -36,7 +36,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(224, 160, 42), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
-		
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.Bell>());

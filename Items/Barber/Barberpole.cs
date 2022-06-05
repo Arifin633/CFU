@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Barberpole : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Barber/Barberpole";
+    {
+        public override string Texture => "CFU/Textures/Items/Barber/Barberpole";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Barber's Pole");

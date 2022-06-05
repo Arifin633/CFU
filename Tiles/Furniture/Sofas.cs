@@ -10,8 +10,9 @@ using Terraria.GameContent.ObjectInteractions;
 namespace CFU.Tiles
 {
     public class Sofas : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Sofas";
-        public override string HighlightTexture =>"CFU/Textures/Tiles/Furniture/SofasHighlight";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Sofas";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/SofasHighlight";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -37,7 +38,7 @@ namespace CFU.Tiles
             Tile tile = Framing.GetTileSafely(i, j);
 
             int direction = info.TargetDirection = info.RestingEntity.direction;
-            
+
             if (tile.TileFrameX == 0 && direction == -1)
                 info.AnchorTilePosition.X = (i + 1);
             else if (tile.TileFrameX == 36 && direction == 1)

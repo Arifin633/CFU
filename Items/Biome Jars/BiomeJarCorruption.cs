@@ -6,8 +6,8 @@ namespace CFU.Items
 {
     public class BiomeJarCorruption : ModItem
     {
-        public override string Texture =>"CFU/Textures/Items/Biome Jars/BiomeJarCorruption";
-        
+        public override string Texture => "CFU/Textures/Items/Biome Jars/BiomeJarCorruption";
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Corruption Jar");

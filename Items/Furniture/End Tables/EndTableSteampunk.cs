@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableSteampunk : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableSteampunk";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableSteampunk";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Steampunk End Table");

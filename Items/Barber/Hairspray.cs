@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Hairspray : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Barber/Hairspray";
+    {
+        public override string Texture => "CFU/Textures/Items/Barber/Hairspray";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hairspray");

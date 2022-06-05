@@ -8,7 +8,8 @@ using Terraria.ObjectData;
 namespace CFU.Tiles
 {
     class Lantern : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Lantern";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Lantern";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;
@@ -16,7 +17,7 @@ namespace CFU.Tiles
             Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 18;;
+            TileObjectData.newTile.StyleWrapLimit = 18; ;
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Lamp");
@@ -24,7 +25,7 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
         }
-		
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.Lantern>());

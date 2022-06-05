@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class FilingCabinet : ModItem
-    {public override string Texture =>"CFU/Textures/Items/FilingCabinet";
+    {
+        public override string Texture => "CFU/Textures/Items/FilingCabinet";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Filing Cabinet");

@@ -7,7 +7,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Bookcases : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Bookcases";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Bookcases";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableBoreal : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableBoreal";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableBoreal";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Boreal Wood End Table");

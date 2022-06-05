@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MysticBath : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mystic/MysticBath";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticBath";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Bathtub");

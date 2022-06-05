@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MysticPlatform : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mystic/MysticPlatform";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticPlatform";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Platform");

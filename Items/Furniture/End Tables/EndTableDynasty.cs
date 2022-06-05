@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableDynasty : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableDynasty";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableDynasty";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Dynasty End Table");

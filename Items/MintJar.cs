@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MintJar : ModItem
-    {public override string Texture =>"CFU/Textures/Items/MintJar";
+    {
+        public override string Texture => "CFU/Textures/Items/MintJar";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Jar O' Mints");

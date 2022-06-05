@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableMystic : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableMystic";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableMystic";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical End Table");

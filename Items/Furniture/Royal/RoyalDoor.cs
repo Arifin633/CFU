@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class RoyalDoor : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Royal/RoyalDoor";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalDoor";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Royal Door");

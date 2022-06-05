@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Blacksmith : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/Blacksmith";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/Blacksmith";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Blacksmith's Forge");

@@ -8,7 +8,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class BannersLarge : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Teams/BannersLarge";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Teams/BannersLarge";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

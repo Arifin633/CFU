@@ -52,7 +52,7 @@ namespace CFU.Tiles
               ModContent.ItemType<Items.MysticClock>(),
               ModContent.ItemType<Items.RoyalClock>(),
               ModContent.ItemType<Items.AltSandstoneClock>() };
-        
+
         public override void MouseOver(int i, int j)
         {
             Player player = Main.LocalPlayer;

@@ -5,14 +5,15 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class WallClockBone : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Wall Clocks/WallClockBone";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockBone";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bone Clock");
             Tooltip.SetDefault("'Hanging from the wall.'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-	}
-        
+        }
+
         public override void SetDefaults()
         {
             Item.width = 16;
@@ -38,7 +39,7 @@ namespace CFU.Items
                 .AddIngredient(ItemID.Bone, 5)
                 .AddTile(TileID.BoneWelder)
                 .Register();
-            
+
             CreateRecipe()
                 .AddIngredient(ItemID.LeadBar, 3)
                 .AddIngredient(ItemID.Glass, 6)

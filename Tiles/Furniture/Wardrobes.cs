@@ -13,7 +13,7 @@ namespace CFU.Tiles
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/Wardrobes";
         public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/WardrobesHighlight";
-        
+
         public override void SetStaticDefaults()
         {
             Main.tileSolidTop[Type] = true;

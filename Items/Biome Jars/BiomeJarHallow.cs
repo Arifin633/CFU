@@ -5,9 +5,9 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class BiomeJarHallow : ModItem
-    {        
-        public override string Texture =>"CFU/Textures/Items/Biome Jars/BiomeJarHallow";
-        
+    {
+        public override string Texture => "CFU/Textures/Items/Biome Jars/BiomeJarHallow";
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hallow Jar");

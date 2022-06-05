@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class WallClockMystic : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Wall Clocks/WallClockMystic";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockMystic";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Clock");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableSkyware : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableSkyware";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableSkyware";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Skyware End Table");

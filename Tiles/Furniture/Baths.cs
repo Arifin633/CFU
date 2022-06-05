@@ -9,7 +9,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Baths : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Baths";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Baths";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -31,7 +32,7 @@ namespace CFU.Tiles
             DustType = 7;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.PrinBath>(),

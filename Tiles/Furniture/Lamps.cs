@@ -10,7 +10,8 @@ using Terraria.ObjectData;
 namespace CFU.Tiles
 {
     public class Lamps : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Lamps";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Lamps";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;
@@ -78,7 +79,7 @@ namespace CFU.Tiles
                 CFUtils.DrawFlame(i, j, spriteBatch, "LampsFlame");
             }
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.PrinLamp>(),

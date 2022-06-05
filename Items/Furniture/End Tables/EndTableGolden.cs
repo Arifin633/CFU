@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class EndTableGolden : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableGolden";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableGolden";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Golden End Table");

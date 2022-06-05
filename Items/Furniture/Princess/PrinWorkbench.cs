@@ -6,8 +6,8 @@ namespace CFU.Items
 {
     public class PrinWorkbench : ModItem
     {
-        public override string Texture =>"CFU/Textures/Items/Furniture/Princess/PrinWorkbench";
-        
+        public override string Texture => "CFU/Textures/Items/Furniture/Princess/PrinWorkbench";
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Princess Work Bench");

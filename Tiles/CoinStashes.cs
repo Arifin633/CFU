@@ -7,7 +7,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class CoinStashes : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/CoinStashes";
+    {
+        public override string Texture => "CFU/Textures/Tiles/CoinStashes";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -30,7 +31,7 @@ namespace CFU.Tiles
             name.SetDefault("Coin Stash");
             AddMapEntry(new Color(107, 81, 65), name);
         }
-		
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.CoinStashCopper>(),

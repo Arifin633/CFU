@@ -7,7 +7,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     class Printer3D : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Stations/Printer3D";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Stations/Printer3D";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

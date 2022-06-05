@@ -11,8 +11,9 @@ using Terraria.GameContent.ObjectInteractions;
 namespace CFU.Tiles
 {
     public class Chairs : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Chairs";
-        public override string HighlightTexture =>"CFU/Textures/Tiles/Furniture/ChairsHighlight";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Chairs";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/ChairsHighlight";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -87,11 +88,11 @@ namespace CFU.Tiles
                 }
             }
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameY / 38)]); ;
         }
-        
+
     }
 }

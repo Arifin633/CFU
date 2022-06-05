@@ -9,7 +9,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class StglCthulhu : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Stained Glass Windows/StglCthulhu";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Stained Glass Windows/StglCthulhu";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;

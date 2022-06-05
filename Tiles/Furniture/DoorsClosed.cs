@@ -10,8 +10,9 @@ using Terraria.ObjectData;
 namespace CFU.Tiles
 {
     public class DoorsClosed : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/DoorsClosed";
-        public override string HighlightTexture =>"CFU/Textures/Tiles/Furniture/DoorsClosedHighlight";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/DoorsClosed";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/DoorsClosedHighlight";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

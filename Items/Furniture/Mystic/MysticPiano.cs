@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MysticPiano : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mystic/MysticPiano";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticPiano";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Piano");

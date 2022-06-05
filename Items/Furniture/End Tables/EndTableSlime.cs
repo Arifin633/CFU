@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableSlime : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableSlime";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableSlime";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Slime End Table");

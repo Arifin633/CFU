@@ -10,7 +10,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     class Hardsmith : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Stations/Hardsmith";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Stations/Hardsmith";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;

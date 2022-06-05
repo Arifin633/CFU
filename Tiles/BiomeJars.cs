@@ -61,7 +61,7 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.BiomeJarCorruption>(),
                              ModContent.ItemType<Items.BiomeJarCrimson>(),
                              ModContent.ItemType<Items.BiomeJarHallow>(),};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i,j].TileFrameX / 36)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameX / 36)]);
             return true;
         }
     }

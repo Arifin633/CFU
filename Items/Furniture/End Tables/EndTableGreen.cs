@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableGreen : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableGreen";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableGreen";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Green Brick End Table");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class PrinClock : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Princess/PrinClock";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Princess/PrinClock";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Princess Clock");

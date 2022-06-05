@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class KingBlack : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Chess Pieces/KingBlack";
+    {
+        public override string Texture => "CFU/Textures/Items/Chess Pieces/KingBlack";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Black King");

@@ -10,7 +10,8 @@ using Terraria.ObjectData;
 namespace CFU.Tiles
 {
     public class BarberpoleLamp : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Barber/BarberpoleLamp";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Barber/BarberpoleLamp";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;

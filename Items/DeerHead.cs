@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class DeerHead : ModItem
-    {public override string Texture =>"CFU/Textures/Items/DeerHead";
+    {
+        public override string Texture => "CFU/Textures/Items/DeerHead";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Deer Head");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableLihzard : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableLihzard";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableLihzard";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Lihzahrd End Table");

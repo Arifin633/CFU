@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MirrorBoreal : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mirrors/MirrorBoreal";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mirrors/MirrorBoreal";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Boreal Wood Mirror");

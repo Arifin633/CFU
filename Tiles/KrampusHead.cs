@@ -8,7 +8,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class KrampusHead : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/KrampusHead";
+    {
+        public override string Texture => "CFU/Textures/Tiles/KrampusHead";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

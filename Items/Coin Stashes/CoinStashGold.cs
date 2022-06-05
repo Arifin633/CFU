@@ -7,13 +7,13 @@ namespace CFU.Items
 {
     public class CoinStashGold : ModItem
     {
-        public override string Texture =>"CFU/Textures/Items/Coin Stashes/CoinStashGold";
+        public override string Texture => "CFU/Textures/Items/Coin Stashes/CoinStashGold";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Gold Coin Stash");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 10;
-	}
-		
+        }
+
         public override void SetDefaults()
         {
             Item.width = 16;

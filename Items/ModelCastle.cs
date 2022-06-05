@@ -5,12 +5,13 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class ModelCastle : ModItem
-    {public override string Texture =>"CFU/Textures/Items/ModelCastle";
+    {
+        public override string Texture => "CFU/Textures/Items/ModelCastle";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Model Castle");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-	}
+        }
 
         public override void SetDefaults()
         {

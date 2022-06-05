@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class CultivationBox : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/CultivationBox";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/CultivationBox";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cultivation Box");

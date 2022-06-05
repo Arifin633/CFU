@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MysticTable : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mystic/MysticTable";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticTable";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Table");

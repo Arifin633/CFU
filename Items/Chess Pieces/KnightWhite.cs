@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class KnightWhite : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Chess Pieces/KnightWhite";
+    {
+        public override string Texture => "CFU/Textures/Items/Chess Pieces/KnightWhite";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("White Knight");

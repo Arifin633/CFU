@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Hellsmith : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/Hellsmith";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/Hellsmith";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hellsmith's Forge");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTablePink : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTablePink";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTablePink";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Pink Dungeon End Table");

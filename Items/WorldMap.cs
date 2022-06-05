@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class WorldMap : ModItem
-    {public override string Texture =>"CFU/Textures/Items/WorldMap";
+    {
+        public override string Texture => "CFU/Textures/Items/WorldMap";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("World Map");

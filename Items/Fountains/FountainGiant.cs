@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class FountainGiant : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Fountains/FountainGiant";
+    {
+        public override string Texture => "CFU/Textures/Items/Fountains/FountainGiant";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Giant Moon Lord Fountain");

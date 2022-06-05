@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class RoyalLantern : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Royal/RoyalLantern";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalLantern";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Royal Lantern");

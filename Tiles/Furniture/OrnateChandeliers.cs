@@ -54,7 +54,8 @@ namespace CFU.Tiles
             }
         }
 
-        public override void HitWire(int i, int j) {
+        public override void HitWire(int i, int j)
+        {
             if (Main.tile[i, j].TileFrameX < 72)
                 CFUtils.ShiftTileX(i, j, 4, 4, 72, false, true);
             else

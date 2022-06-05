@@ -5,13 +5,14 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Bell : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Bell";
+    {
+        public override string Texture => "CFU/Textures/Items/Bell";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Clock Tower Bell");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-	}	
-		
+        }
+
         public override void SetDefaults()
         {
             Item.width = 16;
@@ -33,7 +34,7 @@ namespace CFU.Items
                 .AddIngredient(ItemID.CopperBar, 10)
                 .AddTile(TileID.HeavyWorkBench)
                 .Register();
-			
+
             CreateRecipe()
                 .AddIngredient(ItemID.TinBar, 10)
                 .AddTile(TileID.HeavyWorkBench)

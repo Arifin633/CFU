@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableCrystal : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableCrystal";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableCrystal";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Crystal End Table");

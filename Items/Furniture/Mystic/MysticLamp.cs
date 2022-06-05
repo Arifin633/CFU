@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MysticLamp : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mystic/MysticLamp";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticLamp";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Lamp");

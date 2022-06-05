@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class PinkBanner : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Teams/PinkBanner";
+    {
+        public override string Texture => "CFU/Textures/Items/Teams/PinkBanner";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Vibrant Pink Banner");

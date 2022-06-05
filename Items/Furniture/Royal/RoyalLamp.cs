@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class RoyalLamp : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Royal/RoyalLamp";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalLamp";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Royal Lamp");

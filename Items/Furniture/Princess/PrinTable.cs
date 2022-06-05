@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class PrinTable : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Princess/PrinTable";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Princess/PrinTable";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Princess Table");

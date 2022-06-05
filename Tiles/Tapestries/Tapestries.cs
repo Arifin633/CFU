@@ -8,7 +8,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Tapestries : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Tapestries/Tapestries";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Tapestries/Tapestries";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

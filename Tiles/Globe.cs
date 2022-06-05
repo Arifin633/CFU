@@ -8,7 +8,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Globe : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Globe";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Globe";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

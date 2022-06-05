@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTablePearl : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTablePearl";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTablePearl";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Pearlwood End Table");

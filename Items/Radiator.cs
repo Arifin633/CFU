@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Radiator : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Radiator";
+    {
+        public override string Texture => "CFU/Textures/Items/Radiator";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Radiator");

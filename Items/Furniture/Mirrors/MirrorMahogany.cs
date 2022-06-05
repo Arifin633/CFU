@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MirrorMahogany : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mirrors/MirrorMahogany";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mirrors/MirrorMahogany";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Rich Mahogany Mirror");

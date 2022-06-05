@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class FountainMarble : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Fountains/FountainMarble";
+    {
+        public override string Texture => "CFU/Textures/Items/Fountains/FountainMarble";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Marble Water Fountain");

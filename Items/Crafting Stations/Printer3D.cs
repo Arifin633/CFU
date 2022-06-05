@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class Printer3D : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/Printer3D";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/Printer3D";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("3D Printer");

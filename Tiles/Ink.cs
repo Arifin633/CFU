@@ -8,7 +8,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Ink : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Ink";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Ink";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

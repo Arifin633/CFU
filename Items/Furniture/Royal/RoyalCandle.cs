@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class RoyalCandle : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Royal/RoyalCandle";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalCandle";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Royal Candle");

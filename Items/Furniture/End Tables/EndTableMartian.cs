@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableMartian : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableMartian";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableMartian";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Martian End Table");

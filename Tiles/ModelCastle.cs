@@ -24,7 +24,7 @@ namespace CFU.Tiles
             };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
-            TileObjectData.addTile(Type);			
+            TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Model Castle");
             AddMapEntry(new Color(99, 99, 99), name);

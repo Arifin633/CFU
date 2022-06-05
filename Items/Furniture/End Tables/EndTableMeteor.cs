@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableMeteor : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableMeteor";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableMeteor";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Meteor End Table");

@@ -9,7 +9,8 @@ using Terraria.ObjectData;
 namespace CFU.Tiles
 {
     public class Barberpole : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Barber/Barberpole";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Barber/Barberpole";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;
@@ -72,7 +73,7 @@ namespace CFU.Tiles
         {
             r = g = b = 0.1f;
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.Barberpole>());

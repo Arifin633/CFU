@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class TipJar : ModItem
-    {public override string Texture =>"CFU/Textures/Items/TipJar";
+    {
+        public override string Texture => "CFU/Textures/Items/TipJar";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tip Jar");

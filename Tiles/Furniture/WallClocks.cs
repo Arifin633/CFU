@@ -14,7 +14,7 @@ namespace CFU.Tiles
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/WallClocks";
         public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/WallClocksHighlight";
-        
+
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -33,7 +33,7 @@ namespace CFU.Tiles
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) { return true; }
-        
+
         static bool SwingLeft = true;
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {
@@ -82,7 +82,7 @@ namespace CFU.Tiles
             CFUtils.PrintTime();
             return true;
         }
-        
+
         static readonly int[] Styles = {
             ModContent.ItemType<Items.WallClockWood>(),
             ModContent.ItemType<Items.WallClockBone>(),
@@ -113,7 +113,7 @@ namespace CFU.Tiles
             ModContent.ItemType<Items.WallClockMystic>(),
             ModContent.ItemType<Items.WallClockRoyal>(),
             ModContent.ItemType<Items.WallClockAltSandstone>() };
-        
+
         public override void MouseOver(int i, int j)
         {
             Player player = Main.LocalPlayer;
@@ -122,7 +122,7 @@ namespace CFU.Tiles
             player.noThrow = 2;
             player.cursorItemIconEnabled = true;
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameX / 36)]);

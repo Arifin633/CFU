@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class SpinningWheel : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Crafting Stations/SpinningWheel";
+    {
+        public override string Texture => "CFU/Textures/Items/Crafting Stations/SpinningWheel";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Rumpelstiltskin's Spinning Wheel");

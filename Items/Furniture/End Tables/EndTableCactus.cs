@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableCactus : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableCactus";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableCactus";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Cactus End Table");

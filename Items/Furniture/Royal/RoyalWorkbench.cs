@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class RoyalWorkbench : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Royal/RoyalWorkbench";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalWorkbench";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Royal Work Bench");

@@ -13,7 +13,7 @@ namespace CFU.Tiles
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/DoorsOpen";
         public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/DoorsOpenHighlight";
-        
+
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

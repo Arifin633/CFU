@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class PrinSink : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Princess/PrinSink";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Princess/PrinSink";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Princess Sink");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MysticDoor : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mystic/MysticDoor";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticDoor";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mystical Door");

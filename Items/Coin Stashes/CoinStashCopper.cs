@@ -7,7 +7,7 @@ namespace CFU.Items
 {
     public class CoinStashCopper : ModItem
     {
-        public override string Texture =>"CFU/Textures/Items/Coin Stashes/CoinStashCopper";
+        public override string Texture => "CFU/Textures/Items/Coin Stashes/CoinStashCopper";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Copper Coin Stash");

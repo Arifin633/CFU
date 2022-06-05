@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class PawnBlack : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Chess Pieces/PawnBlack";
+    {
+        public override string Texture => "CFU/Textures/Items/Chess Pieces/PawnBlack";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Black Pawn");

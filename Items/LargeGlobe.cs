@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class LargeGlobe : ModItem
-    {public override string Texture =>"CFU/Textures/Items/LargeGlobe";
+    {
+        public override string Texture => "CFU/Textures/Items/LargeGlobe";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Large Globe");

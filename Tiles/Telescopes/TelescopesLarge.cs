@@ -28,7 +28,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(224, 160, 42), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.TelescopeGold>(),

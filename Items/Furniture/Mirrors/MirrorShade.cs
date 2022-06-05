@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MirrorShade : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mirrors/MirrorShade";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mirrors/MirrorShade";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Shadewood Mirror");

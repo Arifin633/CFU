@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class QueenBlack : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Chess Pieces/QueenBlack";
+    {
+        public override string Texture => "CFU/Textures/Items/Chess Pieces/QueenBlack";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Black Queen");

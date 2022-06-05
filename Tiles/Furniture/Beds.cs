@@ -13,9 +13,9 @@ namespace CFU.Tiles
 {
     public class Beds : ModTile
     {
-        public override string Texture =>"CFU/Textures/Tiles/Furniture/Beds";
-        public override string HighlightTexture =>"CFU/Textures/Tiles/Furniture/BedsHighlight";
-        
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Beds";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/BedsHighlight";
+
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -81,7 +81,7 @@ namespace CFU.Tiles
                 player.GamepadEnableGrappleCooldown();
                 player.sleeping.StartSleeping(player, i, j);
             }
-            
+
             return true;
         }
 

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MirrorPrin : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/Mirrors/MirrorPrin";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/Mirrors/MirrorPrin";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Princess Mirror");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class EndTableSpooky : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Furniture/End Tables/EndTableSpooky";
+    {
+        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableSpooky";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spooky End Table");

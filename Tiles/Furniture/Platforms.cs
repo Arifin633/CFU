@@ -8,7 +8,8 @@ using Terraria.ObjectData;
 namespace CFU.Tiles
 {
     public class Platforms : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Furniture/Platforms";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Furniture/Platforms";
         public override void SetStaticDefaults()
         {
             Main.tileLighted[Type] = true;
@@ -35,7 +36,7 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Platforms };
         }
-        
+
         public override bool Drop(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.PrinPlatform>(),

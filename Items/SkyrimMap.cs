@@ -5,7 +5,8 @@ using Terraria.ID;
 namespace CFU.Items
 {
     public class SkyrimMap : ModItem
-    {public override string Texture =>"CFU/Textures/Items/SkyrimMap";
+    {
+        public override string Texture => "CFU/Textures/Items/SkyrimMap";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Skyrim Map");

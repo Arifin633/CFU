@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class YellowBannerLarge : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Teams/YellowBannerLarge";
+    {
+        public override string Texture => "CFU/Textures/Items/Teams/YellowBannerLarge";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Large Yellow Banner");
