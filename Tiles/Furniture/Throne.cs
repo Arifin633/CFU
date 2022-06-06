@@ -12,11 +12,13 @@ namespace CFU.Tiles
     class Throne : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/Throne";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/ThroneHighlight";
+        
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileLavaDeath[Type] = true;
-            // TileID.Sets.HasOutlines[Type] = true;
+            TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);

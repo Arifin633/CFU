@@ -12,11 +12,13 @@ namespace CFU.Tiles
     class OrnateThrones : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/OrnateThrones";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/OrnateThronesHighlight";
+        
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileLavaDeath[Type] = true;
-            // TileID.Sets.HasOutlines[Type] = true;
+            TileID.Sets.HasOutlines[Type] = true;
             /* It doesn't look like NPCs like to sit on regular thrones.
                TODO: Confirm? */
             // TileID.Sets.CanBeSatOnForNPCs[Type] = true;
