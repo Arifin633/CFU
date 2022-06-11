@@ -1,3 +1,4 @@
 /obj/
 /Experimental/
 /bin/
+.dir-locals.el

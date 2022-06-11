@@ -2,8 +2,10 @@ This file includes both known bugs and planned additions.
 The TODO file from the original Chad's Furniture is attached at the bottom.
 
 * Lanterns
+* Hanging Lamp
 * Banners
-Add animation on touch.
+Hanging tiles should be affected by the wind, and
+react when a player touches them, as in vanilla.
 
 * Biome jars
 Drops two items(?).
@@ -45,7 +47,7 @@ Highlight is broken.
 
 * End Tables
 * Wall Candelabras
-Add missing furniture types: Spider, Sandstone, Bamboo,  Lesion, Lunar stuff.
+Add missing furniture types: Spider, Sandstone, Bamboo, Lesion, Lunar stuff.
 
 * Keg
 Remove the vanilla Keg recipe.
@@ -59,9 +61,33 @@ Princess Wall Clock; all Wardrobes.
 Aside from that, a lot of other item textures are just plain bad and/or don't
 match the game's style very well.
 
+The dust and sound of pretty much every item is wrong.
+
 * Dressers
 * Chests
 Renaming a modded chest or dresser to "" will not restore its default name.
+
+* Wall Clocks
+* Wall Candelabras
+* Wardrobes
+* Mirrors
+* End Tables
+These tiles' textures are supposed to be based on their vanilla equivalents,
+but some are mismatched, either because of a mistake when they were first
+made or because the vanilla textures have been updated since then.
+
+* Miracle Plants
+The item textures for all plants look specially
+bad as they are just copy and pasted tiles.
+
+* Miracle Lily Pads
+Both placement and killing of the tile is very finicky.
+The lily pad will get stuck in place (either underwater or hovering in the air)
+if the water gets too high/low.  Some mechanism should be put in place so
+tile can physically change its position in that situation.
+
+* Mannequin Head
+Add hair-displaying capabilities as it had in the original mod.
 
 * Original Chad's Furniture TODO list
 Gardening Updates:

@@ -1,12 +1,17 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoMod.RuntimeDetour.HookGen;
+using MonoMod.Utils;
 using Terraria;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.GameContent;
 using Terraria.Localization;
+using Tiles = CFU.Tiles;
 
 namespace ChadsFurnitureUpdated
 {
@@ -284,6 +289,27 @@ namespace ChadsFurnitureUpdated
 
     public class CFU : Mod
     {
+        public override void PostSetupContent()
+        {
+            HookEndpointManager.Add(typeof(Main).FindMethod("DrawTileInWater"), new Action<Vector2, int, int>((drawOffset, x, y) =>
+            {
+                if (Main.tile[x, y] != null && Main.tile[x, y].HasTile
+                    && (Main.tile[x, y].TileType == ModContent.TileType<Tiles.MiracleLilyPads>() ||
+                        Main.tile[x, y].TileType == 518))
+                {
+                    Main.instance.LoadTiles(Main.tile[x, y].TileType);
+                    Tile tile = Main.tile[x, y];
+                    int num = tile.LiquidAmount / 16;
+                    num -= 3;
+                    if (WorldGen.SolidTile(x, y - 1) && num > 8)
+                        num = 8;
 
+                    Rectangle value = new Rectangle(tile.TileFrameX, tile.TileFrameY, 16, 16);
+                    Main.spriteBatch.Draw(TextureAssets.Tile[tile.TileType].Value,
+                                          new Vector2(x * 16, y * 16 - num) + drawOffset,
+                                          value, Lighting.GetColor(x, y), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+                }
+            }));
+        }
     }
 }
