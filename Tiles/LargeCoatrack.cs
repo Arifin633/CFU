@@ -7,14 +7,13 @@ using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
-    public class GunRack : ModTile
+    public class LargeCoatrack : ModTile
     {
-        public override string Texture => "CFU/Textures/Tiles/GunRack";
+        public override string Texture => "CFU/Textures/Tiles/LargeCoatrack";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
-            TileObjectData.newTile.Height = 3;
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.CoordinateHeights = new int[]
             {
                 16,
@@ -23,7 +22,7 @@ namespace CFU.Tiles
             };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Gun Rack");
+            name.SetDefault("Coatrack");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = 7;
             TileID.Sets.DisableSmartCursor[Type] = true;
@@ -31,7 +30,7 @@ namespace CFU.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.GunRack>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.LargeCoatrack>());
         }
     }
 }

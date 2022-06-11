@@ -8,7 +8,8 @@ using Terraria.DataStructures;
 namespace CFU.Tiles
 {
     public class Toolrack : ModTile
-    {public override string Texture =>"CFU/Textures/Tiles/Toolrack";
+    {
+        public override string Texture => "CFU/Textures/Tiles/Toolrack";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

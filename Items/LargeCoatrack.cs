@@ -4,12 +4,13 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class Easel : ModItem
+    public class LargeCoatrack : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Easel";
+        public override string Texture => "CFU/Textures/Items/LargeCoatrack";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Easel");
+            DisplayName.SetDefault("Coatrack");
+            Tooltip.SetDefault("'A large coatrack.'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -17,7 +18,7 @@ namespace CFU.Items
         {
             Item.width = 16;
             Item.height = 22;
-            Item.maxStack = 999;
+            Item.maxStack = 99;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;
@@ -25,15 +26,13 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Easel>();
-            Item.placeStyle = 0;
+            Item.createTile = ModContent.TileType<Tiles.LargeCoatrack>();
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.Paper>(), 12)
-            .AddIngredient(ItemID.Wood, 10)
+            .AddRecipeGroup(RecipeGroupID.Wood, 15)
             .AddTile(TileID.Sawmill)
             .Register();
         }
