@@ -72,13 +72,25 @@ namespace CFU.Tiles
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
+        static readonly int[] Styles =
+            { ModContent.ItemType<Items.PrinDoor>(),
+              ModContent.ItemType<Items.MysticDoor>(),
+              ModContent.ItemType<Items.RoyalDoor>(),
+              ModContent.ItemType<Items.AltSandstoneDoor>()};
+
+        public override void MouseOver(int i, int j)
+        {
+
+            Player player = Main.LocalPlayer;
+            player.cursorItemIconID = Styles[(Main.tile[i, j].TileFrameY / 54)];
+            player.cursorItemIconText = "";
+            player.noThrow = 2;
+            player.cursorItemIconEnabled = true;
+        }
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            int[] styles = { ModContent.ItemType<Items.PrinDoor>(),
-                             ModContent.ItemType<Items.MysticDoor>(),
-                             ModContent.ItemType<Items.RoyalDoor>(),
-                             ModContent.ItemType<Items.AltSandstoneDoor>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 54)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameY / 54)]);
         }
     }
 }
