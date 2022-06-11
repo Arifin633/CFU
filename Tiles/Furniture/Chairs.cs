@@ -72,7 +72,9 @@ namespace CFU.Tiles
               0, /* ModContent.ItemType<Items.MysticChair>(), */
               ModContent.ItemType<Items.RoyalChair>(),
               ModContent.ItemType<Items.AltSandstoneChair>(),
-              ModContent.ItemType<Items.DiningChair>() };
+              ModContent.ItemType<Items.DiningChair>(),
+              ModContent.ItemType<Items.RushChair>(),
+              ModContent.ItemType<Items.IronChair>() };
 
         public override void MouseOver(int i, int j)
         {

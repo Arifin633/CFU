@@ -37,7 +37,8 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinTable>(),
                              ModContent.ItemType<Items.MysticTable>(),
                              0, /* ModContent.ItemType<Items.RoyalTable>(), */
-                             ModContent.ItemType<Items.AltSandstoneTable>()};
+                             ModContent.ItemType<Items.AltSandstoneTable>(),
+                             ModContent.ItemType<Items.RushTable>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameX / 54)]);
         }
     }
