@@ -28,9 +28,19 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Pouf");
             AddMapEntry(new Color(183, 58, 71), name);
+            name = CreateMapEntryName("Stool");
+            name.SetDefault("Stool");
+            AddMapEntry(new Color(191, 142, 111), name);
             DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Chairs };
+        }
+
+        public override ushort GetMapOption(int i, int j)
+        {
+            if (Main.tile[i, j].TileFrameY >= 80)
+                return 1;
+            else return 0;
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
@@ -63,7 +73,8 @@ namespace CFU.Tiles
                 0, /* ModContent.ItemType<Items.PoufPrincess>(), */
                 ModContent.ItemType<Items.PoufMystic>(),
                 ModContent.ItemType<Items.PoufRoyal>(),
-                0 /* ModContent.ItemType<Items.PoufSandstone>(), */
+                0, /* ModContent.ItemType<Items.PoufSandstone>(), */
+                ModContent.ItemType<Items.Stool>()
         };
 
         public override void MouseOver(int i, int j)
