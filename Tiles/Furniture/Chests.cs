@@ -30,7 +30,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
-            TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(CFUtils.ChestAfterPlacementHook, -1, 0, false);
+            TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
             TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.LavaDeath = false;
@@ -39,16 +39,16 @@ namespace CFU.Tiles
             ChestDrop = ModContent.ItemType<Items.PrinChest>();
 
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Princess Chest");
+            name.SetDefault(Names[0]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             name = CreateMapEntryName("MysticChest");
-            name.SetDefault("Mystical Chest");
+            name.SetDefault(Names[1]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             name = CreateMapEntryName("RoyalChest");
-            name.SetDefault("Royal Chest");
+            name.SetDefault(Names[2]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             name = CreateMapEntryName("SandstoneChest");
-            name.SetDefault("Sandstone Urn");
+            name.SetDefault(Names[3]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
@@ -75,6 +75,9 @@ namespace CFU.Tiles
 
             return name + ": " + Main.chest[chest].name;
         }
+
+        public static readonly string[] Names =
+            { "Princess Chest", "Mystical Chest", "Royal Chest", "Sandstone Urn" };
 
         static readonly int[] Styles =
             { ModContent.ItemType<Items.PrinChest>(),

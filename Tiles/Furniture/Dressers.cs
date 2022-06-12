@@ -29,7 +29,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(1, 1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
-            TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(CFUtils.ChestAfterPlacementHook, -1, 0, false);
+            TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
             TileObjectData.newTile.AnchorInvalidTiles = new int[] { 127 };
             TileObjectData.newTile.StyleHorizontal = false;
             TileObjectData.newTile.LavaDeath = false;
@@ -38,16 +38,16 @@ namespace CFU.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Princess Dresser");
+            name.SetDefault(Names[0]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             name = CreateMapEntryName("MysticDresser");
-            name.SetDefault("Mystical Dresser");
+            name.SetDefault(Names[1]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             name = CreateMapEntryName("RoyalDresser");
-            name.SetDefault("Royal Dresser");
+            name.SetDefault(Names[2]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             name = CreateMapEntryName("SandstoneDresser");
-            name.SetDefault("Sandstone Dresser");
+            name.SetDefault(Names[3]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Dressers };
@@ -104,12 +104,14 @@ namespace CFU.Tiles
             return true;
         }
 
-        static readonly int[] Styles = {
-            ModContent.ItemType<Items.PrinDresser>(),
-            ModContent.ItemType<Items.MysticDresser>(),
-            ModContent.ItemType<Items.RoyalDresser>(),
-            ModContent.ItemType<Items.AltSandstoneDresser>()
-        };
+        public static readonly string[] Names =
+            { "Princess Dresser", "Mystical Dresser", "Royal Dresser" ,"Sandstone Dresser" };
+
+        static readonly int[] Styles =
+            { ModContent.ItemType<Items.PrinDresser>(),
+              ModContent.ItemType<Items.MysticDresser>(),
+              ModContent.ItemType<Items.RoyalDresser>(),
+              ModContent.ItemType<Items.AltSandstoneDresser>() };
 
 
         public override void MouseOver(int i, int j)

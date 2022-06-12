@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoMod.RuntimeDetour.HookGen;
 using MonoMod.Utils;
 using Terraria;
-using Terraria.ObjectData;
-using Terraria.DataStructures;
+using Terraria.GameContent.UI.States;
+using Terraria.UI;
+using Terraria.UI.Gamepad;
+using Terraria.UI.Chat;
 using Terraria.ModLoader;
 using Terraria.Audio;
 using Terraria.ID;
@@ -223,74 +225,25 @@ namespace ChadsFurnitureUpdated
             }
         }
 
-        public static int ChestAfterPlacementHook(int x, int y, int type, int style = 0, int direction = 1, int alternate = 0)
-        {
-            Tile tile = Main.tile[x, y];
-            Point16 baseCoords = new Point16(x, y);
-            TileObjectData.OriginToTopLeft(type, style, ref baseCoords);
-            int num = Chest.FindEmptyChest(baseCoords.X, baseCoords.Y);
-            if (num == -1)
-            {
-                return -1;
-            }
-
-            if (Main.netMode != NetmodeID.MultiplayerClient)
-            {
-                Chest chest = new Chest();
-                chest.x = baseCoords.X;
-                chest.y = baseCoords.Y;
-                for (int i = 0; i < 40; i++)
-                {
-                    chest.item[i] = new Item();
-                }
-
-                /* TODO: Add this to the netcode branch. */
-                string name = "";
-                int frame = TileID.Sets.BasicDresser[type] ? tile.TileFrameY : tile.TileFrameX;
-                switch (frame / 36)
-                {
-                    case 0:
-                        name = "Princess";
-                        break;
-                    case 1:
-                        name = "Mystical";
-                        break;
-                    case 2:
-                        name = "Royal";
-                        break;
-                    case 3:
-                        name = "Sandstone";
-                        break;
-                }
-                if (TileID.Sets.BasicDresser[type])
-                    name += " Dresser";
-                else if (frame / 36 == 3)
-                    name += " Urn";
-                else
-                    name += " Chest";
-
-                chest.name = name;
-                Main.chest[num] = chest;
-            }
-            else
-            {
-                if (TileID.Sets.BasicChest[type])
-                {
-                    NetMessage.SendData(MessageID.ChestUpdates, -1, -1, null, 100, x, y, style, 0, type);
-                }
-                else if (TileID.Sets.BasicDresser[type])
-                {
-                    NetMessage.SendData(MessageID.ChestUpdates, -1, -1, null, 102, x, y, style, 0, type);
-                }
-            }
-            return num;
-        }
     }
 
     public class CFU : Mod
     {
+        static string ContainerName(int i, int j)
+        {
+            Tile tile = Main.tile[i, j];
+            if (tile.TileType == ModContent.TileType<Tiles.Chests>())
+                return Tiles.Chests.Names[(tile.TileFrameX / 36)];
+            else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
+                return Tiles.Dressers.Names[(tile.TileFrameY / 36)];
+            else return TileLoader.ContainerName(tile.TileType);
+        }
+
         public override void PostSetupContent()
         {
+            /* This Hook allows the mod's Miracle Lily Pads to be drawn in
+               the same manner as vanilla Lily Pads, that is, not being
+               obstructed by water and reacting to ripples and waves. */
             HookEndpointManager.Add(typeof(Main).FindMethod("DrawTileInWater"), new Action<Vector2, int, int>((drawOffset, x, y) =>
             {
                 if (Main.tile[x, y] != null && Main.tile[x, y].HasTile
@@ -310,6 +263,180 @@ namespace ChadsFurnitureUpdated
                                           value, Lighting.GetColor(x, y), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
                 }
             }));
+
+            /* The following two hooks replace the sole two existing
+               calls to `TileLoader.ContainerName' with calls to our
+               own `CFU.ContainerName' (which see). */
+            HookEndpointManager.Add(typeof(ChestUI).FindMethod("DrawName"), new Action<SpriteBatch>(spritebatch =>
+            {
+                Player player = Main.player[Main.myPlayer];
+                string text = string.Empty;
+                if (Main.editChest)
+                {
+                    text = Main.npcChatText;
+                    Main.instance.textBlinkerCount++;
+                    if (Main.instance.textBlinkerCount >= 20)
+                    {
+                        if (Main.instance.textBlinkerState == 0)
+                        {
+                            Main.instance.textBlinkerState = 1;
+                        }
+                        else
+                        {
+                            Main.instance.textBlinkerState = 0;
+                        }
+                        Main.instance.textBlinkerCount = 0;
+                    }
+                    if (Main.instance.textBlinkerState == 1)
+                    {
+                        text += "|";
+                    }
+                    Main.instance.DrawWindowsIMEPanel(new Vector2(120f, 518f));
+                }
+                else if (player.chest > -1)
+                {
+                    if (Main.chest[player.chest] == null)
+                    {
+                        Main.chest[player.chest] = new Chest();
+                    }
+                    Chest chest = Main.chest[player.chest];
+                    if (chest.name != "")
+                    {
+                        text = chest.name;
+                    }
+                    else
+                    {
+                        Tile tile = Main.tile[player.chestX, player.chestY];
+                        if (tile.TileType == 21)
+                        {
+                            text = Lang.chestType[tile.TileFrameX / 36].Value;
+                        }
+                        else if (tile.TileType == 467 && tile.TileFrameX / 36 == 4)
+                        {
+                            text = Lang.GetItemNameValue(3988);
+                        }
+                        else if (tile.TileType == 467)
+                        {
+                            text = Lang.chestType2[tile.TileFrameX / 36].Value;
+                        }
+                        else if (tile.TileType == 88)
+                        {
+                            text = Lang.dresserType[tile.TileFrameX / 54].Value;
+                        }
+                        else if (TileID.Sets.BasicChest[Main.tile[player.chestX, player.chestY].TileType] || TileID.Sets.BasicDresser[Main.tile[player.chestX, player.chestY].TileType])
+                        {
+                            text = ContainerName(player.chestX, player.chestY);
+                        }
+                    }
+                }
+                else if (player.chest == -2)
+                {
+                    text = Lang.inter[32].Value;
+                }
+                else if (player.chest == -3)
+                {
+                    text = Lang.inter[33].Value;
+                }
+                else if (player.chest == -4)
+                {
+                    text = Lang.GetItemNameValue(3813);
+                }
+                else if (player.chest == -5)
+                {
+                    text = Lang.GetItemNameValue(4076);
+                }
+                Color color = new Color(Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor, Main.mouseTextColor);
+                color = Color.White * (1f - (255f - (float)(int)Main.mouseTextColor) / 255f * 0.5f);
+                color.A = byte.MaxValue;
+                Utils.WordwrapString(text, FontAssets.MouseText.Value, 200, 1, out var lineAmount);
+                lineAmount++;
+                for (int i = 0; i < lineAmount; i++)
+                {
+                    ChatManager.DrawColorCodedStringWithShadow(spritebatch, FontAssets.MouseText.Value, text, new Vector2(504f, Main.instance.invBottom + i * 26), color, 0f, Vector2.Zero, Vector2.One, -1f, 1.5f);
+                }
+            }));
+
+            HookEndpointManager.Add(typeof(IngameFancyUI).FindMethod("OpenVirtualKeyboard"), new Action<int>(keyboardContext =>
+            {
+                IngameFancyUI.CoverNextFrame();
+                Main.ClosePlayerChat();
+                Main.chatText = "";
+                SoundEngine.PlaySound(12);
+                string labelText = "";
+                switch (keyboardContext)
+                {
+                    case 1:
+                        Main.editSign = true;
+                        labelText = Language.GetTextValue("UI.EnterMessage");
+                        break;
+                    case 2:
+                        {
+                            labelText = Language.GetTextValue("UI.EnterNewName");
+                            Player player = Main.player[Main.myPlayer];
+                            Main.npcChatText = Main.chest[player.chest].name;
+                            Tile tile = Main.tile[player.chestX, player.chestY];
+                            if (tile.TileType == 21)
+                            {
+                                Main.defaultChestName = Lang.chestType[tile.TileFrameX / 36].Value;
+                            }
+                            else if (tile.TileType == 467 && tile.TileFrameX / 36 == 4)
+                            {
+                                Main.defaultChestName = Lang.GetItemNameValue(3988);
+                            }
+                            else if (tile.TileType == 467)
+                            {
+                                Main.defaultChestName = Lang.chestType2[tile.TileFrameX / 36].Value;
+                            }
+                            else if (tile.TileType == 88)
+                            {
+                                Main.defaultChestName = Lang.dresserType[tile.TileFrameX / 54].Value;
+                            }
+                            if (tile.TileType >= 625 && (TileID.Sets.BasicChest[tile.TileType] || TileID.Sets.BasicDresser[tile.TileType]))
+                            {
+                                Main.defaultChestName = ContainerName(player.chestX, player.chestY);
+                            }
+                            if (Main.npcChatText == "")
+                            {
+                                Main.npcChatText = Main.defaultChestName;
+                            }
+                            Main.editChest = true;
+                            break;
+                        }
+                }
+                Main.clrInput();
+                if (!IngameFancyUI.CanShowVirtualKeyboard(keyboardContext))
+                {
+                    return;
+                }
+                Main.inFancyUI = true;
+                switch (keyboardContext)
+                {
+                    case 1:
+                        Main.InGameUI.SetState(new UIVirtualKeyboard(labelText, Main.npcChatText, delegate
+                        {
+                            Main.SubmitSignText();
+                            IngameFancyUI.Close();
+                        }, delegate
+                        {
+                            Main.InputTextSignCancel();
+                            IngameFancyUI.Close();
+                        }, keyboardContext));
+                        break;
+                    case 2:
+                        Main.InGameUI.SetState(new UIVirtualKeyboard(labelText, Main.npcChatText, delegate
+                        {
+                            ChestUI.RenameChestSubmit(Main.player[Main.myPlayer]);
+                            IngameFancyUI.Close();
+                        }, delegate
+                        {
+                            ChestUI.RenameChestCancel();
+                            IngameFancyUI.Close();
+                        }, keyboardContext));
+                        break;
+                }
+                UILinkPointNavigator.GoToDefaultPage(1);
+            }));
+
         }
     }
 }
