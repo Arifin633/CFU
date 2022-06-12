@@ -49,7 +49,10 @@ namespace ChadsFurnitureUpdated
 
             /* The following two hooks replace the sole two existing
                calls to `TileLoader.ContainerName' with calls to our
-               own `CFU.ContainerName' (which see). */
+               own `CFU.ContainerName' (which see).
+               This is done so different styles of the same tile
+               type can have different default container names.
+            */
             HookEndpointManager.Add(typeof(ChestUI).FindMethod("DrawName"), new Action<SpriteBatch>(spritebatch =>
             {
                 Player player = Main.player[Main.myPlayer];
