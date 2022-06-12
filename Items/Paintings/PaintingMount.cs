@@ -27,7 +27,7 @@ namespace CFU.Items
             Item.consumable = true;
             Item.value = 10000;
             Item.createTile = ModContent.TileType<Tiles.Paintings2xX>();
-            Item.placeStyle = 0;
+            Item.placeStyle = 5;
         }
     }
 }

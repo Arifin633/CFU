@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tapestry");
-            Tooltip.SetDefault("'Depicts King Jacques being knighted by the Dryad.'");
+            Tooltip.SetDefault("'Depicts King Jacques having met an accidental end to a catapult manned by his wife.'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -27,6 +27,7 @@ namespace CFU.Items
             Item.consumable = true;
             Item.value = 0;
             Item.createTile = ModContent.TileType<Tiles.Tapestries>();
+            Item.placeStyle = 0;
         }
 
         public override void AddRecipes()
