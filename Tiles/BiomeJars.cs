@@ -54,15 +54,14 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
-        public override bool Drop(int i, int j)
+        public override void KillMultiTile(int i, int j, int tileFrameX, int tileFrameY)
         {
             int[] styles = { ModContent.ItemType<Items.BiomeJarForest>(),
                              ModContent.ItemType<Items.BiomeJarJungle>(),
                              ModContent.ItemType<Items.BiomeJarCorruption>(),
                              ModContent.ItemType<Items.BiomeJarCrimson>(),
                              ModContent.ItemType<Items.BiomeJarHallow>(),};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameX / 36)]);
-            return true;
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(tileFrameX / 36)]);
         }
     }
 }
