@@ -4,9 +4,8 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class Lantern : ModItem
-    {
-        public override string Texture => "CFU/Textures/Items/Lantern";
+    public class HangingLamp : ModItem
+    {public override string Texture =>"CFU/Textures/Items/Furniture/HangingLamp";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hanging Lamp");

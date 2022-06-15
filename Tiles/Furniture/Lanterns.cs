@@ -34,7 +34,8 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinLantern>(),
                              ModContent.ItemType<Items.MysticLantern>(),
                              ModContent.ItemType<Items.RoyalLantern>(),
-                             ModContent.ItemType<Items.AltSandstoneLantern>()};
+                             ModContent.ItemType<Items.AltSandstoneLantern>(),
+                             ModContent.ItemType<Items.HangingLamp>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 36)]);
         }
 
