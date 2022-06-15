@@ -23,7 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleMultiplier = 2;
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Lamp");
+            name.SetDefault("Lantern");
             AddMapEntry(new Color(181, 172, 190), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
@@ -50,7 +50,7 @@ namespace CFU.Tiles
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             if (Main.tile[i, j].TileFrameX < 18 &&
-                Main.tile[i, j].TileFrameY / 18 is >= 3 and <= 7)
+                Main.tile[i, j].TileFrameY / 18 is >= 3 and <= 9)
             {
                 CFUtils.DrawFlame(i, j, spriteBatch, "LanternsFlame");
             }
@@ -81,6 +81,9 @@ namespace CFU.Tiles
                         r = 1f;
                         g = 0.5f;
                         b = 0f;
+                        break;
+                    case 9: /* Hanging Lamp */
+                        r = g = b = 1f;
                         break;
                 }
             }

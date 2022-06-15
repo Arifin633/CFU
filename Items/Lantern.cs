@@ -25,8 +25,8 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Lantern>();
-            Item.placeStyle = 0;
+            Item.createTile = ModContent.TileType<Tiles.Lanterns>();
+            Item.placeStyle = 4;
         }
 
         public override void AddRecipes()
