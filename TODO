@@ -75,6 +75,10 @@ The lily pad will get stuck in place (either underwater or hovering in the air)
 if the water gets too high/low.  Some mechanism should be put in place so
 tile can physically change its position in that situation.
 
+* Miracle Vines
+Can't be placed (extended) unless there's a wall or another solid block.
+Doesn't get killed if the tile above it is.
+
 * Mannequin Head
 Add hair-displaying capabilities as it had in the original mod.
 
