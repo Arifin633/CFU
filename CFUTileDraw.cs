@@ -24,6 +24,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Tiles = CFU.Tiles;
 
@@ -50,19 +51,9 @@ namespace ChadsFurnitureUpdated
             Pendulum
         }
 
-        public static bool ResetOnNextAddition = false;
-
         public static void AddSpecialPosition(int x, int y, SpecialPositionType type)
         {
             int i = (int)type;
-            if (ResetOnNextAddition)
-            {
-                ResetOnNextAddition = false;
-                SpecialPositionsCount[0] = 0;
-                SpecialPositionsCount[1] = 0;
-                SpecialPositionsCount[2] = 0;
-                SpecialPositionsCount[3] = 0;
-            }
             if (SpecialPositionsCount[i] < 5000)
                 SpecialPositions[i][SpecialPositionsCount[i]++] = new Point(x, y);
         }
@@ -370,7 +361,7 @@ namespace ChadsFurnitureUpdated
             if (flag)
                 value += new Vector2(0f, 16f);
 
-            var texture = ModContent.Request<Texture2D>(ModContent.GetModTile(type).Texture).Value; // lol
+            var texture = TextureAssets.Tile[type].Value;
             for (int i = topLeftX; i < topLeftX + sizeX; i++)
                 for (int j = topLeftY; j < topLeftY + sizeY; j++)
                 {
@@ -436,7 +427,7 @@ namespace ChadsFurnitureUpdated
             float num4 = 0f;
             float num5 = 0f;
 
-            var texture = ModContent.Request<Texture2D>(ModContent.GetModTile(type).Texture).Value;
+            var texture = TextureAssets.Tile[type].Value;
             for (int i = startY; i < Main.maxTilesY - 10; i++)
             {
                 Tile tile = Main.tile[x, i];
@@ -500,7 +491,7 @@ namespace ChadsFurnitureUpdated
             float num4 = 0f;
             float num5 = 0f;
 
-            var texture = ModContent.Request<Texture2D>(ModContent.GetModTile(type).Texture).Value;
+            var texture = TextureAssets.Tile[type].Value;
             for (int i = startY; i > 10; i--)
             {
                 Tile tile = Main.tile[x, i];

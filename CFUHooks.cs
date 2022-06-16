@@ -71,6 +71,50 @@ namespace ChadsFurnitureUpdated
                 });
             }));
 
+            /* tModLoader has no pre-existing hook for `PreDrawTiles'.
+               Thus to hook into this function is the most sensible way to make
+               sure our array will get reset neither too early nor too late. */
+            HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PreDrawTiles"), new Action<ILContext>((il) =>
+            {
+                var c = new ILCursor(il);
+                c.GotoNext(MoveType.Before, i => i.MatchLdarg(0));
+                c.EmitDelegate<Action>(() =>
+                {
+                    CFUTileDraw.SpecialPositionsCount[0] = 0;
+                    CFUTileDraw.SpecialPositionsCount[1] = 0;
+                    CFUTileDraw.SpecialPositionsCount[2] = 0;
+                    CFUTileDraw.SpecialPositionsCount[3] = 0;
+                });
+            }));
+
+            /* The point in time a drawing function is called
+               seems to be the sole determinant for drawing order.
+               Therefore, to ensure our tiles' drawing order looks
+               just like vanilla, we must hook into this function
+               and draw our tiles at the same time as their equivalents.*/
+            HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PostDrawTiles"), new Action<ILContext>((il) =>
+            {
+                var c = new ILCursor(il);
+                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileVines"));
+                c.EmitDelegate<Action>(() =>
+                {
+                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[0]; i++)
+                        if (CFUTileDraw.SpecialPositionsCount[0] < 5000 && // Don't draw past the array size.
+                            CFUTileDraw.SpecialPositions[0][i] != new Point()) // Don't draw empty coordinates.
+                            CFUTileDraw.DrawHangingTile(CFUTileDraw.SpecialPositions[0][i]);
+                });
+
+                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawVines"));
+                c.EmitDelegate<Action>(() =>
+                {
+                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[1]; i++)
+                        if (CFUTileDraw.SpecialPositionsCount[1] < 5000 && // Don't draw past the array size.
+                            CFUTileDraw.SpecialPositions[1][i] != new Point()) // Don't draw empty coordinates.
+                            CFUTileDraw.DrawHangingVine(CFUTileDraw.SpecialPositions[1][i]);
+                });
+            }));
+
+
             /* The following two hooks replace the sole two existing
                calls to `TileLoader.ContainerName' with calls to our
                own `CFU.ContainerName' (which see).
