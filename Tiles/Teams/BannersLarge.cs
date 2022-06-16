@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -18,6 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
             TileObjectData.newTile.Width = 2;
             TileObjectData.newTile.Height = 3;
+            TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
