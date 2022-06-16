@@ -74,7 +74,7 @@ namespace CFU.Tiles
         {
             if (Main.tile[i, j].TileFrameX < 36)
             {
-                CFUtils.DrawFlame(i, j, spriteBatch, "CandelabrasFlame");
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
             }
         }
 

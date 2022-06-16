@@ -48,7 +48,7 @@ namespace CFU.Tiles
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
             Tile tile = Main.tile[i, j];
-            if (tile.TileFrameX < 88)
+            if (tile.TileFrameX < 66)
             {
                 r = 1f;
                 g = 0.5f;
@@ -77,7 +77,10 @@ namespace CFU.Tiles
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            CFUtils.DrawFlame(i, j, spriteBatch, "TorchesFlame", true);
+            if (Main.tile[i, j].TileFrameX < 66)
+            {
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
+            }
         }
     }
 }

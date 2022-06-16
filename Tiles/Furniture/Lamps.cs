@@ -76,7 +76,7 @@ namespace CFU.Tiles
             if (Main.tile[i, j].TileFrameX < 18 &&
                 Main.tile[i, j].TileFrameY / 56 is 1 or 2 or 3)
             {
-                CFUtils.DrawFlame(i, j, spriteBatch, "LampsFlame");
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
             }
         }
 

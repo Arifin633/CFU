@@ -1,4 +1,6 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -52,6 +54,15 @@ namespace CFU.Tiles
             AddMapEntry(new Color(133, 213, 247), name);
             DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => ((Main.tile[i, j].TileFrameX / 18) % 2 == 0);
+
+        public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+        {
+            if (Main.tile[i, j].TileFrameY == 0 &&
+                (Main.tile[i, j].TileFrameX / 18) % 2 != 0)
+                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
         }
 
         public override void KillMultiTile(int i, int j, int tileFrameX, int tileFrameY)

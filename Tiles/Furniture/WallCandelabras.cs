@@ -85,8 +85,7 @@ namespace CFU.Tiles
             if (Main.tile[i, j].TileFrameY < 36)
             {
                 /* Unverified colors.
-                   TODO: Figure out where vanilla stores lighting
-                   colors and make sure everything matches up. */
+                   TODO: Use colors from `TileLightScanner.ApplyTileLight'. */
                 switch (Main.tile[i, j].TileFrameX)
                 {
                     case 72:
@@ -115,7 +114,7 @@ namespace CFU.Tiles
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             if (Main.tile[i, j].TileFrameY < 36)
-                CFUtils.DrawFlame(i, j, spriteBatch, "WallCandelabrasFlame");
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
         }
     }
 }

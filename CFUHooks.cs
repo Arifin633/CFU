@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoMod.Cil;
 using MonoMod.Utils;
 using MonoMod.RuntimeDetour.HookGen;
 using Terraria;
@@ -10,6 +11,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.GameContent.Drawing;
 using Terraria.UI.Chat;
 using Terraria.UI.Gamepad;
 using Terraria.UI;
@@ -22,9 +24,9 @@ namespace ChadsFurnitureUpdated
         public static void SetupHooks()
         {
             /* FIXME: The Hooks here should really be `Modify'ing instead of
-             `Add'ing to these functions, but that's more complicated. */
+               `Add'ing to these functions, but that's more complicated. */
 
-            /* This Hook allows the mod's Miracle Lily Pads to be drawn in
+            /* This hook allows the mod's Miracle Lily Pads to be drawn in
                the same manner as vanilla Lily Pads, that is, not being
                obstructed by water and reacting to ripples and waves. */
             HookEndpointManager.Add(typeof(Main).FindMethod("DrawTileInWater"), new Action<Vector2, int, int>((drawOffset, x, y) =>
@@ -47,12 +49,33 @@ namespace ChadsFurnitureUpdated
                 }
             }));
 
+            /* The `TileDrawing.Update' function updates both the
+               internal WindGrid and the various wind counters.
+               By hooking into this function and updating our own
+               Grid/counters, we can ensure they will be in sync
+               with their `TileDrawing' vanilla counterparts. */
+            HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("Update"), new Action<ILContext>((il) =>
+            {
+                var c = new ILCursor(il);
+                c.EmitDelegate<Action>(() =>
+                {
+                    if (!Main.dedServ)
+                    {
+                        double num = Math.Abs(Main.WindForVisuals);
+                        num = Utils.GetLerpValue(0.08f, 1.2f, (float)num, clamped: true);
+                        CFUTileDraw.WindCounter += 1.0 / 420.0 + 1.0 / 420.0 * num * 5.0;
+                        CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.4000000059604645;
+                        CFUTileDraw.EnsureWindGridSize();
+                        CFUTileDraw.WindGrid.Update();
+                    }
+                });
+            }));
+
             /* The following two hooks replace the sole two existing
                calls to `TileLoader.ContainerName' with calls to our
                own `CFU.ContainerName' (which see).
                This is done so different styles of the same tile
-               type can have different default container names.
-            */
+               type can have different default container names. */
             HookEndpointManager.Add(typeof(ChestUI).FindMethod("DrawName"), new Action<SpriteBatch>(spritebatch =>
             {
                 Player player = Main.player[Main.myPlayer];

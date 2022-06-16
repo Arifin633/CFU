@@ -69,9 +69,17 @@ namespace CFU.Tiles
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 72)]);
         }
 
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            CFUtils.DrawFlame(i, j, spriteBatch, "OrnateChandeliersFlame");
+            // if (Main.tile[i, j].TileFrameX < 72)
+            // {
+            //     CFUTileDraw.DrawFlame(i, j, spriteBatch);
+            // }
+            if (Main.tile[i, j].TileFrameY % 72 == 0 &&
+                Main.tile[i, j].TileFrameX % 72 == 0)
+                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
         }
     }
 }

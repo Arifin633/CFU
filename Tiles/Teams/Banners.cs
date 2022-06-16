@@ -1,4 +1,6 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -36,6 +38,13 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.YellowBanner>(),
                              ModContent.ItemType<Items.PinkBanner>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, styles[(frameX / 18)]);
+        }
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+
+        public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+        {
+            if (Main.tile[i, j].TileFrameY == 0)
+                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
         }
     }
 }

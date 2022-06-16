@@ -1,12 +1,6 @@
 This file includes both known bugs and planned additions.
 The TODO file from the original Chad's Furniture is attached at the bottom.
 
-* Lanterns
-* Hanging Lamp
-* Banners
-Hanging tiles should be affected by the wind, and
-react when a player touches them, as in vanilla.
-
 * Biome Jars
 Add more biomes.
 Current ones: Forest, Hallow, Corruption, Crimson, Jungle.
@@ -83,6 +77,12 @@ tile can physically change its position in that situation.
 
 * Mannequin Head
 Add hair-displaying capabilities as it had in the original mod.
+
+* Wall Clocks
+Draw the pendulum using `AddSpecialPosition' to avoid blurriness.
+
+* Wall Candelabras
+Use vanilla values for the light colors and flame draw data.
 
 * Original Chad's Furniture TODO list
 Gardening Updates:

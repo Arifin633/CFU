@@ -47,8 +47,8 @@ namespace CFU.Tiles
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             if (Main.tile[i, j].TileFrameX < 144)
-                CFUtils.ForgeDrawSmoke(i, j, spriteBatch, "HardsmithSmokeMythril", 8, 26, Type);
-            else CFUtils.ForgeDrawSmoke(i, j, spriteBatch, "HardsmithSmokeOrichalcum", 8, 26, Type);
+                CFUTileDraw.ForgeDrawSmoke(i, j, spriteBatch, "HardsmithSmokeMythril", 8, 26, Type);
+            else CFUTileDraw.ForgeDrawSmoke(i, j, spriteBatch, "HardsmithSmokeOrichalcum", 8, 26, Type);
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

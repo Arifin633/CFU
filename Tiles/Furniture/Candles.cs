@@ -97,7 +97,7 @@ namespace CFU.Tiles
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             if (Main.tile[i, j].TileFrameX < 18)
-                CFUtils.DrawFlame(i, j, spriteBatch, "CandlesFlame");
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
         }
 
         public override bool Drop(int i, int j)

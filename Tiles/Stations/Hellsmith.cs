@@ -44,7 +44,7 @@ namespace CFU.Tiles
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            CFUtils.ForgeDrawSmoke(i, j, spriteBatch, "HellsmithSmoke", 32, 26, Type);
+            CFUTileDraw.ForgeDrawSmoke(i, j, spriteBatch, "HellsmithSmoke", 32, 26, Type);
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

@@ -69,12 +69,17 @@ namespace CFU.Tiles
                 CFUtils.ShiftTileX(i, j, 3, 3, 54, true, true);
         }
 
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            if (Main.tile[i, j].TileFrameX < 54)
-            {
-                CFUtils.DrawFlame(i, j, spriteBatch, "ChandeliersFlame");
-            }
+            // if (Main.tile[i, j].TileFrameX < 54)
+            // {
+            //     CFUTileDraw.DrawFlame(i, j, spriteBatch);
+            // }
+            if (Main.tile[i, j].TileFrameY % 54 == 0 &&
+                Main.tile[i, j].TileFrameX % 54 == 0)
+                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

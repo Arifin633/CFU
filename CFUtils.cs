@@ -1,5 +1,3 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -78,54 +76,6 @@ namespace ChadsFurnitureUpdated
 
                 }
                 acc = 0;
-            }
-        }
-
-        public static void ForgeDrawSmoke(int i, int j, SpriteBatch spriteBatch, string smoke, int smokeX, int smokeY, int Type)
-        {
-            Tile tile = Main.tile[i, j];
-            Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
-
-            if (tile.TileFrameY % 56 == 0 && tile.TileFrameX % 72 == 0)
-            {
-                /* The size of the area in which tiles are considered an
-                   obstruction is rather large, but that means we can safely
-                   use it for all kinds of forges without change. */
-                bool obstructed = false;
-                for (int x = 1; x <= 3; x++)
-                    for (int y = 1; y <= 2; y++)
-                        if (WorldGen.SolidTile(i + x, j - y))
-                            obstructed = true;
-
-                if (!obstructed)
-                    spriteBatch.Draw(
-                        ModContent.Request<Texture2D>("CFU/Textures/Tiles/Stations/" + smoke).Value,
-                        new Vector2(i * 16 + smokeX - (int)Main.screenPosition.X, j * 16 - smokeY - (int)Main.screenPosition.Y) + zero,
-                        new Rectangle(Main.tileFrame[Type] * 32, 0, 30, 26),
-                        Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-            }
-        }
-
-        public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame)
-        {
-            DrawFlame(i, j, spriteBatch, flame, false);
-        }
-
-        public static void DrawFlame(int i, int j, SpriteBatch spriteBatch, string flame, bool torch)
-        {
-            ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i);
-            Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
-            int frameX = (torch) ? (Main.tile[i, j].TileFrameX + 2) : Main.tile[i, j].TileFrameX;
-            int frameY = Main.tile[i, j].TileFrameY;
-            int offsetY = (torch && (WorldGen.SolidTile(i, j - 1))) ? 2 : 0;
-            for (int k = 0; k < 7; k++)
-            {
-                float x = (float)Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
-                float y = (float)Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
-                spriteBatch.Draw(
-                    ModContent.Request<Texture2D>("CFU/Textures/Tiles/Furniture/" + flame).Value,
-                    new Vector2((float)(i * 16 - (int)Main.screenPosition.X) + x, (float)(j * 16 - (int)Main.screenPosition.Y + offsetY) + y) + zero,
-                    new Rectangle(frameX, frameY, 16, 18), new Color(100, 100, 100, 0), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
             }
         }
 
