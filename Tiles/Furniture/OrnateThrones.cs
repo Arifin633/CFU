@@ -19,8 +19,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
-            /* It doesn't look like NPCs like to sit on regular thrones.
-               TODO: Confirm? */
+            /* NPCs only sit in chairs and toilets. */
             // TileID.Sets.CanBeSatOnForNPCs[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
