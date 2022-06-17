@@ -24,7 +24,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Tiles = CFU.Tiles;
 
@@ -366,7 +365,6 @@ namespace ChadsFurnitureUpdated
             if (flag)
                 value += new Vector2(0f, 16f);
 
-            var texture = TextureAssets.Tile[type].Value;
             for (int i = topLeftX; i < topLeftX + sizeX; i++)
                 for (int j = topLeftY; j < topLeftY + sizeY; j++)
                 {
@@ -386,6 +384,7 @@ namespace ChadsFurnitureUpdated
                     else if (num7 == 0f)
                         num7 = 0.1f;
 
+                    var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile2, i, j);
                     TileDrawData(i, j, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
 
                     Color tileLight = Lighting.GetColor(i, j);
@@ -432,7 +431,6 @@ namespace ChadsFurnitureUpdated
             float num4 = 0f;
             float num5 = 0f;
 
-            var texture = TextureAssets.Tile[type].Value;
             for (int i = startY; i < Main.maxTilesY - 10; i++)
             {
                 Tile tile = Main.tile[x, i];
@@ -461,12 +459,9 @@ namespace ChadsFurnitureUpdated
                     short tileFrameX = tile.TileFrameX;
                     short tileFrameY = tile.TileFrameY;
                     Color color = Lighting.GetColor(x, i);
+                    var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, x, i);
                     TileDrawData(x, i, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
-                    // if (tile.color() == 31) // ?
-                    // {
-                    //     color = Color.White;
-                    // }
                     float num6 = (float)num2 * num3 * windCycle + num4;
                     Main.spriteBatch.Draw(texture, position, new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), color, num6, new Vector2(tileWidth / 2, tileTop), 1f, tileSpriteEffects, 0f);
                     value += (num6 + (float)Math.PI / 2f).ToRotationVector2() * 16f;
@@ -496,7 +491,6 @@ namespace ChadsFurnitureUpdated
             float num4 = 0f;
             float num5 = 0f;
 
-            var texture = TextureAssets.Tile[type].Value;
             for (int i = startY; i > 10; i--)
             {
                 Tile tile = Main.tile[x, i];
@@ -525,6 +519,7 @@ namespace ChadsFurnitureUpdated
                     short tileFrameX = tile.TileFrameX;
                     short tileFrameY = tile.TileFrameY;
                     Color color = Lighting.GetColor(x, i);
+                    var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, x, i);
                     TileDrawData(x, i, tile, type, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out var addFrX, out var addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * (0f - num3) * windCycle + num4;
