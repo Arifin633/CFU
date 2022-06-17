@@ -1,15 +1,15 @@
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
+using Terraria.ID;
 
 namespace CFU.Items
 {
-    public class EndTableMeteor : ModItem
+    public class CabinetGolden : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableMeteor";
+        public override string Texture => "CFU/Textures/Items/Furniture/Cabinets/CabinetGolden";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Meteorite End Table");
+            DisplayName.SetDefault("Golden Cabinet");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,16 +25,8 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.EndTables>();
-            Item.placeStyle = 16;
-        }
-
-        public override void AddRecipes()
-        {
-            CreateRecipe()
-            .AddIngredient(ItemID.MeteoriteBrick, 12)
-            .AddTile(TileID.WorkBenches)
-            .Register();
+            Item.createTile = ModContent.TileType<Tiles.Cabinets>();
+            Item.placeStyle = 23;
         }
     }
 }

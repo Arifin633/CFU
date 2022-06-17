@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Candelabras/WallCandelabraMeteor";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Meteor Wall Candelabra");
+            DisplayName.SetDefault("Meteorite Wall Candelabra");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

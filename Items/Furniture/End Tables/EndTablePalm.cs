@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTablePalm";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Palm End Table");
+            DisplayName.SetDefault("Palm Wood End Table");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

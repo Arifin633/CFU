@@ -174,6 +174,8 @@ namespace ChadsFurnitureUpdated
                 return Tiles.Chests.Names[(tile.TileFrameX / 36)];
             else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
                 return Tiles.Dressers.Names[(tile.TileFrameY / 36)];
+            else if (tile.TileType == ModContent.TileType<Tiles.Cabinets>())
+                return Tiles.Cabinets.Names[(tile.TileFrameX / 36)];
             /* Since we fall back to using the original TileLoader function in
                all but the specific cases that should return a different value,
                this function should never cause any problems. */

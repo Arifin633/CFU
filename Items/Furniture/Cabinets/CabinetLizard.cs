@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class EndTableMeteor : ModItem
+    public class CabinetLizard : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableMeteor";
+        public override string Texture => "CFU/Textures/Items/Furniture/Cabinets/CabinetLizard";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Meteorite End Table");
+            DisplayName.SetDefault("Lihzahrd Cabinet");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,15 +25,15 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.EndTables>();
-            Item.placeStyle = 16;
+            Item.createTile = ModContent.TileType<Tiles.Cabinets>();
+            Item.placeStyle = 21;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.MeteoriteBrick, 12)
-            .AddTile(TileID.WorkBenches)
+            .AddIngredient(ItemID.LihzahrdBrick, 10)
+            .AddTile(TileID.LihzahrdFurnace)
             .Register();
         }
     }
