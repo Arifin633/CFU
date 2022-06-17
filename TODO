@@ -61,6 +61,7 @@ The dust and sound of pretty much every item is wrong.
 * Wardrobes
 * Mirrors
 * End Tables
+* Cabinets
 These tiles' textures are supposed to be based on their vanilla equivalents,
 but some are mismatched, either because of a mistake when they were first
 made or because the vanilla textures have been updated since then.
@@ -87,6 +88,9 @@ Draw the pendulum using `AddSpecialPosition' to avoid blurriness.
 
 * Wall Candelabras
 Use vanilla values for the light colors and flame draw data.
+
+* Cabinets
+No highlighting.
 
 * Original Chad's Furniture TODO list
 Gardening Updates:
