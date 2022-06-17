@@ -578,7 +578,7 @@ namespace ChadsFurnitureUpdated
 
                 if (!obstructed)
                     spriteBatch.Draw(
-                        ModContent.Request<Texture2D>("CFU/Textures/Tiles/Stations/" + smoke).Value,
+                        ModContent.Request<Texture2D>("CFU/Textures/Tiles/Crafting Stations/" + smoke).Value,
                         new Vector2(i * 16 + smokeX - (int)Main.screenPosition.X, j * 16 - smokeY - (int)Main.screenPosition.Y) + zero,
                         new Rectangle(Main.tileFrame[Type] * 32, 0, 30, 26),
                         Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
