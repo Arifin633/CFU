@@ -36,8 +36,8 @@ namespace CFU.Tiles
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
             fail = effectOnly = noItem = false;
-            while (Main.tile[i, ++j].TileType == Type)
-                WorldGen.KillTile(i, j);
+            if (Main.tile[i, (j + 1)].TileType == Type)
+                WorldGen.KillTile(i, (j + 1));
         }
 
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => false;
