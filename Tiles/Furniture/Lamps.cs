@@ -67,6 +67,9 @@ namespace CFU.Tiles
                         g = 0.5f;
                         b = 0f;
                         break;
+                    case 4: /* Paintable */
+                        r = g = b = 0.9f;
+                        break;
                 }
             }
         }
@@ -85,7 +88,8 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinLamp>(),
                              ModContent.ItemType<Items.MysticLamp>(),
                              ModContent.ItemType<Items.RoyalLamp>(),
-                             ModContent.ItemType<Items.AltSandstoneLamp>()};
+                             ModContent.ItemType<Items.AltSandstoneLamp>(),
+                             ModContent.ItemType<Items.PaintableLamp>()};
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 56)]);
         }
     }

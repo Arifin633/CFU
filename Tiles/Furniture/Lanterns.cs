@@ -35,7 +35,8 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.MysticLantern>(),
                              ModContent.ItemType<Items.RoyalLantern>(),
                              ModContent.ItemType<Items.AltSandstoneLantern>(),
-                             ModContent.ItemType<Items.HangingLamp>() };
+                             ModContent.ItemType<Items.HangingLamp>(),
+                             ModContent.ItemType<Items.PaintableLantern>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 36)]);
         }
 
@@ -89,6 +90,9 @@ namespace CFU.Tiles
                         break;
                     case 9: /* Hanging Lamp */
                         r = g = b = 1f;
+                        break;
+                    case 11: /* Paintable */
+                        r = g = b = 0.9f;
                         break;
                 }
             }

@@ -95,6 +95,10 @@ namespace ChadsFurnitureUpdated
                         m = -1f;
                         flag = true;
                         break;
+                    case 5:
+                        n = null;
+                        m = -1f;
+                        break;
                 }
             }
             if (type == ModContent.TileType<Tiles.BiomeJars>())
@@ -185,7 +189,7 @@ namespace ChadsFurnitureUpdated
             else if (type == ModContent.TileType<Tiles.Lanterns>())
             {
                 if (Main.tile[x, y].TileFrameX < 18 &&
-                    Main.tile[x, y].TileFrameY / 18 is >= 3)
+                    Main.tile[x, y].TileFrameY / 18 is >= 3 and <= 10)
                 {
                     // switch (Main.tile[x, y].TileFrameY / 36) { }
                     return true;
