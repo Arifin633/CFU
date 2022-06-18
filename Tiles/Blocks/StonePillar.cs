@@ -11,7 +11,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileSolid[Type] = false;
-            Main.tileMergeDirt[Type] = false;
+            Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = false;
             DustType = 0;
             AddMapEntry(new Color(99, 99, 99));

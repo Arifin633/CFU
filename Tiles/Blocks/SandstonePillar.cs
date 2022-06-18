@@ -12,7 +12,7 @@ namespace CFU.Tiles
         {
             Main.tileSolid[Type] = false;
             Main.tileNoAttach[Type] = false;
-            Main.tileMergeDirt[Type] = false;
+            Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = false;
             DustType = 0;
             AddMapEntry(new Color(198, 124, 78));
