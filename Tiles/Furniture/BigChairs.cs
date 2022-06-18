@@ -14,7 +14,7 @@ namespace CFU.Tiles
     public class BigChairs : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/BigChairs";
-        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/BigChairs";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/BigChairsHighlight";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
