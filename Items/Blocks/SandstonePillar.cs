@@ -10,7 +10,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Blocks/SandstonePillar";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sandstone Pillar");
+            DisplayName.SetDefault("Ancient Sandstone Pillar");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -31,7 +31,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-                     .AddIngredient(ModContent.ItemType<Items.AltSandstoneBrick>(), 1)
+            .AddIngredient(ModContent.ItemType<Items.AltSandstoneBrick>(), 1)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

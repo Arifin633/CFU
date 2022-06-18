@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 
@@ -11,9 +12,9 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileSolid[Type] = false;
-            Main.tileNoAttach[Type] = false;
             Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = false;
+            TileID.Sets.IsBeam[Type] = true;
             DustType = 0;
             AddMapEntry(new Color(198, 124, 78));
         }

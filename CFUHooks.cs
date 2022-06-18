@@ -16,6 +16,7 @@ using Terraria.UI.Chat;
 using Terraria.UI.Gamepad;
 using Terraria.UI;
 using Tiles = CFU.Tiles;
+using Items = CFU.Items;
 
 namespace ChadsFurnitureUpdated
 {
@@ -114,6 +115,38 @@ namespace ChadsFurnitureUpdated
                 });
             }));
 
+            /* The hook below allows the player to place Cobweb and Ivy
+               blocks as long as they border any other tile (as opposed
+               to bordering a solid tile, as is the usual condition).
+               As these tiles aren't frame-important, I find this to be
+               the only perceivable way to unconditionally decide where
+               they may or may not be placed. */
+            HookEndpointManager.Modify(typeof(Player).FindMethod("PlaceThing_Tiles_BlockPlacementForAssortedThings"), new Action<ILContext>((il) =>
+            {
+                var c = new ILCursor(il);
+                c.Next = null;
+                c.GotoPrev(MoveType.Before, i => i.MatchRet());
+                c.EmitDelegate<Func<bool, bool>>(canPlace =>
+                {
+                    Player player = Main.LocalPlayer;
+                    int type = player.inventory[player.selectedItem].type;
+                    if (type == ModContent.ItemType<Items.Cobweb>() ||
+                        type == ModContent.ItemType<Items.Ivy>())
+                    {
+                        return
+                            /* Based on the placement code for the
+                               Living Fire, Bubbles, and Smoke Blocks. */
+                            (Main.tile[Player.tileTargetX + 1, Player.tileTargetY].HasTile ||
+                             Main.tile[Player.tileTargetX + 1, Player.tileTargetY].WallType > 0 ||
+                             Main.tile[Player.tileTargetX - 1, Player.tileTargetY].HasTile ||
+                             Main.tile[Player.tileTargetX - 1, Player.tileTargetY].WallType > 0 ||
+                             Main.tile[Player.tileTargetX, Player.tileTargetY + 1].HasTile ||
+                             Main.tile[Player.tileTargetX, Player.tileTargetY + 1].WallType > 0 ||
+                             Main.tile[Player.tileTargetX, Player.tileTargetY - 1].HasTile ||
+                             Main.tile[Player.tileTargetX, Player.tileTargetY - 1].WallType > 0);
+                    } else return canPlace;
+                });
+            }));
 
             /* The following two hooks replace the sole two existing
                calls to `TileLoader.ContainerName' with calls to our
