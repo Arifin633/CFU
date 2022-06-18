@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class EndTableGreen : ModItem
+    public class Ivy : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableGreen";
+        public override string Texture => "CFU/Textures/Items/Blocks/Ivy";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Green Dungeon End Table");
+            DisplayName.SetDefault("Ivy");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -17,7 +17,7 @@ namespace CFU.Items
         {
             Item.width = 16;
             Item.height = 22;
-            Item.maxStack = 99;
+            Item.maxStack = 999;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;
@@ -25,15 +25,14 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.EndTables>();
-            Item.placeStyle = 26;
+            Item.createTile = ModContent.TileType<Tiles.Ivy>();
         }
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-            .AddIngredient(ItemID.GreenBrick, 12)
-            .AddTile(TileID.BoneWelder)
+            CreateRecipe(30)
+            .AddIngredient(ItemID.JungleGrassSeeds, 1)
+            .AddTile(ModContent.TileType<Tiles.CultivationBox>())
             .Register();
         }
     }

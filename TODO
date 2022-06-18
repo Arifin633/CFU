@@ -89,6 +89,15 @@ Use vanilla values for the light colors and flame draw data.
 * Cabinets
 No highlighting.
 
+* Paintable Sofa
+* Paintable Armchair
+Highlighting gets hidden under the wooden parts.
+
+* Pillars
+* Ivy
+* Cobweb
+Can't be placed (extended) unless there's a wall or another solid block.
+
 * Original Chad's Furniture TODO list
 Gardening Updates:
 General Improvements:
