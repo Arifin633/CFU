@@ -24,8 +24,8 @@ namespace CFU.Items
             Item.useAnimation = 15;
             Item.useTime = 10;
             Item.useStyle = ItemUseStyleID.Swing;
-            // Item.consumable = true;
-            // Item.createTile = ModContent.TileType<Tiles.SandstoneBrick>();
+            Item.consumable = true;
+            Item.createTile = ModContent.TileType<Tiles.SandstoneBrick>();
         }
 
         public override void AddRecipes()
