@@ -20,8 +20,10 @@ namespace CFU.Tiles
             Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 2;
-            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.Origin = new Point16(0, 1);
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
+            TileObjectData.newTile.StyleHorizontal = true;
+            TileObjectData.newTile.StyleMultiplier = 2;
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             ModTranslation name = CreateMapEntryName();
@@ -34,41 +36,54 @@ namespace CFU.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, ModContent.ItemType<Items.DiningTable>());
+            int[] styles = { ModContent.ItemType<Items.DiningTable>(),
+                             ModContent.ItemType<Items.RoyalDiningTable>() };
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 108)]);
         }
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             Tile tile = Main.tile[i, j];
+            int frameY = tile.TileFrameY;
+            bool royal = tile.TileFrameX >= 108;
 
-            i -= ((tile.TileFrameX % 54) / 18);
-            bool left = Main.tile[i - 1, j].TileType == Type;
-            bool right = Main.tile[i + 3, j].TileType == Type;
+            i -= (((tile.TileFrameX % 108) % 54) / 18);
+            bool left = ((Main.tile[i - 1, j].TileType == Type) &&
+                         ((royal && Main.tile[i - 1, j].TileFrameX >= 108) ||
+                          (!royal && Main.tile[i - 1, j].TileFrameX < 108)));
+            
+            bool right = ((Main.tile[i + 3, j].TileType == Type) &&
+                         ((royal && Main.tile[i + 3, j].TileFrameX >= 108) ||
+                          (!royal && Main.tile[i + 3, j].TileFrameX < 108)));
+            
             bool surrounded = (left && right);
 
-            switch ((tile.TileFrameX % 54) / 18)
+            switch (((tile.TileFrameX % 108) % 54) / 18)
             {
                 case 0:
-                    if (tile.TileFrameY == 0 && left ||
-                        tile.TileFrameY == 18 && surrounded)
+                    if (frameY == 0 && left ||
+                        frameY == 18 && surrounded)
                         tile.TileFrameX = 54;
                     else
                         tile.TileFrameX = 0;
                     break;
                 case 1:
-                    if (tile.TileFrameY == 18 && surrounded)
+                    if (frameY == 18 && surrounded)
                         tile.TileFrameX = 72;
                     else
                         tile.TileFrameX = 18;
                     break;
                 case 2:
-                    if (tile.TileFrameY == 0 && right ||
-                        tile.TileFrameY == 18 && surrounded)
+                    if (frameY == 0 && right ||
+                        frameY == 18 && surrounded)
                         tile.TileFrameX = 90;
                     else
                         tile.TileFrameX = 36;
                     break;
             }
+
+            if (royal) tile.TileFrameX += 108;
+
         }
     }
 }
