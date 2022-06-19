@@ -583,5 +583,49 @@ namespace ChadsFurnitureUpdated
                         Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
             }
         }
+
+        public static void CurtainDrawEdges(int i, int j, SpriteBatch spriteBatch, int type, string textureName)
+        {
+            Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
+            var texture = ModContent.Request<Texture2D>(textureName).Value;
+            var color = Lighting.GetColor(i, j);
+
+            if ((Main.tile[i, j - 1].WallType > 0) &&
+                (Main.tile[i, j - 1].WallType != type))
+            {
+                spriteBatch.Draw(
+                    texture,
+                    new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,
+                    new Rectangle(8, 188, 16, 6),
+                    color, 0f, default, 1f, SpriteEffects.None, 0f);
+            }
+            if ((Main.tile[i, j + 1].WallType > 0) &&
+                (Main.tile[i, j + 1].WallType != type))
+            {
+                spriteBatch.Draw(
+                    texture,
+                    new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 + 12 - (int)Main.screenPosition.Y) + zero,
+                    new Rectangle(8, 200, 16, 4),
+                    color, 0f, default, 1f, SpriteEffects.None, 0f);
+            }
+            if ((Main.tile[i - 1, j].WallType > 0) &&
+                (Main.tile[i - 1, j].WallType != type))
+            {
+                spriteBatch.Draw(
+                    texture,
+                    new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,
+                    new Rectangle(6, 188, 2, 16),
+                    color, 0f, default, 1f, SpriteEffects.None, 0f);
+            }
+            if ((Main.tile[i + 1, j].WallType > 0) &&
+                (Main.tile[i + 1, j].WallType != type))
+            {
+                spriteBatch.Draw(
+                    texture,
+                    new Vector2(i * 16 + 14 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,
+                    new Rectangle(6, 188, 2, 16),
+                    color, 0f, default, 1f, SpriteEffects.None, 0f);
+            }
+        }
     }
 }
