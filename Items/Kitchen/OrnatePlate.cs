@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class Ladder : ModItem
+    public class OrnatePlate : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Ladder";
+        public override string Texture => "CFU/Textures/Items/Kitchen/OrnatePlate";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ladder");
+            DisplayName.SetDefault("Golden Plate");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,19 +25,14 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Ladder>();
+            Item.createTile = ModContent.TileType<Tiles.OrnatePlate>();
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.Wood, 2)
-            .AddTile(TileID.WorkBenches)
-            .Register();
-
-            Mod.CreateRecipe(ItemID.Wood, 2)
-            .AddIngredient(this)
-            .AddTile(TileID.WorkBenches)
+            .AddIngredient(ItemID.GoldBar, 1)
+            .AddTile(TileID.Anvils)
             .Register();
         }
     }
