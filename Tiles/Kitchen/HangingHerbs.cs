@@ -7,9 +7,9 @@ using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
-    public class Herbs : ModTile
+    public class HangingHerbs : ModTile
     {
-        public override string Texture => "CFU/Textures/Tiles/Kitchen/Herbs";
+        public override string Texture => "CFU/Textures/Tiles/Kitchen/HangingHerbs";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -26,7 +26,7 @@ namespace CFU.Tiles
             };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Herbs");
+            name.SetDefault("Hanging Herb");
             AddMapEntry(new Color(72, 145, 125), name);
             DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
@@ -34,7 +34,13 @@ namespace CFU.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            int[] styles = { };
+            int[] styles = { ModContent.ItemType<Items.HangingBlinkroot>(),
+                             ModContent.ItemType<Items.HangingDaybloom>(),
+                             ModContent.ItemType<Items.HangingDeathweed>(),
+                             ModContent.ItemType<Items.HangingFireblossom>(),
+                             ModContent.ItemType<Items.HangingMoonglow>(),
+                             ModContent.ItemType<Items.HangingShiverthorn>(),
+                             ModContent.ItemType<Items.HangingWaterleaf>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameX / 18)]);
         }
     }
