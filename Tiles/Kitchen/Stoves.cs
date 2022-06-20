@@ -60,7 +60,7 @@ namespace CFU.Tiles
                     short topTileFrameY = topTile.TileFrameY;
                     /* This isn't exhaustive but should work with most cases. */
                     Main.instance.TilesRenderer.GetTileDrawData(i, j, topTile, topTile.TileType, ref topTileFrameX, ref topTileFrameY, out var topTileWidth, out var topTileHeight, out var topTileTop, out var halfBrickHeight, out var addFrX, out var addFrY, out var topTileSpriteEffects, out _, out _, out _);
-                    
+
                     var topTileTexture = Main.instance.TilesRenderer.GetTileDrawTexture(topTile, i, j);
                     spriteBatch.Draw(
                         topTileTexture,

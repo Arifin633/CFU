@@ -51,11 +51,11 @@ namespace CFU.Tiles
             bool left = ((Main.tile[i - 1, j].TileType == Type) &&
                          ((royal && Main.tile[i - 1, j].TileFrameX >= 108) ||
                           (!royal && Main.tile[i - 1, j].TileFrameX < 108)));
-            
+
             bool right = ((Main.tile[i + 3, j].TileType == Type) &&
                          ((royal && Main.tile[i + 3, j].TileFrameX >= 108) ||
                           (!royal && Main.tile[i + 3, j].TileFrameX < 108)));
-            
+
             bool surrounded = (left && right);
 
             switch (((tile.TileFrameX % 108) % 54) / 18)
