@@ -5,7 +5,7 @@ The TODO file from the original Chad's Furniture is attached at the bottom.
 Add more biomes.
 Current ones: Forest, Hallow, Corruption, Crimson, Jungle.
 
-* Giant water fountain
+* Giant Water Fountain
 The water texture doesn't match the style of other fountains' water.
 
 * Ink
@@ -22,7 +22,7 @@ No directional placement on Bishop and Knight.
 * Doors
 In vanilla, doors will attempt to open towards the opposite direction the player
 is facing if the preferred direction is obstructed.  This behavior should be
-added the modded doors.
+added to modded doors.
 
 * Thrones
 * Poufs
