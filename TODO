@@ -30,11 +30,6 @@ added to modded doors.
 The sitting positions aren't very good, TileRestingInfo.visualOffset can be used
 to make adjustments.
 
-* End Tables
-Royal and Rush end tables can't be stood on.
-This is because they occupy the second row of styles in the texture file, and
-only the first row is capable of having a solid top.  No idea how to fix this.
-
 * Dressers
 Highlight is broken.
 
@@ -71,7 +66,7 @@ bad as they are just copy and pasted tiles.
 Both placement and killing of the tile is very finicky.
 The lily pad will get stuck in place (either underwater or hovering in the air)
 if the water gets too high/low.  Some mechanism should be put in place so
-tile can physically change its position in that situation.
+the tile can physically change its position in that situation.
 
 * Miracle Vines
 Can't be placed (extended) unless there's a wall or another solid block.

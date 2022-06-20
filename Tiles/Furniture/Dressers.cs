@@ -31,7 +31,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
             TileObjectData.newTile.AnchorInvalidTiles = new int[] { 127 };
-            TileObjectData.newTile.StyleHorizontal = false;
+            TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
@@ -53,21 +53,21 @@ namespace CFU.Tiles
             AdjTiles = new int[] { TileID.Dressers };
         }
 
-        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 36);
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 54);
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
         public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
         {
-            width = 2;
-            height = 2;
+            width = 3;
+            height = 1;
         }
 
         public static string MapChestName(string name, int i, int j)
         {
             Tile tile = Main.tile[i, j];
             int left = (i - ((tile.TileFrameX / 18) % 3));
-            int top = (tile.TileFrameY % 38 == 0) ? j : (j - 1);
+            int top = (tile.TileFrameY == 0) ? j : (j - 1);
 
             int chest = Chest.FindChest(left, top);
 
@@ -84,7 +84,7 @@ namespace CFU.Tiles
         {
             Player player = Main.LocalPlayer;
             Tile tile = Main.tile[i, j];
-            if (tile.TileFrameY % 38 == 0)
+            if (tile.TileFrameY == 0)
             {
                 CFUtils.OpenChest(i, j, 3);
             }
@@ -96,7 +96,7 @@ namespace CFU.Tiles
                 player.SetTalkNPC(-1);
                 Main.npcChatCornerItem = 0;
                 Main.npcChatText = "";
-                Main.interactedDresserTopLeftX = (i - tile.TileFrameX / 18);
+                Main.interactedDresserTopLeftX = (i - ((tile.TileFrameX / 18) % 3));
                 Main.interactedDresserTopLeftY = (j - 1);
                 Main.OpenClothesWindow();
             }
@@ -121,11 +121,11 @@ namespace CFU.Tiles
             player.noThrow = 2;
             player.cursorItemIconEnabled = true;
 
-            if (tile.TileFrameY % 38 == 0)
+            if (tile.TileFrameY == 0)
             {
-                int chest = Chest.FindChest((i - tile.TileFrameX / 18), j);
+                int chest = Chest.FindChest((i - ((tile.TileFrameX / 18) % 3)), j);
                 player.cursorItemIconText = Main.chest[chest].name;
-                switch (tile.TileFrameY / 36)
+                switch (tile.TileFrameX / 54)
                 {
                     case 0:
                         if (Main.chest[chest].name is "Princess Dresser" or "")
@@ -163,7 +163,7 @@ namespace CFU.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 32, Styles[(frameY / 36)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 32, Styles[(frameX / 54)]);
             Chest.DestroyChest(i, j);
         }
     }
