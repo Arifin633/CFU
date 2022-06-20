@@ -1,16 +1,16 @@
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class Plant3 : ModItem
+    public class BirdhouseCardinal : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Garden/Plants/Plant3";
+        public override string Texture => "CFU/Textures/Items/Garden/BirdhouseCardinal";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Plant");
+            DisplayName.SetDefault("Cardinal Birdhouse");
+            Tooltip.SetDefault("'Any cardinal's dream home.'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -18,7 +18,7 @@ namespace CFU.Items
         {
             Item.width = 16;
             Item.height = 22;
-            Item.maxStack = 999;
+            Item.maxStack = 99;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;
@@ -26,15 +26,16 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Plants>();
-            Item.placeStyle = 3;
+            Item.createTile = ModContent.TileType<Tiles.Birdhouses>();
+            Item.placeStyle = 1;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.GrassSeeds, 1)
-            .AddTile(ModContent.TileType<Tiles.CultivationBox>())
+            .AddRecipeGroup(RecipeGroupID.Wood, 10)
+            .AddIngredient(ItemID.Cardinal, 1)
+            .AddTile(TileID.Sawmill)
             .Register();
         }
     }
