@@ -44,10 +44,11 @@ namespace CFU.Tiles
             if ((frameX % 36 == 0) && (frameY == 0))
             {
                 Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
+                var texture = Main.instance.TilesRenderer.GetTileDrawTexture(Main.tile[i, j], i, j);
                 spriteBatch.Draw(
-                    ModContent.Request<Texture2D>("CFU/Textures/Tiles/Kitchen/StovesPipe").Value,
+                    texture,
                     new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - 24 - (int)Main.screenPosition.Y) + zero,
-                    new Rectangle(((frameX == 0) ? 0 : 32), 0, 32, 24),
+                    new Rectangle(((frameX == 0) ? 0 : 32), 36, 32, 24),
                     Lighting.GetColor(i, j), 0f, default, 1f, SpriteEffects.None, 0f);
 
                 Tile topTile = Main.tile[i, (j - 1)];
@@ -55,11 +56,17 @@ namespace CFU.Tiles
                    as it gets obstructed by the stove pipe. */
                 if (topTile.HasTile)
                 {
+                    short topTileFrameX = topTile.TileFrameX;
+                    short topTileFrameY = topTile.TileFrameY;
+                    /* This isn't exhaustive but should work with most cases. */
+                    Main.instance.TilesRenderer.GetTileDrawData(i, j, topTile, topTile.TileType, ref topTileFrameX, ref topTileFrameY, out var topTileWidth, out var topTileHeight, out var topTileTop, out var halfBrickHeight, out var addFrX, out var addFrY, out var topTileSpriteEffects, out _, out _, out _);
+                    
+                    var topTileTexture = Main.instance.TilesRenderer.GetTileDrawTexture(topTile, i, j);
                     spriteBatch.Draw(
-                        TextureAssets.Tile[topTile.TileType].Value,
-                        new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - 16 - (int)Main.screenPosition.Y) + zero,
-                        new Rectangle(topTile.TileFrameX, topTile.TileFrameY, 16, 16),
-                        Lighting.GetColor(i, j), 0f, default, 1f, SpriteEffects.None, 0f);
+                        topTileTexture,
+                        new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (16 - topTileTop) - (int)Main.screenPosition.Y) + zero,
+                        new Rectangle(topTileFrameX + addFrX, topTileFrameY + addFrY, topTileWidth, topTileHeight - halfBrickHeight),
+                        Lighting.GetColor(i, j), 0f, default, 1f, topTileSpriteEffects, 0f);
                 }
             }
         }

@@ -21,7 +21,6 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleMultiplier = 2;
-            TileObjectData.newTile.StyleWrapLimit = 2;
             TileObjectData.newTile.RandomStyleRange = 2;
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
@@ -37,7 +36,7 @@ namespace CFU.Tiles
         {
             int[] styles = { ModContent.ItemType<Items.Counter>(),
                              ModContent.ItemType<Items.OrnateCounter>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, styles[(frameY / 38)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, styles[(frameX / 72)]);
         }
 
 
@@ -46,7 +45,7 @@ namespace CFU.Tiles
             bool draw = false;
             int offsetX, x, y;
             offsetX = x = y = 0;
-            int frameX = Main.tile[i, j].TileFrameX % 36;
+            int frameX = ((Main.tile[i, j].TileFrameX % 72) % 36);
             int frameY = Main.tile[i, j].TileFrameY;
             /* Left side */
             if (frameX == 0)
@@ -54,23 +53,23 @@ namespace CFU.Tiles
                 Tile tile = Main.tile[i - ((frameX == 0) ? 1 : 2), j];
                 int type = tile.TileType;
                 /* Ornate Counters */
-                if (frameY >= 38 &&
+                if (Main.tile[i, j].TileFrameX >= 72 &&
                     ((type == ModContent.TileType<OrnateFridge>()) ||
-                     (type == Type && tile.TileFrameY >= 38) ||
+                     (type == Type && tile.TileFrameX >= 72) ||
                      (type == ModContent.TileType<Tiles.Stoves>() && tile.TileFrameX >= 36)))
                 {
                     draw = true;
-                    x = 2;
-                    y = (frameY == 38) ? 0 : 18;
+                    x = 106;
+                    y = (frameY == 0) ? 0 : 18;
                 }
                 /* Regular Counters */
-                else if (frameY < 38 &&
+                else if (Main.tile[i, j].TileFrameX < 72 &&
                          ((type == ModContent.TileType<Fridge>()) ||
-                          (type == Type && tile.TileFrameY < 38) ||
+                          (type == Type && tile.TileFrameX < 72) ||
                           (type == ModContent.TileType<Tiles.Stoves>() && tile.TileFrameX < 36)))
                 {
                     draw = true;
-                    x = 0;
+                    x = 34;
                     y = (frameY == 0) ? 0 : 18;
                 }
             }
@@ -80,33 +79,34 @@ namespace CFU.Tiles
                 Tile tile = Main.tile[i + ((frameX == 0) ? 2 : 1), j];
                 int type = tile.TileType;
                 /* Ornate Counters */
-                if (frameY >= 38 &&
+                if (Main.tile[i, j].TileFrameX >= 72 &&
                     ((type == ModContent.TileType<OrnateFridge>()) ||
-                     (type == Type && tile.TileFrameY >= 38) ||
+                     (type == Type && tile.TileFrameX >= 72) ||
                      (type == ModContent.TileType<Tiles.Stoves>() && tile.TileFrameX >= 36)))
                 {
                     draw = true;
                     offsetX = 14;
-                    x = 2;
-                    y = (frameY == 38) ? 0 : 18;
+                    x = 106;
+                    y = (frameY == 0) ? 0 : 18;
                 }
                 /* Regular Counters */
-                else if (frameY < 38 &&
+                else if (Main.tile[i, j].TileFrameX < 72 &&
                          ((type == ModContent.TileType<Fridge>()) ||
-                          (type == Type && tile.TileFrameY < 38) ||
+                          (type == Type && tile.TileFrameX < 72) ||
                           (type == ModContent.TileType<Tiles.Stoves>() && tile.TileFrameX < 36)))
                 {
                     draw = true;
                     offsetX = 14;
-                    x = 0;
+                    x = 34;
                     y = (frameY == 0) ? 0 : 18;
                 }
             }
             if (draw)
             {
                 Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
+                var texture = Main.instance.TilesRenderer.GetTileDrawTexture(Main.tile[i, j], i, j);
                 spriteBatch.Draw(
-                    ModContent.Request<Texture2D>("CFU/Textures/Tiles/Kitchen/CountersAlign").Value,
+                    texture,
                     new Vector2(i * 16 + offsetX - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,
                     new Rectangle(x, y, 2, 16),
                     Lighting.GetColor(i, j), 0f, default, 1f, SpriteEffects.None, 0f);

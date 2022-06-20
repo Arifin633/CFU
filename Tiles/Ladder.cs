@@ -37,8 +37,9 @@ namespace CFU.Tiles
             if (Main.tile[i, j - 1].TileType != Type)
             {
                 Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
+                var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, i, j);
                 spriteBatch.Draw(
-                    ModContent.Request<Texture2D>(Texture).Value,
+                    texture,
                     new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - 16 - (int)Main.screenPosition.Y) + zero,
                     new Rectangle(tile.TileFrameX, tile.TileFrameY + 90, 16, 16),
                     Lighting.GetColor(i, j), 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
