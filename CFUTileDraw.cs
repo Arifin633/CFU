@@ -37,15 +37,16 @@ namespace ChadsFurnitureUpdated
 
         public static double WindCounterVine;
 
-        public static int[] SpecialPositionsCount = new int[4] { 0, 0, 0, 0 };
+        public static int[] SpecialPositionsCount = new int[5] { 0, 0, 0, 0, 0 };
 
-        public static Point[][] SpecialPositions = new Point[4][]
-        { new Point[5000], new Point[5000], new Point[5000], new Point[5000] };
+        public static Point[][] SpecialPositions = new Point[5][]
+        { new Point[5000], new Point[5000], new Point[5000], new Point[5000], new Point[5000] };
 
         public enum SpecialPositionType
         {
             HangingTile,
             HangingVine,
+            RisingTile,
             RisingVine,
             Pendulum
         }
@@ -60,9 +61,19 @@ namespace ChadsFurnitureUpdated
         public static bool TileWindData(int x, int y, int type, out float? n, out float m, out float l, out float j, out int sizeX, out int sizeY)
         {
             bool flag = false;
+            /* NB: "rising tiles" should use this as their default:
+                 flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY);
+               Currently that's only Cattails, which sets their own value. */
             n = null; m = -4f; l = 0.15f; j = 1f;
             sizeX = sizeY = 1;
-            if (type == ModContent.TileType<Tiles.Chandeliers>())
+            if (type == ModContent.TileType<Tiles.MiracleCattails>())
+            {
+                flag = WorldGen.InAPlaceWithWind(x, y, 1, 1);
+                l = 0.07f;
+                while (Main.tile[x, ++y].TileType == type)
+                    sizeY++;
+            }
+            else if (type == ModContent.TileType<Tiles.Chandeliers>())
             {
                 n = 1f;
                 m = 0f;
@@ -76,7 +87,7 @@ namespace ChadsFurnitureUpdated
                         break;
                 }
             }
-            if (type == ModContent.TileType<Tiles.OrnateChandeliers>())
+            else if (type == ModContent.TileType<Tiles.OrnateChandeliers>())
             {
                 n = 1f;
                 m = 0f;
@@ -101,7 +112,7 @@ namespace ChadsFurnitureUpdated
                         break;
                 }
             }
-            if (type == ModContent.TileType<Tiles.BiomeJars>())
+            else if (type == ModContent.TileType<Tiles.BiomeJars>())
             {
                 n = 1f;
                 m = 0f;
@@ -136,7 +147,12 @@ namespace ChadsFurnitureUpdated
                 type == ModContent.TileType<Tiles.MiracleFlowerVine>() ||
                 type == ModContent.TileType<Tiles.MiracleGlowingMushroomVine>())
             {
-                tileTop = -2;
+                tileTop = 2;
+                tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            }
+            else if (type == ModContent.TileType<Tiles.MiracleCattails>())
+            {
+                tileTop = 2;
                 tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             }
             // else if (type == ModContent.TileType<Tiles.BiomeJars>())
@@ -413,6 +429,55 @@ namespace ChadsFurnitureUpdated
 
                     }
                 }
+        }
+
+        public static void DrawRisingTile(Point topLeft)
+        {
+            int topLeftX = topLeft.X;
+            int topLeftY = topLeft.Y;
+            int type = Main.tile[topLeftX, topLeftY].TileType;
+            if (!Main.tile[topLeftX, topLeftY].HasTile) return;
+
+            Vector2 screenPosition = Main.Camera.UnscaledPosition;
+            Vector2 offSet = Vector2.Zero;
+
+            bool flag = TileWindData(topLeftX, topLeftY, type, out _, out float _, out float num, out float _, out int sizeX, out int sizeY);
+
+            float windCycle = GetWindCycle(topLeftX, topLeftY, WindCounter);
+
+            Vector2 value = new Vector2((float)(topLeftX * 16 - (int)screenPosition.X) + (float)sizeX * 16f * 0.5f, topLeftY * 16 - (int)screenPosition.Y + 16 * sizeY) + offSet;
+            for (int i = topLeftX; i < topLeftX + sizeX; i++)
+            {
+                for (int j = topLeftY; j < topLeftY + sizeY; j++)
+                {
+                    Tile tile = Main.tile[i, j];
+                    ushort type2 = tile.TileType;
+                    if (type2 != type)
+                    {
+                        continue;
+                    }
+                    Math.Abs(((float)(i - topLeftX) + 0.5f) / (float)sizeX - 0.5f);
+                    short tileFrameX = tile.TileFrameX;
+                    short tileFrameY = tile.TileFrameY;
+                    float num2 = 1f - (float)(j - topLeftY + 1) / (float)sizeY;
+                    if (num2 == 0f)
+                    {
+                        num2 = 0.1f;
+                    }
+                    if (!flag)
+                    {
+                        num2 = 0f;
+                    }
+                    TileDrawData(i, j, tile, type2, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out var addFrX, out var addFrY, out var tileSpriteEffect);
+
+                    Color tileLight = Lighting.GetColor(i, j);
+                    Vector2 value2 = new Vector2(i * 16 - (int)screenPosition.X, j * 16 - (int)screenPosition.Y + tileTop) + offSet;
+                    Vector2 vector = new Vector2(windCycle * 1f, Math.Abs(windCycle) * 2f * num2);
+                    Texture2D tileDrawTexture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, i, j);
+                    Vector2 origin = value - value2;
+                    Main.spriteBatch.Draw(tileDrawTexture, value + new Vector2(0f, vector.Y), new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), tileLight, windCycle * num * num2, origin, 1f, tileSpriteEffect, 0f);
+                }
+            }
         }
 
         public static void DrawHangingVine(Point coords)

@@ -85,6 +85,7 @@ namespace ChadsFurnitureUpdated
                     CFUTileDraw.SpecialPositionsCount[1] = 0;
                     CFUTileDraw.SpecialPositionsCount[2] = 0;
                     CFUTileDraw.SpecialPositionsCount[3] = 0;
+                    CFUTileDraw.SpecialPositionsCount[4] = 0;
                 });
             }));
 
@@ -105,6 +106,15 @@ namespace ChadsFurnitureUpdated
                             CFUTileDraw.DrawHangingTile(CFUTileDraw.SpecialPositions[0][i]);
                 });
 
+                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileGrass"));
+                c.EmitDelegate<Action>(() =>
+                {
+                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[2]; i++)
+                        if (CFUTileDraw.SpecialPositionsCount[2] < 5000 && // Don't draw past the array size.
+                            CFUTileDraw.SpecialPositions[2][i] != new Point()) // Don't draw empty coordinates.
+                            CFUTileDraw.DrawRisingTile(CFUTileDraw.SpecialPositions[2][i]);
+                });
+                
                 c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawVines"));
                 c.EmitDelegate<Action>(() =>
                 {
@@ -112,6 +122,15 @@ namespace ChadsFurnitureUpdated
                         if (CFUTileDraw.SpecialPositionsCount[1] < 5000 && // Don't draw past the array size.
                             CFUTileDraw.SpecialPositions[1][i] != new Point()) // Don't draw empty coordinates.
                             CFUTileDraw.DrawHangingVine(CFUTileDraw.SpecialPositions[1][i]);
+                });
+
+                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawReverseVines"));
+                c.EmitDelegate<Action>(() =>
+                {
+                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[3]; i++)
+                        if (CFUTileDraw.SpecialPositionsCount[3] < 5000 && // Don't draw past the array size.
+                            CFUTileDraw.SpecialPositions[3][i] != new Point()) // Don't draw empty coordinates.
+                            CFUTileDraw.DrawRisingVine(CFUTileDraw.SpecialPositions[3][i]);
                 });
             }));
 

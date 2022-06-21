@@ -25,7 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleMultiplier = 18;
             TileObjectData.newTile.RandomStyleRange = 18;
             TileObjectData.newTile.WaterPlacement = LiquidPlacement.OnlyInLiquid;
-            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.EmptyTile, TileObjectData.newTile.Width, 0);
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.EmptyTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(25, 195, 85));
