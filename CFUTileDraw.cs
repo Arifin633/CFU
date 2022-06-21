@@ -66,7 +66,13 @@ namespace ChadsFurnitureUpdated
                Currently that's only Cattails, which sets their own value. */
             n = null; m = -4f; l = 0.15f; j = 1f;
             sizeX = sizeY = 1;
-            if (type == ModContent.TileType<Tiles.MiracleCattails>())
+            if (type == ModContent.TileType<Tiles.Brazier>())
+            {
+                n = null;
+                m = -1f;
+                sizeX = sizeY = 2;
+            }
+            else if (type == ModContent.TileType<Tiles.MiracleCattails>())
             {
                 flag = WorldGen.InAPlaceWithWind(x, y, 1, 1);
                 l = 0.07f;
@@ -189,7 +195,14 @@ namespace ChadsFurnitureUpdated
             rangeMultX = 0.15f;
             rangeMultY = 0.35f;
             texture = ModContent.GetModTile(type).Texture + "Flame";
-            if (type == ModContent.TileType<Tiles.Chandeliers>())
+            if (type == ModContent.TileType<Tiles.Brazier>())
+            {
+                if (Main.tile[x, y].TileFrameX < 36)
+                {
+                    return true;
+                }
+            }
+            else if (type == ModContent.TileType<Tiles.Chandeliers>())
             {
                 if (Main.tile[x, y].TileFrameX < 54)
                 {
