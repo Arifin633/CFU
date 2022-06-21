@@ -26,7 +26,8 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.MiracleVine>();
+            Item.createTile = ModContent.TileType<Tiles.MiracleVines>();
+            Item.placeStyle = 0;
         }
         public override void AddRecipes()
         {

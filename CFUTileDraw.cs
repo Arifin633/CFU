@@ -140,12 +140,7 @@ namespace ChadsFurnitureUpdated
             addFrY = Main.tileFrame[type] * 38;
             addFrX = 0;
             tileSpriteEffects = SpriteEffects.None;
-            if (type == ModContent.TileType<Tiles.MiracleVine>() ||
-                type == ModContent.TileType<Tiles.MiracleJungleVine>() ||
-                type == ModContent.TileType<Tiles.MiracleHallowedVine>() ||
-                type == ModContent.TileType<Tiles.MiracleCrimsonVine>() ||
-                type == ModContent.TileType<Tiles.MiracleFlowerVine>() ||
-                type == ModContent.TileType<Tiles.MiracleGlowingMushroomVine>())
+            if (type == ModContent.TileType<Tiles.MiracleVines>())
             {
                 tileTop = 2;
                 tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;

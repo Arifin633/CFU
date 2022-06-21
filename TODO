@@ -68,10 +68,6 @@ The lily pad will get stuck in place (either underwater or hovering in the air)
 if the water gets too high/low.  Some mechanism should be put in place so
 the tile can physically change its position in that situation.
 
-* Miracle Vines
-Can't be placed (extended) unless there's a wall or another solid block.
-Doesn't get killed if the tile above it is.
-
 * Mannequin Head
 Add hair-displaying capabilities as it had in the original mod.
 
@@ -92,12 +88,10 @@ Highlighting gets hidden under the wooden parts.
 All walls have the same map color.
 
 * Potted Plants
-The potted plants are good candidates to join the ranks
-of tiles affected by wind.  That would require both an
-adaptation of the function that draws swaying grass,
-as that only supports 1x1 tiles, and a more intricate
-system for drawing the pots themselves, as the plants
-would overlap with them otherwise.
+The potted plants are good candidates to join the
+ranks of tiles affected by wind.  That would require
+a system for drawing the pots themselves, as the
+plants would overlap with them otherwise.
 
 * Birdhouses
 No birds.
