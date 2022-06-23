@@ -1,42 +1,39 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class CrimsonPot : ModItem
+    public class LimestoneSlab : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Pots/CrimsonPot";
+        public override string Texture => "CFU/Textures/Items/Blocks/LimestoneSlab";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Crimson Pot");
+            DisplayName.SetDefault("Limestone Slab");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
         {
-            Item.width = 16;
-            Item.height = 20;
-            Item.maxStack = 99;
+            Item.width = 12;
+            Item.height = 12;
+            Item.maxStack = 999;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;
             Item.useTime = 10;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
-            Item.value = 0;
-            Item.rare = ItemRarityID.White;
-            Item.createTile = ModContent.TileType<Tiles.Pots>();
-            Item.placeStyle = 66;
+            Item.createTile = ModContent.TileType<Tiles.LimestoneSlab>();
         }
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-            .AddIngredient(ItemID.ClayBlock, 5)
-            .AddIngredient(ItemID.CrimstoneBlock, 5)
-            .AddTile(TileID.Furnaces)
-            .AddTile(TileID.FleshCloningVat)
+            CreateRecipe(25)
+            .AddIngredient(ItemID.Coral, 1)
+            .AddIngredient(ItemID.StoneBlock, 25)
+            .AddTile(TileID.HeavyWorkBench)
             .Register();
         }
     }

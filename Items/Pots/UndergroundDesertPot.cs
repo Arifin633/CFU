@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class UndergroundDesertPot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/UndergroundDesertPot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/UndergroundDesertPot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Desert Pot");

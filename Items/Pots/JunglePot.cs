@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class JunglePot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/JunglePot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/JunglePot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Jungle Pot");

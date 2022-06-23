@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class CorruptionPot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/CorruptionPot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/CorruptionPot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Corruption Pot");

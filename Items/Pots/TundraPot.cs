@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class TundraPot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/TundraPot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/TundraPot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Frozen Pot");

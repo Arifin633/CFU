@@ -4,19 +4,20 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class CrimsonPot : ModItem
+    public class StoneSpireLarge : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Pots/CrimsonPot";
+        public override string Texture => "CFU/Textures/Items/Ornaments/StoneSpireLarge";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Crimson Pot");
+            DisplayName.SetDefault("Large Stone Spire");
+            Tooltip.SetDefault("'A Stone ornament'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
         {
             Item.width = 16;
-            Item.height = 20;
+            Item.height = 8;
             Item.maxStack = 99;
             Item.useTurn = true;
             Item.autoReuse = true;
@@ -25,18 +26,15 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.rare = ItemRarityID.White;
-            Item.createTile = ModContent.TileType<Tiles.Pots>();
-            Item.placeStyle = 66;
+            Item.createTile = ModContent.TileType<Tiles.SpireLarge>();
+            Item.placeStyle = 1;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.ClayBlock, 5)
-            .AddIngredient(ItemID.CrimstoneBlock, 5)
-            .AddTile(TileID.Furnaces)
-            .AddTile(TileID.FleshCloningVat)
+            .AddIngredient(ItemID.GrayBrick, 10)
+            .AddTile(TileID.HeavyWorkBench)
             .Register();
         }
     }

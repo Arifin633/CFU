@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class PyramidPot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/PyramidPot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/PyramidPot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Pyramid Pot");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class MarbleCavePot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/MarbleCavePot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/MarbleCavePot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Marble Pot");

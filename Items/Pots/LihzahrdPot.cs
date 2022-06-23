@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class LihzahrdPot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/LihzahrdPot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/LihzahrdPot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Lihzahrd Pot");

@@ -5,7 +5,8 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
     public class SpiderCavePot : ModItem
-    {public override string Texture =>"CFU/Textures/Items/Pots/SpiderCavePot";
+    {
+        public override string Texture => "CFU/Textures/Items/Pots/SpiderCavePot";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spider Pot");
