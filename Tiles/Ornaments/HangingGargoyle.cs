@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
@@ -42,69 +43,70 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public static readonly int[] Styles = {
+            ModContent.ItemType<Items.LimestoneHangingGargoyle>(),
+            ModContent.ItemType<Items.StoneHangingGargoyle>() };
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            int[] styles = { ModContent.ItemType<Items.LimestoneHangingGargoyle>(),
-                             ModContent.ItemType<Items.StoneHangingGargoyle>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameX / 72)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameX / 72)]);
         }
 
-        // public override void MouseOver(int i, int j)
-        // {
-        // 	Player player = Main.LocalPlayer;
-        // 	Tile tile = Main.tile[i, j];
-        // 	player.showItemIcon2 = 909;
-        // 	player.showItemIconText = "";
-        // 	player.noThrow = 2;
-        // 	player.showItemIcon = true;
-        // }
-        // 
-        // public override void RightClick(int i, int j)
-        // {
-        // 	Tile tile = Main.tile[i, j];
-        // 	int left = (tile.TileFrameX % 36) == 0 ? i : i-1;
-        // 	int top = j - (tile.TileFrameY/18);
-        // 	
-        // 	if(handleother.turnedOn2D[left,top])
-        // 	{
-        // 		handleother.turnedOn2D[left,top] = false;
-        // 	}
-        // 	else
-        // 	{
-        // 		handleother.turnedOn2D[left,top] = true;
-        // 	}
-        // }
+        public override void MouseOver(int i, int j)
+        {
+            int frameX = Main.tile[i, j].TileFrameX;
+            Player player = Main.LocalPlayer;
+            Tile tile = Main.tile[i, j];
+            player.cursorItemIconEnabled = true;
+            player.cursorItemIconID = Styles[(frameX / 72)];
+            player.cursorItemIconText = "";
+            if (frameX is >= 36 and < 72 or >= 108)
+                player.cursorItemIconReversed = true;
+            player.noThrow = 2;
+        }
 
-        // public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
-        // {
-        // 	Tile tile = Main.tile[i, j];
-        // 	
-        // 	int ver = tile.TileFrameX == 36 ? 48 : 0;
-        // 	int ver2 = tile.TileFrameX == 36 ? 0 : 16;
-        // 	int left = (tile.TileFrameX % 36) == 0 ? i : i-1;
-        // 	int top = j - (tile.TileFrameY/18);
-        // 	
-        // 	bool water = false;
-        // 	
-        // 	if(left < 8400 && top < 2400)
-        // 	{
-        // 		if(handleother.turnedOn2D[left, top]) water = true;
-        // 	}
-        // 	
-        // 	if(Main.raining) water = true;
-        // 	
-        // 	if((i == left && j == top) && water)
-        // 	{
-        // 		Vector2 zero = new Vector2(Main.offScreenRange, Main.offScreenRange);
-        // 		if (Main.drawToScreen)
-        // 		{
-        // 			zero = Vector2.Zero;
-        // 		}
-        // 		Main.spriteBatch.Draw(mod.GetTexture("Tiles/Limestone/GargoyleHanging_water"), new Vector2(i * 16 + ver2 - (int)Main.screenPosition.X,
-        // 		j * 16 - (int)Main.screenPosition.Y) + zero,
-        // 		new Rectangle(handleother.gargoanim*16, ver, 16, 48),
-        // 		Lighting.GetColor(i, j), 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
-        // 	}
-        // }
+        public override void AnimateTile(ref int frame, ref int frameCounter)
+        {
+            if (++frameCounter >= 4)
+            {
+                frameCounter = 0;
+                frame = ++frame % 8;
+            }
+        }
+
+        public override void HitWire(int i, int j)
+        {
+            if (Main.tile[i, j].TileFrameY < 36)
+                CFUtils.ShiftTileY(i, j, 2, 2, 36, false, true);
+            else
+                CFUtils.ShiftTileY(i, j, 2, 2, 36, true, true);
+            return true;
+        }
+
+        public override bool RightClick(int i, int j)
+        {
+            HitWire(i, j);
+            return true;
+        }
+
+        public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+        {
+            Tile tile = Main.tile[i, j];
+            int frameX = (tile.TileFrameX % 72);
+            int frameY = tile.TileFrameY;
+            if ((frameX is 0 or 36) &&
+                ((frameY == 0) || ((frameY == 36) && Main.raining)))
+            {
+                Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
+                int offsetX = (frameX == 36) ? 0 : 16;
+                int x = (Main.tileFrame[Type] * 16);
+                int y = (frameX == 36) ? 48 : 0;
+                spriteBatch.Draw(
+                    ModContent.Request<Texture2D>("CFU/Textures/Tiles/Ornaments/HangingGargoyleWater").Value,
+                    new Vector2(i * 16 + offsetX - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,
+                    new Rectangle(x, y, 16, 48),
+                    Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+            }
+        }
     }
 }
