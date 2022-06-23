@@ -1,4 +1,4 @@
-This file includes both known bugs and planned additions.
+This file includes planned additions, improvements and changes.
 The TODO file from the original Chad's Furniture is attached at the bottom.
 
 * Biome Jars
@@ -6,18 +6,20 @@ Add more biomes.
 Current ones: Forest, Hallow, Corruption, Crimson, Jungle.
 
 * Giant Water Fountain
-The water texture doesn't match the style of other fountains' water.
+The water texture for this fountain doesn't match the style of other fountains
+because of its dark outline.  The texture should be re-touched.
 
 * Ink
-Either associate this with the vanilla Black Ink item, or make a new one.
+Associate this with the vanilla Black Ink item.
 
 * Mirrors
-Add one for each furniture type,
+Add one for each furniture type.
 Current ones: Wood, Boreal Wood, Palm Wood, Rich Mahogany, Shade Wood, Ebonwood,
 Pearlwood, Princess.
 
 * Chess Pieces
-No directional placement on Bishop and Knight.
+Add directional placement for Bishops and Knights,
+as the textures are already there.
 
 * Doors
 In vanilla, doors will attempt to open towards the opposite direction the player
@@ -27,11 +29,11 @@ added to modded doors.
 * Thrones
 * Poufs
 * Sofas
-The sitting positions aren't very good, TileRestingInfo.visualOffset can be used
-to make adjustments.
+The sitting positions aren't very accurate.
+`TileRestingInfo.visualOffset' can be used to make adjustments.
 
 * Dressers
-Highlight is broken.
+Highlight is broken -- only the top is highlighted, and I have no idea why.
 
 * End Tables
 * Wall Candelabras
@@ -41,12 +43,15 @@ Add missing furniture types: Spider, Sandstone, Bamboo, Lesion, Lunar stuff.
 The following item textures don't match the corresponding tile:
 Bottle; all Mirrors; Mystic Bookcase; Mystic Bed; Mystic Clock;
 Mystic Wall Clock; Princess Bed; Princess Bookcase; Princess Chair;
-Princess Wall Clock; all Wardrobes.
+Princess Wall Clock; all Wardrobes. (This list might be outdated)
 
 Aside from that, a lot of other item textures are just plain bad and/or don't
 match the game's style very well.
 
-The dust and sound of pretty much every item is wrong.
+* Tiles
+The dust and sound of pretty much every tile is wrong.
+Additionally, their map color is often inaccurate, specially
+when it comes to tiles with a lot of different styles.
 
 * Wall Clocks
 * Wall Candelabras
@@ -94,10 +99,21 @@ a system for drawing the pots themselves, as the
 plants would overlap with them otherwise.
 
 * Birdhouses
-No birds.
-
 * Rabbit Hole
-No rabbits.
+These tiles ought to spawn their respective NPCs as they originally did.
+I don't know if there was a problem in the porting process or if they never
+made much sense in the first place, but the original NPC AI isn't much of
+an improvement over having nothing at all, so a new one will have to be
+written from scratch, which is a significant undertaking.
+
+An alternative to spawning NPCs at all is to instead use animations built
+into the birdhouses/rabbit holes, much like critter cages work.  This is a
+much simpler (even if still not simple) solution, but also an inferior one
+as birds/rabbits will be limited to a small area, and their movement won't
+be as smooth.
+
+* Ornaments
+Originally, the ornaments "blended" with any solid tile placed below them.
 
 * Original Chad's Furniture TODO list
 Gardening Updates:
