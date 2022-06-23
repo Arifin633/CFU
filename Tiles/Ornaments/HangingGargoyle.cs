@@ -80,7 +80,6 @@ namespace CFU.Tiles
                 CFUtils.ShiftTileY(i, j, 2, 2, 36, false, true);
             else
                 CFUtils.ShiftTileY(i, j, 2, 2, 36, true, true);
-            return true;
         }
 
         public override bool RightClick(int i, int j)
