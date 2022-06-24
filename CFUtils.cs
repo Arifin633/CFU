@@ -10,13 +10,14 @@ namespace ChadsFurnitureUpdated
     static class CFUtils
     {
         /* Shift the tile which [I, J] belong to by PIXELHEIGHT pixels. */
-        public static void ShiftTileY(int i, int j, int width, int height, short pixelHeight, bool reset = false, bool skipwire = false)
+        public static void ShiftTileY(int i, int j, int width, int height, short pixelHeight, bool reset = false, bool skipwire = false, short resetTo = -1)
         {
             /* Theoretically we could figure out WIDTH, HEIGHT and PIXELHEIGHT
                just from the Tile coordinates, but it's just as easy for the
                caller itself to input those values directly and save us some
                performance and complexity. */
-            int absy = Main.tile[i, j].TileFrameY / 18;
+            int pixelStep = pixelHeight / height;
+            int absy = Main.tile[i, j].TileFrameY / pixelStep;
             int absx = Main.tile[i, j].TileFrameX / 18;
             while (absy >= height) { absy -= height; }
             while (absx >= width) { absx -= width; }
@@ -24,7 +25,8 @@ namespace ChadsFurnitureUpdated
             int diffy = (height - 1) - absy;
             int diffx = (width - 1) - absx;
 
-            short acc = 0;
+            short init = (short)((resetTo != -1) ? resetTo : 0);
+            short acc = init;
             for (int x = (-1 * absx); x <= diffx; x++)
             {
                 for (int y = (-1 * absy); y <= diffy; y++)
@@ -35,10 +37,10 @@ namespace ChadsFurnitureUpdated
                     if (reset)
                     {
                         Main.tile[i + x, j + y].TileFrameY = acc;
-                        if ((pixelHeight - acc) > 18 && 36 > (pixelHeight - acc))
+                        if ((pixelHeight - acc) > pixelStep && (pixelStep * 2) > (pixelHeight - acc))
                             acc += (short)(pixelHeight - acc);
                         else
-                            acc += 18;
+                            acc += (short)pixelStep;
                     }
                     else
                     {
@@ -48,21 +50,23 @@ namespace ChadsFurnitureUpdated
                     if (Main.netMode == NetmodeID.MultiplayerClient)
                         NetMessage.SendTileSquare(-1, (i + x), (j + y));
                 }
-                acc = 0;
+                acc = init;
             }
         }
 
-        public static void ShiftTileX(int i, int j, int width, int height, short pixelWidth, bool reset = false, bool skipwire = false)
+        public static void ShiftTileX(int i, int j, int width, int height, short pixelWidth, bool reset = false, bool skipwire = false, short resetTo = -1)
         {
+            int pixelStep = pixelWidth / width;
             int absy = Main.tile[i, j].TileFrameY / 18;
-            int absx = Main.tile[i, j].TileFrameX / 18;
+            int absx = Main.tile[i, j].TileFrameX / pixelStep;
             while (absy >= height) { absy -= height; }
             while (absx >= width) { absx -= width; }
 
             int diffy = (height - 1) - absy;
             int diffx = (width - 1) - absx;
 
-            short acc = 0;
+            short init = (short)((resetTo != -1) ? resetTo : 0);
+            short acc = init;
             for (int y = (-1 * absy); y <= diffy; y++)
             {
                 for (int x = (-1 * absx); x <= diffx; x++)
@@ -73,10 +77,10 @@ namespace ChadsFurnitureUpdated
                     if (reset)
                     {
                         Main.tile[i + x, j + y].TileFrameX = acc;
-                        if ((pixelWidth - acc) > 18 && 36 > (pixelWidth - acc))
+                        if ((pixelWidth - acc) > pixelStep && (pixelStep * 2) > (pixelWidth - acc))
                             acc += (short)(pixelWidth - acc);
                         else
-                            acc += 18;
+                            acc += (short)pixelStep;
                     }
                     else
                     {
@@ -87,7 +91,7 @@ namespace ChadsFurnitureUpdated
                         NetMessage.SendTileSquare(-1, (i + x), (j + y));
 
                 }
-                acc = 0;
+                acc = init;
             }
         }
 
