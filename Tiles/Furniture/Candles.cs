@@ -86,6 +86,7 @@ namespace CFU.Tiles
             if (Main.tile[i, j].TileFrameX < 18)
                 Main.tile[i, j].TileFrameX = 18;
             else Main.tile[i, j].TileFrameX = 0;
+            NetMessage.SendTileSquare(-1, i, j);
         }
 
         public override bool RightClick(int i, int j)

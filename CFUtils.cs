@@ -40,7 +40,13 @@ namespace ChadsFurnitureUpdated
                         else
                             acc += 18;
                     }
-                    else { Main.tile[i + x, j + y].TileFrameY += pixelHeight; }
+                    else
+                    {
+                        Main.tile[i + x, j + y].TileFrameY += pixelHeight;
+                    }
+
+                    if (Main.netMode == NetmodeID.MultiplayerClient)
+                        NetMessage.SendTileSquare(-1, (i + x), (j + y));
                 }
                 acc = 0;
             }
@@ -72,7 +78,13 @@ namespace ChadsFurnitureUpdated
                         else
                             acc += 18;
                     }
-                    else { Main.tile[i + x, j + y].TileFrameX += pixelWidth; }
+                    else
+                    {
+                        Main.tile[i + x, j + y].TileFrameX += pixelWidth;
+                    }
+                    
+                    if (Main.netMode == NetmodeID.MultiplayerClient)
+                        NetMessage.SendTileSquare(-1, (i + x), (j + y));
 
                 }
                 acc = 0;

@@ -51,6 +51,11 @@ namespace CFU.Tiles
                 Tile tileBelow = Main.tile[i, (j + 1)];
                 tileBelow.TileFrameY = 18;
                 tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 15));
+
+                /* The tile below is always changed, so we always
+                   update it assuming we're in multiplayer.*/
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, (j + 1));
             }
             return 1;
         }
@@ -81,6 +86,11 @@ namespace CFU.Tiles
                     tileBelow.TileFrameY = 36;
                     tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 15));
                 }
+
+                /* If we're in multiplayer update
+                   the tile, since we changed it. */
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, (j + 1));
             }
         }
 

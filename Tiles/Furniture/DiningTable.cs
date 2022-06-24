@@ -41,6 +41,7 @@ namespace CFU.Tiles
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 108)]);
         }
 
+        /* FIXME: Get this out of PostDraw. */
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             Tile tile = Main.tile[i, j];

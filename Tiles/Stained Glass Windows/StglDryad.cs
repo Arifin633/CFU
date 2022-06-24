@@ -60,10 +60,14 @@ namespace CFU.Tiles
             if ((tile.TileFrameX < 72) && !Main.dayTime)
             {
                 tile.TileFrameX += 72;
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, j);
             }
-            if ((tile.TileFrameX >= 72) && Main.dayTime)
+            else if ((tile.TileFrameX >= 72) && Main.dayTime)
             {
                 tile.TileFrameX -= 72;
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, j);
             }
         }
     }

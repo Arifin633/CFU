@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
+using Terraria.ID;
 using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -49,6 +50,8 @@ namespace CFU.Tiles
                 if ((Main.tile[i, j].TileFrameY / 18) == 5)
                 {
                     Main.tile[i, j].TileFrameY = (18 * 6);
+                    if (Main.netMode == NetmodeID.MultiplayerClient)
+                        NetMessage.SendTileSquare(-1, i, j);
                 }
                 Tile tileAboveAbove = Main.tile[i, (j - 2)];
                 if (tileAboveAbove.TileType == Type)
@@ -59,6 +62,9 @@ namespace CFU.Tiles
                 {
                     tileAbove.TileFrameX = (short)(18 * Main.rand.Next(24, 47));
                 }
+
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, (j - 1));
             }
             return 1;
         }
@@ -71,12 +77,16 @@ namespace CFU.Tiles
             if (tileAbove.TileType == Type)
             {
                 CFUTileDraw.AddSpecialPosition(i, (j - 1), CFUTileDraw.SpecialPositionType.RisingTile);
+
                 tileAbove.TileFrameX = (short)(18 * Main.rand.Next(0, 23));
                 if (((tileAbove.TileFrameY / 18) == 6) &&
                     (Main.tile[i, (j - 2)].TileType != Type))
                 {
                     tileAbove.TileFrameY = (18 * 5);
                 }
+
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, (j - 1));
             }
         }
 

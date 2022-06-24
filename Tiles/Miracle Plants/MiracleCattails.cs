@@ -93,9 +93,16 @@ namespace CFU.Tiles
                         (tileBelowBelow.TileFrameX / 18) is 13 or 14 or 15)
                     {
                         tileBelowBelow.TileFrameX = (18 * 12);
+                        /* If we're in multiplayer update
+                           the tile, since we changed it. */
+                        if (Main.netMode == NetmodeID.MultiplayerClient)
+                            NetMessage.SendTileSquare(-1, i, (j + 2));
                     }
-
                 }
+                /* The tile below is always changed, so we always
+                   update it assuming we're in multiplayer.*/
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, (j + 1));
             }
             return 1;
         }
@@ -151,9 +158,19 @@ namespace CFU.Tiles
                                     tileBelowBelow.TileFrameX = (18 * 15);
                                     break;
                             }
+
+                            /* If we're in multiplayer update
+                               the tile, since we changed it. */
+                            if (frameX is 6 or 7 or 8 &&
+                                Main.netMode == NetmodeID.MultiplayerClient)
+                                NetMessage.SendTileSquare(-1, i, (j + 2));
                         }
                     }
                 }
+                /* The tile below is always changed, so we always
+                   update it assuming we're in multiplayer.*/
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendTileSquare(-1, i, (j + 1));
             }
         }
 
