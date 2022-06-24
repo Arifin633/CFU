@@ -66,7 +66,13 @@ namespace ChadsFurnitureUpdated
                Currently that's only Cattails, which sets their own value. */
             n = null; m = -4f; l = 0.15f; j = 1f;
             sizeX = sizeY = 1;
-            if (type == ModContent.TileType<Tiles.Brazier>())
+            if (type == ModContent.TileType<Tiles.Fishhook>())
+            {
+                n = 1f;
+                m = 0f;
+                sizeY = 3;
+            }
+            else if (type == ModContent.TileType<Tiles.Brazier>())
             {
                 n = null;
                 m = -1f;
@@ -155,6 +161,10 @@ namespace ChadsFurnitureUpdated
             {
                 tileTop = 2;
                 tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            }
+            else if (type == ModContent.TileType<Tiles.Fishhook>())
+            {
+                tileWidth = 22;
             }
             // else if (type == ModContent.TileType<Tiles.BiomeJars>())
             // {
