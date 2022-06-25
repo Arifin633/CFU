@@ -98,22 +98,25 @@ ranks of tiles affected by wind.  That would require
 a system for drawing the pots themselves, as the
 plants would overlap with them otherwise.
 
-* Birdhouses
 * Rabbit Hole
-These tiles ought to spawn their respective NPCs as they originally did.
-I don't know if there was a problem in the porting process or if they never
-made much sense in the first place, but the original NPC AI isn't much of
-an improvement over having nothing at all, so a new one will have to be
-written from scratch, which is a significant undertaking.
+The rabbit hole should "display" a rabbit,
+much like critter cages and the Birdhouses.
 
-An alternative to spawning NPCs at all is to instead use animations built
-into the birdhouses/rabbit holes, much like critter cages work.  This is a
-much simpler (even if still not simple) solution, but also an inferior one
-as birds/rabbits will be limited to a small area, and their movement won't
-be as smooth.
+* Birdhouses
+Birds will instantly appear on the birdhouses, and will never leave.
+Animations of the birds flying to and from the birdhouses should
+be put together.  This animation could show the bird going into/
+coming from the horizon, to minize the need to draw an animation
+far away from the birdhouse.
+
+The coming and going of birds should also be tied to certain conditions
+as opposed to being purely random like the rest of the animation frames.
+These conditions could include: Only come in if the path isn't obstructed
+by walls or solid tiles; fly away at night, or if the player gets too close.
 
 * Ornaments
 Originally, the ornaments "blended" with any solid tile placed below them.
+
 
 * Original Chad's Furniture TODO list
 Gardening Updates:

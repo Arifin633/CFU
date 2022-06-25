@@ -27,7 +27,7 @@ namespace CFU.Items
             Item.consumable = true;
             Item.value = 0;
             Item.createTile = ModContent.TileType<Tiles.Birdhouses>();
-            Item.placeStyle = 3;
+            Item.placeStyle = 2;
         }
 
         public override void AddRecipes()
