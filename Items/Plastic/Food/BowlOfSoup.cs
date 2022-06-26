@@ -34,11 +34,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ItemID.BowlofSoup)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
-            .Register();
-
-            Mod.CreateRecipe(ItemID.BowlofSoup)
-            .AddIngredient(this)
-            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
         }
     }

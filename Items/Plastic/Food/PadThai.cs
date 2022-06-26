@@ -35,11 +35,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ItemID.PadThai)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
-            .Register();
-
-            Mod.CreateRecipe(ItemID.PadThai)
-            .AddIngredient(this)
-            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
         }
     }

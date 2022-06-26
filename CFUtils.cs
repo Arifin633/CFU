@@ -220,6 +220,8 @@ namespace ChadsFurnitureUpdated
             else return TileLoader.ContainerName(tile.TileType);
         }
 
+        public static Terraria.Recipe.ConsumeItemCallback Print = delegate (Recipe recipe, int type, ref int amount) { amount = 0; };
+
         public static void SetupTileMerge(int type, bool mergeTo = true, bool mergeFrom = true)
         {
             /* This array is missing all 1.4 tiles. */

@@ -35,11 +35,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ItemID.CookedShrimp)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
-            .Register();
-
-            Mod.CreateRecipe(ItemID.CookedShrimp)
-            .AddIngredient(this)
-            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
         }
     }

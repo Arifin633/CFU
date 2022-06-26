@@ -34,11 +34,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ItemID.MedusaHead)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
-            .Register();
-
-            Mod.CreateRecipe(ItemID.MedusaHead)
-            .AddIngredient(this)
-            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
         }
     }

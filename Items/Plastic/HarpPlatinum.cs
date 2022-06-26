@@ -36,11 +36,7 @@ namespace CFU.Items
             .AddIngredient(ItemID.Harp)
             .AddIngredient(ItemID.PlatinumBar)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
-            .Register();
-
-            Mod.CreateRecipe(ItemID.Harp)
-            .AddIngredient(this)
-            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
         }
     }

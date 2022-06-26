@@ -32,13 +32,9 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.SugarCookie)
-                .AddTile(ModContent.TileType<Tiles.Printer3D>())
-                .Register();
-
-            Mod.CreateRecipe(ItemID.SugarCookie)
-            .AddIngredient(this)
+            .AddIngredient(ItemID.SugarCookie)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
         }
     }
