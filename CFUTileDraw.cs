@@ -62,11 +62,17 @@ namespace ChadsFurnitureUpdated
         {
             bool flag = false;
             /* NB: "rising tiles" should use this as their default:
-                 flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY);
-               Currently that's only Cattails, which sets their own value. */
+                 flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY); */
             n = null; m = -4f; l = 0.15f; j = 1f;
             sizeX = sizeY = 1;
-            if (type == ModContent.TileType<Tiles.Fishhook>())
+            if (type == ModContent.TileType<Tiles.PlanteraBulb>() ||
+                type == ModContent.TileType<Tiles.LifeFruit>() ||
+                type == ModContent.TileType<Tiles.AntlionEggs>())
+            {
+                sizeX = sizeY = 2;
+                flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY);
+            }
+            else if (type == ModContent.TileType<Tiles.Fishhook>())
             {
                 n = 1f;
                 m = 0f;
@@ -152,7 +158,29 @@ namespace ChadsFurnitureUpdated
             addFrY = Main.tileFrame[type] * 38;
             addFrX = 0;
             tileSpriteEffects = SpriteEffects.None;
-            if (type == ModContent.TileType<Tiles.MiracleVines>())
+            if (type == ModContent.TileType<Tiles.AntlionEggs>())
+            {
+                tileTop = 2;
+                int a = (Main.tileFrameCounter[type] / 5);
+                int b = y - tileFrameY / 18;
+                int c = x - tileFrameX / 18;
+                a += b + c;
+                a %= 4;
+                addFrY = a * 36;
+            }
+            else if (type == ModContent.TileType<Tiles.LifeFruit>())
+            {
+                int potType = ModContent.TileType<Tiles.PlantPots>();
+                if (Main.tile[x, y + 1].TileType == potType ||
+                    Main.tile[x, y + 2].TileType == potType)
+                    tileTop = -4;
+            }
+            else if (type == ModContent.TileType<Tiles.PlanteraBulb>())
+            {
+                tileTop = 2;
+                addFrY = Main.tileFrame[type] * 36;
+            }
+            else if (type == ModContent.TileType<Tiles.MiracleVines>())
             {
                 tileTop = 2;
                 tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
