@@ -41,9 +41,9 @@ namespace CFU.Tiles
         public override bool RightClick(int i, int j)
         {
             if (Main.tile[i, j].TileFrameX >= 144)
-                CFUtils.ShiftTileX(i, j, 1, 2, 18, true);
+                CFUtils.ShiftTileX(i, j, 18, reset: true);
             else
-                CFUtils.ShiftTileX(i, j, 1, 2, 18, false);
+                CFUtils.ShiftTileX(i, j, 18, reset: false);
             return true;
         }
     }

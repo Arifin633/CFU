@@ -44,9 +44,9 @@ namespace CFU.Tiles
         public override void HitWire(int i, int j)
         {
             if (Main.tile[i, j].TileFrameX < 18)
-                CFUtils.ShiftTileX(i, j, 1, 2, 18, false, true);
+                CFUtils.ShiftTileX(i, j, 18, reset: false, skipWire: true);
             else
-                CFUtils.ShiftTileX(i, j, 1, 2, 18, true, true);
+                CFUtils.ShiftTileX(i, j, 18, reset: true, skipWire: true);
         }
 
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;

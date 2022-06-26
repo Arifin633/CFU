@@ -63,7 +63,7 @@ namespace CFU.Tiles
 
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {
-            CFUtils.ShiftTileX(i, j, 1, 3, 24, true, false, 24);
+            CFUtils.ShiftTileX(i, j, 24, reset: true, resetTo: 24);
             return 1;
         }
         
@@ -93,14 +93,13 @@ namespace CFU.Tiles
                     NetMessage.SendData(21, -1, -1, null, item);
                 }
 
-                CFUtils.ShiftTileX(i, j, 1, 3, 24, true, false, 24);
+                CFUtils.ShiftTileX(i, j, 24, reset: true, resetTo: 24);
             }
 
             int index = System.Array.IndexOf(Fishes, player.inventory[player.selectedItem].type);
             if (index != -1)
             {
-                CFUtils.ShiftTileX(i, j, 1, 3, 24, true, false, (short)(index * 24));
-                
+                CFUtils.ShiftTileX(i, j, 24, reset: true, resetTo: (short)(index * 24));                
                 Main.mouseItem.stack--;
                 player.inventory[player.selectedItem].stack--;
                 if (player.inventory[player.selectedItem].stack <= 0)

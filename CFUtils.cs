@@ -1,98 +1,120 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.ObjectData;
+using Terraria.Localization;
 using Tiles = CFU.Tiles;
 
 namespace ChadsFurnitureUpdated
 {
     static class CFUtils
     {
-        /* Shift the tile which [I, J] belong to by PIXELHEIGHT pixels. */
-        public static void ShiftTileY(int i, int j, int width, int height, short pixelHeight, bool reset = false, bool skipwire = false, short resetTo = -1)
+        /* Shift the tile which [I, J] belongs to by SHIFTPIXELS.
+           
+           Note that tiles that have styles with differing heights
+           or widths are not supported by this function.
+           
+           SHIFTY decides which axis the tile will be shifted on,
+           false for the X axis and true for Y axis.
+
+           If RESET is true, the tile will not be shifted but
+           reset to its original frame, beginning at zero.
+           If RESETTO has a non-zero value and RESET is true,
+           the tile will be reset to this value instead of zero.
+
+           If SKIPWIRE is true, `Wiring.SkipWire' will be called for each tile. */
+        public static void ShiftTile(int i, int j, short shiftPixels = 0, bool shiftY = false, bool reset = false, bool skipWire = false, short resetTo = 0)
         {
-            /* Theoretically we could figure out WIDTH, HEIGHT and PIXELHEIGHT
-               just from the Tile coordinates, but it's just as easy for the
-               caller itself to input those values directly and save us some
-               performance and complexity. */
-            int pixelStep = pixelHeight / height;
-            int absy = Main.tile[i, j].TileFrameY / pixelStep;
-            int absx = Main.tile[i, j].TileFrameX / 18;
+            var data = TileObjectData.GetTileData(Main.tile[i, j].TileType, 0);
+
+            int width = data.Width;
+            int height = data.Height;
+
+            int padding = data.CoordinatePadding;
+            int pixelHeightStep = data.CoordinateHeights[0] + padding;
+            var pixelLastHeightStep = data.CoordinateHeights[(data.CoordinateHeights.Length - 1)] + padding;
+
+            int pixelDiff = (pixelLastHeightStep - pixelHeightStep);
+            int pixelWidthStep = data.CoordinateWidth + padding;
+
+            int absy = ((pixelDiff != 0 && Main.tile[i, j].TileFrameY != 0) ?
+                        (Main.tile[i, j].TileFrameY - pixelDiff) :
+                        (Main.tile[i, j].TileFrameY))
+                / pixelHeightStep;
+            int absx = Main.tile[i, j].TileFrameX / pixelWidthStep;
             while (absy >= height) { absy -= height; }
             while (absx >= width) { absx -= width; }
 
             int diffy = (height - 1) - absy;
             int diffx = (width - 1) - absx;
 
-            short init = (short)((resetTo != -1) ? resetTo : 0);
+            short init = resetTo;
             short acc = init;
-            for (int x = (-1 * absx); x <= diffx; x++)
+
+            if (!shiftY)
             {
                 for (int y = (-1 * absy); y <= diffy; y++)
                 {
-                    if (skipwire)
-                        Wiring.SkipWire(i + x, j + y);
-
-                    if (reset)
+                    for (int x = (-1 * absx); x <= diffx; x++)
                     {
-                        Main.tile[i + x, j + y].TileFrameY = acc;
-                        if ((pixelHeight - acc) > pixelStep && (pixelStep * 2) > (pixelHeight - acc))
-                            acc += (short)(pixelHeight - acc);
+                        if (skipWire)
+                            Wiring.SkipWire(i + x, j + y);
+
+                        if (reset)
+                        {
+                            Main.tile[i + x, j + y].TileFrameX = acc;
+                            acc += (short)pixelWidthStep;
+                        }
                         else
-                            acc += (short)pixelStep;
-                    }
-                    else
-                    {
-                        Main.tile[i + x, j + y].TileFrameY += pixelHeight;
-                    }
+                        {
+                            Main.tile[i + x, j + y].TileFrameX += shiftPixels;
+                        }
 
-                    if (Main.netMode == NetmodeID.MultiplayerClient)
-                        NetMessage.SendTileSquare(-1, (i + x), (j + y));
+                        if (Main.netMode == NetmodeID.MultiplayerClient)
+                            NetMessage.SendTileSquare(-1, (i + x), (j + y));
+
+                    }
+                    acc = init;
                 }
-                acc = init;
             }
-        }
-
-        public static void ShiftTileX(int i, int j, int width, int height, short pixelWidth, bool reset = false, bool skipwire = false, short resetTo = -1)
-        {
-            int pixelStep = pixelWidth / width;
-            int absy = Main.tile[i, j].TileFrameY / 18;
-            int absx = Main.tile[i, j].TileFrameX / pixelStep;
-            while (absy >= height) { absy -= height; }
-            while (absx >= width) { absx -= width; }
-
-            int diffy = (height - 1) - absy;
-            int diffx = (width - 1) - absx;
-
-            short init = (short)((resetTo != -1) ? resetTo : 0);
-            short acc = init;
-            for (int y = (-1 * absy); y <= diffy; y++)
+            else
             {
                 for (int x = (-1 * absx); x <= diffx; x++)
                 {
-                    if (skipwire)
-                        Wiring.SkipWire(i + x, j + y);
-
-                    if (reset)
+                    for (int y = (-1 * absy); y <= diffy; y++)
                     {
-                        Main.tile[i + x, j + y].TileFrameX = acc;
-                        if ((pixelWidth - acc) > pixelStep && (pixelStep * 2) > (pixelWidth - acc))
-                            acc += (short)(pixelWidth - acc);
+                        if (skipWire)
+                            Wiring.SkipWire(i + x, j + y);
+
+                        if (reset)
+                        {
+                            Main.tile[i + x, j + y].TileFrameY = (short)((y == diffy) ? (acc + pixelDiff) : acc);
+                            acc += (short)pixelHeightStep;
+                        }
                         else
-                            acc += (short)pixelStep;
-                    }
-                    else
-                    {
-                        Main.tile[i + x, j + y].TileFrameX += pixelWidth;
-                    }
-                    
-                    if (Main.netMode == NetmodeID.MultiplayerClient)
-                        NetMessage.SendTileSquare(-1, (i + x), (j + y));
+                        {
+                            Main.tile[i + x, j + y].TileFrameY += shiftPixels;
+                        }
 
+                        if (Main.netMode == NetmodeID.MultiplayerClient)
+                            NetMessage.SendTileSquare(-1, (i + x), (j + y));
+                    }
+                    acc = init;
                 }
-                acc = init;
             }
+        }
+
+        /* See `ShiftTile'. */
+        public static void ShiftTileX(int i, int j, short shiftPixels = 0, bool reset = false, bool skipWire = false, short resetTo = 0)
+        {
+            ShiftTile(i, j, shiftPixels, false, reset, skipWire, resetTo);
+        }
+
+        /* See `ShiftTile'. */
+        public static void ShiftTileY(int i, int j, short shiftPixels = 0, bool reset = false, bool skipWire = false, short resetTo = 0)
+        {
+            ShiftTile(i, j, shiftPixels, true, reset, skipWire, resetTo);
         }
 
         public static void PrintTime()

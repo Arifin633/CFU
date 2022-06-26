@@ -77,9 +77,9 @@ namespace CFU.Tiles
         public override void HitWire(int i, int j)
         {
             if (Main.tile[i, j].TileFrameY < 36)
-                CFUtils.ShiftTileY(i, j, 2, 2, 36, false, true);
+                CFUtils.ShiftTileY(i, j, 36, reset: false, skipWire: true);
             else
-                CFUtils.ShiftTileY(i, j, 2, 2, 36, true, true);
+                CFUtils.ShiftTileY(i, j, 36, reset: true, skipWire: true);
         }
 
         public override bool RightClick(int i, int j)
