@@ -4,12 +4,11 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltarDemon : ModItem
-    {
-        public override string Texture => "CFU/Textures/Items/Plastic/AltarDemon";
+    public class SmallPileDirt : ModItem
+    {public override string Texture =>"CFU/Textures/Items/Plastic/Small Piles/SmallPileDirt";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Demon Altar");
+            DisplayName.SetDefault("Small Dirt Pile");
             Tooltip.SetDefault("'*A plastic replica'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
@@ -26,15 +25,14 @@ namespace CFU.Items
             Item.useStyle = 1;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Altars>();
-            Item.placeStyle = 0;
+            Item.createTile = ModContent.TileType<Tiles.SmallPiles>();
+            Item.placeStyle = 6;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.EbonstoneBlock, 100)
-            .AddIngredient(ItemID.SoulofNight, 5)
+            .AddIngredient(ItemID.DirtBlock, 1)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
