@@ -47,6 +47,11 @@ public override string Texture => "CFU/Textures/Tiles/Plastic/SmallPiles";
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
+        {
+            offsetY = -2;
+        }
+
         public override bool Drop(int i, int j)
         {
             int item = 0;
