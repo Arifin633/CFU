@@ -27,7 +27,7 @@ namespace CFU.Tiles
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {
-            if (++frameCounter >= 12)
+            if (++frameCounter >= 11)
             {
                 frameCounter = 0;
                 frame = ++frame % 2;
