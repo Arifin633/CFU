@@ -29,7 +29,7 @@ namespace CFU.Tiles
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
         {
-            offsetY = -2;
+            offsetY = 2;
         }
         
         public override void AnimateTile(ref int frame, ref int frameCounter)
