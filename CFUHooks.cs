@@ -50,6 +50,26 @@ namespace ChadsFurnitureUpdated
                 }
             }));
 
+            /* Here we insert a check for our our Fallen Log tile
+               type in the occasion when the event which causes
+               fairies to spawn from logs is scanning the world
+               for appropriate tiles. */
+            HookEndpointManager.Modify(typeof(Terraria.GameContent.Events.MysticLogFairiesEvent).FindMethod("ScanWholeOverworldForLogs"), new Action<ILContext>((il) =>
+            {
+                var c = new ILCursor(il);
+                c.GotoNext(MoveType.Before, i => i.MatchLdcI4(488));
+                c.EmitDelegate<Func<ushort, ushort>>(type =>
+                {
+                    /* The next value pushed to the stack must be 488
+                       for a fairy to be able to spawn.
+                       As such, when the type just read matches our tile,
+                       we pretend that its value is actually 488. */
+                    if (type == ModContent.TileType<Tiles.FallenLog>())
+                        type = 488;
+                    return type;
+                });
+            }));
+
             /* The `TileDrawing.Update' function updates both the
                internal WindGrid and the various wind counters.
                By hooking into this function and updating our own
