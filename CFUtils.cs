@@ -38,7 +38,7 @@ namespace ChadsFurnitureUpdated
             int pixelDiff = (pixelLastHeightStep - pixelHeightStep);
             int pixelWidthStep = data.CoordinateWidth + padding;
 
-            int absy = ((pixelDiff != 0 && Main.tile[i, j].TileFrameY != 0) ?
+            int absy = ((pixelDiff != 0 && (Main.tile[i, j].TileFrameY % pixelDiff) != 0) ?
                         (Main.tile[i, j].TileFrameY - pixelDiff) :
                         (Main.tile[i, j].TileFrameY))
                 / pixelHeightStep;
@@ -89,7 +89,7 @@ namespace ChadsFurnitureUpdated
 
                         if (reset)
                         {
-                            Main.tile[i + x, j + y].TileFrameY = (short)((y == diffy) ? (acc + pixelDiff) : acc);
+                            Main.tile[i + x, j + y].TileFrameY = acc;
                             acc += (short)pixelHeightStep;
                         }
                         else

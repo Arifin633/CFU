@@ -24,7 +24,6 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fountain");
             AddMapEntry(new Color(99, 99, 99), name);
-            AnimationFrameHeight = 128;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
@@ -68,18 +67,19 @@ namespace CFU.Tiles
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch)
         {
             Tile tile = Main.tile[i, j];
-            Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
-
-            int frameY;
-            if (tile.TileFrameY < 128) { frameY = tile.TileFrameY; }
-            else { frameY = tile.TileFrameY + (Main.tileFrame[Type] * 128); }
-
-            spriteBatch.Draw(
-                Terraria.GameContent.TextureAssets.Tile[Type].Value,
-                new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,
-                new Rectangle(tile.TileFrameX, frameY, 16, 16),
-                Lighting.GetColor(i, j), 0f, default, 1f, SpriteEffects.None, 0f);
-            return false;
+            if (tile.TileFrameY >= 128)
+            {
+                int frameY = tile.TileFrameY + (Main.tileFrame[Type] * 128);
+                Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
+                
+                spriteBatch.Draw(
+                    Terraria.GameContent.TextureAssets.Tile[Type].Value,
+                    new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,
+                    new Rectangle(tile.TileFrameX, frameY, 16, (((tile.TileFrameY % 128) == 108) ? 18 : 16)),
+                    Lighting.GetColor(i, j), 0f, default, 1f, SpriteEffects.None, 0f);
+                return false;
+            }
+            else return true;
         }
     }
 }
