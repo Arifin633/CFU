@@ -65,7 +65,19 @@ namespace ChadsFurnitureUpdated
                  flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY); */
             n = null; m = -4f; l = 0.15f; j = 1f;
             sizeX = sizeY = 1;
-            if (type == ModContent.TileType<Tiles.PlanteraBulb>() ||
+            if (type == ModContent.TileType<Tiles.MiracleOasisVegetation>())
+            {
+                sizeY = 2;
+                sizeX = 3;
+                flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY);
+            }
+            else if (type == ModContent.TileType<Tiles.MiracleJungleVegetation>())
+            {
+                sizeY = 2;
+                sizeX = (Main.tile[x, y].TileFrameY == 0) ? 3 : 2;
+                flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY);
+            }
+            else if (type == ModContent.TileType<Tiles.PlanteraBulb>() ||
                 type == ModContent.TileType<Tiles.LifeFruit>() ||
                 type == ModContent.TileType<Tiles.AntlionEggs>())
             {
@@ -158,7 +170,21 @@ namespace ChadsFurnitureUpdated
             addFrY = Main.tileFrame[type] * 38;
             addFrX = 0;
             tileSpriteEffects = SpriteEffects.None;
-            if (type == ModContent.TileType<Tiles.AntlionEggs>())
+            if (type == ModContent.TileType<Tiles.MiracleOasisVegetation>())
+            {
+                tileTop = 2;
+            }
+            else if (type == ModContent.TileType<Tiles.MiracleJungleVegetation>())
+            {
+                tileTop = 2;
+                int potType = ModContent.TileType<Tiles.PlantPots>();
+                if ((tileFrameY >= 36) &&
+                    ((Main.tile[x, y + 1].TileType == potType) ||
+                     ((Main.tile[x, y + 1].TileType == type) &&
+                      (Main.tile[x, y + 2].TileType == potType))))
+                    tileTop = -4;
+            }
+            else if (type == ModContent.TileType<Tiles.AntlionEggs>())
             {
                 tileTop = 2;
                 int a = (Main.tileFrameCounter[type] / 5);
@@ -171,8 +197,9 @@ namespace ChadsFurnitureUpdated
             else if (type == ModContent.TileType<Tiles.LifeFruit>())
             {
                 int potType = ModContent.TileType<Tiles.PlantPots>();
-                if (Main.tile[x, y + 1].TileType == potType ||
-                    Main.tile[x, y + 2].TileType == potType)
+                if ((Main.tile[x, y + 1].TileType == potType) ||
+                    ((Main.tile[x, y + 1].TileType == type) &&
+                     (Main.tile[x, y + 2].TileType == potType)))
                     tileTop = -4;
             }
             else if (type == ModContent.TileType<Tiles.PlanteraBulb>())

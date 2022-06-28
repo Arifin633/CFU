@@ -1,6 +1,9 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
+using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -25,13 +28,19 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
             TileObjectData.newSubTile.Width = 2;
+            TileObjectData.newSubTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.PlantPots>() };
+            TileObjectData.newSubTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newSubTile.Width, 0);
             TileObjectData.addSubTile(4);
             TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
             TileObjectData.newSubTile.Width = 2;
+            TileObjectData.newSubTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.PlantPots>() };
+            TileObjectData.newSubTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newSubTile.Width, 0);
             TileObjectData.addSubTile(5);
             TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
             TileObjectData.newSubTile.Width = 2;
             TileObjectData.newSubTile.RandomStyleRange = 6;
+            TileObjectData.newSubTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.PlantPots>() };
+            TileObjectData.newSubTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newSubTile.Width, 0);
             TileObjectData.addSubTile(6);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
@@ -40,6 +49,21 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => false;
+        
+        public override void PostDraw(int i, int j, SpriteBatch spritebatch)
+        {
+            if (Main.tile[i, j].TileFrameY == 0)
+            {
+                if ((Main.tile[i, j].TileFrameX % 54) == 0)
+                    CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
+            }
+            else if (Main.tile[i, j].TileFrameY == 36)
+            {
+                if ((Main.tile[i, j].TileFrameX % 36) == 0)
+                    CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
+            }
+        }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {

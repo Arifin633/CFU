@@ -1,4 +1,6 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -42,6 +44,21 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
+        {
+            if (frameX >= 270)
+                offsetY = 2;
+        }
+        
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => (Main.tile[i, j].TileFrameX >= 270);
+        
+        public override void PostDraw(int i, int j, SpriteBatch spritebatch)
+        {
+            if ((Main.tile[i, j].TileFrameX < 270) &&
+                ((Main.tile[i, j].TileFrameY % 36) == 0) &&
+                ((Main.tile[i, j].TileFrameX % 54) == 0))
+                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
+        }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
