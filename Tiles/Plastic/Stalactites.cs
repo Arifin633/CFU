@@ -38,6 +38,14 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
+        {
+            if (frameY < 36)
+                offsetY = -2;
+            else
+                offsetY = 2;        
+        }
+        
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.StoneStalactite>(),
