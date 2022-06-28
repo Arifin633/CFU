@@ -36,7 +36,15 @@ namespace CFU.Tiles
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.EndTableRoyal>(),
-                             ModContent.ItemType<Items.EndTableRush>() };
+                             ModContent.ItemType<Items.EndTableRush>(),
+                             ModContent.ItemType<Items.EndTableSpider>(),
+                             ModContent.ItemType<Items.EndTableLesion>(),
+                             ModContent.ItemType<Items.EndTableSandstone>(),
+                             ModContent.ItemType<Items.EndTableBamboo>(),
+                             ModContent.ItemType<Items.EndTableSolar>(),
+                             ModContent.ItemType<Items.EndTableVortex>(),
+                             ModContent.ItemType<Items.EndTableNebula>(),
+                             ModContent.ItemType<Items.EndTableStardust>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 54)]);
         }
     }
