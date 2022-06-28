@@ -23,12 +23,6 @@ In vanilla, doors will attempt to open towards the opposite direction the player
 is facing if the preferred direction is obstructed.  This behavior should be
 added to modded doors.
 
-* Thrones
-* Poufs
-* Sofas
-The sitting positions aren't very accurate.
-`TileRestingInfo.visualOffset' can be used to make adjustments.
-
 * Dressers
 Highlight is broken -- only the top is highlighted, and I have no idea why.
 

@@ -51,6 +51,8 @@ namespace CFU.Tiles
             if (tile.TileFrameY != 54)
                 info.AnchorTilePosition.Y = (j + ((54 - tile.TileFrameY) / 16));
             else info.AnchorTilePosition.Y = j;
+
+            info.VisualOffset.X -= 6;
         }
 
         public override bool RightClick(int i, int j)

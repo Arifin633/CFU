@@ -54,6 +54,7 @@ namespace CFU.Tiles
             int direction = info.TargetDirection = info.RestingEntity.direction;
             info.AnchorTilePosition.X = i;
             info.AnchorTilePosition.Y = j;
+            info.VisualOffset.X -= 6;
         }
 
         public override bool RightClick(int i, int j)

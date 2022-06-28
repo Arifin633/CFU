@@ -83,7 +83,7 @@ namespace CFU.Tiles
         {
             int item = 0;
             int style = (frameX / 54);
-            style += (35 * (frameY / 38));
+            style += (35 * (frameY / 36));
             switch (style)
             {
                 case <= 2:

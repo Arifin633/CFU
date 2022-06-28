@@ -37,16 +37,75 @@ namespace CFU.Tiles
         public override void ModifySittingTargetInfo(int i, int j, ref TileRestingInfo info)
         {
             Tile tile = Framing.GetTileSafely(i, j);
+            int frameX = tile.TileFrameX;
+            int frameY = tile.TileFrameY;
 
             int direction = info.TargetDirection = info.RestingEntity.direction;
 
-            if (tile.TileFrameX == 0 && direction == -1)
-                info.AnchorTilePosition.X = (i + 1);
-            else if (tile.TileFrameX == 36 && direction == 1)
-                info.AnchorTilePosition.X = (i - 1);
-            else info.AnchorTilePosition.X = i;
-
+            info.AnchorTilePosition.X = i;
             info.AnchorTilePosition.Y = (tile.TileFrameY % 38 == 0) ? (j + 1) : j;
+
+            switch (frameY / 38)
+            {
+                case 0:
+                case 1:
+                    info.VisualOffset.Y += 1;
+                    if (frameX == 18)
+                    {
+                        info.VisualOffset.X -= 4;
+                    }
+                    else if ((frameX == 0 && direction == -1) ||
+                             (frameX == 36 && direction == 1))
+                    {
+                        info.VisualOffset.X -= 8;
+                    }
+                    break;
+                case 2:
+                    if (frameX == 18)
+                    {
+                        info.VisualOffset.X -= 4;
+                    }
+                    else if ((frameX == 0 && direction == -1) ||
+                             (frameX == 36 && direction == 1))
+                    {
+                        info.VisualOffset.Y -= 4;
+                        info.VisualOffset.X -= 4;
+                    }
+                    else
+                    {
+                        info.VisualOffset.Y -= 4;
+                        info.VisualOffset.X -= 6;
+                    }
+                    break;
+                case 3:
+                    info.VisualOffset.Y += 1;
+                    if (direction == 1) info.VisualOffset.X -= 2;
+                    if (frameX == 18)
+                    {
+                        info.VisualOffset.X -= 4;
+                    }
+                    else if ((frameX == 0 && direction == -1) ||
+                             (frameX == 36 && direction == 1))
+                    {
+                        info.VisualOffset.X -= 8;
+                    }
+                    break;
+                case 4:
+                    info.VisualOffset.Y += 2;
+                    if (direction == 1) info.VisualOffset.X -= 2;
+                    if (frameX == 18)
+                    {
+                        info.VisualOffset.X -= 4;
+                        info.VisualOffset.Y -= 1;
+                    }
+                    else if ((frameX == 0 && direction == -1) ||
+                             (frameX == 36 && direction == 1))
+                    {
+                        info.VisualOffset.X -= 8;
+                    }
+                    break;
+            }
+            
         }
 
         public override bool RightClick(int i, int j)
@@ -81,6 +140,12 @@ namespace CFU.Tiles
             }
         }
 
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
+        {
+            if ((frameY / 38) == 4)
+                offsetY = 2;
+        }
+        
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             if ((Main.tile[i, j].TileFrameY / 38 == 4) &&
@@ -89,7 +154,7 @@ namespace CFU.Tiles
                 Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
                 spriteBatch.Draw(
                     ModContent.Request<Texture2D>(Texture + "Wood").Value,
-                    new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - 4 - (int)Main.screenPosition.Y) + zero,
+                    new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - 2 - (int)Main.screenPosition.Y) + zero,
                     new Rectangle(Main.tile[i, j].TileFrameX, 0, 18, 22),
                     Lighting.GetColor(i, j));
             }

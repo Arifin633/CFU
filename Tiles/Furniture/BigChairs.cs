@@ -52,10 +52,18 @@ namespace CFU.Tiles
         public override void ModifySittingTargetInfo(int i, int j, ref TileRestingInfo info)
         {
             Tile tile = Framing.GetTileSafely(i, j);
-            // info.TargetDirection = (tile.TileFrameX % 36 == 0) ? -1 : 1;
             int direction = info.TargetDirection = (tile.TileFrameX < 36) ? -1 : 1;
             info.AnchorTilePosition.X = (tile.TileFrameX is 0 or 54) ? ((direction * -1) + i) : i;
             info.AnchorTilePosition.Y = (tile.TileFrameY % 38 == 0) ? (j + 1) : j;
+            if (Main.tile[i, j].TileFrameY < 56)
+            {
+                info.VisualOffset.X += 4;
+            }
+            else
+            {
+                info.VisualOffset.X += 2;
+                info.VisualOffset.Y += 2;
+            }
         }
 
         public override bool RightClick(int i, int j)
