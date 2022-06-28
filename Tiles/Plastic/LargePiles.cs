@@ -4,7 +4,6 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Microsoft.Xna.Framework;
 
 namespace CFU.Tiles
 {
@@ -84,7 +83,7 @@ namespace CFU.Tiles
         {
             int item = 0;
             int style = (frameX / 54);
-            if (frameY != 0) style += 35;
+            style += (35 * (frameY / 38));
             switch (style)
             {
                 case <= 2:

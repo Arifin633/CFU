@@ -26,8 +26,8 @@ namespace CFU.Tiles
                 TileObjectData.addSubTile(i);
             }
             TileObjectData.addTile(Type);
-            SoundType = 13;
-            SoundStyle = 0;
+            // SoundType = 13;
+            // SoundStyle = 0;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Pot");
             AddMapEntry(new Color(111, 71, 61), name);
