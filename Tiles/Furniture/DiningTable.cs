@@ -1,5 +1,5 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -19,11 +19,12 @@ namespace CFU.Tiles
             Main.tileTable[Type] = true;
             Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
+            TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(AfterPlacementHook, -1, 0, false);
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleMultiplier = 2;
+            TileObjectData.newTile.StyleMultiplier = 4;
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             ModTranslation name = CreateMapEntryName();
@@ -34,57 +35,90 @@ namespace CFU.Tiles
             AdjTiles = new int[] { TileID.Tables };
         }
 
+        public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
+        {
+            Tile tile = Main.tile[i, j];
+            int frameX = Main.tile[i, j].TileFrameX;
+            int frameY = Main.tile[i, j].TileFrameY;
+            i -= ((frameX % 54) / 18);
+            j -= (frameY != 0) ? 1 : 0;
+            UpdateTables(i, j);
+            return 1;
+        }
+
+       public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+       {
+            fail = effectOnly = noItem = false;
+            
+            Tile tile = Main.tile[i, j];
+            int frameX = tile.TileFrameX;
+            int frameY = tile.TileFrameY;
+            bool royal = frameX >= 216;
+            if (((frameX % 54) == 0) && (frameY == 0))
+            {
+                bool left = (((Main.tile[i - 3, j].TileType == Type) &&
+                              ((royal && Main.tile[i - 3, j].TileFrameX >= 216) ||
+                               (!royal && Main.tile[i - 3, j].TileFrameX < 216))));
+
+                bool right = (((Main.tile[i + 3, j].TileType == Type) &&
+                               ((royal && Main.tile[i + 3, j].TileFrameX >= 216) ||
+                                (!royal && Main.tile[i + 3, j].TileFrameX < 216))));
+
+                if (left)
+                    UpdateTables((i - 3), j, fromRight: true, notFrom: true);
+                if (right)
+                    UpdateTables((i + 3), j, fromLeft: true, notFrom: true);
+            }
+        }
+        
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.DiningTable>(),
                              ModContent.ItemType<Items.RoyalDiningTable>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 108)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 216)]);
         }
 
-        /* FIXME: Get this out of PostDraw. */
-        public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
+        void UpdateTables(int i, int j, bool fromLeft = false, bool fromRight = false, bool notFrom = false)
         {
             Tile tile = Main.tile[i, j];
             int frameY = tile.TileFrameY;
-            bool royal = tile.TileFrameX >= 108;
+            int frameX = tile.TileFrameX;
+            bool royal = frameX >= 216;
 
-            i -= (((tile.TileFrameX % 108) % 54) / 18);
-            bool left = ((Main.tile[i - 1, j].TileType == Type) &&
-                         ((royal && Main.tile[i - 1, j].TileFrameX >= 108) ||
-                          (!royal && Main.tile[i - 1, j].TileFrameX < 108)));
+            bool left = (!(notFrom && fromLeft) &&
+                         (fromLeft ||
+                          ((Main.tile[i - 3, j].TileType == Type) &&
+                           ((royal && Main.tile[i - 3, j].TileFrameX >= 216) ||
+                            (!royal && Main.tile[i - 3, j].TileFrameX < 216)))));
 
-            bool right = ((Main.tile[i + 3, j].TileType == Type) &&
-                         ((royal && Main.tile[i + 3, j].TileFrameX >= 108) ||
-                          (!royal && Main.tile[i + 3, j].TileFrameX < 108)));
+            bool right = (!(notFrom && fromRight) &&
+                          (fromRight ||
+                           ((Main.tile[i + 3, j].TileType == Type) &&
+                            ((royal && Main.tile[i + 3, j].TileFrameX >= 216) ||
+                             (!royal && Main.tile[i + 3, j].TileFrameX < 216)))));
 
-            bool surrounded = (left && right);
-
-            switch (((tile.TileFrameX % 108) % 54) / 18)
+            int style = (royal) ? 4 : 0;
+            if (left && right)
             {
-                case 0:
-                    if (frameY == 0 && left ||
-                        frameY == 18 && surrounded)
-                        tile.TileFrameX = 54;
-                    else
-                        tile.TileFrameX = 0;
-                    break;
-                case 1:
-                    if (frameY == 18 && surrounded)
-                        tile.TileFrameX = 72;
-                    else
-                        tile.TileFrameX = 18;
-                    break;
-                case 2:
-                    if (frameY == 0 && right ||
-                        frameY == 18 && surrounded)
-                        tile.TileFrameX = 90;
-                    else
-                        tile.TileFrameX = 36;
-                    break;
+                style += 3;
+            }
+            else if (left)
+            {
+                style += 2;
+            }
+            else if (right)
+            {
+                style += 1;
             }
 
-            if (royal) tile.TileFrameX += 108;
-
+            if (frameX != (style * 54))
+            {
+                CFUtils.ShiftTileX(i, j, reset: true, resetTo: (short)(style * 54));
+                if (left && !fromLeft)
+                    UpdateTables((i - 3), j, fromRight: true);
+                if (right && !fromRight)
+                    UpdateTables((i + 3), j, fromLeft: true);
+            }
         }
     }
 }
