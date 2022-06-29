@@ -84,28 +84,93 @@ namespace CFU.Tiles
         {
             if (Main.tile[i, j].TileFrameY < 36)
             {
-                /* Unverified colors.
-                   TODO: Use colors from `TileLightScanner.ApplyTileLight'. */
-                switch (Main.tile[i, j].TileFrameX)
+                switch (Main.tile[i, j].TileFrameX / 36)
                 {
-                    case 72:
-                    case 90:
-                    case 612:
-                    case 630:
-                        r = 0.7f;
+                    case 2: /* Boreal */
+                        r = 0f;
+                        g = 0.9f;
+                        b = 1f;
+                        break;
+                    case 5: /* Ebonwood */
+                        r = 0.85f;
+                        g = 0.6f;
+                        b = 1f;
+                        break;
+                    case 7: /* Pearlwood */
+                        r = 1f;
+                        g = 0.97f;
+                        b = 0.85f;
+                        break;
+                    case 10: /* Living Wood */
+                        r = 1f;
+                        g = 1f;
+                        b = 0.6f;
+                        break;
+                    case 11: /* Cactus */
+                        r = 0.95f;
+                        g = 0.95f;
+                        b = 0.5f;
+                        break;
+                    case 13: /* Mushroom */
+                        r = 0.37f;
+                        g = 0.8f;
+                        b = 1f;
+                        break;
+                    case 16: /* Skyware */
+                        r = 1f;
+                        g = 1f;
+                        b = 0.7f;
+                        break;
+                    case 17: /* Frozen */
+                        r = 0.75f;
                         g = 0.85f;
                         b = 1f;
                         break;
-                    case 1044:
-                    case 1062:
-                        r = 0.75f;
+                    case 19: /* Slime */
+                        r = 0.25f;
+                        g = 0.7f;
+                        b = 1f;
+                        break;
+                    case 21: /* Granite */
+                        r = 0.9f;
+                        g = 0.75f;
+                        b = 1f;
+                        break;
+                    case 24: /* Flesh */
+                        r = 1f;
+                        g = 0.6f;
+                        b = 0.6f;
+                        break;
+                    case 26: /* Blue Dungeon */
+                        r = 0.35f;
+                        g = 0.5f;
+                        b = 0.3f;
+                        break;
+                    case 27: /* Green Dungeon */
+                        r = 0.34f;
+                        g = 0.4f;
+                        b = 0.31f;
+                        break;
+                    case 28: /* Pink Dungeon */
+                        r = 0.25f;
+                        g = 0.32f;
+                        b = 0.5f;
+                        break;
+                    case 29: /* Obsidian */
+                        r = 0.5f * Main.demonTorch + 1f * (1f - Main.demonTorch);
                         g = 0.3f;
-                        b = 0.75f;
+                        b = 1f * Main.demonTorch + 0.5f * (1f - Main.demonTorch);
+                        break;
+                    case 32: /* Crystal */
+                        Vector3 vector = Main.hslToRgb(Main.demonTorch * 0.12f + 0.69f, 1f, 0.75f).ToVector3() * 1.2f;
+                        r = vector.X;
+                        g = vector.Y;
+                        b = vector.Z;
                         break;
                     default:
                         r = 1f;
                         g = 0.95f;
-                        b = 0.8f;
+                        b = 0.65f;
                         break;
                 }
             }

@@ -252,6 +252,7 @@ namespace ChadsFurnitureUpdated
 
         public static bool TileFlameData(int type, int x, int y, out string texture, out int count, out Color color, out int rangeXMin, out int rangeXMax, out int rangeYMin, out int rangeYMax, out float rangeMultX, out float rangeMultY)
         {
+            bool flag = false;
             count = 7;
             color = new Color(100, 100, 100, 0);
             rangeXMin = rangeYMin = -10;
@@ -264,7 +265,7 @@ namespace ChadsFurnitureUpdated
             {
                 if (Main.tile[x, y].TileFrameX < 36)
                 {
-                    return true;
+                    flag = true;
                 }
             }
             else if (type == ModContent.TileType<Tiles.Chandeliers>())
@@ -272,7 +273,7 @@ namespace ChadsFurnitureUpdated
                 if (Main.tile[x, y].TileFrameX < 54)
                 {
                     // switch (Main.tile[x, y].TileFrameY / 54) { }
-                    return true;
+                    flag = true;
                 }
             }
             else if (type == ModContent.TileType<Tiles.Lanterns>())
@@ -281,7 +282,7 @@ namespace ChadsFurnitureUpdated
                     Main.tile[x, y].TileFrameY / 18 is >= 3 and <= 10)
                 {
                     // switch (Main.tile[x, y].TileFrameY / 36) { }
-                    return true;
+                    flag = true;
                 }
             }
             else if (type == ModContent.TileType<Tiles.Candles>())
@@ -289,7 +290,7 @@ namespace ChadsFurnitureUpdated
                 if (Main.tile[x, y].TileFrameX < 18)
                 {
                     // switch (Main.tile[x, y].TileFrameY / 18) { }
-                    return true;
+                    flag = true;
                 }
             }
             else if (type == ModContent.TileType<Tiles.Lamps>())
@@ -298,7 +299,7 @@ namespace ChadsFurnitureUpdated
                     Main.tile[x, y].TileFrameY / 56 is 1 or 2 or 3)
                 {
                     // switch (Main.tile[x, y].TileFrameY / 56) { }
-                    return true;
+                    flag = true;
                 }
             }
             else if (type == ModContent.TileType<Tiles.Candelabras>())
@@ -306,32 +307,78 @@ namespace ChadsFurnitureUpdated
                 if (Main.tile[x, y].TileFrameX < 36)
                 {
                     // switch (Main.tile[x, y].TileFrameY / 38) { }
-                    return true;
+                    flag = true;
                 }
-                return true;
             }
             else if (type == ModContent.TileType<Tiles.OrnateChandeliers>())
             {
                 if (Main.tile[x, y].TileFrameX < 72)
                 {
-                    return true;
+                    flag = true;
                 }
             }
             else if (type == ModContent.TileType<Tiles.WallCandelabras>())
             {
                 if (Main.tile[x, y].TileFrameY < 36)
                 {
-                    return true;
+                    flag = true;
+                    switch (Main.tile[x, y].TileFrameX / 36)
+                    {
+                        case 8:  /* Dynasty */
+                        case 13: /* Mushroom */
+                        case 31: /* Martian */
+                        case 32: /* Crystal */
+                            flag = false;
+                            break;
+                        case 10: /* Living Wood */
+                            count = 8;
+                            color = new Color(75, 75, 75, 0);
+                            rangeYMax = 11;
+                            rangeMultX = 0.1f;
+                            rangeMultY = 0.1f;
+                            break;
+                        case 14: /* Glass */
+                            count = 5;
+                            color = new Color(75, 75, 75, 0);
+                            rangeYMax = 11;
+                            rangeMultX = 0.15f;
+                            rangeMultY = 0.15f;
+                            break;
+                        case 16: /* Skyware */
+                            color = new Color(50, 50, 50, 0);
+                            rangeMultX = 0.1f;
+                            rangeMultY = 0.15f;
+                            break;
+                        case 17: /* Frozen */
+                            rangeYMax = 11;
+                            rangeMultX = 0.3f;
+                            rangeMultY = 0.3f;
+                            break;
+                        case 20: /* Meteorite */
+                        case 21: /* Granite */
+                            count = 1;
+                            color = new Color(75, 75, 75, 0);
+                            rangeMultX = 0f;
+                            rangeMultY = 0f;
+                            break;
+                        case 24: /* Flesh */
+                            count = 3;
+                            color = new Color(50, 50, 50, 0);
+                            rangeYMax = 11;
+                            rangeMultX = 0.05f;
+                            rangeMultY = 0.15f;
+                            break;
+                    }
                 }
             }
             else if (type == ModContent.TileType<Tiles.Torches>())
             {
                 if (Main.tile[x, y].TileFrameX < 66)
                 {
-                    return true;
+                    flag = true;
                 }
             }
-            return false;
+            return flag;
         }
 
         public static void GetScreenDrawArea(Vector2 screenPosition, Vector2 offSet, out int firstTileX, out int lastTileX, out int firstTileY, out int lastTileY)
