@@ -13,6 +13,8 @@ namespace CFU.Tiles
     public class Cabinets : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Furniture/Cabinets";
+        public override string HighlightTexture => "CFU/Textures/Tiles/Furniture/CabinetsHighlight";
+        
         public override void SetStaticDefaults()
         {
             Main.tileSolidTop[Type] = true;
@@ -20,7 +22,7 @@ namespace CFU.Tiles
             Main.tileNoAttach[Type] = true;
             Main.tileTable[Type] = true;
             Main.tileContainer[Type] = true;
-            // TileID.Sets.HasOutlines[Type] = true;
+            TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicDresser[Type] = true;
             Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
@@ -53,11 +55,11 @@ namespace CFU.Tiles
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
-        public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
-        {
-            width = 2;
-            height = 1;
-        }
+        // public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
+        // {
+        //     width = 2;
+        //     height = 1;
+        // }
 
         public static string MapChestName(string name, int i, int j)
         {

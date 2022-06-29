@@ -57,11 +57,11 @@ namespace CFU.Tiles
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
-        public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
-        {
-            width = 3;
-            height = 1;
-        }
+        // public override void ModifySmartInteractCoords(ref int width, ref int height, ref int frameWidth, ref int frameHeight, ref int extraY)
+        // {
+        //     width = 3;
+        //     height = 1;
+        // }
 
         public static string MapChestName(string name, int i, int j)
         {
