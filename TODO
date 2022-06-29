@@ -20,13 +20,18 @@ as the textures are already there.
 
 * Doors
 In vanilla, doors will attempt to open towards the opposite direction the player
-is facing if the preferred direction is obstructed.  This behavior should be
-added to modded doors.
+is facing if the preferred direction is obstructed; the same is not true for any
+modded doors.  This is a tModloader issue.
 
 * Dressers
+* Cabinets
 Highlight is broken -- only the top is highlighted, and I have no idea why.
+As a temporary workaround, highlighting for Dressers
+and Cabinets is no longer separated into two sections
+(the dresser, below, and the container, on the top).
 
 * Wall Candelabras
+* Cabinets
 Add missing furniture types: Spider, Sandstone, Bamboo, Lesion, Lunar stuff.
 
 * Items
@@ -43,14 +48,6 @@ The dust and sound of pretty much every tile is wrong.
 Additionally, their map color is often inaccurate, specially
 when it comes to tiles with a lot of different styles.
 
-* Wall Clocks
-* Wall Candelabras
-* Wardrobes
-* Mirrors
-These tiles' textures are supposed to be based on their vanilla equivalents,
-but some are mismatched, either because of a mistake when they were first
-made or because the vanilla textures have been updated since then.
-
 * Miracle Plants
 The item textures for all plants look specially
 bad as they are just copy and pasted tiles.
@@ -66,12 +63,6 @@ Add hair-displaying capabilities as it had in the original mod.
 
 * Wall Clocks
 Draw the pendulum using `AddSpecialPosition' to avoid blurriness.
-
-* Wall Candelabras
-Use vanilla values for the light colors and flame draw data.
-
-* Cabinets
-No highlighting.
 
 * Paintable Sofa
 * Paintable Armchair
