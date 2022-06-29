@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Candelabras/WallCandelabraPearl";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Pearl Wood Wall Candelabra");
+            DisplayName.SetDefault("Pearlwood Wall Candelabra");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

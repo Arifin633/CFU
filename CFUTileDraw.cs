@@ -681,7 +681,11 @@ namespace ChadsFurnitureUpdated
 
             int frameX = (torch) ? (tile.TileFrameX + 2) : tile.TileFrameX;
             int frameY = tile.TileFrameY;
-            int offsetY = (torch && (WorldGen.SolidTile(i, j - 1))) ? 2 : 0;
+            int offsetY =  0;
+            if (torch && (WorldGen.SolidTile(i, j - 1)))
+                offsetY = 2;
+            else if (type == ModContent.TileType<Tiles.Candles>())
+                offsetY = -2;
 
             TileFlameData(type, i, j, out var flameTexture, out var flameCount, out var flameColor, out var flameRangeXMin, out var flameRangeXMax, out var flameRangeYMin, out var flameRangeYMax, out var flameRangeMultX, out var flameRangeMultY);
             ulong flameSeed = Main.TileFrameSeed ^ (ulong)(((long)i << 32) | (uint)j);

@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
-using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
