@@ -129,11 +129,12 @@ namespace CFU.Tiles
             return true;
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => false;
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if (Main.tile[i, j].TileFrameY == 0)
+            if ((CFUConfig.WindEnabled()) &&
+                (Main.tile[i, j].TileFrameY == 0))
             {
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
             }

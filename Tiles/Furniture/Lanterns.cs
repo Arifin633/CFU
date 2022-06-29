@@ -49,17 +49,19 @@ namespace CFU.Tiles
                 CFUtils.ShiftTileX(i, j, 18, reset: true, skipWire: true);
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            // if (Main.tile[i, j].TileFrameX < 18 &&
-            //     Main.tile[i, j].TileFrameY / 18 is >= 3)
-            // {
-            //     CFUTileDraw.DrawFlame(i, j, spriteBatch);
-            // }
-            if (Main.tile[i, j].TileFrameY % 36 == 0)
-                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
+            if (CFUConfig.WindEnabled())
+            {
+                if (Main.tile[i, j].TileFrameY % 36 == 0)
+                    CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
+            }
+            else if (Main.tile[i, j].TileFrameX < 18)
+            {
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
+            }
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

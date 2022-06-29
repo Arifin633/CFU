@@ -56,11 +56,13 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => ((Main.tile[i, j].TileFrameX / 18) % 2 == 0);
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) =>
+            (!(CFUConfig.WindEnabled()) || ((Main.tile[i, j].TileFrameX / 18) % 2 == 0));
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            if (Main.tile[i, j].TileFrameY == 0 &&
+            if ((CFUConfig.WindEnabled()) &&
+                (Main.tile[i, j].TileFrameY == 0) &&
                 (Main.tile[i, j].TileFrameX / 18) % 2 != 0)
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
         }

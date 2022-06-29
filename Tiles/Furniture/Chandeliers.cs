@@ -69,17 +69,20 @@ namespace CFU.Tiles
                 CFUtils.ShiftTileX(i, j, 54, reset: true, skipWire: true);
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            // if (Main.tile[i, j].TileFrameX < 54)
-            // {
-            //     CFUTileDraw.DrawFlame(i, j, spriteBatch);
-            // }
-            if (Main.tile[i, j].TileFrameY % 54 == 0 &&
-                Main.tile[i, j].TileFrameX % 54 == 0)
-                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
+            if (CFUConfig.WindEnabled())
+            {
+                if (Main.tile[i, j].TileFrameY % 54 == 0 &&
+                    Main.tile[i, j].TileFrameX % 54 == 0)
+                    CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
+            }
+            else if (Main.tile[i, j].TileFrameX < 54)
+            {
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
+            }
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

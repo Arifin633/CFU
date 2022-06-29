@@ -70,7 +70,8 @@ namespace CFU.Tiles
                    is destroyed we avoid the flickering that would otherwise
                    happen between the time of death and the placement of a
                    a new point in `PostDraw'. */
-                CFUTileDraw.AddSpecialPosition(i, (j + 1), CFUTileDraw.SpecialPositionType.RisingTile);
+                if (CFUConfig.WindEnabled())
+                    CFUTileDraw.AddSpecialPosition(i, (j + 1), CFUTileDraw.SpecialPositionType.RisingTile);
 
                 /* If the tile below isn't connected to
                    another seaweed, shift it into a stub. */
@@ -94,11 +95,12 @@ namespace CFU.Tiles
             }
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => false;
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if (Main.tile[i, j + 1].TileType != Type)
+            if ((CFUConfig.WindEnabled()) &&
+                (Main.tile[i, j + 1].TileType != Type))
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingVine);
         }
 

@@ -45,15 +45,22 @@ namespace CFU.Tiles
             }
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            Tile tile = Main.tile[i, j];
-            if (tile.TileFrameX % 36 == 0 &&
-                tile.TileFrameY == 0)
+            if (CFUConfig.WindEnabled())
             {
-                CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
+                Tile tile = Main.tile[i, j];
+                if (((tile.TileFrameX % 36) == 0) &&
+                    (tile.TileFrameY == 0))
+                {
+                    CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
+                }
+            }
+            else
+            {
+                CFUTileDraw.DrawFlame(i, j, spriteBatch);
             }
         }
 

@@ -44,11 +44,20 @@ namespace CFU.Tiles
             }
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => false;
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
+        {
+            if (!CFUConfig.WindEnabled())
+            {
+                offsetY = 2;
+            }
+        }
+
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if ((Main.tile[i, j].TileFrameX == 0) &&
+            if ((CFUConfig.WindEnabled()) &&
+                (Main.tile[i, j].TileFrameX == 0) &&
                 (Main.tile[i, j].TileFrameY == 0))
             {
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);

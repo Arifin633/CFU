@@ -75,84 +75,93 @@ namespace ChadsFurnitureUpdated
                By hooking into this function and updating our own
                Grid/counters, we can ensure they will be in sync
                with their `TileDrawing' vanilla counterparts. */
-            HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("Update"), new Action<ILContext>((il) =>
+            if (CFUConfig.WindEnabled())
             {
-                var c = new ILCursor(il);
-                c.EmitDelegate<Action>(() =>
+                HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("Update"), new Action<ILContext>((il) =>
                 {
-                    if (!Main.dedServ)
+                    var c = new ILCursor(il);
+                    c.EmitDelegate<Action>(() =>
                     {
-                        double num = Math.Abs(Main.WindForVisuals);
-                        num = Utils.GetLerpValue(0.08f, 1.2f, (float)num, clamped: true);
-                        CFUTileDraw.WindCounter += 1.0 / 420.0 + 1.0 / 420.0 * num * 5.0;
-                        CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.4000000059604645;
-                        CFUTileDraw.EnsureWindGridSize();
-                        CFUTileDraw.WindGrid.Update();
-                    }
-                });
-            }));
+                        if (!Main.dedServ)
+                        {
+                            double num = Math.Abs(Main.WindForVisuals);
+                            num = Utils.GetLerpValue(0.08f, 1.2f, (float)num, clamped: true);
+                            CFUTileDraw.WindCounter += 1.0 / 420.0 + 1.0 / 420.0 * num * 5.0;
+                            CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.4000000059604645;
+                            CFUTileDraw.EnsureWindGridSize();
+                            CFUTileDraw.WindGrid.Update();
+                        }
+                    });
+                }));
+            }
 
             /* tModLoader has no pre-existing hook for `PreDrawTiles'.
                Thus to hook into this function is the most sensible way to make
                sure our array will get reset neither too early nor too late. */
-            HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PreDrawTiles"), new Action<ILContext>((il) =>
+            if (CFUConfig.WindEnabled())
             {
-                var c = new ILCursor(il);
-                c.GotoNext(MoveType.Before, i => i.MatchLdarg(0));
-                c.EmitDelegate<Action>(() =>
+                HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PreDrawTiles"), new Action<ILContext>((il) =>
                 {
-                    CFUTileDraw.SpecialPositionsCount[0] = 0;
-                    CFUTileDraw.SpecialPositionsCount[1] = 0;
-                    CFUTileDraw.SpecialPositionsCount[2] = 0;
-                    CFUTileDraw.SpecialPositionsCount[3] = 0;
-                    CFUTileDraw.SpecialPositionsCount[4] = 0;
-                });
-            }));
+                    var c = new ILCursor(il);
+                    c.GotoNext(MoveType.Before, i => i.MatchLdarg(0));
+                    c.EmitDelegate<Action>(() =>
+                    {
+                        CFUTileDraw.SpecialPositionsCount[0] = 0;
+                        CFUTileDraw.SpecialPositionsCount[1] = 0;
+                        CFUTileDraw.SpecialPositionsCount[2] = 0;
+                        CFUTileDraw.SpecialPositionsCount[3] = 0;
+                        CFUTileDraw.SpecialPositionsCount[4] = 0;
+                    });
+                }));
+            }
 
             /* The point in time a drawing function is called
                seems to be the sole determinant for drawing order.
                Therefore, to ensure our tiles' drawing order looks
                just like vanilla, we must hook into this function
                and draw our tiles at the same time as their equivalents.*/
-            HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PostDrawTiles"), new Action<ILContext>((il) =>
+            if (CFUConfig.WindEnabled())
             {
-                var c = new ILCursor(il);
-                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileVines"));
-                c.EmitDelegate<Action>(() =>
+                HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PostDrawTiles"), new Action<ILContext>((il) =>
                 {
-                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[0]; i++)
-                        if (CFUTileDraw.SpecialPositionsCount[0] < 5000 && // Don't draw past the array size.
-                            CFUTileDraw.SpecialPositions[0][i] != new Point()) // Don't draw empty coordinates.
-                            CFUTileDraw.DrawHangingTile(CFUTileDraw.SpecialPositions[0][i]);
-                });
+                    var c = new ILCursor(il);
+                    c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileVines"));
+                    c.EmitDelegate<Action>(() =>
+                    {
+                        for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[0]; i++)
+                            if (CFUTileDraw.SpecialPositionsCount[0] < 5000 && // Don't draw past the array size.
+                                CFUTileDraw.SpecialPositions[0][i] != new Point()) // Don't draw empty coordinates.
+                                CFUTileDraw.DrawHangingTile(CFUTileDraw.SpecialPositions[0][i]);
+                    });
 
-                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileGrass"));
-                c.EmitDelegate<Action>(() =>
-                {
-                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[2]; i++)
-                        if (CFUTileDraw.SpecialPositionsCount[2] < 5000 && // Don't draw past the array size.
-                            CFUTileDraw.SpecialPositions[2][i] != new Point()) // Don't draw empty coordinates.
-                            CFUTileDraw.DrawRisingTile(CFUTileDraw.SpecialPositions[2][i]);
-                });
-                
-                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawVines"));
-                c.EmitDelegate<Action>(() =>
-                {
-                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[1]; i++)
-                        if (CFUTileDraw.SpecialPositionsCount[1] < 5000 && // Don't draw past the array size.
-                            CFUTileDraw.SpecialPositions[1][i] != new Point()) // Don't draw empty coordinates.
-                            CFUTileDraw.DrawHangingVine(CFUTileDraw.SpecialPositions[1][i]);
-                });
+                    c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileGrass"));
+                    c.EmitDelegate<Action>(() =>
+                    {
+                        for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[2]; i++)
+                            if (CFUTileDraw.SpecialPositionsCount[2] < 5000 && // Don't draw past the array size.
+                                CFUTileDraw.SpecialPositions[2][i] != new Point()) // Don't draw empty coordinates.
+                                CFUTileDraw.DrawRisingTile(CFUTileDraw.SpecialPositions[2][i]);
+                    });
 
-                c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawReverseVines"));
-                c.EmitDelegate<Action>(() =>
-                {
-                    for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[3]; i++)
-                        if (CFUTileDraw.SpecialPositionsCount[3] < 5000 && // Don't draw past the array size.
-                            CFUTileDraw.SpecialPositions[3][i] != new Point()) // Don't draw empty coordinates.
-                            CFUTileDraw.DrawRisingVine(CFUTileDraw.SpecialPositions[3][i]);
-                });
-            }));
+                    c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawVines"));
+                    c.EmitDelegate<Action>(() =>
+                    {
+                        for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[1]; i++)
+                            if (CFUTileDraw.SpecialPositionsCount[1] < 5000 && // Don't draw past the array size.
+                                CFUTileDraw.SpecialPositions[1][i] != new Point()) // Don't draw empty coordinates.
+                                CFUTileDraw.DrawHangingVine(CFUTileDraw.SpecialPositions[1][i]);
+                    });
+
+                    c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawReverseVines"));
+                    c.EmitDelegate<Action>(() =>
+                    {
+                        for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[3]; i++)
+                            if (CFUTileDraw.SpecialPositionsCount[3] < 5000 && // Don't draw past the array size.
+                                CFUTileDraw.SpecialPositions[3][i] != new Point()) // Don't draw empty coordinates.
+                                CFUTileDraw.DrawRisingVine(CFUTileDraw.SpecialPositions[3][i]);
+                    });
+                }));
+            }
 
             /* The hook below allows the player to place Cobweb and Ivy
                blocks as long as they border any other tile (as opposed

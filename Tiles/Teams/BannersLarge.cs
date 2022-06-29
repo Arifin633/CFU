@@ -43,11 +43,13 @@ namespace CFU.Tiles
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 36)]);
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            if ((Main.tile[i, j].TileFrameY == 0) && (Main.tile[i, j].TileFrameX % 36 == 0))
+            if ((CFUConfig.WindEnabled()) &&
+                (Main.tile[i, j].TileFrameY == 0) &&
+                (Main.tile[i, j].TileFrameX % 36 == 0))
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
         }
     }

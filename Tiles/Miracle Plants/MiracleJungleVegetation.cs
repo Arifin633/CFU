@@ -49,19 +49,37 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
-        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => false;
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
+        {
+            if (!CFUConfig.WindEnabled())
+            {
+                int potType = ModContent.TileType<Tiles.PlantPots>();
+                if ((frameY >= 36) &&
+                    ((Main.tile[i, j + 1].TileType == potType) ||
+                     ((Main.tile[i, j + 1].TileType == Type) &&
+                      (Main.tile[i, j + 2].TileType == potType))))
+                    offsetY = -4;
+                else
+                    offsetY = 2;
+            }
+        }
+        
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
         
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if (Main.tile[i, j].TileFrameY == 0)
+            if (CFUConfig.WindEnabled())
             {
-                if ((Main.tile[i, j].TileFrameX % 54) == 0)
-                    CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
-            }
-            else if (Main.tile[i, j].TileFrameY == 36)
-            {
-                if ((Main.tile[i, j].TileFrameX % 36) == 0)
-                    CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
+                if (Main.tile[i, j].TileFrameY == 0)
+                {
+                    if ((Main.tile[i, j].TileFrameX % 54) == 0)
+                        CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
+                }
+                else if (Main.tile[i, j].TileFrameY == 36)
+                {
+                    if ((Main.tile[i, j].TileFrameX % 36) == 0)
+                        CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
+                }
             }
         }
 
