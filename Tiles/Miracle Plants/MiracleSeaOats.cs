@@ -42,13 +42,13 @@ namespace CFU.Tiles
         public override bool Drop(int i, int j)
         {
             int[,] styles =
-                { { ModContent.ItemType<Items.MiracleShortSeaOats>(),
-                    ModContent.ItemType<Items.MiracleMediumSeaOats>(),
-                    ModContent.ItemType<Items.MiracleTallSeaOats>() },
-
-                  { ModContent.ItemType<Items.MiracleShortOasisSeaOats>(),
+                { { ModContent.ItemType<Items.MiracleShortOasisSeaOats>(),
                     ModContent.ItemType<Items.MiracleMediumOasisSeaOats>(),
                     ModContent.ItemType<Items.MiracleTallOasisSeaOats>() },
+
+                  { ModContent.ItemType<Items.MiracleShortSeaOats>(),
+                    ModContent.ItemType<Items.MiracleMediumSeaOats>(),
+                    ModContent.ItemType<Items.MiracleTallSeaOats>() },
 
                   { ModContent.ItemType<Items.MiracleShortHallowedSeaOats>(),
                     ModContent.ItemType<Items.MiracleMediumHallowedSeaOats>(),

@@ -27,7 +27,7 @@ namespace CFU.Items
             Item.consumable = true;
             Item.value = 0;
             Item.createTile = ModContent.TileType<Tiles.MiracleSeaOats>();
-            Item.placeStyle = 3;
+            Item.placeStyle = 0;
         }
 
         public override void AddRecipes()
