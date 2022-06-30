@@ -35,6 +35,8 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override void NumDust(int i, int j, bool fail, ref int num) => num = 2;
+
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {
             /* Only proceed if we're not placing a base
