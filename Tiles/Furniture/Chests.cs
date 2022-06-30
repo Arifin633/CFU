@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.GameContent.ObjectInteractions;
@@ -153,28 +154,32 @@ namespace CFU.Tiles
             }
         }
 
-        /* Although this doesn't work properly, I can't imagine it would look
-           very good even if it did.  TODO: Make a proper animation. */
-        /* public override bool PreDraw(int i, int j, SpriteBatch spriteBatch)
+        public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             Tile tile = Main.tile[i, j];
-            if (tile.TileFrameX is 36 && tile.TileFrameY is 0) //  tile.TileFrameY is 38 or 76
+            int frameX = tile.TileFrameX;
+            int frameY = tile.TileFrameY;
+            if (frameX is 36 or 54)
             {
-                ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i);
-                Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
-                for (int k = 0; k < 7; k++)
+                int chest = Chest.FindChest((frameX == 54) ? (i - 1) : i,
+                                            (frameY == 18) ? (j - 1) : j);
+                if (Main.chest[chest].frame == 2)
                 {
-                    float x = (float)Utils.RandomInt(ref randSeed, -10, 11) * 0.15f;
-                    float y = (float)Utils.RandomInt(ref randSeed, -10, 1) * 0.35f;
-                    spriteBatch.Draw(
-                        ModContent.Request<Texture2D>("CFU/Textures/Tiles/Furniture/MysticChestVoid").Value,
-                        new Vector2((float)(i * 16 - (int)Main.screenPosition.X) + x, (float)(j * 16 - (int)Main.screenPosition.Y) + y) + zero,
-                        new Rectangle(0, 0, 34, 36),
-                        Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f
-                        );
+                    /* These values still aren't great. */
+                    ulong randSeed = Main.TileFrameSeed ^ (ulong)((long)j << 32 | (long)(uint)i);
+                    Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
+                    for (int k = 0; k < 2; k++)
+                    {
+                        float x = (float)Utils.RandomInt(ref randSeed, -10, 1) * 0.033f;
+                        float y = (float)Utils.RandomInt(ref randSeed, -10, 1) * 0.05f;
+                        spriteBatch.Draw(
+                            ModContent.Request<Texture2D>("CFU/Textures/Tiles/Furniture/MysticChestVoid").Value,
+                            new Vector2((float)(i * 16 - (int)Main.screenPosition.X) + x, (float)(j * 16 - (int)Main.screenPosition.Y) + y) + zero,
+                            new Rectangle((frameX == 54) ? 18 : 0, (frameY == 18) ? 18 : 0, 16, 16),
+                            Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
+                    }
                 }
             }
-            return true;
-        } */
+        }
     }
 }
