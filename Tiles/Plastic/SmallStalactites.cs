@@ -43,9 +43,52 @@ namespace CFU.Tiles
             if (frameY < 18)
                 offsetY = -2;
             else
-                offsetY = 2;        
+                offsetY = 2;
         }
-        
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameX / 54)
+            {
+                case 0:
+                case 1:
+                    type = DustID.Stone;
+                    break;
+                case 2:
+                    type = DustID.Demonite;
+                    break;
+                case 3:
+                    type = DustID.Crimstone;
+                    break;
+                case 4:
+                    type = DustID.Sluggy;
+                    break;
+                case 5:
+                    type = DustID.Granite;
+                    break;
+                case 6:
+                    type = DustID.Marble;
+                    break;
+                case 7:
+                    type = DustID.t_Honey;
+                    break;
+                case 8:
+                    type = DustID.Ice_Pink;
+                    break;
+                case 9:
+                    type = DustID.Ice_Purple;
+                    break;
+                case 10:
+                    type = DustID.Ice_Red;
+                    break;
+                case 11:
+                    type = DustID.Ice;
+                    break;
+            }
+            return true;
+        }
+
+
         public override bool Drop(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.StoneSmallStalactite>(),
