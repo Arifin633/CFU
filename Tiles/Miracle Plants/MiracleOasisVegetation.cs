@@ -40,7 +40,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(25, 195, 85));
-            HitSound = SoundID.Grass;
+            HitSound = null;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
@@ -67,7 +67,6 @@ namespace CFU.Tiles
             return true;
         }        
 
-
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
         {
             if ((!CFUConfig.WindEnabled()) ||
@@ -85,6 +84,18 @@ namespace CFU.Tiles
                 ((Main.tile[i, j].TileFrameY % 36) == 0) &&
                 ((Main.tile[i, j].TileFrameX % 54) == 0))
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
+        }
+
+        public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        {
+            if (Main.tile[i, j].TileFrameX < 270)
+            {
+                SoundEngine.PlaySound(SoundID.Grass, new Vector2(i * 16, j * 16));
+            }
+            else
+            {
+                SoundEngine.PlaySound(SoundID.Dig, new Vector2(i * 16, j * 16));
+            }
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
