@@ -38,7 +38,7 @@ namespace CFU.Tiles
             name.SetDefault("Sashimi");
             AddMapEntry(new Color(146, 81, 68), name);
 
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AnimationFrameHeight = 20;
         }

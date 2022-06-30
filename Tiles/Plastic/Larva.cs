@@ -24,7 +24,15 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(254, 156, 12));
             TileID.Sets.DisableSmartCursor[Type] = true;
+            HitSound = SoundID.NPCDeath1;
             AnimationFrameHeight = 54;
+        }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            type = (Main.rand.Next(3) != 0)
+                ? DustID.Bone : DustID.Honey2;
+            return true;
         }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)

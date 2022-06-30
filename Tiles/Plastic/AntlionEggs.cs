@@ -22,6 +22,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.RandomStyleRange = 4;
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(230, 215, 195));
+            DustType = DustID.Sand;
+            HitSound = SoundID.NPCDeath1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
         

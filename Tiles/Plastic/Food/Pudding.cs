@@ -25,7 +25,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Christmas Pudding");
             AddMapEntry(new Color(146, 81, 68), name);
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

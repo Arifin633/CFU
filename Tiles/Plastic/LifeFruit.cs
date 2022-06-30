@@ -31,7 +31,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Life Fruit");
             AddMapEntry(new Color(219, 157, 64), name);
-            DustType = 1;
+            DustType = DustID.JunglePlants;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

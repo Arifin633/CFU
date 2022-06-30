@@ -35,7 +35,7 @@ namespace CFU.Tiles
             name.SetDefault("Sake");
             AddMapEntry(new Color(133, 213, 247), name);
 
-            DustType = 1;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

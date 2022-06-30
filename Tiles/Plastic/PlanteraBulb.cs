@@ -52,6 +52,14 @@ namespace CFU.Tiles
             }
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            type = (Main.rand.Next(3) != 0)
+                ? DustID.Plantera_Pink : DustID.Plantera_Green;
+            return true;
+        }
+
+
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Audio;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -21,7 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(98, 75, 107));
-
+            HitSound = null;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { 26 };
         }
@@ -40,6 +41,31 @@ namespace CFU.Tiles
                 r = 0.31f + rand;
                 g = 0.1f;
                 b = 0.44f + rand * 2f;
+            }
+        }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            if (Main.tile[i, j].TileFrameX >= 54)
+            {
+                type = DustID.Blood;
+            }
+            else
+            {
+                type = (Main.rand.Next(2) == 0) ? DustID.Stone : DustID.Demonite;
+            }
+            return true;
+        }
+
+        public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        {
+            if (Main.tile[i, j].TileFrameX >= 54)
+            {
+                SoundEngine.PlaySound(SoundID.NPCDeath1, new Vector2(i * 16, j * 16));
+            }
+            else
+            {
+                SoundEngine.PlaySound(SoundID.Dig, new Vector2(i * 16, j * 16));
             }
         }
 

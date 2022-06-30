@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -50,6 +51,20 @@ namespace CFU.Tiles
                 b = 0.44f + rand * 2f;
             }
         }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            if (Main.tile[i, j].TileFrameX >= 36)
+            {
+                type = DustID.Blood;
+            }
+            else
+            {
+                type = (Main.rand.Next(2) == 0) ? DustID.Stone : DustID.Demonite;
+            }
+            return true;
+        }
+
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
