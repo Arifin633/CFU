@@ -60,9 +60,26 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(25, 195, 85));
-            DustType = 0;
+            HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameY / 34)
+            {
+                case 7 or 8:
+                    type = DustID.JunglePlants;
+                    break;
+                case 9 or 10:
+                    type = DustID.HallowedPlants;
+                    break;
+                default:
+                    type = DustID.GrassBlades;
+                    break;
+            }
+            return true;
+        }        
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
         {
@@ -82,7 +99,7 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.MiracleTallJungleFlower>(),
                              ModContent.ItemType<Items.MiracleTallHallowedGrass>(),
                              ModContent.ItemType<Items.MiracleTallHallowedFlower>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 32)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 34)]);
             return true;
         }
     }

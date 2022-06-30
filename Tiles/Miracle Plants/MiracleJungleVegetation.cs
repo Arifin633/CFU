@@ -45,7 +45,8 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(25, 195, 85));
-            DustType = 0;
+            HitSound = SoundID.Grass;
+            DustType = DustID.JunglePlants;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

@@ -29,11 +29,35 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(25, 195, 85));
-            DustType = 0;
+            HitSound = SoundID.Grass;
             TileID.Sets.DrawsWalls[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameY / 18)
+            {
+                case 0:
+                    type = DustID.GrassBlades;
+                    break;
+                case 1:
+                    type = DustID.HallowedPlants;
+                    break;
+                case 2:
+                    type = DustID.JunglePlants;
+                    break;
+                case 3:
+                    type = DustID.CrimsonPlants;
+                    break;
+                case 4:
+                    type = DustID.CorruptPlants;
+                    break;
+            }
+            return true;
+        }        
+
+        
         public override bool PreDraw(int i, int j, SpriteBatch _) => (Main.tile[i, j].LiquidAmount == 0);
 
         public override bool Drop(int i, int j)

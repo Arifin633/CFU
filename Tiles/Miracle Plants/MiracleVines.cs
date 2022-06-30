@@ -34,7 +34,7 @@ namespace CFU.Tiles
             // TileObjectData.newAlternate.AnchorTop = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             // TileObjectData.addAlternate(144);
             TileObjectData.addTile(Type);
-            DustType = 0;
+            HitSound = SoundID.Grass;
             AddMapEntry(new Color(14, 152, 64));
         }
 
@@ -69,6 +69,31 @@ namespace CFU.Tiles
             return 1;
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameY / 18)
+            {
+                case 0:
+                case 2:
+                    type = DustID.GrassBlades;
+                    break;
+                case 1:
+                    type = DustID.CrimsonPlants;
+                    break;
+                case 3:
+                    type = DustID.HallowedPlants;
+                    break;
+                case 4:
+                    type = DustID.JunglePlants;
+                    break;
+                case 5:
+                case 6:
+                    type = DustID.Bone;
+                    break;
+            }
+            
+            return true;
+        }        
 
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {

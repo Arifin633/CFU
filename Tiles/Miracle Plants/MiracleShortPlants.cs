@@ -87,9 +87,40 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(25, 195, 85));
-            DustType = 0;
+            HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameY / 22)
+            {
+                case >= 0 and <= 6:
+                case 16:
+                    type = DustID.GrassBlades;
+                    break;
+                case 7 or 8:
+                case 17:
+                    type = (Main.rand.Next(2) != 0)
+                        ? DustID.CorruptPlants : DustID.Demonite;
+                    break;
+                case 9 or 10:
+                case 18:
+                    type = DustID.JunglePlants;
+                    break;
+                case 11:
+                    type = DustID.Bone;
+                    break;
+                case 12 or 13:
+                    type = DustID.HallowedPlants;
+                    break;
+                case 14 or 15:
+                case 19:
+                    type = DustID.CrimsonPlants;
+                    break;
+            }
+            return true;
+        }        
 
         public override bool Drop(int i, int j)
         {

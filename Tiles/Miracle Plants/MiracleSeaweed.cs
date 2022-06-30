@@ -30,7 +30,8 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(30);
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(25, 193, 97));
-            DustType = 7;
+            HitSound = SoundID.Grass;
+            DustType = DustID.GrassBlades;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

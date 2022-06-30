@@ -35,9 +35,35 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(6);
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(25, 193, 97));
-            DustType = 7;
+            HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameY / 18)
+            {
+                case 0:
+                    type = DustID.GrassBlades;
+                    break;
+                case 1:
+                    type = DustID.JunglePlants;
+                    break;
+                case 2:
+                    type = DustID.HallowedPlants;
+                    break;
+                case 3:
+                    type = DustID.CrimsonPlants;
+                    break;
+                case 4:
+                    type = DustID.CorruptPlants;
+                    break;
+                case 5:
+                    type = DustID.Bone;
+                    break;
+            }
+            return true;
+        }        
 
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {
