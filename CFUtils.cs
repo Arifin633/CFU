@@ -1,10 +1,8 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.Localization;
-using Tiles = CFU.Tiles;
 
 namespace ChadsFurnitureUpdated
 {
@@ -203,21 +201,6 @@ namespace ChadsFurnitureUpdated
                     Recipe.FindRecipes();
                 }
             }
-        }
-
-        public static string ContainerName(int i, int j)
-        {
-            Tile tile = Main.tile[i, j];
-            if (tile.TileType == ModContent.TileType<Tiles.Chests>())
-                return Tiles.Chests.Names[(tile.TileFrameX / 36)];
-            else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
-                return Tiles.Dressers.Names[(tile.TileFrameX / 54)];
-            else if (tile.TileType == ModContent.TileType<Tiles.Cabinets>())
-                return Tiles.Cabinets.Names[(tile.TileFrameX / 36)];
-            /* Since we fall back to using the original TileLoader function in
-               all but the specific cases that should return a different value,
-               this function should never cause any problems. */
-            else return TileLoader.ContainerName(tile.TileType);
         }
 
         public static Terraria.Recipe.ConsumeItemCallback Print = delegate (Recipe recipe, int type, ref int amount) { amount = 0; };
