@@ -94,6 +94,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Potion Holder");
             AddMapEntry(new Color(155, 183, 193), name);
+            DustType = -1;
         }
 
         public override void MouseOver(int i, int j)

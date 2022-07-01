@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -19,6 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(1, 6);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
+            DustType = DustID.Stone;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Statue");
             AddMapEntry(new Color(99, 99, 99), name);

@@ -25,7 +25,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Gun Rack");
             AddMapEntry(new Color(191, 142, 111), name);
-            DustType = 7;
+            DustType = DustID.WoodFurniture;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

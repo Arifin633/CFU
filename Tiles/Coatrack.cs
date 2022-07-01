@@ -25,7 +25,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Coatrack");
             AddMapEntry(new Color(191, 142, 111), name);
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

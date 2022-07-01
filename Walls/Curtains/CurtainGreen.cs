@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CFU.Walls
@@ -12,7 +13,7 @@ namespace CFU.Walls
         public override void SetStaticDefaults()
         {
             Main.wallHouse[Type] = true;
-            DustType = 0;
+            DustType = DustID.GemEmerald;
             AddMapEntry(new Color(150, 150, 150));
         }
 

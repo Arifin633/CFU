@@ -21,6 +21,7 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
+            DustType = -1;
             name.SetDefault("Telescope");
             AddMapEntry(new Color(81, 81, 89), name);
             TileID.Sets.DisableSmartCursor[Type] = true;

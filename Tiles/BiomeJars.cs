@@ -52,7 +52,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Biome Jar");
             AddMapEntry(new Color(133, 213, 247), name);
-            DustType = 0;
+            HitSound = SoundID.Shatter;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
@@ -65,6 +65,35 @@ namespace CFU.Tiles
                 (Main.tile[i, j].TileFrameY == 0) &&
                 (Main.tile[i, j].TileFrameX / 18) % 2 != 0)
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
+        }
+
+        
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameX / 36)
+            {
+                case 0:
+                    type = (Main.rand.Next(2) == 0)
+                        ? DustID.Glass : DustID.Grass;
+                    break;
+                case 1:
+                    type = (Main.rand.Next(2) == 0)
+                        ? DustID.Glass : DustID.JungleGrass;
+                    break;
+                case 2:
+                    type = (Main.rand.Next(2) == 0)
+                        ? DustID.Glass : DustID.CorruptPlants;
+                    break;
+                case 3:
+                    type = (Main.rand.Next(2) == 0)
+                        ? DustID.Glass : DustID.CrimsonPlants;
+                    break;
+                case 4:
+                    type = (Main.rand.Next(2) == 0)
+                        ? DustID.Glass : DustID.HallowedPlants;
+                    break;
+            }
+            return true;
         }
 
         public override void KillMultiTile(int i, int j, int tileFrameX, int tileFrameY)

@@ -26,7 +26,8 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Tip Jar");
             AddMapEntry(new Color(133, 213, 247), name);
-            DustType = 7;
+            DustType = DustID.Glass;
+            HitSound = SoundID.Shatter;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

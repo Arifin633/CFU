@@ -24,6 +24,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Brazier");
+            DustType = -1;
             AddMapEntry(new Color(81, 81, 89), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);

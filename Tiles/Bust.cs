@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -34,6 +35,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bust");
             AddMapEntry(new Color(168, 178, 204), name);
+            DustType = DustID.Marble;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

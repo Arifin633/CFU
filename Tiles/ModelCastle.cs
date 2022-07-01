@@ -28,7 +28,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Model Castle");
             AddMapEntry(new Color(99, 99, 99), name);
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

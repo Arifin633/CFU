@@ -25,7 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newSubTile.CoordinateHeights = new int[] { 16, 16, 16 };
             TileObjectData.addSubTile(2);
             TileObjectData.addTile(Type);
-            DustType = 0;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Tapestry");

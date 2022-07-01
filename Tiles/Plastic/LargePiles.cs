@@ -70,7 +70,6 @@ namespace CFU.Tiles
             
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(191, 142, 111));
-            DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

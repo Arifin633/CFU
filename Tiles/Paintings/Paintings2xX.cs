@@ -32,7 +32,7 @@ namespace CFU.Tiles
                 TileObjectData.addSubTile(i);
             }
             TileObjectData.addTile(Type);
-            DustType = 0;
+            DustType = -1;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Painting");
             AddMapEntry(new Color(191, 142, 111), name);

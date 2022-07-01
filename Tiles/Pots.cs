@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
+using Terraria.Audio;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -26,13 +28,78 @@ namespace CFU.Tiles
                 TileObjectData.addSubTile(i);
             }
             TileObjectData.addTile(Type);
-            // SoundType = 13;
-            // SoundStyle = 0;
+            HitSound = null;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Pot");
             AddMapEntry(new Color(111, 71, 61), name);
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            int frameY = Main.tile[i, j].TileFrameY;
+            frameY = (frameY <= 36) ? frameY : (frameY - 36);
+            switch (frameY / 108)
+            {
+                case 0:
+                    type = DustID.Pot;
+                    break;
+                case 1:
+                    type = DustID.Cobalt;
+                    break;
+                case 2:
+                    type = DustID.UnusedBrown;
+                    break;
+                case 3:
+                    type = DustID.Bone;
+                    break;
+                case 4:
+                    type = DustID.Ash;
+                    break;
+                case 5:
+                case 6:
+                    type = DustID.CorruptGibs;
+                    break;
+                case 7:
+                    type = DustID.Blood;
+                    break;
+                case 8:
+                    type = DustID.Dirt;
+                    break;
+                case 9:
+                    type = DustID.Lihzahrd;
+                    break;
+                case 10:
+                    type = DustID.MarblePot;
+                    break;
+                case 11:
+                    type = DustID.DesertPot;
+                    break;
+            }
+            return true;
+        }
+
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
+        {
+            offsetY = 2;
+        }
+
+        public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        {
+            int frameY = Main.tile[i, j].TileFrameY;
+            frameY = (frameY <= 36) ? frameY : (frameY - 36);
+            switch (frameY / 108)
+            {
+                case 5:
+                case 6:
+                case 7:
+                    SoundEngine.PlaySound(SoundID.NPCDeath1, new Vector2(i * 16, j * 16));
+                    break;
+                default:
+                    SoundEngine.PlaySound(SoundID.Shatter, new Vector2(i * 16, j * 16));
+                    break;
+            }
+        }
+        
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.ForestPot>(),

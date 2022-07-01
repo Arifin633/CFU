@@ -13,7 +13,7 @@ namespace CFU.Walls
             Main.wallHouse[Type] = true;
             Main.wallLight[Type] = true;
             WallID.Sets.AllowsWind[Type] = true;
-            DustType = 0;
+            DustType = DustID.PalmWood;
             AddMapEntry(new Color(150, 150, 150));
         }
 

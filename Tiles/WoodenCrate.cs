@@ -27,7 +27,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Wooden Crate");
             AddMapEntry(new Color(181, 172, 190), name);
-            DustType = 0;
+            DustType = DustID.WoodFurniture;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

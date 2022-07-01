@@ -51,13 +51,11 @@ namespace CFU.Tiles
             
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(191, 142, 111));
-            DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool CreateDust(int i, int j, ref int type)
         {
-            int item = 0;
             int style = (Main.tile[i, j].TileFrameX / 36);
             if (Main.tile[i, j].TileFrameY != 0) style += 53;
             switch (style)

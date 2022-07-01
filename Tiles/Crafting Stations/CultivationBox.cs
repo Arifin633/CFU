@@ -25,8 +25,14 @@ namespace CFU.Tiles
             HitSound = SoundID.Shatter;
             DustType = -1;
             AddMapEntry(new Color(133, 213, 247), name);
-            DustType = 7;
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            type = (Main.rand.Next(3) == 0)
+                ? DustID.Glass : DustID.Grass;
+            return true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

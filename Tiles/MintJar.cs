@@ -26,7 +26,8 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Jar O' Mints");
             AddMapEntry(new Color(133, 213, 247), name);
-            DustType = 7;
+            HitSound = SoundID.Shatter;
+            DustType = DustID.Glass;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

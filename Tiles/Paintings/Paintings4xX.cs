@@ -29,7 +29,7 @@ namespace CFU.Tiles
             TileObjectData.newSubTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16 };
             TileObjectData.addSubTile(1);
             TileObjectData.addTile(Type);
-            DustType = 0;
+            DustType = -1;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Painting");
             AddMapEntry(new Color(191, 142, 111), name);

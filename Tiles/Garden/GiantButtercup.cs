@@ -27,7 +27,6 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Plant");
             AddMapEntry(new Color(14, 152, 64), name);
-            DustType = 7;
             HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }

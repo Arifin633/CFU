@@ -18,7 +18,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.Width = 4;
             TileObjectData.addTile(Type);
-            DustType = 0;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Animal Skin");

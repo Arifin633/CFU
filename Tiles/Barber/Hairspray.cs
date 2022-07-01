@@ -26,7 +26,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 18;
             TileObjectData.addTile(Type);
-            DustType = -1;
+            DustType = DustID.Glass;
             HitSound = SoundID.Shatter;
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();

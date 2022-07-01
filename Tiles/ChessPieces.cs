@@ -44,8 +44,36 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Chess");
             AddMapEntry(new Color(168, 178, 204), name);
-            DustType = 7;
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameX / 36)
+            {
+                case 0:
+                case 2:
+                case 4:
+                case 5:
+                case 8:
+                case 9:
+                case 12:
+                case 14:
+                    type = DustID.Marble;
+                    break;
+
+                case 1:
+                case 3:
+                case 6:
+                case 7:
+                case 10:
+                case 11:
+                case 13:
+                case 15:
+                    type = DustID.Asphalt;
+                    break;
+            }
+            return true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

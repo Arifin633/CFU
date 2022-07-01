@@ -59,6 +59,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fishhook");
             AddMapEntry(new Color(155, 183, 193), name);
+            DustType = -1;
         }
 
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)

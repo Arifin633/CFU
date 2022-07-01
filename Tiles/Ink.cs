@@ -25,7 +25,8 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Ink");
             AddMapEntry(new Color(133, 213, 247), name);
-            DustType = 0;
+            HitSound = SoundID.Shatter;
+            DustType = DustID.Asphalt;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

@@ -19,7 +19,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Radiator");
             AddMapEntry(new Color(81, 81, 89), name);
-            DustType = 0;
+            DustType = DustID.Iron;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

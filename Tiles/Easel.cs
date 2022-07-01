@@ -31,6 +31,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Easel");
             AddMapEntry(new Color(191, 142, 111), name);
+            DustType = -1;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

@@ -19,7 +19,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.addTile(Type);
-            DustType = 0;
+            DustType = -1;
+            HitSound = SoundID.Shatter;
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("World Map");

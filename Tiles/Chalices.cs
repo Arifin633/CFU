@@ -20,7 +20,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Chalices");
             AddMapEntry(new Color(224, 160, 42), name);
-            DustType = 0;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

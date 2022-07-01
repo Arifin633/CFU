@@ -31,6 +31,8 @@ namespace CFU.Tiles
             };
             TileObjectData.newTile.Origin = new Point16(1, 0);
             TileObjectData.addTile(Type);
+            DustType = -1;
+            HitSound = SoundID.Item37;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bell");
             AddMapEntry(new Color(224, 160, 42), name);

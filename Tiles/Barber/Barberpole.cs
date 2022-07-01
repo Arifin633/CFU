@@ -55,7 +55,7 @@ namespace CFU.Tiles
             name.SetDefault("Barber's Pole");
             AddMapEntry(new Color(133, 213, 247), name);
             AnimationFrameHeight = 36;
-            DustType = -1;
+            DustType = DustID.Glass;
             HitSound = SoundID.Shatter;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }

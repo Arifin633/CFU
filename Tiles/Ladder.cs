@@ -19,7 +19,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Ladder");
             AddMapEntry(new Color(191, 142, 111), name);
-            DustType = 0;
+            DustType = DustID.Dirt;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

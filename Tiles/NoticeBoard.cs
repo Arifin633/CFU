@@ -19,10 +19,9 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.addTile(Type);
-            DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Notice Board");
+            DustType = -1;
             AddMapEntry(new Color(191, 142, 111), name);
         }
 

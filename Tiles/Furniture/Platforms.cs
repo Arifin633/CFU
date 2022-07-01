@@ -32,7 +32,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
             AddMapEntry(new Color(181, 172, 190));
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Platforms };
         }

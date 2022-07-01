@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -25,11 +26,30 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleMultiplier = 6;
             TileObjectData.newTile.RandomStyleRange = 6;
             TileObjectData.addTile(Type);
-            // SoundType = 18;
-            // SoundStyle = 0;
+            HitSound = SoundID.Coins;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Coin Stash");
             AddMapEntry(new Color(107, 81, 65), name);
+        }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameY / 38)
+            {
+                case 0:
+                    type = DustID.Copper;
+                    break;
+                case 1:
+                    type = DustID.Silver;
+                    break;
+                case 2:
+                    type = DustID.Gold;
+                    break;
+                case 3:
+                    type = DustID.Platinum;
+                    break;
+            }
+            return true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

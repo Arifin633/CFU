@@ -31,6 +31,8 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("World Map");
             AddMapEntry(new Color(191, 142, 111), name);
+            DustType = -1;
+            HitSound = SoundID.Shatter;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

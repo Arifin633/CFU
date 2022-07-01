@@ -51,7 +51,6 @@ namespace CFU.Tiles
             name = CreateMapEntryName("SandstoneChest");
             name.SetDefault(Names[3]);
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
-            DustType = 0;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Containers };
         }
