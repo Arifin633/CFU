@@ -18,7 +18,8 @@ namespace CFU.Tiles
             Main.tileMerge[TileID.Dirt][Type] = true;
             Main.tileBlockLight[Type] = true;
             Main.tileLargeFrames[Type] = 1;
-            DustType = 0;
+            DustType = DustID.MothronEgg;
+            HitSound = SoundID.Tink;
             AddMapEntry(new Color(160, 156, 146));
         }
 

@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.ID;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
@@ -13,7 +14,8 @@ namespace CFU.Tiles
             Main.tileSolid[Type] = false;
             Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = false;
-            DustType = 0;
+            DustType = DustID.GrassBlades;
+            HitSound = SoundID.Grass;
             AddMapEntry(new Color(160, 156, 146));
         }
 

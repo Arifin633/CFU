@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 
@@ -14,7 +15,7 @@ namespace CFU.Tiles
             Main.tileMergeDirt[Type] = false;
             ChadsFurnitureUpdated.CFUtils.SetupTileMerge(Type, mergeTo: false);
             Main.tileBlockLight[Type] = true;
-            DustType = 0;
+            DustType = DustID.Asphalt;
             AddMapEntry(new Color(36, 36, 53));
         }
 

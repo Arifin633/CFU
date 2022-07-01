@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -21,6 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(2, 6);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
+            DustType = DustID.Stone;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fountain");
             AddMapEntry(new Color(99, 99, 99), name);

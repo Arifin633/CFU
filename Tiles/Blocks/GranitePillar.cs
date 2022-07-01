@@ -15,7 +15,8 @@ namespace CFU.Tiles
             Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = false;
             TileID.Sets.IsBeam[Type] = true;
-            DustType = 0;
+            DustType = DustID.Granite;
+            HitSound = SoundID.Tink;
             AddMapEntry(new Color(50, 46, 104));
         }
         public override bool Drop(int i, int j)

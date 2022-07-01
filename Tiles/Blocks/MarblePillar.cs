@@ -15,7 +15,8 @@ namespace CFU.Tiles
             Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = false;
             TileID.Sets.IsBeam[Type] = true;
-            DustType = 0;
+            DustType = DustID.Marble;
+            HitSound = SoundID.Tink;
             AddMapEntry(new Color(168, 178, 204));
         }
 

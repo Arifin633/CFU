@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.ID;
 using ChadsFurnitureUpdated;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -20,6 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(1, 3);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
+            DustType = DustID.Marble;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fountain");
             AddMapEntry(new Color(168, 178, 204), name);

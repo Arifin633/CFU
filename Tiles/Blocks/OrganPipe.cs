@@ -16,7 +16,7 @@ namespace CFU.Tiles
             Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = false;
             TileID.Sets.IsBeam[Type] = true;
-            DustType = 0;
+            DustType = DustID.Bone;
             AddMapEntry(new Color(81, 81, 89));
         }
 
