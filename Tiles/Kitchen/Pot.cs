@@ -20,7 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(81, 81, 89));
-            DustType = 0;
+            DustType = DustID.Iron;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

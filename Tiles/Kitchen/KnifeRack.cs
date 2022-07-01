@@ -20,7 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.Origin = new Point16(0, 0);
             TileObjectData.addTile(Type);
-            DustType = 0;
+            DustType = DustID.WoodFurniture;
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Knife Rack");

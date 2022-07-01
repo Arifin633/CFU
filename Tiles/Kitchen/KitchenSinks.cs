@@ -26,7 +26,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Kitchen Sink");
             AddMapEntry(new Color(81, 81, 89), name);
-            DustType = 0;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Sinks };
         }

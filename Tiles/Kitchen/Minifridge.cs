@@ -41,8 +41,8 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Minifridge");
             AddMapEntry(new Color(81, 81, 89), name, MapChestName);
-            // dustType = 0;
-            // disableSmartCursor = true;
+            DustType = -1;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Containers };
         }
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;

@@ -28,7 +28,8 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Hanging Herb");
             AddMapEntry(new Color(72, 145, 125), name);
-            DustType = 0;
+            HitSound = SoundID.Grass;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

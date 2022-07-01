@@ -27,7 +27,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Keg");
             AddMapEntry(new Color(191, 142, 111), name);
-            DustType = 0;
+            DustType = DustID.WoodFurniture;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Kegs };
         }

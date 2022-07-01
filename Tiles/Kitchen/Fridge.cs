@@ -29,7 +29,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("ReFridgerator");
             AddMapEntry(new Color(81, 81, 89), name);
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
