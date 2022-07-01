@@ -40,12 +40,32 @@ namespace CFU.Tiles
             name = CreateMapEntryName("RedPlant");
             name.SetDefault("Plant");
             AddMapEntry(new Color(198, 19, 78), name);
-            DustType = 7;
+            HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 38);
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameY / 38)
+            {
+                case 0:
+                    type = DustID.CorruptPlants;
+                    break;
+                case 1:
+                    type = DustID.Torch;
+                    break;
+                case 2:
+                    type = DustID.GrassBlades;
+                    break;
+                case 3:
+                    type = DustID.Bone;
+                    break;
+            }
+            return true;
+        }
+        
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short _1, ref short _2)
         {
             int type = ModContent.TileType<Tiles.PlantPots>();

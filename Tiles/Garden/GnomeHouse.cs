@@ -26,7 +26,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Gnome House");
             AddMapEntry(new Color(222, 152, 127), name);
-            DustType = 7;
+            DustType = DustID.Bone;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

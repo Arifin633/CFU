@@ -19,7 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 22 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Pot");

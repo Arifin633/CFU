@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
+using Terraria.Audio;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -31,8 +32,21 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Plants");
             AddMapEntry(new Color(14, 152, 64), name);
-            DustType = 7;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        {
+            if (Main.tile[i, j].TileFrameX >= 228 &&
+                Main.tile[i, j].TileFrameX < 342)
+            {
+                SoundEngine.PlaySound(SoundID.Dig, new Vector2(i * 16, j * 16));
+            }
+            else
+            {
+                SoundEngine.PlaySound(SoundID.Grass, new Vector2(i * 16, j * 16));
+            }
         }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short _1, ref short _2)

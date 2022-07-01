@@ -28,7 +28,15 @@ namespace CFU.Tiles
             name.SetDefault("Plant");
             AddMapEntry(new Color(14, 152, 64), name);
             DustType = 7;
+            HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            type = (Main.rand.Next(2) == 0)
+                ? DustID.Sunflower : DustID.GrassBlades;
+            return true;
         }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short _1, ref short _2)

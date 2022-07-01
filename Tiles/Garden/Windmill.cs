@@ -25,6 +25,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Windmill");
             AddMapEntry(new Color(191, 142, 111), name);
+            DustType = -1;
             AnimationFrameHeight = 40;
         }
 
