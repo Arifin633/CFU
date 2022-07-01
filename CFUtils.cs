@@ -1,8 +1,10 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.Localization;
+using Tiles = CFU.Tiles;
 
 namespace ChadsFurnitureUpdated
 {
@@ -205,7 +207,6 @@ namespace ChadsFurnitureUpdated
 
         public static void SetupTileMerge(int type, bool mergeTo = true, bool mergeFrom = true)
         {
-            /* This array is missing all 1.4 tiles. */
             int[] tiles =
                 { TileID.Stone,
                   TileID.Grass,
@@ -377,14 +378,71 @@ namespace ChadsFurnitureUpdated
                   TileID.TeamBlockPink,
                   TileID.TeamBlockWhite,
                   TileID.SandFallBlock,
-                  TileID.SnowFallBlock };
+                  TileID.SnowFallBlock,
+                  TileID.IronBrick,
+                  TileID.LeadBrick,
+                  TileID.LesionBlock,
+                  TileID.GolfGrass,
+                  TileID.CrimstoneBrick,
+                  TileID.SmoothSandstone,
+                  TileID.CrackedBlueDungeonBrick,
+                  TileID.CrackedGreenDungeonBrick,
+                  TileID.CrackedPinkDungeonBrick,
+                  TileID.GolfGrassHallowed,
+                  TileID.ShellPile,
+                  TileID.AntiPortalBlock,
+                  TileID.Spider,
+                  TileID.SolarBrick,
+                  TileID.VortexBrick,
+                  TileID.NebulaBrick,
+                  TileID.StardustBrick,
+                  TileID.GoldStarryGlassBlock,
+                  TileID.BlueStarryGlassBlock,
+                  TileID.GreenMossBrick,
+                  TileID.BrownMossBrick,
+                  TileID.RedMossBrick,
+                  TileID.BlueMossBrick,
+                  TileID.PurpleMossBrick,
+                  TileID.LavaMossBrick,
+                  TileID.KryptonMoss,
+                  TileID.KryptonMossBrick,
+                  TileID.XenonMoss,
+                  TileID.XenonMossBrick,
+                  TileID.ArgonMoss,
+                  TileID.ArgonMossBrick,
+                  TileID.BambooBlock,
+                  TileID.LargeBambooBlock,
+                  TileID.AmberStoneBlock,
+
+                  ModContent.TileType<Tiles.Cobweb>(),
+                  ModContent.TileType<Tiles.GraniteBrick>(),
+                  ModContent.TileType<Tiles.GranitePillar>(),
+                  ModContent.TileType<Tiles.Ivy>(),
+                  ModContent.TileType<Tiles.LeadGlass>(),
+                  ModContent.TileType<Tiles.LimestoneBrick>(),
+                  ModContent.TileType<Tiles.LimestoneFrieze>(),
+                  ModContent.TileType<Tiles.LimestoneSlabArch>(),
+                  ModContent.TileType<Tiles.LimestoneSlab>(),
+                  ModContent.TileType<Tiles.MarblePillar>(),
+                  ModContent.TileType<Tiles.MarbleSlab>(),
+                  // ModContent.TileType<Tiles.OrganPipe>(),
+                  ModContent.TileType<Tiles.SandPillar>(),
+                  ModContent.TileType<Tiles.SandstoneBrick>(),
+                  ModContent.TileType<Tiles.SandstonePillar>(),
+                  ModContent.TileType<Tiles.Shingles>(),
+                  ModContent.TileType<Tiles.StoneFrieze>(),
+                  ModContent.TileType<Tiles.StonePillar>(),
+                  ModContent.TileType<Tiles.StoneSlabArch>() };
 
             foreach (int tile in tiles)
             {
-                if (mergeFrom)
-                    Main.tileMerge[type][tile] = true;
-                if (mergeTo)
-                    Main.tileMerge[tile][type] = true;
+                if (tile != type)
+                {
+                    if (mergeFrom)
+                        Main.tileMerge[type][tile] = true;
+                    if (mergeTo)
+                        Main.tileMerge[tile][type] = true;
+                }
             }
         }
     }
