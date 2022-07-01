@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Large Stone Spire");
-            Tooltip.SetDefault("'A Stone ornament'");
+            Tooltip.SetDefault("'A stone ornament'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

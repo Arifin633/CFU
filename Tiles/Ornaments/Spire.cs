@@ -30,12 +30,23 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Spire");
             AddMapEntry(new Color(160, 156, 146), name);
-            DustType = 7;
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            if (Main.tile[i, j].TileFrameX >= 72)
+            {
+                type = DustID.Stone;
+            }
+            else
+            {
+                type = DustID.MothronEgg;
+            }
+            return true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Stone Hanging Gargoyle");
-            Tooltip.SetDefault("'A Stone ornament'");
+            Tooltip.SetDefault("'A stone ornament'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

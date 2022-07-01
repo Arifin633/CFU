@@ -29,9 +29,20 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Spire");
             AddMapEntry(new Color(160, 156, 146), name);
-            DustType = 1;
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            if (Main.tile[i, j].TileFrameX >= 36)
+            {
+                type = DustID.Stone;
+            }
+            else
+            {
+                type = DustID.MothronEgg;
+            }
+            return true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
