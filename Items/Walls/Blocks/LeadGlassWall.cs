@@ -35,7 +35,7 @@ namespace CFU.Items
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            Mod.CreateRecipe(ModContent.ItemType<Items.LeadGlass>())
+            Recipe.Create(ModContent.ItemType<Items.LeadGlass>())
             .AddIngredient(this, 4)
             .AddTile(TileID.WorkBenches)
             .Register();

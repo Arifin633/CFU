@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
@@ -34,7 +35,7 @@ namespace CFU.Items
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            Mod.CreateRecipe(ModContent.ItemType<Items.AltSandstoneBrick>())
+            Recipe.Create(ModContent.ItemType<Items.AltSandstoneBrick>())
             .AddIngredient(this, 4)
             .AddTile(TileID.WorkBenches)
             .Register();

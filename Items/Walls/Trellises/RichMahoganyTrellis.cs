@@ -35,7 +35,7 @@ namespace CFU.Items
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            Mod.CreateRecipe(ItemID.RichMahogany)
+            Recipe.Create(ItemID.RichMahogany)
             .AddIngredient(this, 4)
             .AddTile(TileID.WorkBenches)
             .Register();

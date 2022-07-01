@@ -38,7 +38,7 @@ namespace CFU.Items
                 .AddTile(TileID.WorkBenches)
                 .Register();
 
-            Mod.CreateRecipe(ItemID.GoldCoin, 10)
+            Recipe.Create(ItemID.GoldCoin, 10)
                 .AddIngredient(Type)
                 .AddTile(TileID.WorkBenches)
                 .Register();

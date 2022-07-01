@@ -35,7 +35,7 @@ namespace CFU.Items
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            Mod.CreateRecipe(ItemID.BorealWood)
+            Recipe.Create(ItemID.BorealWood)
             .AddIngredient(this, 4)
             .AddTile(TileID.WorkBenches)
             .Register();

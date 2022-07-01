@@ -35,7 +35,7 @@ namespace CFU.Items
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            Mod.CreateRecipe(ModContent.ItemType<Items.LimestoneBrick>())
+            Recipe.Create(ModContent.ItemType<Items.LimestoneBrick>())
             .AddIngredient(this, 4)
             .AddTile(TileID.WorkBenches)
             .Register();

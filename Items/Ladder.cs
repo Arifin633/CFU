@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
@@ -35,7 +36,7 @@ namespace CFU.Items
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            Mod.CreateRecipe(ItemID.Wood, 2)
+            Recipe.Create(ItemID.Wood, 2)
             .AddIngredient(this)
             .AddTile(TileID.WorkBenches)
             .Register();
