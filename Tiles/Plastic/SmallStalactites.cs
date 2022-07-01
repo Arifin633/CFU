@@ -70,7 +70,7 @@ namespace CFU.Tiles
                     type = DustID.Marble;
                     break;
                 case 7:
-                    type = DustID.t_Honey;
+                    type = DustID.Hive;
                     break;
                 case 8:
                     type = DustID.Ice_Pink;

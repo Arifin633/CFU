@@ -74,6 +74,100 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            int style = (Main.tile[i, j].TileFrameX / 54);
+            style += (35 * (Main.tile[i, j].TileFrameY / 36));
+            switch (style)
+            {
+                case <= 2:
+                    type = DustID.Stone;
+                    break;
+                case > 2 and <= 5:
+                    type = DustID.Mud;
+                    break;
+                case > 5 and <= 8:
+                    type = DustID.Ash;
+                    break;
+                case > 8 and <= 13:
+                    type = DustID.Web;
+                    break;
+                case > 13 and <= 16:
+                    type = DustID.Stone;
+                    break;
+                case 17:
+                    type = DustID.Stone;
+                    break;
+                case > 17 and <= 20:
+                    type = DustID.Lihzahrd;
+                    break;
+                case 21 or 22:
+                    type = DustID.Dirt;
+                    break;
+                case 23:
+                    type = DustID.Iron;
+                    break;
+                case 24:
+                    type = DustID.Stone;
+                    break;
+                case 25:
+                    type = DustID.Dirt;
+                    break;
+                case 26:
+                    type = DustID.Bone;
+                    break;
+                case 27:
+                    type = DustID.Iron;
+                    break;
+                case 28:
+                    type = DustID.Dirt;
+                    break;
+                case > 28 and <= 34:
+                    type = DustID.Sluggy;
+                    break;
+                case > 34 and <= 40:
+                    type = DustID.Granite;
+                    break;
+                case > 40 and <= 46:
+                    type = DustID.Marble;
+                    break;
+                case > 46 and <= 49:
+                    type = DustID.Dirt;
+                    break;
+                case > 49 and <= 51:
+                    type = DustID.Grass;
+                    break;
+                case > 51 and <= 61:
+                    type = DustID.Bone;
+                    break;
+                case > 61 and <= 70:
+                    type = DustID.Stone;
+                    break;
+                case 71 or 72:
+                    type = DustID.Copper;
+                    break;
+                case 73 or 74:
+                    type = DustID.Silver;
+                    break;
+                case 75 or 76:
+                    type = DustID.Gold;
+                    break;
+                case > 76 and <= 79:
+                    type = DustID.Dirt;
+                    break;
+                case 80:
+                    type = DustID.Gold;
+                    break;
+                case > 80 and <= 86:
+                    type = DustID.Ice;
+                    break;
+                case > 86 and <= 89:
+                    type = DustID.Stone;
+                    break;
+            }
+            return true;
+        }
+
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
         {
             offsetY = 2;

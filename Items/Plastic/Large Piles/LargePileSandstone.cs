@@ -27,7 +27,7 @@ namespace CFU.Items
             Item.consumable = true;
             Item.value = 0;
             Item.createTile = ModContent.TileType<Tiles.LargePiles>();
-            Item.placeStyle = 3-1;
+            Item.placeStyle = 29;
         }
 
         public override void AddRecipes()

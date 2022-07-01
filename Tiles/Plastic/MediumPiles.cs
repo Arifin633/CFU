@@ -55,6 +55,65 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            int item = 0;
+            int style = (Main.tile[i, j].TileFrameX / 36);
+            if (Main.tile[i, j].TileFrameY != 0) style += 53;
+            switch (style)
+            {
+                case <= 5:
+                    type = DustID.Stone;
+                    break;
+                case > 5 and <= 15:
+                    type = DustID.Bone;
+                    break;
+                case 16:
+                    type = DustID.Copper;
+                    break;
+                case 17:
+                    type = DustID.Silver;
+                    break;
+                case 18:
+                    type = DustID.Gold;
+                    break;
+                case > 18 and <= 24:
+                    type = DustID.Stone;
+                    break;
+                case > 24 and <= 30:
+                    type = DustID.Ice;
+                    break;
+                case > 30 and <= 32:
+                    type = DustID.Dirt;
+                    break;
+                case 33:
+                    type = DustID.Stone;
+                    break;
+                case > 33 and <= 37:
+                    type = DustID.Web;
+                    break;
+                case > 37 and <= 40:
+                    type = DustID.Stone;
+                    break;
+                case > 40 and <= 46:
+                    type = DustID.Sluggy;
+                    break;
+                case > 46 and <= 52:
+                    type = DustID.Granite;
+                    break;
+                case > 52 and <= 58:
+                    type = DustID.Marble;
+                    break;
+                case > 58 and <= 61:
+                    type = DustID.Dirt;
+                    break;
+                case > 61 and <= 64:
+                    type = DustID.Sand;
+                    break;
+            }
+            return true;
+        }
+        
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
         {
             offsetY = 2;

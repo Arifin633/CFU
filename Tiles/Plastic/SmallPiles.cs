@@ -47,6 +47,47 @@ public override string Texture => "CFU/Textures/Tiles/Plastic/SmallPiles";
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameX / 18)
+            {
+                case <= 5:
+                    type = DustID.Stone;
+                    break;
+                case > 5 and <= 11:
+                    type = DustID.Dirt;
+                    break;
+                case > 11 and <= 27:
+                    type = DustID.Bone;
+                    break;
+                case > 27 and <= 35:
+                    type = DustID.Dirt;
+                    break;
+                case > 35 and <= 47:
+                    type = DustID.Ice;
+                    break;
+                case > 47 and <= 53:
+                    type = DustID.Web;
+                    break;
+                case > 53 and <= 59:
+                    type = DustID.Sluggy;
+                    break;
+                case > 59 and <= 65:
+                    type = DustID.Granite;
+                    break;
+                case > 65 and <= 71:
+                    type = DustID.Marble;
+                    break;
+                case 72:
+                    type = DustID.Dirt;
+                    break;
+                case > 72 and <= 76:
+                    type = DustID.Sand;
+                    break;
+            }            
+            return true;
+        }
+        
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
         {
             offsetY = 2;
