@@ -55,9 +55,9 @@ namespace CFU.Tiles
             name.SetDefault("Barber's Pole");
             AddMapEntry(new Color(133, 213, 247), name);
             AnimationFrameHeight = 36;
-            DustType = 0;
+            DustType = -1;
+            HitSound = SoundID.Shatter;
             TileID.Sets.DisableSmartCursor[Type] = true;
-            //	torch = true;
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

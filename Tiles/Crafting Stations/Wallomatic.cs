@@ -24,6 +24,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Wall-O-Matic");
+            DustType = -1;
             AddMapEntry(new Color(81, 81, 89), name);
             AnimationFrameHeight = 54;
         }

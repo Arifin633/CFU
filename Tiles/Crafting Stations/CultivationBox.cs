@@ -22,6 +22,8 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Cultivation Box");
+            HitSound = SoundID.Shatter;
+            DustType = -1;
             AddMapEntry(new Color(133, 213, 247), name);
             DustType = 7;
             TileID.Sets.DisableSmartCursor[Type] = true;

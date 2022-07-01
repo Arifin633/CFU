@@ -42,6 +42,13 @@ namespace CFU.Tiles
             b = 0.5f;
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            type = (Main.rand.Next(2) == 0)
+                ? DustID.Iron : DustID.Stone;
+            return true;
+        }
+
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             CFUTileDraw.ForgeDrawSmoke(i, j, spriteBatch, "BlacksmithSmoke", 32, 26, Type);

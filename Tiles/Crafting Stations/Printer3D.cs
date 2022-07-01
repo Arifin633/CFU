@@ -22,6 +22,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("3D Printer");
+            DustType = -1;
             AddMapEntry(new Color(81, 81, 89), name);
             AnimationFrameHeight = 36;
         }

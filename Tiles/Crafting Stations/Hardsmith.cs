@@ -60,6 +60,33 @@ namespace CFU.Tiles
             }
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            int dust1 = 0;
+            int dust2 = 0;
+            switch (Main.tile[i, j].TileFrameX / 72)
+            {
+                case 0:
+                    dust1 = DustID.Adamantite;
+                    dust2 = DustID.Mythril;
+                    break;
+                case 1:
+                    dust1 = DustID.Adamantite;
+                    dust2 = DustID.Orichalcum;
+                    break;
+                case 2:
+                    dust1 = DustID.Titanium;
+                    dust2 = DustID.Mythril;
+                    break;
+                case 3:
+                    dust1 = DustID.Titanium;
+                    dust2 = DustID.Orichalcum;
+                    break;
+            }
+            type = (Main.rand.Next(2) == 0) ? dust2 : dust1;
+            return true;
+        }
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int item = 0;
