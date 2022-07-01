@@ -91,8 +91,9 @@ namespace CFU.Tiles
         public override void HitWire(int i, int j)
         {
             if (Main.tile[i, j].TileFrameX >= 54)
-            { CFUtils.ShiftTileX(i, j, -54, skipWire: true); }
-            else { CFUtils.ShiftTileX(i, j, 54, skipWire: true); }
+                CFUtils.ShiftTileX(i, j, -54, skipWire: true);
+            else
+                CFUtils.ShiftTileX(i, j, 54, skipWire: true);
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

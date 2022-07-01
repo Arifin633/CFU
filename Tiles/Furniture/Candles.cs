@@ -84,14 +84,17 @@ namespace CFU.Tiles
         public override void HitWire(int i, int j)
         {
             if (Main.tile[i, j].TileFrameX < 18)
-                Main.tile[i, j].TileFrameX = 18;
-            else Main.tile[i, j].TileFrameX = 0;
-            NetMessage.SendTileSquare(-1, i, j);
+                CFUtils.ShiftTileX(i, j, 18, skipWire: true);
+            else
+                CFUtils.ShiftTileX(i, j, 0, set: true, skipWire: true);
         }
 
         public override bool RightClick(int i, int j)
         {
-            HitWire(i, j);
+            if (Main.tile[i, j].TileFrameX < 18)
+                CFUtils.ShiftTileX(i, j, 18);
+            else
+                CFUtils.ShiftTileX(i, j, 0, set: true);
             return true;
         }
 

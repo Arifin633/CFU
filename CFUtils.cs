@@ -16,13 +16,11 @@ namespace ChadsFurnitureUpdated
            SHIFTY decides which axis the tile will be shifted on,
            false for the X axis and true for Y axis.
 
-           If RESET is true, the tile will not be shifted but
-           reset to its original frame, beginning at zero.
-           If RESETTO has a non-zero value and RESET is true,
-           the tile will be reset to this value instead of zero.
+           If SET is true, the tile frame will not be shifted
+           but set, beginning at SHIFTPIXELS (zero by default).
 
            If SKIPWIRE is true, `Wiring.SkipWire' will be called for each tile. */
-        public static void ShiftTile(int i, int j, short shiftPixels = 0, bool shiftY = false, bool reset = false, bool skipWire = false, short resetTo = 0)
+        public static void ShiftTile(int i, int j, short shiftPixels = 0, bool shiftY = false, bool set = false, bool skipWire = false)
         {
             var data = TileObjectData.GetTileData(Main.tile[i, j].TileType, 0);
 
@@ -47,7 +45,7 @@ namespace ChadsFurnitureUpdated
             int diffy = (height - 1) - absy;
             int diffx = (width - 1) - absx;
 
-            short init = resetTo;
+            short init = shiftPixels;
             short acc = init;
 
             if (!shiftY)
@@ -59,7 +57,7 @@ namespace ChadsFurnitureUpdated
                         if (skipWire)
                             Wiring.SkipWire(i + x, j + y);
 
-                        if (reset)
+                        if (set)
                         {
                             Main.tile[i + x, j + y].TileFrameX = acc;
                             acc += (short)pixelWidthStep;
@@ -85,7 +83,7 @@ namespace ChadsFurnitureUpdated
                         if (skipWire)
                             Wiring.SkipWire(i + x, j + y);
 
-                        if (reset)
+                        if (set)
                         {
                             Main.tile[i + x, j + y].TileFrameY = acc;
                             acc += (short)pixelHeightStep;
@@ -104,15 +102,15 @@ namespace ChadsFurnitureUpdated
         }
 
         /* See `ShiftTile'. */
-        public static void ShiftTileX(int i, int j, short shiftPixels = 0, bool reset = false, bool skipWire = false, short resetTo = 0)
+        public static void ShiftTileX(int i, int j, short shiftPixels = 0, bool set = false, bool skipWire = false)
         {
-            ShiftTile(i, j, shiftPixels, false, reset, skipWire, resetTo);
+            ShiftTile(i, j, shiftPixels, false, set, skipWire);
         }
 
         /* See `ShiftTile'. */
-        public static void ShiftTileY(int i, int j, short shiftPixels = 0, bool reset = false, bool skipWire = false, short resetTo = 0)
+        public static void ShiftTileY(int i, int j, short shiftPixels = 0, bool set = false, bool skipWire = false)
         {
-            ShiftTile(i, j, shiftPixels, true, reset, skipWire, resetTo);
+            ShiftTile(i, j, shiftPixels, true, set, skipWire);
         }
 
         public static void PrintTime()

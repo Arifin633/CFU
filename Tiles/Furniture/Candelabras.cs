@@ -35,9 +35,9 @@ namespace CFU.Tiles
         public override void HitWire(int i, int j)
         {
             if (Main.tile[i, j].TileFrameX < 36)
-                CFUtils.ShiftTileX(i, j, 36, reset: false, skipWire: true);
+                CFUtils.ShiftTileX(i, j, 36, skipWire: true);
             else
-                CFUtils.ShiftTileX(i, j, 36, reset: true, skipWire: true);
+                CFUtils.ShiftTileX(i, j, 0, set: true, skipWire: true);
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

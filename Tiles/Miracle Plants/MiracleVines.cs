@@ -97,7 +97,9 @@ namespace CFU.Tiles
 
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
-            fail = effectOnly = noItem = false;
+            if (fail || effectOnly)
+                return;
+            
             Tile tileAbove = Main.tile[i, (j - 1)];
             if (tileAbove.TileType == Type)
             {

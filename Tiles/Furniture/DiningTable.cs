@@ -46,10 +46,11 @@ namespace CFU.Tiles
             return 1;
         }
 
-       public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
-       {
-            fail = effectOnly = noItem = false;
-            
+        public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        {
+            if (fail || effectOnly)
+                return;
+
             Tile tile = Main.tile[i, j];
             int frameX = tile.TileFrameX;
             int frameY = tile.TileFrameY;
@@ -70,7 +71,7 @@ namespace CFU.Tiles
                     UpdateTables((i + 3), j, fromLeft: true, notFrom: true);
             }
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.DiningTable>(),
@@ -113,7 +114,7 @@ namespace CFU.Tiles
 
             if (frameX != (style * 54))
             {
-                CFUtils.ShiftTileX(i, j, reset: true, resetTo: (short)(style * 54));
+                CFUtils.ShiftTileX(i, j, (short)(style * 54), set: true);
                 if (left && !fromLeft)
                     UpdateTables((i - 3), j, fromRight: true);
                 if (right && !fromRight)

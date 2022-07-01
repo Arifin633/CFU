@@ -101,7 +101,7 @@ namespace CFU.Tiles
 
         static void BirdAnimation(int i, int j, Animation Type)
         {
-            CFUtils.ShiftTileY(i, j, 54, reset: true, resetTo: (short)((int)Type * 54));
+            CFUtils.ShiftTileY(i, j, (short)((int)Type * 54), set: true);
         }
 
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
