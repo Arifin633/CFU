@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mannequin Head");
-            Tooltip.SetDefault("'Right-click after placing to change hairstyle'");
+            // Tooltip.SetDefault("'Right-click after placing to change hairstyle'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
