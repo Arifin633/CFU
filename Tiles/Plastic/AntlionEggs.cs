@@ -26,7 +26,7 @@ namespace CFU.Tiles
             HitSound = SoundID.NPCDeath1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
-        
+
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {
             if (++frameCounter >= 20)
@@ -40,7 +40,7 @@ namespace CFU.Tiles
         //         offsetY = 2;
         //     }
         // }
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

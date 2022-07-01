@@ -28,7 +28,7 @@ namespace CFU.Tiles
         {
             offsetY = -8;
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.PylonBaseForest>(),

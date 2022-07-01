@@ -30,7 +30,7 @@ namespace CFU.Tiles
 
         public override bool CreateDust(int i, int j, ref int type)
         {
-            type = (Main.rand.Next(3) == 0)
+            type = (Main.rand.NextBool(3))
                 ? DustID.Glass : DustID.Grass;
             return true;
         }

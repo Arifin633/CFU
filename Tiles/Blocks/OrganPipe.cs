@@ -47,7 +47,8 @@ namespace CFU.Tiles
                     new Rectangle(0, 0, 16, 16),
                     Lighting.GetColor(i, j), 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
                 return false;
-            } else return true;
+            }
+            else return true;
         }
     }
 }

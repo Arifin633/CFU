@@ -16,7 +16,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
             TileObjectData.newTile.Height = 1;
-            TileObjectData.newTile.CoordinateHeights = new int[]{ 16 };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.RandomStyleRange = 3;

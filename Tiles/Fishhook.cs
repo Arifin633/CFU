@@ -67,7 +67,7 @@ namespace CFU.Tiles
             CFUtils.ShiftTileX(i, j, 24, set: true);
             return 1;
         }
-        
+
         public override void MouseOver(int i, int j)
         {
             Player player = Main.LocalPlayer;
@@ -91,7 +91,7 @@ namespace CFU.Tiles
                 int item = Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, Fishes[(frameX / 24)]);
                 if (client)
                 {
-                    NetMessage.SendData(21, -1, -1, null, item);
+                    NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item);
                 }
 
                 CFUtils.ShiftTileX(i, j, 24, set: true);
@@ -123,7 +123,7 @@ namespace CFU.Tiles
                 int item = Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, Fishes[(frameX / 24)]);
                 if (Main.netMode == NetmodeID.MultiplayerClient)
                 {
-                    NetMessage.SendData(21, -1, -1, null, item);
+                    NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item);
                 }
             }
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.Fishhook>());

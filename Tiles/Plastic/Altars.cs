@@ -52,12 +52,12 @@ namespace CFU.Tiles
             }
             else
             {
-                type = (Main.rand.Next(2) == 0) ? DustID.Stone : DustID.Demonite;
+                type = (Main.rand.NextBool(2)) ? DustID.Stone : DustID.Demonite;
             }
             return true;
         }
 
-        public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
             if (Main.tile[i, j].TileFrameX >= 54)
             {

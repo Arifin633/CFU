@@ -63,7 +63,7 @@ namespace CFU.Tiles
                     break;
             }
             return true;
-        }        
+        }
 
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {
@@ -137,7 +137,7 @@ namespace CFU.Tiles
         {
             if (fail || effectOnly)
                 return;
-            
+
             Tile tileBelow = Main.tile[i, (j + 1)];
             if (tileBelow.TileType == Type)
             {
@@ -216,7 +216,7 @@ namespace CFU.Tiles
                 offsetY = 2;
             }
         }
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)

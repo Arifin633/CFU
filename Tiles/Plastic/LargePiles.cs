@@ -15,7 +15,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
-            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16 };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 35;
             TileObjectData.newTile.RandomStyleRange = 3;
@@ -60,14 +60,14 @@ namespace CFU.Tiles
                 6, /* Snow */
                 3, /* Glowing Mushroom */ };
             int acc = 3;
-            foreach(int range in ranges)
+            foreach (int range in ranges)
             {
                 TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
                 TileObjectData.newSubTile.RandomStyleRange = range;
                 TileObjectData.addSubTile(acc);
                 acc += range;
             }
-            
+
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(191, 142, 111));
             TileID.Sets.DisableSmartCursor[Type] = true;
@@ -171,7 +171,7 @@ namespace CFU.Tiles
         {
             offsetY = 2;
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int item = 0;

@@ -9,7 +9,7 @@ namespace CFU.Tiles
 {
     public class SmallPiles : ModTile
     {
-public override string Texture => "CFU/Textures/Tiles/Plastic/SmallPiles";
+        public override string Texture => "CFU/Textures/Tiles/Plastic/SmallPiles";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -33,7 +33,7 @@ public override string Texture => "CFU/Textures/Tiles/Plastic/SmallPiles";
                 1, /* Tree */
                 4  /* Sand */};
             int acc = 6;
-            foreach(int range in ranges)
+            foreach (int range in ranges)
             {
                 TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
                 TileObjectData.newSubTile.RandomStyleRange = range;
@@ -41,7 +41,7 @@ public override string Texture => "CFU/Textures/Tiles/Plastic/SmallPiles";
                 acc += range;
             }
             TileObjectData.addTile(Type);
-            
+
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(128, 128, 128));
             TileID.Sets.DisableSmartCursor[Type] = true;
@@ -84,10 +84,10 @@ public override string Texture => "CFU/Textures/Tiles/Plastic/SmallPiles";
                 case > 72 and <= 76:
                     type = DustID.Sand;
                     break;
-            }            
+            }
             return true;
         }
-        
+
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
         {
             offsetY = 2;

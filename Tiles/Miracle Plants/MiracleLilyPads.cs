@@ -55,9 +55,9 @@ namespace CFU.Tiles
                     break;
             }
             return true;
-        }        
+        }
 
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch _) => (Main.tile[i, j].LiquidAmount == 0);
 
         public override bool Drop(int i, int j)

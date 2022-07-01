@@ -60,7 +60,7 @@ namespace CFU.Tiles
             }
             else
             {
-                type = (Main.rand.Next(2) == 0) ? DustID.Stone : DustID.Demonite;
+                type = (Main.rand.NextBool(2)) ? DustID.Stone : DustID.Demonite;
             }
             return true;
         }

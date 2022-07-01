@@ -121,7 +121,7 @@ namespace CFU.Tiles
                 int item = Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, Potions[(frameX / 18)]);
                 if (client)
                 {
-                    NetMessage.SendData(21, -1, -1, null, item);
+                    NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item);
                 }
 
                 tile.TileFrameX = 0;
@@ -166,7 +166,7 @@ namespace CFU.Tiles
                 int item = Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, Potions[(frameX / 18)]);
                 if (Main.netMode == NetmodeID.MultiplayerClient)
                 {
-                    NetMessage.SendData(21, -1, -1, null, item);
+                    NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item);
                 }
             }
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.PotionHolder>());

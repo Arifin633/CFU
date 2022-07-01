@@ -128,15 +128,15 @@ namespace CFU.Tiles
                         frame = 0;
 
                         /* Fly down to the ground */
-                        if (Main.rand.Next(23) == 0)
+                        if (Main.rand.NextBool(23))
                             BirdAnimation(i, j, Animation.FlyDownToLeft);
 
                         /* Sit down */
-                        else if (Main.rand.Next(13) == 0)
+                        else if (Main.rand.NextBool(13))
                             BirdAnimation(i, j, Animation.SitOnPerch);
 
                         /* Blink */
-                        else if (Main.rand.Next(5) == 0)
+                        else if (Main.rand.NextBool(5))
                             BirdAnimation(i, j, Animation.StandOnPerchAndBlink);
 
                         /* Do nothing */
@@ -146,11 +146,11 @@ namespace CFU.Tiles
                         frame = 0;
 
                         /* Stand up */
-                        if (Main.rand.Next(17) == 0)
+                        if (Main.rand.NextBool(17))
                             BirdAnimation(i, j, Animation.StandOnPerch);
 
                         /* Blink */
-                        else if (Main.rand.Next(5) == 0)
+                        else if (Main.rand.NextBool(5))
                             BirdAnimation(i, j, Animation.SitOnPerchAndBlink);
 
                         /* Do nothing */
@@ -160,15 +160,15 @@ namespace CFU.Tiles
                         frame = 0;
 
                         /* Hop left */
-                        if (Main.rand.Next(17) == 0)
+                        if (Main.rand.NextBool(17))
                             BirdAnimation(i, j, Animation.HopToLeft);
 
                         /* Peck */
-                        else if (Main.rand.Next(11) == 0)
+                        else if (Main.rand.NextBool(11))
                             BirdAnimation(i, j, Animation.StandOnRightAndPeck);
 
                         /* Blink */
-                        else if (Main.rand.Next(11) == 0)
+                        else if (Main.rand.NextBool(11))
                             BirdAnimation(i, j, Animation.StandOnRightAndBlink);
 
                         /* Do nothing */
@@ -178,19 +178,19 @@ namespace CFU.Tiles
                         frame = 0;
 
                         /* Fly up to perch */
-                        if (Main.rand.Next(29) == 0)
+                        if (Main.rand.NextBool(29))
                             BirdAnimation(i, j, Animation.FlyUpToPerch);
 
                         /* Hop right */
-                        else if (Main.rand.Next(23) == 0)
+                        else if (Main.rand.NextBool(23))
                             BirdAnimation(i, j, Animation.HopToRight);
 
                         /* Peck */
-                        else if (Main.rand.Next(11) == 0)
+                        else if (Main.rand.NextBool(11))
                             BirdAnimation(i, j, Animation.StandOnLeftAndPeck);
 
                         /* Blink */
-                        else if (Main.rand.Next(11) == 0)
+                        else if (Main.rand.NextBool(11))
                             BirdAnimation(i, j, Animation.StandOnLeftAndBlink);
 
                         /* Do nothing */

@@ -21,7 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
-            TileObjectData.newTile.CoordinateHeights = new int[]{ 18 };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.newTile.Width = 3;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);

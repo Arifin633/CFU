@@ -83,7 +83,7 @@ namespace CFU.Tiles
                     dust2 = DustID.Orichalcum;
                     break;
             }
-            type = (Main.rand.Next(2) == 0) ? dust2 : dust1;
+            type = (Main.rand.NextBool(2)) ? dust2 : dust1;
             return true;
         }
 

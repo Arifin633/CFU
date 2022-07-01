@@ -30,7 +30,7 @@ namespace CFU.Tiles
 
         public override bool CreateDust(int i, int j, ref int type)
         {
-            type = (Main.rand.Next(3) != 0)
+            type = (!Main.rand.NextBool(3))
                 ? DustID.Bone : DustID.Honey2;
             return true;
         }
@@ -41,7 +41,7 @@ namespace CFU.Tiles
         {
             offsetY = 2;
         }
-        
+
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {
             if (++frameCounter >= 17)
@@ -50,7 +50,7 @@ namespace CFU.Tiles
                 frame = ++frame % 7;
             }
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.Larva>());

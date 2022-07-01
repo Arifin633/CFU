@@ -67,7 +67,7 @@ namespace CFU.Tiles
         {
             if (fail || effectOnly)
                 return;
-            
+
             Tile tileBelow = Main.tile[i, (j + 1)];
             if (tileBelow.TileType == Type)
             {

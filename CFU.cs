@@ -14,7 +14,7 @@ namespace ChadsFurnitureUpdated
 
     public static class CFUConfig
     {
-        public static bool WindEnabled() =>  ModContent.GetInstance<Features>().WindEnabled;
+        public static bool WindEnabled() => ModContent.GetInstance<Features>().WindEnabled;
     }
 
     public class Features : ModConfig
@@ -27,5 +27,5 @@ namespace ChadsFurnitureUpdated
         [ReloadRequired]
 
         public bool WindEnabled;
-    }    
+    }
 }

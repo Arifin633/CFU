@@ -64,9 +64,9 @@ namespace CFU.Tiles
                     offsetY = 2;
             }
         }
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
-        
+
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
             if (CFUConfig.WindEnabled())

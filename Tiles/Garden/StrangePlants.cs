@@ -65,7 +65,7 @@ namespace CFU.Tiles
             }
             return true;
         }
-        
+
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short _1, ref short _2)
         {
             int type = ModContent.TileType<Tiles.PlantPots>();

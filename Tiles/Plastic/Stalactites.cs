@@ -43,7 +43,7 @@ namespace CFU.Tiles
             if (frameY < 36)
                 offsetY = -2;
             else
-                offsetY = 2;        
+                offsetY = 2;
         }
 
         public override bool CreateDust(int i, int j, ref int type)
@@ -88,7 +88,7 @@ namespace CFU.Tiles
             return true;
         }
 
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.StoneStalactite>(),
@@ -103,7 +103,7 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.CorruptIceStalactite>(),
                              ModContent.ItemType<Items.CrimsonIceStalactite>(),
                              ModContent.ItemType<Items.IceStalactite>() };
-                Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 54)]);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 54)]);
         }
     }
 }

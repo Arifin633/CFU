@@ -67,29 +67,29 @@ namespace CFU.Tiles
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.HangingTile);
         }
 
-        
+
         public override bool CreateDust(int i, int j, ref int type)
         {
             switch (Main.tile[i, j].TileFrameX / 36)
             {
                 case 0:
-                    type = (Main.rand.Next(2) == 0)
+                    type = (Main.rand.NextBool(2))
                         ? DustID.Glass : DustID.Grass;
                     break;
                 case 1:
-                    type = (Main.rand.Next(2) == 0)
+                    type = (Main.rand.NextBool(2))
                         ? DustID.Glass : DustID.JungleGrass;
                     break;
                 case 2:
-                    type = (Main.rand.Next(2) == 0)
+                    type = (Main.rand.NextBool(2))
                         ? DustID.Glass : DustID.CorruptPlants;
                     break;
                 case 3:
-                    type = (Main.rand.Next(2) == 0)
+                    type = (Main.rand.NextBool(2))
                         ? DustID.Glass : DustID.CrimsonPlants;
                     break;
                 case 4:
-                    type = (Main.rand.Next(2) == 0)
+                    type = (Main.rand.NextBool(2))
                         ? DustID.Glass : DustID.HallowedPlants;
                     break;
             }

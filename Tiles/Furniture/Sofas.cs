@@ -106,7 +106,7 @@ namespace CFU.Tiles
                     }
                     break;
             }
-            
+
         }
 
         public override bool RightClick(int i, int j)
@@ -146,7 +146,7 @@ namespace CFU.Tiles
             if ((frameY / 38) == 4)
                 offsetY = 2;
         }
-        
+
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             if ((Main.tile[i, j].TileFrameY / 38 == 4) &&

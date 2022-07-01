@@ -76,7 +76,7 @@ namespace CFU.Tiles
             {
                 int frameY = tile.TileFrameY + (Main.tileFrame[Type] * 128);
                 Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
-                
+
                 spriteBatch.Draw(
                     Terraria.GameContent.TextureAssets.Tile[Type].Value,
                     new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero,

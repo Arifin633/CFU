@@ -15,7 +15,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
-            TileObjectData.newTile.CoordinateHeights = new int[]{ 16 };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 53;
             TileObjectData.newTile.RandomStyleRange = 6;
@@ -41,14 +41,14 @@ namespace CFU.Tiles
                 3, /* Tree */
                 3  /* Sand */ };
             int acc = 6;
-            foreach(int range in ranges)
+            foreach (int range in ranges)
             {
                 TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
                 TileObjectData.newSubTile.RandomStyleRange = range;
                 TileObjectData.addSubTile(acc);
                 acc += range;
             }
-            
+
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(191, 142, 111));
             TileID.Sets.DisableSmartCursor[Type] = true;
@@ -111,12 +111,12 @@ namespace CFU.Tiles
             }
             return true;
         }
-        
+
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short x, ref short y)
         {
             offsetY = 2;
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int item = 0;

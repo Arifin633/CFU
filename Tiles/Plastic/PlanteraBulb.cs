@@ -54,7 +54,7 @@ namespace CFU.Tiles
 
         public override bool CreateDust(int i, int j, ref int type)
         {
-            type = (Main.rand.Next(3) != 0)
+            type = (!Main.rand.NextBool(3))
                 ? DustID.Plantera_Pink : DustID.Plantera_Green;
             return true;
         }
@@ -71,7 +71,7 @@ namespace CFU.Tiles
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
             }
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.PlanteraBulb>());

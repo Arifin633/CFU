@@ -728,7 +728,7 @@ namespace ChadsFurnitureUpdated
 
             int frameX = (torch) ? (tile.TileFrameX + 2) : tile.TileFrameX;
             int frameY = tile.TileFrameY;
-            int offsetY =  0;
+            int offsetY = 0;
             if (torch && (WorldGen.SolidTile(i, j - 1)))
                 offsetY = 2;
             else if (type == ModContent.TileType<Tiles.Candles>())

@@ -16,7 +16,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
-            TileObjectData.newTile.AnchorAlternateTiles = new int[]{ Type };
+            TileObjectData.newTile.AnchorAlternateTiles = new int[] { Type };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();

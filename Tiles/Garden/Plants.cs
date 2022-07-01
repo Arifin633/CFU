@@ -36,7 +36,7 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
-        public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
             if (Main.tile[i, j].TileFrameX >= 228 &&
                 Main.tile[i, j].TileFrameX < 342)

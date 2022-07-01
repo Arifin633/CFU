@@ -182,7 +182,8 @@ namespace ChadsFurnitureUpdated
                              Main.tile[Player.tileTargetX, Player.tileTargetY + 1].WallType > 0 ||
                              Main.tile[Player.tileTargetX, Player.tileTargetY - 1].HasTile ||
                              Main.tile[Player.tileTargetX, Player.tileTargetY - 1].WallType > 0);
-                    } else return canPlace;
+                    }
+                    else return canPlace;
                 });
             }));
 

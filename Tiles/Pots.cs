@@ -83,7 +83,7 @@ namespace CFU.Tiles
             offsetY = 2;
         }
 
-        public override void KillTile (int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
+        public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
             int frameY = Main.tile[i, j].TileFrameY;
             frameY = (frameY <= 36) ? frameY : (frameY - 36);
@@ -99,7 +99,7 @@ namespace CFU.Tiles
                     break;
             }
         }
-        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             int[] styles = { ModContent.ItemType<Items.ForestPot>(),

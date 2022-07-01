@@ -29,7 +29,7 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
-        
+
         public override bool CreateDust(int i, int j, ref int type)
         {
             if (Main.tile[i, j].TileFrameX >= 72)

@@ -101,7 +101,7 @@ namespace CFU.Tiles
                     break;
                 case 7 or 8:
                 case 17:
-                    type = (Main.rand.Next(2) != 0)
+                    type = (!Main.rand.NextBool(2))
                         ? DustID.CorruptPlants : DustID.Demonite;
                     break;
                 case 9 or 10:
@@ -120,7 +120,7 @@ namespace CFU.Tiles
                     break;
             }
             return true;
-        }        
+        }
 
         public override bool Drop(int i, int j)
         {

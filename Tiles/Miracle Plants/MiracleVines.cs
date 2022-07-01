@@ -91,15 +91,15 @@ namespace CFU.Tiles
                     type = DustID.Bone;
                     break;
             }
-            
+
             return true;
-        }        
+        }
 
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
             if (fail || effectOnly)
                 return;
-            
+
             Tile tileAbove = Main.tile[i, (j - 1)];
             if (tileAbove.TileType == Type)
             {
@@ -145,7 +145,7 @@ namespace CFU.Tiles
                 offsetY = -2;
             }
         }
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
