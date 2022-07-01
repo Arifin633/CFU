@@ -29,6 +29,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Throne");
             AddMapEntry(new Color(128, 151, 184), name);
+            DustType = DustID.Platinum;
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)

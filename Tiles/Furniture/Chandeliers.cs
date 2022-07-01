@@ -33,6 +33,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(181, 172, 190), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Torches };
+            DustType = -1;
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

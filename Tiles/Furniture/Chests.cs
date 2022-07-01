@@ -86,6 +86,26 @@ namespace CFU.Tiles
               ModContent.ItemType<Items.RoyalChest>(),
               ModContent.ItemType<Items.AltSandstoneChest>() };
 
+        
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            switch (Main.tile[i, j].TileFrameX / 36)
+            {
+                case 0:
+                case 2:
+                    type = DustID.Gold;
+                    break;
+                case 1:
+                    type = DustID.PurpleTorch;
+                    break;
+                case 3:
+                    type = DustID.Sluggy;
+                    break;
+            }
+            return true;
+        }
+
+        
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameX / 36)]);

@@ -68,6 +68,7 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.OpenDoor };
             CloseDoorID = ModContent.TileType<Tiles.DoorsClosed>();
+            DustType = -1;
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;

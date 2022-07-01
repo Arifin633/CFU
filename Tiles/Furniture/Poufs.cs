@@ -31,7 +31,7 @@ namespace CFU.Tiles
             name = CreateMapEntryName("Stool");
             name.SetDefault("Stool");
             AddMapEntry(new Color(191, 142, 111), name);
-            DustType = 0;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Chairs };
         }

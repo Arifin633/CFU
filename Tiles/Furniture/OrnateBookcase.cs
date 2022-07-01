@@ -22,6 +22,7 @@ namespace CFU.Tiles
             name.SetDefault("Bookcase");
             AddMapEntry(new Color(191, 142, 111), name);
             AdjTiles = new int[] { 101 };
+            DustType = -1;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

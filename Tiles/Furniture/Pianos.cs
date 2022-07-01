@@ -22,6 +22,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Piano");
             AddMapEntry(new Color(181, 172, 190), name);
+            DustType = -1;
         }
 
         public static void dropStyle(int i, int j, int step, int style, params int[] styles)

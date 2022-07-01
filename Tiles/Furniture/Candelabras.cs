@@ -30,6 +30,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(181, 172, 190), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Torches };
+            DustType = -1;
         }
 
         public override void HitWire(int i, int j)

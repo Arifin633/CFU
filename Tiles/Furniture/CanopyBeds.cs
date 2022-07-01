@@ -44,7 +44,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bed");
             AddMapEntry(new Color(191, 142, 111), name);
-            DustType = 7;
+            DustType = -1;
             AdjTiles = new int[] { TileID.Beds };
         }
 

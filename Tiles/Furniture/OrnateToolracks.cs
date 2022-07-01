@@ -25,9 +25,23 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fireplace Rack");
             AddMapEntry(new Color(224, 160, 42), name);
-            DustType = 7;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
+
+        
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            if (Main.tile[i, j].TileFrameX >= 36)
+            {
+                type = DustID.Platinum;
+            }
+            else
+            {
+                type = DustID.Gold;
+            }
+            return true;
+        }
+
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {

@@ -24,7 +24,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Sink");
             AddMapEntry(new Color(181, 172, 190), name);
-            DustType = 0;
+            DustType = -1;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

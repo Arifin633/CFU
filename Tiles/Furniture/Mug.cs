@@ -18,7 +18,8 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Mug");
             AddMapEntry(new Color(204, 204, 204), name);
-            DustType = 0;
+            DustType = -1;
+            HitSound = SoundID.Shatter;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

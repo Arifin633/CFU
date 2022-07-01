@@ -43,6 +43,7 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Torches };
             TileID.Sets.Torch[Type] = true;
+            DustType = DustID.YellowTorch;
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

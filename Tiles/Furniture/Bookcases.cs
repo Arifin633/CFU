@@ -21,6 +21,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bookcase");
             AddMapEntry(new Color(181, 172, 190), name);
+            DustType = -1;
             AdjTiles = new int[] { 101 };
         }
 

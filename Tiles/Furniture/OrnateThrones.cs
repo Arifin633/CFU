@@ -70,6 +70,19 @@ namespace CFU.Tiles
             return true;
         }
 
+        public override bool CreateDust(int i, int j, ref int type)
+        {
+            if (Main.tile[i, j].TileFrameX >= 54)
+            {
+                type = DustID.Platinum;
+            }
+            else
+            {
+                type = DustID.Gold;
+            }
+            return true;
+        }
+
         static readonly int[] Styles =
             { ModContent.ItemType<Items.OrnateGoldThrone>(),
               ModContent.ItemType<Items.OrnatePlatinumThrone>() };

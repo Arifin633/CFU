@@ -51,6 +51,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(181, 172, 190), name, MapChestName);
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Dressers };
+            DustType = -1;
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 54);

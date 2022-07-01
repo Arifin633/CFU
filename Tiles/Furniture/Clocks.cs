@@ -35,7 +35,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Clock");
             AddMapEntry(new Color(181, 172, 190), name);
-            DustType = 0;
+            DustType = -1;
             AdjTiles = new int[] { TileID.GrandfatherClocks };
         }
 

@@ -30,6 +30,7 @@ namespace CFU.Tiles
             name.SetDefault("Wall Clock");
             AddMapEntry(new Color(224, 160, 42), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
+            DustType = -1;
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) { return true; }

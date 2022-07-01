@@ -27,6 +27,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(181, 172, 190), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            DustType = -1;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

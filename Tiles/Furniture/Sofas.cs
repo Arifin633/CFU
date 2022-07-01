@@ -30,6 +30,7 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Sofa");
             AddMapEntry(new Color(181, 172, 190), name);
+            DustType = -1;
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
