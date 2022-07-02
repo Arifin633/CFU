@@ -28,5 +28,13 @@ namespace CFU.Items
             Item.createTile = ModContent.TileType<Tiles.WallCandelabras>();
             Item.placeStyle = 30;
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddIngredient(ItemID.GoldBar, 5)
+            .AddIngredient(ItemID.Torch, 3)
+            .AddTile(TileID.WorkBenches)
+            .Register();
+        }
     }
 }
