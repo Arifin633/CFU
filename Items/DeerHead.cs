@@ -31,6 +31,11 @@ namespace CFU.Items
 
         public override void AddRecipes()
         {
+            CreateRecipe()
+            .AddIngredient(ItemID.DeerclopsTrophy)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
         }
     }
 }

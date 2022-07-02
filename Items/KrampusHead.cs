@@ -31,6 +31,11 @@ namespace CFU.Items
 
         public override void AddRecipes()
         {
+            CreateRecipe()
+            .AddIngredient(ItemID.Coal, 1)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
         }
     }
 }

@@ -25,9 +25,16 @@ namespace CFU.Items
             Item.useTime = 10;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
-            Item.value = 10000;
+            // Item.value = 10000;
+            Item.value = 0;
             Item.createTile = ModContent.TileType<Tiles.Paintings2xX>();
             Item.placeStyle = 4;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddTile(ModContent.TileType<Tiles.Easel>())
+            .Register();
         }
     }
 }

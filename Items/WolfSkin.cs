@@ -31,6 +31,23 @@ namespace CFU.Items
 
         public override void AddRecipes()
         {
+            CreateRecipe()
+            .AddIngredient(ItemID.TigerSkin)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
+
+            CreateRecipe()
+            .AddIngredient(ItemID.LeopardSkin)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
+
+            CreateRecipe()
+            .AddIngredient(ItemID.ZebraSkin)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
         }
     }
 }

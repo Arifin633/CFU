@@ -30,5 +30,14 @@ namespace CFU.Items
             Item.createTile = ModContent.TileType<Tiles.WallClocks>();
             Item.placeStyle = 7;
         }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddRecipeGroup(RecipeGroupID.IronBar, 3)
+            .AddIngredient(ItemID.Glass, 6)
+            .AddIngredient(ItemID.GoldBar, 5)
+            .AddTile(TileID.Sawmill)
+            .Register();
+        }
     }
 }

@@ -28,5 +28,14 @@ namespace CFU.Items
             Item.value = 10000;
             Item.createTile = ModContent.TileType<Tiles.StuffedTurkey>();
         }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddIngredient(ItemID.RoastedDuck)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
+        }
     }
 }

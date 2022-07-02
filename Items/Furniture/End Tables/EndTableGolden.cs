@@ -28,5 +28,13 @@ namespace CFU.Items
             Item.createTile = ModContent.TileType<Tiles.EndTables>();
             Item.placeStyle = 23;
         }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+            .AddIngredient(ItemID.GoldBar, 12)
+            .AddTile(TileID.WorkBenches)
+            .Register();
+        }
     }
 }

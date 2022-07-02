@@ -32,6 +32,10 @@ namespace CFU.Items
 
         public override void AddRecipes()
         {
+            CreateRecipe()
+            .AddRecipeGroup(RecipeGroupID.Wood, 12)
+            .AddTile(TileID.MythrilAnvil)
+            .Register();
         }
     }
 }
