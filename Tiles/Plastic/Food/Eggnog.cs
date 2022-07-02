@@ -12,20 +12,17 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Plastic/Food/Eggnog";
         public override void SetStaticDefaults()
         {
-            Main.tileSolidTop[Type] = false;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileTable[Type] = false;
-            Main.tileLavaDeath[Type] = false;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.CoordinateWidth = 18;
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Eggnog");
-            AddMapEntry(new Color(133, 213, 247), name);
+            AddMapEntry(new Color(224, 219, 236), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool Drop(int i, int j)

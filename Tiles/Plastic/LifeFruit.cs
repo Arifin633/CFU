@@ -15,24 +15,20 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Plastic/LifeFruit";
         public override void SetStaticDefaults()
         {
-            Main.tileSolidTop[Type] = false;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileTable[Type] = false;
-            Main.tileLavaDeath[Type] = false;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.PlantPots>() };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.RandomStyleRange = 3;
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Life Fruit");
-            AddMapEntry(new Color(219, 157, 64), name);
+            AddMapEntry(new Color(149, 232, 87), name);
             DustType = DustID.JunglePlants;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
@@ -40,10 +36,9 @@ namespace CFU.Tiles
             if (!CFUConfig.WindEnabled())
             {
                 int potType = ModContent.TileType<Tiles.PlantPots>();
-                if ((frameY >= 36) &&
-                    ((Main.tile[i, j + 1].TileType == potType) ||
+                if ((Main.tile[i, j + 1].TileType == potType) ||
                      ((Main.tile[i, j + 1].TileType == Type) &&
-                      (Main.tile[i, j + 2].TileType == potType))))
+                      (Main.tile[i, j + 2].TileType == potType)))
                     offsetY = -4;
             }
         }

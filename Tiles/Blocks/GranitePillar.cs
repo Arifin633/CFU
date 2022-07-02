@@ -11,13 +11,10 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Blocks/GranitePillar";
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = false;
-            Main.tileMergeDirt[Type] = false;
-            Main.tileBlockLight[Type] = false;
             TileID.Sets.IsBeam[Type] = true;
+            AddMapEntry(new Color(50, 46, 104));
             DustType = DustID.Granite;
             HitSound = SoundID.Tink;
-            AddMapEntry(new Color(50, 46, 104));
         }
         public override bool Drop(int i, int j)
         {

@@ -17,18 +17,17 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 4;
             TileObjectData.newTile.Origin = new Point16(0, 3);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Throne");
-            AddMapEntry(new Color(128, 151, 184), name);
+            AddMapEntry(new Color(253, 221, 3), name);
             DustType = DustID.Platinum;
         }
 

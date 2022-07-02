@@ -16,6 +16,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileTable[Type] = true;
             Main.tileNoAttach[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -23,12 +24,11 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.Counters>() };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.Sinks };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Kitchen Sink");
-            AddMapEntry(new Color(81, 81, 89), name);
+            AddMapEntry(new Color(144, 148, 144), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Sinks };
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

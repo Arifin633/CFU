@@ -14,10 +14,6 @@ Add one for each furniture type.
 Current ones: Wood, Boreal Wood, Palm Wood, Rich Mahogany, Shade Wood, Ebonwood,
 Pearlwood, Princess.
 
-* Chess Pieces
-Add directional placement for Bishops and Knights,
-as the textures are already there.
-
 * Doors
 In vanilla, doors will attempt to open towards the opposite direction the player
 is facing if the preferred direction is obstructed; the same is not true for any
@@ -43,11 +39,6 @@ Princess Wall Clock; all Wardrobes. (This list might be outdated)
 Aside from that, a lot of other item textures are just plain bad and/or don't
 match the game's style very well.
 
-* Tiles
-The dust and sound of pretty much every tile is wrong.
-Additionally, their map color is often inaccurate, specially
-when it comes to tiles with a lot of different styles.
-
 * Miracle Plants
 The item textures for all plants look specially
 bad as they are just copy and pasted tiles.
@@ -60,9 +51,6 @@ the tile can physically change its position in that situation.
 
 * Mannequin Head
 Add hair-displaying capabilities as it had in the original mod.
-
-* Wall Clocks
-Draw the pendulum using `AddSpecialPosition' to avoid blurriness.
 
 * Paintable Sofa
 * Paintable Armchair
@@ -95,7 +83,6 @@ by walls or solid tiles; fly away at night, or if the player gets too close.
 
 * Ornaments
 Originally, the ornaments "blended" with any solid tile placed below them.
-
 
 * Original Chad's Furniture TODO list
 Gardening Updates:

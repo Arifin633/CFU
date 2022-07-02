@@ -18,8 +18,10 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
+            TileID.Sets.Clock[Type] = true;
+            TileID.Sets.FramesOnKillWall[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Width = 2;
@@ -28,8 +30,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Wall Clock");
-            AddMapEntry(new Color(224, 160, 42), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(127, 92, 69), name);
             DustType = -1;
         }
 
@@ -61,6 +62,13 @@ namespace CFU.Tiles
                 //     ModContent.Request<Texture2D>("CFU/Textures/Tiles/Clocks/ChainBottom").Value,
                 //     new Vector2(i * 16 + 11 - (int)Main.screenPosition.X, j * 16 + 32 - (int)Main.screenPosition.Y) + zero,
                 //     new Rectangle(0, 0, 6, 16), Lighting.GetColor(i, j), 0f, default, 1f, SpriteEffects.None, 0f);
+
+                /* The drawn pendulum is rather blurry thanks to
+                   the default settings of the given SpriteBatch.
+                   The alternative, using a sharper raster, will
+                   produce even worse results: it will appear
+                   very choppy, perhaps owing to the fact the
+                   pendulum is quite thin. */
                 spriteBatch.Draw(
                     ModContent.Request<Texture2D>("CFU/Textures/Tiles/Furniture/WallClocksPendulum").Value,
                     new Vector2(i * 16 + 12 + 4 - (int)Main.screenPosition.X, j * 16 + 32 - 16 - (int)Main.screenPosition.Y) + zero,
@@ -70,6 +78,7 @@ namespace CFU.Tiles
                     (0.0205f * Main.tileFrame[Type]),
                     new Vector2(5, 1),
                     1f, SpriteEffects.None, 0f);
+
                 // spriteBatch.Draw(
                 //     ModContent.Request<Texture2D>("CFU/Textures/Tiles/Clocks/ChainTop").Value,
                 //     new Vector2(i * 16 + 17 - (int)Main.screenPosition.X, j * 16 + 32 - (int)Main.screenPosition.Y) + zero,

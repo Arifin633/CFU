@@ -16,20 +16,14 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Width = 4;
             TileObjectData.newTile.Origin = new Point16(1, 2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Blacksmith's Forge");
-            AddMapEntry(new Color(81, 81, 89), name);
+            AddMapEntry(new Color(144, 148, 144), name);
             AdjTiles = new int[] { TileID.Furnaces, TileID.Anvils };
             AnimationFrameHeight = 56;
         }

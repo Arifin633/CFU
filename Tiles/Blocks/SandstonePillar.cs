@@ -11,9 +11,6 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Blocks/SandstonePillar";
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = false;
-            Main.tileMergeDirt[Type] = false;
-            Main.tileBlockLight[Type] = false;
             TileID.Sets.IsBeam[Type] = true;
             DustType = DustID.Sluggy;
             HitSound = SoundID.Tink;

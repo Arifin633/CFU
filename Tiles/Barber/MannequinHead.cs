@@ -14,9 +14,9 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
@@ -27,7 +27,6 @@ namespace CFU.Tiles
             name.SetDefault("Mannequin Head");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = DustID.WoodFurniture;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
 

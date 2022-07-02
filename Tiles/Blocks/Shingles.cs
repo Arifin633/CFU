@@ -12,8 +12,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = false;
-            ChadsFurnitureUpdated.CFUtils.SetupTileMerge(Type, mergeTo: false);
             Main.tileBlockLight[Type] = true;
             DustType = DustID.Asphalt;
             AddMapEntry(new Color(36, 36, 53));

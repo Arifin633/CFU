@@ -12,15 +12,14 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Ladder";
         public override void SetStaticDefaults()
         {
-            Main.tileSolidTop[Type] = true;
             Main.tileSolid[Type] = true;
             Main.tileNoAttach[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Ladder");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = DustID.Dirt;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool Drop(int i, int j)

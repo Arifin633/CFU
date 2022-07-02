@@ -14,18 +14,13 @@ namespace CFU.Tiles
         {
             Main.tileFrameImportant[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Cultivation Box");
             HitSound = SoundID.Shatter;
             DustType = -1;
             AddMapEntry(new Color(133, 213, 247), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool CreateDust(int i, int j, ref int type)

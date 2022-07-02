@@ -14,17 +14,14 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 2;
             TileObjectData.newTile.StyleMultiplier = 2;
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.Origin = new Point16(0, 1);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
@@ -34,7 +31,6 @@ namespace CFU.Tiles
             name.SetDefault("Gnome");
             AddMapEntry(new Color(222, 152, 127), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

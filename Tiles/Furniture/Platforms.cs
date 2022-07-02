@@ -15,12 +15,12 @@ namespace CFU.Tiles
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
             Main.tileSolidTop[Type] = true;
-            Main.tileNoSunLight[Type] = false;
             Main.tileSolid[Type] = true;
             Main.tileNoAttach[Type] = true;
             Main.tileTable[Type] = true;
             Main.tileLavaDeath[Type] = true;
             TileID.Sets.Platforms[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
@@ -30,11 +30,10 @@ namespace CFU.Tiles
             TileObjectData.newTile.UsesCustomCanPlace = false;
             TileObjectData.newTile.LavaDeath = true;
             TileObjectData.addTile(Type);
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
-            AddMapEntry(new Color(181, 172, 190));
-            DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Platforms };
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+            AddMapEntry(new Color(191, 142, 111));
+            DustType = -1;
         }
 
         public override bool Drop(int i, int j)

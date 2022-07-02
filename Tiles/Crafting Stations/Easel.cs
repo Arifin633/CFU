@@ -9,20 +9,14 @@ namespace CFU.Tiles
 {
     public class Easel : ModTile
     {
-        public override string Texture => "CFU/Textures/Tiles/Easel";
+        public override string Texture => "CFU/Textures/Tiles/Crafting Stations/Easel";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
@@ -30,7 +24,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Easel");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(223, 217, 209), name);
             DustType = -1;
         }
 

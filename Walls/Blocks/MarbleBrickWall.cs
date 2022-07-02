@@ -5,9 +5,9 @@ using Terraria.ModLoader;
 
 namespace CFU.Walls
 {
-    public class MarbleSlabWall : ModWall
+    public class MarbleBrickWall : ModWall
     {
-        public override string Texture => "CFU/Textures/Walls/Blocks/MarbleSlabWall";
+        public override string Texture => "CFU/Textures/Walls/Blocks/MarbleBrickWall";
         public override void SetStaticDefaults()
         {
             Main.wallHouse[Type] = true;
@@ -17,7 +17,7 @@ namespace CFU.Walls
 
         public override bool Drop(int i, int j, ref int type)
         {
-            type = ModContent.ItemType<Items.MarbleSlabWall>();
+            type = ModContent.ItemType<Items.MarbleBrickWall>();
             return true;
         }
     }

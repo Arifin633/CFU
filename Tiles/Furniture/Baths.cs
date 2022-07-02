@@ -14,7 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style4x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
@@ -28,9 +28,8 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bathtub");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(144, 148, 144), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

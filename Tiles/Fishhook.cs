@@ -47,7 +47,6 @@ namespace CFU.Tiles
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2);
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.CoordinateWidth = 22;
@@ -58,10 +57,13 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fishhook");
-            AddMapEntry(new Color(155, 183, 193), name);
+            AddMapEntry(new Color(81, 81, 89), name);
+            AddMapEntry(new Color(100, 100, 74), name);
             DustType = -1;
         }
 
+        public override ushort GetMapOption(int i, int j) => (ushort)((Main.tile[i, j].TileFrameY == 0) ? 0 : 1);
+        
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {
             CFUtils.ShiftTileX(i, j, 24, set: true);

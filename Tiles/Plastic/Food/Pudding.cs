@@ -13,20 +13,15 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16, 18
-            };
-            TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Christmas Pudding");
-            AddMapEntry(new Color(146, 81, 68), name);
+            AddMapEntry(new Color(224, 219, 236), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)

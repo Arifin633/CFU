@@ -12,20 +12,14 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Origin = new Point16(0, 2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Wall-O-Matic");
+            AddMapEntry(new Color(155, 128, 132), name);
             DustType = -1;
-            AddMapEntry(new Color(81, 81, 89), name);
             AnimationFrameHeight = 54;
         }
 

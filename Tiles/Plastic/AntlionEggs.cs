@@ -16,15 +16,17 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.RandomStyleRange = 4;
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(230, 215, 195));
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Antlion Eggs");
+            AddMapEntry(new Color(198, 134, 88), name);
             DustType = DustID.Sand;
             HitSound = SoundID.NPCDeath1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

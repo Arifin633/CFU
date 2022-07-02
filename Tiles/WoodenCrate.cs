@@ -14,7 +14,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileNoAttach[Type] = false;
             Main.tileSolidTop[Type] = true;
             Main.tileTable[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
@@ -26,9 +25,8 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Wooden Crate");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(191, 142, 111), name);
             DustType = DustID.WoodFurniture;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

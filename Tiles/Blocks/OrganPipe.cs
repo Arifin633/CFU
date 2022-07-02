@@ -12,12 +12,9 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Blocks/OrganPipe";
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = false;
-            Main.tileMergeDirt[Type] = false;
-            Main.tileBlockLight[Type] = false;
             TileID.Sets.IsBeam[Type] = true;
             DustType = DustID.Bone;
-            AddMapEntry(new Color(81, 81, 89));
+            AddMapEntry(new Color(202, 197, 191));
         }
 
         public override bool Drop(int i, int j)

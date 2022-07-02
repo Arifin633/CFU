@@ -15,10 +15,9 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileSolid[Type] = false;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.SwaysInWindBasic[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { TileID.ClayPot };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
@@ -86,9 +85,41 @@ namespace CFU.Tiles
             TileObjectData.addSubTile(19);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
-            AddMapEntry(new Color(25, 195, 85));
+            AddMapEntry(new Color(26, 196, 84));          
+            AddMapEntry(new Color(122, 116, 218));
+            AddMapEntry(new Color(135, 196, 26));
+            AddMapEntry(new Color(182, 175, 130));
+            AddMapEntry(new Color(48, 186, 135));
+            AddMapEntry(new Color(203, 61, 64));
             HitSound = SoundID.Grass;
-            TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override ushort GetMapOption(int i, int j)
+        {
+            switch (Main.tile[i, j].TileFrameY / 22)
+            {
+                case 7 or 8:
+                case 17:
+                    return 1;
+                    break;
+                case 9 or 10:
+                case 18:
+                    return 2;
+                    break;
+                case 11:
+                    return 3;
+                    break;
+                case 12 or 13:
+                    return 4;
+                    break;
+                case 14 or 15:
+                case 19:
+                    return 5;
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
         }
 
         public override bool CreateDust(int i, int j, ref int type)

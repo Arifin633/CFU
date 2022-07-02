@@ -16,18 +16,15 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
             TileObjectData.newTile.Width = 2;
-            TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.addTile(Type);
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Brazier");
-            DustType = -1;
             AddMapEntry(new Color(81, 81, 89), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            DustType = -1;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

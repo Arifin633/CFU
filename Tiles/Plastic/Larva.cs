@@ -14,6 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -22,8 +23,9 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(254, 156, 12));
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Queen Bee Larva");
+            AddMapEntry(new Color(224, 194, 101), name);
             HitSound = SoundID.NPCDeath1;
             AnimationFrameHeight = 54;
         }

@@ -15,18 +15,25 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(98, 75, 107));
-            HitSound = null;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { 26 };
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Demon Altar");
+            AddMapEntry(new Color(119, 101, 125), name);
+            name = CreateMapEntryName("CrimsonAltar");
+            name.SetDefault("Crimson Altar");
+            AddMapEntry(new Color(214, 127, 133), name);
+            HitSound = null;
         }
 
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 54);
+        
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
             float rand = Main.rand.Next(-5, 6) * 0.0025f;

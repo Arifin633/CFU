@@ -14,6 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
@@ -21,10 +22,9 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
-            DustType = -1;
             name.SetDefault("Telescope");
             AddMapEntry(new Color(81, 81, 89), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            DustType = -1;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

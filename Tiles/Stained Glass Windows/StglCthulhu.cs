@@ -15,7 +15,8 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.FramesOnKillWall[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.Width = 4;
             TileObjectData.newTile.Height = 8;
@@ -24,12 +25,11 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.addTile(Type);
-            DustType = -1;
-            HitSound = SoundID.Shatter;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Stained Glass Window");
             AddMapEntry(new Color(133, 213, 247), name);
+            DustType = -1;
+            HitSound = SoundID.Shatter;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

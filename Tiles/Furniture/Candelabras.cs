@@ -17,7 +17,7 @@ namespace CFU.Tiles
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            // Main.tileNoFail[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleWrapLimit = 2;
             TileObjectData.newTile.StyleMultiplier = 2;
@@ -25,11 +25,10 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            AdjTiles = new int[] { TileID.Torches };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Candelabra");
-            AddMapEntry(new Color(181, 172, 190), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Torches };
+            AddMapEntry(new Color(253, 221, 3), name);
             DustType = -1;
         }
 

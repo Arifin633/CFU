@@ -16,7 +16,6 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
@@ -25,7 +24,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Gnome House");
-            AddMapEntry(new Color(222, 152, 127), name);
+            AddMapEntry(new Color(239, 38, 38), name);
             DustType = DustID.Bone;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }

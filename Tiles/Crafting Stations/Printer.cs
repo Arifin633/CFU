@@ -12,20 +12,15 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.Origin = new Point16(0, 1);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Printer");
-            DustType = -1;
             AddMapEntry(new Color(204, 204, 204), name);
+            DustType = -1;
             AnimationFrameHeight = 36;
         }
 

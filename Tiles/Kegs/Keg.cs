@@ -13,9 +13,8 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Kegs/Keg";
         public override void SetStaticDefaults()
         {
-            Main.tileSolidTop[Type] = false;
-            Main.tileTable[Type] = false;
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -24,12 +23,11 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.Kegs };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Keg");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = DustID.WoodFurniture;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Kegs };
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

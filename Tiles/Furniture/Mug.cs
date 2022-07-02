@@ -13,14 +13,14 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Mug");
-            AddMapEntry(new Color(204, 204, 204), name);
+            AddMapEntry(new Color(133, 213, 247), name);
             DustType = -1;
             HitSound = SoundID.Shatter;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool Drop(int i, int j)

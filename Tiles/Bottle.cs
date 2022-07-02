@@ -14,24 +14,17 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.Origin = new Point16(0, 1);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                18
-            };
-            TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 18;
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
-            DustType = DustID.Glass;
-            HitSound = SoundID.Shatter;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bottle");
             AddMapEntry(new Color(133, 213, 247), name);
+            DustType = DustID.Glass;
+            HitSound = SoundID.Shatter;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

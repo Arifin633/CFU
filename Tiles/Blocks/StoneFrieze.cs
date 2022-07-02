@@ -13,15 +13,13 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = false;
-            ChadsFurnitureUpdated.CFUtils.SetupTileMerge(Type);
-            Main.tileMerge[Type][TileID.Dirt] = true;
-            Main.tileMerge[TileID.Dirt][Type] = true;
             Main.tileBlockLight[Type] = true;
             Main.tileLargeFrames[Type] = 1;
+            Main.tileBrick[Type] = true;
+            TileID.Sets.ForcedDirtMerging[Type] = true;
             DustType = DustID.Stone;
             HitSound = SoundID.Tink;
-            AddMapEntry(new Color(160, 156, 146));
+            AddMapEntry(new Color(128, 128, 128));
         }
 
         public override bool Drop(int i, int j)

@@ -16,25 +16,21 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Width = 4;
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 74;
             TileObjectData.newTile.Origin = new Point16(1, 2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 18 };
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.Furnaces, TileID.Anvils, TileID.AdamantiteForge, TileID.MythrilAnvil, TileID.Hellforge };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Blacksmith's Forge");
-            AddMapEntry(new Color(81, 81, 89), name);
-            AdjTiles = new int[] { TileID.Furnaces, TileID.Anvils, 133, 134, 77 };
+            AddMapEntry(new Color(231, 53, 56), name);
+            AddMapEntry(new Color(192, 189, 221), name);
             AnimationFrameHeight = 56;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)((Main.tile[i, j].TileFrameX / 72) % 2);
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
@@ -71,12 +67,12 @@ namespace CFU.Tiles
                     dust2 = DustID.Mythril;
                     break;
                 case 1:
-                    dust1 = DustID.Adamantite;
-                    dust2 = DustID.Orichalcum;
-                    break;
-                case 2:
                     dust1 = DustID.Titanium;
                     dust2 = DustID.Mythril;
+                    break;
+                case 2:
+                    dust1 = DustID.Adamantite;
+                    dust2 = DustID.Orichalcum;
                     break;
                 case 3:
                     dust1 = DustID.Titanium;

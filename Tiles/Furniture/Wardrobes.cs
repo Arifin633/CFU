@@ -19,25 +19,24 @@ namespace CFU.Tiles
             Main.tileSolidTop[Type] = true;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicDresser[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 4;
             TileObjectData.newTile.Origin = new Point16(0, 3);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 18 };
-            TileObjectData.newTile.AnchorInvalidTiles = new int[] { 127 };
+            TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Wadrdrobe");
-            AddMapEntry(new Color(191, 142, 111), name);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-            DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Dressers };
+            name.SetDefault("Wardrobe");
+            AddMapEntry(new Color(127, 92, 69), name);
+            DustType = -1;
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;

@@ -22,33 +22,30 @@ namespace CFU.Tiles
             Main.tileNoAttach[Type] = true;
             Main.tileTable[Type] = true;
             Main.tileContainer[Type] = true;
+            
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicDresser[Type] = true;
-            Main.tileLavaDeath[Type] = true;
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
+            TileID.Sets.DisableSmartCursor[Type] = true;
+            
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
-            TileObjectData.newTile.Width = 2;
-            TileObjectData.newTile.Height = 2;
-            TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
-            TileObjectData.newTile.AnchorInvalidTiles = new int[] { 127 };
-            TileObjectData.newTile.LavaDeath = false;
+            TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
+            
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-
+            AdjTiles = new int[] { TileID.Dressers };
             ModTranslation name = CreateMapEntryName();
             foreach (string styleName in Names)
             {
                 name = CreateMapEntryName(styleName.Replace(" ", ""));
                 name.SetDefault(styleName);
-                AddMapEntry(new Color(181, 172, 190), name, MapChestName);
+                AddMapEntry(new Color(127, 92, 69), name, MapChestName);
             }
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Dressers };
             DustType = -1;
         }
 

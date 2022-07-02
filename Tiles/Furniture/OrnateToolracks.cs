@@ -13,19 +13,14 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Height = 3;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fireplace Rack");
-            AddMapEntry(new Color(224, 160, 42), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(253, 221, 3), name);
         }
 
 

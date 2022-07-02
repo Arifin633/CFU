@@ -13,15 +13,15 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Chalices");
-            AddMapEntry(new Color(224, 160, 42), name);
+            AddMapEntry(new Color(253, 221, 3), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool Drop(int i, int j)

@@ -27,7 +27,7 @@ namespace CFU.Items
             Item.value = 0;
             Item.rare = ItemRarityID.White;
             Item.createTile = ModContent.TileType<Tiles.ChessPieces>();
-            Item.placeStyle = 1;
+            Item.placeStyle = 9;
         }
 
         public override void AddRecipes()

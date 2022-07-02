@@ -13,11 +13,9 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Ornaments/SpireSmall";
         public override void SetStaticDefaults()
         {
-            Main.tileSolidTop[Type] = false;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileTable[Type] = false;
-            Main.tileLavaDeath[Type] = false;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -29,8 +27,10 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Spire");
             AddMapEntry(new Color(160, 156, 146), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(128, 128, 128), name);
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
 
         public override bool CreateDust(int i, int j, ref int type)
         {

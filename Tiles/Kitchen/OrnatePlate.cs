@@ -14,14 +14,14 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.newTile.Width = 2;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(224, 160, 42));
+            AddMapEntry(new Color(253, 221, 3));
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

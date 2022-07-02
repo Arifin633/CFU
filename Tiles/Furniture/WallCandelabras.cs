@@ -16,7 +16,8 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
+            TileID.Sets.FramesOnKillWall[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
@@ -25,12 +26,11 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.addTile(Type);
-            DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Wall Candelabra");
-            AddMapEntry(new Color(224, 160, 42), name);
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            AddMapEntry(new Color(253, 221, 3), name);
+            DustType = -1;
         }
 
         public override void HitWire(int i, int j)

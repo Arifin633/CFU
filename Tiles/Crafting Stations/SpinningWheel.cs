@@ -13,14 +13,13 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.Loom };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Spinning Wheel");
-            DustType = -1;
             AddMapEntry(new Color(191, 142, 111), name);
-            AdjTiles = new int[] { TileID.Loom };
+            DustType = -1;
             AnimationFrameHeight = 54;
         }
 

@@ -13,20 +13,15 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Height = 3;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Gun Rack");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = DustID.WoodFurniture;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

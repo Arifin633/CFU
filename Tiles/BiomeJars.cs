@@ -16,6 +16,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Height = 2;
@@ -51,10 +52,15 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Biome Jar");
-            AddMapEntry(new Color(133, 213, 247), name);
+            AddMapEntry(new Color(28, 216, 94), name);
+            AddMapEntry(new Color(143, 215, 29), name);
+            AddMapEntry(new Color(141, 137, 223), name);
+            AddMapEntry(new Color(208, 80, 80), name);
+            AddMapEntry(new Color(78, 193, 227), name);
             HitSound = SoundID.Shatter;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
 
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) =>
             (!(CFUConfig.WindEnabled()) || ((Main.tile[i, j].TileFrameX / 18) % 2 == 0));

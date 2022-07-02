@@ -17,21 +17,20 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             /* NPCs only sit in chairs and toilets. */
             // TileID.Sets.CanBeSatOnForNPCs[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Height = 5;
             TileObjectData.newTile.Origin = new Point16(0, 4);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Throne");
-            AddMapEntry(new Color(224, 160, 42), name);
+            AddMapEntry(new Color(253, 221, 3), name);
         }
 
 
@@ -45,7 +44,7 @@ namespace CFU.Tiles
             Tile tile = Framing.GetTileSafely(i, j);
             var frameX = tile.TileFrameX % 54;
 
-            info.TargetDirection = info.RestingEntity.direction;
+            int direction = info.TargetDirection = info.RestingEntity.direction;
             if (frameX == 0)
                 info.AnchorTilePosition.X = (i + 1);
             else if (frameX == 36)
@@ -55,6 +54,9 @@ namespace CFU.Tiles
             if (tile.TileFrameY != 72)
                 info.AnchorTilePosition.Y = (j + ((72 - tile.TileFrameY) / 16));
             else info.AnchorTilePosition.Y = j;
+
+            info.VisualOffset.X -= (direction == 1) ? 8 : 6;
+            info.VisualOffset.Y -= 1;
         }
 
         public override bool RightClick(int i, int j)

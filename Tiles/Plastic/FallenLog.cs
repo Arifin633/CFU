@@ -13,6 +13,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
@@ -20,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fallen Log");
-            AddMapEntry(new Color(51, 35, 22), name);
-
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(127, 92, 69), name);
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

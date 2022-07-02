@@ -19,8 +19,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileSolid[Type] = false;
-            Main.tileLavaDeath[Type] = true;
 
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSleptIn[Type] = true;
@@ -33,19 +31,19 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleMultiplier = 2;
             TileObjectData.newTile.StyleWrapLimit = 2;
             TileObjectData.newTile.Width = 4;
-            TileObjectData.newTile.Origin = new Point16(1, 3);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 18 };
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
+            
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+            AdjTiles = new int[] { TileID.Beds };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bed");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = -1;
-            AdjTiles = new int[] { TileID.Beds };
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
@@ -60,11 +58,11 @@ namespace CFU.Tiles
         {
             Player player = Main.LocalPlayer;
             Tile tile = Main.tile[i, j];
-            int spawnX = (i - (tile.TileFrameX / 18)) + (tile.TileFrameX >= 72 ? 5 : 2);
-            int spawnY = (j - (((tile.TileFrameY % 74) / 18) - 3));
 
             if (Player.IsHoveringOverABottomSideOfABed(i, j))
             {
+                int spawnX = (i - (tile.TileFrameX / 18)) + (tile.TileFrameX >= 72 ? 5 : 2);
+                int spawnY = (j - (((tile.TileFrameY % 74) / 18) - 4));
                 player.FindSpawn();
                 if (player.SpawnX == spawnX && player.SpawnY == spawnY)
                 {
@@ -80,7 +78,7 @@ namespace CFU.Tiles
             else if (player.IsWithinSnappngRangeToTile(i, j, PlayerSleepingHelper.BedSleepingMaxDistance))
             {
                 player.GamepadEnableGrappleCooldown();
-                player.sleeping.StartSleeping(player, i, j);
+                player.sleeping.StartSleeping(player, i, (j - (((tile.TileFrameY % 74) / 18) - 3)));
             }
 
             return true;

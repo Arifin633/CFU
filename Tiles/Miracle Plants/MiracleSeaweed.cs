@@ -16,6 +16,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -29,10 +30,9 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addAlternate(30);
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(25, 193, 97));
+            AddMapEntry(new Color(54, 83, 20));
             HitSound = SoundID.Grass;
             DustType = DustID.GrassBlades;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void NumDust(int i, int j, bool fail, ref int num) => num = 2;

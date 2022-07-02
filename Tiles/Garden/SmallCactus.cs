@@ -14,6 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { TileID.ClayPot };
@@ -21,9 +22,8 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Cactus");
-            AddMapEntry(new Color(14, 152, 64), name);
+            AddMapEntry(new Color(73, 120, 17), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
 

@@ -15,6 +15,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleMultiplier = 2;
@@ -33,7 +34,6 @@ namespace CFU.Tiles
             name.SetDefault("Plants");
             AddMapEntry(new Color(14, 152, 64), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)

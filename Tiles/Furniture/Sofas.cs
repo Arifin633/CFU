@@ -17,7 +17,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSatOnForNPCs[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
@@ -29,7 +28,7 @@ namespace CFU.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Sofa");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(191, 142, 111), name);
             DustType = -1;
         }
 

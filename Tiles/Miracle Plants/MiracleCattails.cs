@@ -16,6 +16,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -34,10 +35,16 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.WaterPlacement = LiquidPlacement.NotAllowed;
             TileObjectData.addAlternate(6);
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(25, 193, 97));
+            AddMapEntry(new Color(28, 216, 109));
+            AddMapEntry(new Color(107, 182, 0));
+            AddMapEntry(new Color(75, 184, 230));
+            AddMapEntry(new Color(208, 80, 80));
+            AddMapEntry(new Color(141, 137, 223));
+            AddMapEntry(new Color(182, 175, 130));
             HitSound = SoundID.Grass;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 18);
 
         public override bool CreateDust(int i, int j, ref int type)
         {

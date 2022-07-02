@@ -17,6 +17,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
             Main.tileTable[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -26,10 +27,9 @@ namespace CFU.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Tables };
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Counter");
+            name.SetDefault("Kitchen Counter");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

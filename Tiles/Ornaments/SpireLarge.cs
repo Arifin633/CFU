@@ -14,6 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Height = 5;
             TileObjectData.newTile.Origin = new Point16(0, 4);
@@ -29,8 +30,10 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Spire");
             AddMapEntry(new Color(160, 156, 146), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(128, 128, 128), name);
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)((Main.tile[i, j].TileFrameY / 92) % 2);
 
         public override bool CreateDust(int i, int j, ref int type)
         {

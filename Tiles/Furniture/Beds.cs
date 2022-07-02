@@ -19,7 +19,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
 
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSleptIn[Type] = true;
@@ -38,13 +37,13 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(3);
             TileObjectData.addTile(Type);
+            
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+            AdjTiles = new int[] { TileID.Beds };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bed");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(191, 142, 111), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Beds };
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;

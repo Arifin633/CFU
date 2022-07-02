@@ -18,7 +18,6 @@ namespace CFU.Tiles
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSatOnForNPCs[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
@@ -33,12 +32,12 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+            AdjTiles = new int[] { TileID.Chairs };
+            TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Chair");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(127, 92, 69), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Chairs };
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)

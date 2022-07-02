@@ -16,16 +16,11 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileSolid[Type] = false;
             Main.tileNoAttach[Type] = true;
-            Main.tileNoFail[Type] = false;
-            Main.tileWaterDeath[Type] = false;
+            TileID.Sets.DisableSmartCursor[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.Width = 2;
-            TileObjectData.newTile.Height = 2;
-            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.AnchorBottom = AnchorData.Empty;
             TileObjectData.newTile.AnchorLeft = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Height, 0);
 
@@ -35,12 +30,13 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
 
-
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Gargoyle");
             AddMapEntry(new Color(160, 156, 146), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(128, 128, 128), name);
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 72);
 
         public static readonly int[] Styles = {
             ModContent.ItemType<Items.LimestoneHangingGargoyle>(),

@@ -20,8 +20,6 @@ namespace CFU.Tiles
         {
             Main.tileSpelunker[Type] = true;
             Main.tileContainer[Type] = true;
-            Main.tileShine2[Type] = true;
-            Main.tileShine[Type] = 1200;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
@@ -34,25 +32,23 @@ namespace CFU.Tiles
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
             TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock };
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.LavaDeath = false;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.Containers };
             ChestDrop = ModContent.ItemType<Items.PrinChest>();
 
             ModTranslation name = CreateMapEntryName();
             name.SetDefault(Names[0]);
-            AddMapEntry(new Color(181, 172, 190), name, MapChestName);
+            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
             name = CreateMapEntryName("MysticChest");
             name.SetDefault(Names[1]);
-            AddMapEntry(new Color(181, 172, 190), name, MapChestName);
+            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
             name = CreateMapEntryName("RoyalChest");
             name.SetDefault(Names[2]);
-            AddMapEntry(new Color(181, 172, 190), name, MapChestName);
+            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
             name = CreateMapEntryName("SandstoneChest");
             name.SetDefault(Names[3]);
-            AddMapEntry(new Color(181, 172, 190), name, MapChestName);
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Containers };
+            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);

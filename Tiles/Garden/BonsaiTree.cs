@@ -14,6 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
@@ -27,7 +28,6 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bonsai Tree");
             AddMapEntry(new Color(14, 152, 64), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool CreateDust(int i, int j, ref int type)

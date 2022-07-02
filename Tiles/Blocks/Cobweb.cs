@@ -11,10 +11,8 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Blocks/Cobweb";
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = false;
-            Main.tileMergeDirt[Type] = false;
-            Main.tileBlockLight[Type] = false;
-            DustType = DustID.GrassBlades;
+            ChadsFurnitureUpdated.CFUtils.SetupOneSidedTileMerge(Type);
+            DustType = DustID.Web;
             HitSound = SoundID.Grass;
             AddMapEntry(new Color(160, 156, 146));
         }

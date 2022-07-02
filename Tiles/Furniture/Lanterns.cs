@@ -16,17 +16,16 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 2;
             TileObjectData.newTile.StyleMultiplier = 2;
             TileObjectData.addTile(Type);
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Lantern");
-            AddMapEntry(new Color(181, 172, 190), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            AddMapEntry(new Color(251, 235, 127), name);
             DustType = -1;
         }
 

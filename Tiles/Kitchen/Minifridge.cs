@@ -21,7 +21,6 @@ namespace CFU.Tiles
             Main.tileContainer[Type] = true;
             Main.tileTable[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileNoAttach[Type] = false;
 
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicChest[Type] = true;
@@ -36,14 +35,13 @@ namespace CFU.Tiles
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.Containers };
             ChestDrop = ModContent.ItemType<Items.Minifridge>();
             ContainerName.SetDefault("Minifridge");
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Minifridge");
             AddMapEntry(new Color(81, 81, 89), name, MapChestName);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Containers };
         }
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 

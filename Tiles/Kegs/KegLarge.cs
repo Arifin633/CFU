@@ -14,7 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x4);
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.Origin = new Point16(0, 1);
@@ -24,12 +24,11 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.Kegs };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Keg");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = DustID.WoodFurniture;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Kegs };
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

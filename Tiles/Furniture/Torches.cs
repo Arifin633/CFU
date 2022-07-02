@@ -17,11 +17,12 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileSolid[Type] = false;
             Main.tileNoAttach[Type] = true;
             Main.tileNoFail[Type] = true;
             Main.tileWaterDeath[Type] = true;
             TileID.Sets.FramesOnKillWall[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
+            TileID.Sets.Torch[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleTorch);
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newAlternate.CopyFrom(TileObjectData.StyleTorch);
@@ -37,12 +38,10 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(0);
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            AdjTiles = new int[] { TileID.Torches };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Torch");
-            AddMapEntry(new Color(198, 124, 78), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Torches };
-            TileID.Sets.Torch[Type] = true;
+            AddMapEntry(new Color(253, 221, 3), name);
             DustType = DustID.YellowTorch;
         }
 

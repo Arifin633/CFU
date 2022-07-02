@@ -35,8 +35,16 @@ namespace CFU.Tiles
             // TileObjectData.addAlternate(144);
             TileObjectData.addTile(Type);
             HitSound = SoundID.Grass;
-            AddMapEntry(new Color(14, 152, 64));
+            AddMapEntry(new Color(23, 177, 76));
+            AddMapEntry(new Color(186, 50, 52));
+            AddMapEntry(new Color(28, 216, 94));
+            AddMapEntry(new Color(33, 171, 207));
+            AddMapEntry(new Color(121, 176, 24));
+            AddMapEntry(new Color(182, 175, 130));
+            AddMapEntry(new Color(182, 175, 130));
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 18);
 
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {

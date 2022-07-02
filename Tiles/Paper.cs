@@ -14,6 +14,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { Type };
@@ -24,7 +25,6 @@ namespace CFU.Tiles
             AddMapEntry(new Color(197, 183, 166), name);
             DustType = -1;
             HitSound = SoundID.Grass;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override bool Drop(int i, int j)

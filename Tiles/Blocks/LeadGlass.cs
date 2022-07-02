@@ -12,9 +12,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileSolid[Type] = true;
-            Main.tileMergeDirt[Type] = false;
-            ChadsFurnitureUpdated.CFUtils.SetupTileMerge(Type);
-            Main.tileBlockLight[Type] = false;
+            Main.tileBrick[Type] = true;
             DustType = DustID.Glass;
             HitSound = SoundID.Shatter;
             AddMapEntry(new Color(133, 213, 247));

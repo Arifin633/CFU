@@ -14,9 +14,9 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.Height = 1;
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.newTile.Origin = new Point16(0, 0);
@@ -27,8 +27,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Rabbit Hole");
-            AddMapEntry(new Color(191, 142, 111), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(151, 107, 75), name);
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

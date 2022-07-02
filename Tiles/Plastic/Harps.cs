@@ -17,16 +17,11 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.Origin = new Point16(0, 2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Harp");
-            AddMapEntry(new Color(224, 160, 42), name);
+            AddMapEntry(new Color(253, 221, 3), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 

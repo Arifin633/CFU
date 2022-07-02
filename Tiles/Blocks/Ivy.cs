@@ -11,10 +11,7 @@ namespace CFU.Tiles
         public override string Texture => "CFU/Textures/Tiles/Blocks/Ivy";
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = false;
-            Main.tileMergeDirt[Type] = false;
-            ChadsFurnitureUpdated.CFUtils.SetupTileMerge(Type, mergeTo: false);
-            Main.tileBlockLight[Type] = false;
+            ChadsFurnitureUpdated.CFUtils.SetupOneSidedTileMerge(Type);
             DustType = DustID.GrassBlades;
             HitSound = SoundID.Grass;
             AddMapEntry(new Color(14, 152, 64));

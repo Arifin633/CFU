@@ -15,21 +15,16 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileTable[Type] = true;
             Main.tileSolidTop[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.Height = 3;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 18 };
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Refrigerator");
+            name.SetDefault("Fridge");
             AddMapEntry(new Color(81, 81, 89), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

@@ -16,11 +16,10 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleMultiplier = 2;
-            TileObjectData.newTile.Height = 3;
-            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16 };
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
@@ -30,7 +29,6 @@ namespace CFU.Tiles
             name.SetDefault("Birdhouse");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
@@ -300,7 +298,9 @@ namespace CFU.Tiles
 
                 bool flip = ((tile.TileFrameX % 72) == 36);
                 var tileEffects = (flip) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                int floorTile = Main.tile[i, (j + 3)].TileType;
                 int offsetX = (flip) ? 2 : 4;
+                int offsetY = (TileID.Sets.Grass[floorTile]) ? 8 : 10;
 
                 string texture = "";
                 switch (tile.TileFrameX / 72)
@@ -321,7 +321,7 @@ namespace CFU.Tiles
 
                 spriteBatch.Draw(
                     ModContent.Request<Texture2D>("CFU/Textures/Tiles/Garden/" + texture).Value,
-                    new Vector2(i * 16 - offsetX - (int)Main.screenPosition.X, j * 16 - 8 - (int)Main.screenPosition.Y) + zero,
+                    new Vector2(i * 16 - offsetX - (int)Main.screenPosition.X, j * 16 - offsetY - (int)Main.screenPosition.Y) + zero,
                     new Rectangle(((frame - frameOffset) * 40), (frameY * 60), 38, 58),
                     Lighting.GetColor(i, j), 0f, default(Vector2), 1f, tileEffects, 0f);
             }

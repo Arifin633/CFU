@@ -31,11 +31,11 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe(4)
-                     .AddIngredient(ModContent.ItemType<Items.AltSandstoneBrick>(), 1)
+                     .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 1)
             .AddTile(TileID.WorkBenches)
             .Register();
 
-            Recipe.Create(ModContent.ItemType<Items.AltSandstoneBrick>())
+            Recipe.Create(ModContent.ItemType<Items.SandstoneBrick>())
             .AddIngredient(this, 4)
             .AddTile(TileID.WorkBenches)
             .Register();

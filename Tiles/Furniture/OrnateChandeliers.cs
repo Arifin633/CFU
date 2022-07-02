@@ -17,8 +17,8 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             Main.tileNoAttach[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 2;
@@ -28,20 +28,13 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, 2, 1);
             TileObjectData.newTile.AnchorBottom = AnchorData.Empty;
             TileObjectData.newTile.CoordinateWidth = 16;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                16,
-                16
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16 };
             TileObjectData.newTile.Origin = new Point16(1, 0);
             TileObjectData.addTile(Type);
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Chandelier");
-            AddMapEntry(new Color(224, 160, 42), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            AddMapEntry(new Color(253, 221, 3), name);
             DustType = -1;
         }
 

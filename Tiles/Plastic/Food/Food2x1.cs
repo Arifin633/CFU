@@ -13,6 +13,7 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.Height = 1;
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
@@ -24,22 +25,21 @@ namespace CFU.Tiles
 
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bowl of Soup");
-            AddMapEntry(new Color(146, 81, 68), name);
+            AddMapEntry(new Color(224, 219, 236), name);
             name = CreateMapEntryName("CookedFish");
             name.SetDefault("Cooked Fish");
-            AddMapEntry(new Color(146, 81, 68), name);
+            AddMapEntry(new Color(224, 219, 236), name);
             name = CreateMapEntryName("PadThai");
             name.SetDefault("Pad Thai");
-            AddMapEntry(new Color(146, 81, 68), name);
+            AddMapEntry(new Color(224, 219, 236), name);
             name = CreateMapEntryName("Pho");
             name.SetDefault("Pho");
-            AddMapEntry(new Color(146, 81, 68), name);
+            AddMapEntry(new Color(224, 219, 236), name);
             name = CreateMapEntryName("Sashimi");
             name.SetDefault("Sashimi");
-            AddMapEntry(new Color(146, 81, 68), name);
+            AddMapEntry(new Color(224, 219, 236), name);
 
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             AnimationFrameHeight = 20;
         }
 

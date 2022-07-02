@@ -17,14 +17,15 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSatOnForNPCs[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+            AdjTiles = new int[] { TileID.Chairs };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Pouf");
             AddMapEntry(new Color(183, 58, 71), name);
@@ -32,8 +33,6 @@ namespace CFU.Tiles
             name.SetDefault("Stool");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Chairs };
         }
 
         public override ushort GetMapOption(int i, int j)

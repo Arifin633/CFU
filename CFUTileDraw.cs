@@ -48,7 +48,7 @@ namespace ChadsFurnitureUpdated
             HangingVine,
             RisingTile,
             RisingVine,
-            Pendulum
+            Unused
         }
 
         public static void AddSpecialPosition(int x, int y, SpecialPositionType type)
@@ -204,7 +204,13 @@ namespace ChadsFurnitureUpdated
             }
             else if (type == ModContent.TileType<Tiles.PlanteraBulb>())
             {
-                tileTop = 2;
+                int potType = ModContent.TileType<Tiles.PlantPots>();
+                if ((Main.tile[x, y + 1].TileType == potType) ||
+                    ((Main.tile[x, y + 1].TileType == type) &&
+                     (Main.tile[x, y + 2].TileType == potType)))
+                    tileTop = -4;
+                else
+                    tileTop = 2;
                 addFrY = Main.tileFrame[type] * 36;
             }
             else if (type == ModContent.TileType<Tiles.MiracleVines>())

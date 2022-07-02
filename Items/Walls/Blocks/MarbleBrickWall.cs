@@ -5,12 +5,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class MarbleSlab : ModItem
+    public class MarbleBrickWall : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Blocks/MarbleSlab";
+        public override string Texture => "CFU/Textures/Items/Walls/Blocks/MarbleBrickWall";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Marble Slab");
+            DisplayName.SetDefault("Marble Brick Wall");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -22,17 +22,21 @@ namespace CFU.Items
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;
-            Item.useTime = 10;
+            Item.useTime = 7;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
-            Item.createTile = ModContent.TileType<Tiles.MarbleSlab>();
+            Item.createWall = ModContent.WallType<Walls.MarbleBrickWall>();
         }
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-            .AddIngredient(ItemID.MarbleBlock, 1)
-            .AddIngredient(ItemID.StoneBlock, 1)
+            CreateRecipe(4)
+            .AddIngredient(ModContent.ItemType<Items.MarbleBrick>(), 1)
+            .AddTile(TileID.WorkBenches)
+            .Register();
+
+            Recipe.Create(ModContent.ItemType<Items.MarbleBrick>())
+            .AddIngredient(this, 4)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

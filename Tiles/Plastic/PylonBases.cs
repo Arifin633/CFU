@@ -13,16 +13,26 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 26 };
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(128, 128, 128));
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(28, 216, 94));
+            AddMapEntry(new Color(183, 237, 20));
+            AddMapEntry(new Color(185, 83, 200));
+            AddMapEntry(new Color(131, 128, 168));
+            AddMapEntry(new Color(38, 142, 214));
+            AddMapEntry(new Color(229, 154, 9));
+            AddMapEntry(new Color(142, 227, 234));
+            AddMapEntry(new Color(98, 111, 223));
+            AddMapEntry(new Color(241, 233, 158));
             DustType = -1;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 54);
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short _x, ref short _y)
         {

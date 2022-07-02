@@ -13,23 +13,17 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Height = 4;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Mirror");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(133, 213, 247), name);
             DustType = -1;
             HitSound = SoundID.Shatter;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

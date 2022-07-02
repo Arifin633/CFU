@@ -19,10 +19,10 @@ namespace CFU.Tiles
             Main.tileBlockLight[Type] = true;
             Main.tileSolid[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.NotReallySolid[Type] = true;
             TileID.Sets.DrawsWalls[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.Width = 1;
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.Origin = new Point16(0, 0);
@@ -41,12 +41,11 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(0);
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+            AdjTiles = new int[] { TileID.ClosedDoor };
+            OpenDoorID = ModContent.TileType<Tiles.DoorsOpen>();
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Door");
             AddMapEntry(new Color(181, 172, 190), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.ClosedDoor };
-            OpenDoorID = ModContent.TileType<Tiles.DoorsOpen>();
             DustType = -1;
         }
 

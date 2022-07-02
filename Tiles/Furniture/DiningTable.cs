@@ -17,7 +17,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
             Main.tileTable[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(AfterPlacementHook, -1, 0, false);
             TileObjectData.newTile.Height = 2;
@@ -27,12 +27,11 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleMultiplier = 4;
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+            AdjTiles = new int[] { TileID.Tables };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Table");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Tables };
         }
 
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)

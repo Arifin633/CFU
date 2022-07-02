@@ -14,23 +14,22 @@ namespace CFU.Tiles
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 6;
             TileObjectData.newTile.StyleMultiplier = 6;
             TileObjectData.newTile.RandomStyleRange = 6;
             TileObjectData.addTile(Type);
-            HitSound = SoundID.Coins;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Coin Stash");
             AddMapEntry(new Color(107, 81, 65), name);
+            AddMapEntry(new Color(107, 81, 65), name);
+            AddMapEntry(new Color(107, 81, 65), name);
+            HitSound = SoundID.Coins;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 38);
 
         public override bool CreateDust(int i, int j, ref int type)
         {

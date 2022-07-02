@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
+using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
@@ -16,11 +17,15 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+            TileObjectData.newTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.PlantPots>() };
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(225, 128, 216));
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Plantera's Bulb");
+            AddMapEntry(new Color(225, 128, 206), name);
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
@@ -49,6 +54,11 @@ namespace CFU.Tiles
             if (!CFUConfig.WindEnabled())
             {
                 offsetY = 2;
+                int potType = ModContent.TileType<Tiles.PlantPots>();
+                if ((Main.tile[i, j + 1].TileType == potType) ||
+                     ((Main.tile[i, j + 1].TileType == Type) &&
+                      (Main.tile[i, j + 2].TileType == potType)))
+                    offsetY = -4;
             }
         }
 

@@ -19,10 +19,10 @@ namespace CFU.Tiles
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.CanBeSatOnForPlayers[Type] = true;
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+            TileID.Sets.DisableSmartCursor[Type] = true;
+
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 2;
@@ -33,6 +33,9 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
+
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+            AdjTiles = new int[] { TileID.Chairs };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Beanbag Chair");
             AddMapEntry(new Color(204, 204, 204), name);
@@ -40,9 +43,9 @@ namespace CFU.Tiles
             name.SetDefault("Armchair");
             AddMapEntry(new Color(204, 204, 204), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[] { TileID.Chairs };
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 38);
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
         {

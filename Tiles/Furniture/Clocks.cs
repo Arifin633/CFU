@@ -16,27 +16,19 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            TileID.Sets.HasOutlines[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.Clock[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.StyleHorizontal = false;
             TileObjectData.newTile.Height = 5;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
+            AdjTiles = new int[] { TileID.GrandfatherClocks };
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Clock");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(127, 92, 69), name);
             DustType = -1;
-            AdjTiles = new int[] { TileID.GrandfatherClocks };
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;

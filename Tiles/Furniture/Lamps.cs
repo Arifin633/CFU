@@ -16,21 +16,16 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1xX);
             TileObjectData.newTile.Height = 3;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                18
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Lamp");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(253, 221, 3), name);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
         }
 
         public override void HitWire(int i, int j)

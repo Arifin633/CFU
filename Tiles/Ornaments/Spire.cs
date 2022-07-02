@@ -14,17 +14,12 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileSolid[Type] = false;
             Main.tileNoAttach[Type] = true;
-            Main.tileNoFail[Type] = false;
-            Main.tileWaterDeath[Type] = false;
+            TileID.Sets.DisableSmartCursor[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
-            TileObjectData.newTile.Width = 2;
-            TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
-            TileObjectData.newTile.UsesCustomCanPlace = true;
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
@@ -33,8 +28,10 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Spire");
             AddMapEntry(new Color(160, 156, 146), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(128, 128, 128), name);
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 72);
 
         public override bool CreateDust(int i, int j, ref int type)
         {

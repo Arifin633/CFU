@@ -1,22 +1,23 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class Easel : ModItem
+    public class SandstoneBrick : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Easel";
+        public override string Texture => "CFU/Textures/Items/Blocks/SandstoneBrick";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Easel");
+            DisplayName.SetDefault("Ancient Sandstone Brick");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
         {
-            Item.width = 16;
-            Item.height = 22;
+            Item.width = 12;
+            Item.height = 12;
             Item.maxStack = 999;
             Item.useTurn = true;
             Item.autoReuse = true;
@@ -24,17 +25,15 @@ namespace CFU.Items
             Item.useTime = 10;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
-            Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Easel>();
-            Item.placeStyle = 0;
+            Item.createTile = ModContent.TileType<Tiles.SandstoneBrick>();
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.Paper>(), 12)
-            .AddIngredient(ItemID.Wood, 10)
-            .AddTile(TileID.Sawmill)
+            .AddIngredient(ItemID.Sandstone, 1)
+            .AddIngredient(ItemID.StoneBlock, 1)
+            .AddTile(TileID.Furnaces)
             .Register();
         }
     }

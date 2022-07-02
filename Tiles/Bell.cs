@@ -14,29 +14,22 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             Main.tileNoAttach[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Width = 4;
             TileObjectData.newTile.Height = 4;
             TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.AnchorBottom = AnchorData.Empty;
             TileObjectData.newTile.CoordinateWidth = 16;
-            TileObjectData.newTile.CoordinateHeights = new int[]
-            {
-                16,
-                16,
-                16,
-                16
-            };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16 };
             TileObjectData.newTile.Origin = new Point16(1, 0);
             TileObjectData.addTile(Type);
-            DustType = -1;
-            HitSound = SoundID.Item37;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Bell");
             AddMapEntry(new Color(224, 160, 42), name);
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            DustType = -1;
+            HitSound = SoundID.Item37;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

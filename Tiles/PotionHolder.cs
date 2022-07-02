@@ -87,15 +87,17 @@ namespace CFU.Tiles
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 22 };
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Potion Holder");
-            AddMapEntry(new Color(155, 183, 193), name);
+            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(133, 213, 247), name);
             DustType = -1;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)((Main.tile[i, j].TileFrameX == 0) ? 0 : 1);
 
         public override void MouseOver(int i, int j)
         {

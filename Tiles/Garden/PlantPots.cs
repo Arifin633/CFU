@@ -13,16 +13,15 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x1);
             TileObjectData.newTile.Height = 1;
             TileObjectData.newTile.CoordinateHeights = new int[] { 22 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
             DustType = -1;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Pot");
+            name.SetDefault("Plant Pot");
             AddMapEntry(new Color(146, 81, 68), name);
         }
 

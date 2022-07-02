@@ -26,7 +26,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Plant");
-            AddMapEntry(new Color(14, 152, 64), name);
+            AddMapEntry(new Color(226, 196, 49), name);
             HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }

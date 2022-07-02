@@ -29,10 +29,10 @@ namespace CFU.Items
 
         public override void AddRecipes()
         {
-            /*	CreateRecipe()
-                recipe.AddRecipeGroup("IronBar", 1);
-                .AddTile(TileID.Anvils)
-                .Register();*/
+            CreateRecipe()
+            .AddRecipeGroup(RecipeGroupID.IronBar, 1)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
     }
 }

@@ -13,18 +13,16 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.FramesOnKillWall[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.Width = 4;
-            TileObjectData.newTile.CoordinateWidth = 16;
-            TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.addTile(Type);
-            DustType = -1;
-            HitSound = SoundID.Shatter;
-            TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("World Map");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(204, 185, 153), name);
+            DustType = -1;
+            HitSound = SoundID.Grass;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

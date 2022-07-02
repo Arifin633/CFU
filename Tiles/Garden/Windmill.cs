@@ -13,7 +13,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 20 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -24,7 +23,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Windmill");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(91, 78, 71), name);
             DustType = -1;
             AnimationFrameHeight = 40;
         }

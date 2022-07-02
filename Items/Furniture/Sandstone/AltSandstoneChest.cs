@@ -32,7 +32,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.AltSandstoneBrick>(), 8)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 8)
             .AddRecipeGroup(RecipeGroupID.IronBar, 2)
             .AddTile(TileID.WorkBenches)
             .Register();

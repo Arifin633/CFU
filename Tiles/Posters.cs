@@ -13,7 +13,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.FramesOnKillWall[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.Width = 2;
@@ -26,8 +25,12 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Poster");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(174, 162, 4), name);
+            AddMapEntry(new Color(151, 107, 75), name);
+            AddMapEntry(new Color(112, 170, 68), name);
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 54);
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {

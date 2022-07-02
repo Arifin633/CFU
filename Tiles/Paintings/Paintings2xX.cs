@@ -13,7 +13,6 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileID.Sets.FramesOnKillWall[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
@@ -24,7 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16 };
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
-            for (int i = 0; i <= 5; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
                 TileObjectData.newSubTile.Height = 3;
@@ -32,11 +31,18 @@ namespace CFU.Tiles
                 TileObjectData.addSubTile(i);
             }
             TileObjectData.addTile(Type);
-            DustType = -1;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Painting");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(95, 135, 36), name);
+            AddMapEntry(new Color(120, 189, 108), name);
+            AddMapEntry(new Color(75, 79, 89), name);
+            AddMapEntry(new Color(225, 195, 52), name);
+            AddMapEntry(new Color(1, 143, 246), name);
+            AddMapEntry(new Color(116, 96, 96), name);
+            DustType = -1;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {

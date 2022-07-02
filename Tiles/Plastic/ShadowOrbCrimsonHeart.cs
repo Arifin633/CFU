@@ -15,16 +15,23 @@ namespace CFU.Tiles
         {
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            // TileID.Sets.FramesOnKillWall[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.Width = 2;
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(98, 75, 107));
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Shadow Orb");
+            AddMapEntry(new Color(141, 120, 168), name);
+            name = CreateMapEntryName("CrimsonHeart");
+            name.SetDefault("Crimson Heart");
+            AddMapEntry(new Color(212, 105, 105), name);
             AnimationFrameHeight = 36;
         }
+
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {

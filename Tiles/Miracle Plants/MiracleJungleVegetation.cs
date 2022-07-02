@@ -17,9 +17,8 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileSolid[Type] = false;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 12;
@@ -44,10 +43,9 @@ namespace CFU.Tiles
             TileObjectData.addSubTile(6);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
-            AddMapEntry(new Color(25, 195, 85));
+            AddMapEntry(new Color(107, 182, 29));
             HitSound = SoundID.Grass;
             DustType = DustID.JunglePlants;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)

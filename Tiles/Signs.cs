@@ -14,10 +14,8 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileSolid[Type] = false;
             Main.tileNoAttach[Type] = true;
-            Main.tileNoFail[Type] = false;
-            Main.tileWaterDeath[Type] = false;
+            TileID.Sets.DisableSmartCursor[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleTorch);
             TileObjectData.newTile.StyleHorizontal = true;
@@ -67,12 +65,10 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(4);
             TileObjectData.addTile(Type);
 
-
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Sign");
             AddMapEntry(new Color(191, 142, 111), name);
             DustType = DustID.WoodFurniture;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

@@ -14,13 +14,12 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
+            TileID.Sets.DisableSmartCursor[Type] = true;
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleMultiplier = 2;
             TileObjectData.newTile.StyleWrapLimit = 2;
-            TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
-            TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.PlantPots>() };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.Direction = TileObjectDirection.PlaceLeft;
@@ -41,7 +40,6 @@ namespace CFU.Tiles
             name.SetDefault("Plant");
             AddMapEntry(new Color(198, 19, 78), name);
             HitSound = SoundID.Grass;
-            TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 38);

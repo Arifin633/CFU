@@ -15,17 +15,16 @@ namespace CFU.Tiles
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Width = 6;
             TileObjectData.newTile.Height = 7;
             TileObjectData.newTile.Origin = new Point16(2, 6);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
-            DustType = DustID.Stone;
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Fountain");
-            AddMapEntry(new Color(99, 99, 99), name);
+            AddMapEntry(new Color(128, 128, 128), name);
+            DustType = DustID.Stone;
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
