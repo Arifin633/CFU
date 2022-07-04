@@ -14,7 +14,6 @@ namespace CFU.Walls
             Main.wallLight[Type] = true;
             WallID.Sets.AllowsWind[Type] = true;
             DustType = DustID.Shadewood;
-            AddMapEntry(new Color(150, 150, 150));
         }
 
         public override bool Drop(int i, int j, ref int type)
