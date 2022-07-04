@@ -33,7 +33,7 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinWorkbench>(),
                              ModContent.ItemType<Items.MysticWorkbench>(),
                              ModContent.ItemType<Items.RoyalWorkbench>(),
-                             ModContent.ItemType<Items.AltSandstoneWorkbench>(),
+                             ModContent.ItemType<Items.SandstoneWorkbench>(),
                              ModContent.ItemType<Items.RushWorkbench>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameX / 36)]);
         }

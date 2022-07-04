@@ -1,15 +1,15 @@
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
+using Terraria.ID;
 
 namespace CFU.Items
 {
-    public class AltSandstoneChandelier : ModItem
+    public class SandstoneWorkbench : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneChandelier";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneWorkbench";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Brazier");
+            DisplayName.SetDefault("Ancient Sandstone Work Bench");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,17 +25,14 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Chandeliers>();
+            Item.createTile = ModContent.TileType<Tiles.Workbenches>();
             Item.placeStyle = 3;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 4)
-            .AddIngredient(ModContent.ItemType<Items.AltSandstoneTorch>(), 4)
-            .AddIngredient(ItemID.Chain)
-            .AddTile(TileID.Anvils)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 10)
             .Register();
         }
     }

@@ -10,10 +10,10 @@ using Terraria.GameContent.Creative;
 namespace CFU.Items
 {
 
-    public class AltSandstoneTorch : ModItem
+    public class SandstoneTorch : ModItem
     {
 
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneTorch";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneTorch";
 
         public override void AutoStaticDefaults()
         {

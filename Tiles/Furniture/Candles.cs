@@ -66,7 +66,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinCandle>(),
               ModContent.ItemType<Items.MysticCandle>(),
               ModContent.ItemType<Items.RoyalCandle>(),
-              ModContent.ItemType<Items.AltSandstoneCandle>() };
+              ModContent.ItemType<Items.SandstoneCandle>() };
 
         public override void MouseOver(int i, int j)
         {

@@ -1,4 +1,3 @@
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
@@ -10,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableSandstone";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sandstone End Table");
+            DisplayName.SetDefault("Ancient Sandstone End Table");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -26,14 +25,14 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.EndTablesExtra>();
-            Item.placeStyle = 4;
+            Item.createTile = ModContent.TileType<Tiles.EndTables>();
+            Item.placeStyle = 33;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.SmoothSandstone, 12)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 12)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

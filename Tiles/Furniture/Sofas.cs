@@ -125,7 +125,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinSofa>(),
               ModContent.ItemType<Items.MysticSofa>(),
               ModContent.ItemType<Items.RoyalSofa>(),
-              ModContent.ItemType<Items.AltSandstoneSofa>(),
+              ModContent.ItemType<Items.SandstoneSofa>(),
               ModContent.ItemType<Items.PaintableSofa>() };
 
         public override void MouseOver(int i, int j)

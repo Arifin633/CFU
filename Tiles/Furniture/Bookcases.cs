@@ -30,7 +30,7 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinBookcase>(),
                              ModContent.ItemType<Items.MysticBookcase>(),
                              ModContent.ItemType<Items.RoyalBookcase>(),
-                             ModContent.ItemType<Items.AltSandstoneBookcase>()};
+                             ModContent.ItemType<Items.SandstoneBookcase>()};
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 74)]);
         }
     }

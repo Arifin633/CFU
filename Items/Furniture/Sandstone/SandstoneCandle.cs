@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstoneChair : ModItem
+    public class SandstoneCandle : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneChair";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneCandle";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Chair");
+            DisplayName.SetDefault("Ancient Sandstone Candle");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,7 +25,7 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Chairs>();
+            Item.createTile = ModContent.TileType<Tiles.Candles>();
             Item.placeStyle = 3;
         }
 
@@ -33,6 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 4)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneTorch>(), 1)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

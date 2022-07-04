@@ -4,9 +4,9 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstoneBed : ModItem
+    public class SandstoneBed : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneBed";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneBed";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Ancient Sandstone Sarcophagus");

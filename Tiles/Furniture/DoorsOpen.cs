@@ -75,7 +75,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinDoor>(),
               ModContent.ItemType<Items.MysticDoor>(),
               ModContent.ItemType<Items.RoyalDoor>(),
-              ModContent.ItemType<Items.AltSandstoneDoor>()};
+              ModContent.ItemType<Items.SandstoneDoor>()};
 
         public override void MouseOver(int i, int j)
         {

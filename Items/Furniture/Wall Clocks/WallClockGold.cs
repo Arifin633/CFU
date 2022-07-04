@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockGold";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Gold Wall Clock");
+            DisplayName.SetDefault("Golden Wall Clock");
             Tooltip.SetDefault("'Hanging from the wall'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }

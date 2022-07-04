@@ -68,7 +68,7 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.EndTableIce>(),
                              ModContent.ItemType<Items.EndTableLiving>(),
                              ModContent.ItemType<Items.EndTableGothic>(),
-                             ModContent.ItemType<Items.EndTableAltSandstone>(),
+                             ModContent.ItemType<Items.EndTableSandstone>(),
                              ModContent.ItemType<Items.EndTablePrincess>(),
                              ModContent.ItemType<Items.EndTableMystic>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 54)]);

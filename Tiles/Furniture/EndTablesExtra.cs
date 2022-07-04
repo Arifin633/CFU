@@ -39,7 +39,7 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.EndTableRush>(),
                              ModContent.ItemType<Items.EndTableSpider>(),
                              ModContent.ItemType<Items.EndTableLesion>(),
-                             ModContent.ItemType<Items.EndTableSandstone>(),
+                             ModContent.ItemType<Items.EndTableNewSandstone>(),
                              ModContent.ItemType<Items.EndTableBamboo>(),
                              ModContent.ItemType<Items.EndTableSolar>(),
                              ModContent.ItemType<Items.EndTableVortex>(),

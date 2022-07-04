@@ -122,7 +122,7 @@ namespace CFU.Tiles
             ModContent.ItemType<Items.WallClockPrincess>(),
             ModContent.ItemType<Items.WallClockMystic>(),
             ModContent.ItemType<Items.WallClockRoyal>(),
-            ModContent.ItemType<Items.WallClockAltSandstone>() };
+            ModContent.ItemType<Items.WallClockSandstone>() };
 
         public override void MouseOver(int i, int j)
         {

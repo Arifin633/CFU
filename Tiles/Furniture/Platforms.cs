@@ -41,7 +41,7 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinPlatform>(),
                              ModContent.ItemType<Items.MysticPlatform>(),
                              ModContent.ItemType<Items.RoyalPlatform>(),
-                             ModContent.ItemType<Items.AltSandstonePlatform>()};
+                             ModContent.ItemType<Items.SandstonePlatform>()};
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(Main.tile[i, j].TileFrameY / 18)]);
             return true;
         }

@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstoneTable : ModItem
+    public class SandstoneSofa : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneTable";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneSofa";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Table");
+            DisplayName.SetDefault("Ancient Sandstone Sofa");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,15 +25,16 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Tables>();
+            Item.createTile = ModContent.TileType<Tiles.Sofas>();
             Item.placeStyle = 3;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 8)
-            .AddTile(TileID.WorkBenches)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 15)
+            .AddIngredient(ItemID.Silk, 5)
+            .AddTile(TileID.Sawmill)
             .Register();
         }
     }

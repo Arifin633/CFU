@@ -61,7 +61,7 @@ namespace CFU.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.AltSandstoneTorch>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.SandstoneTorch>());
             return true;
         }
 
@@ -69,7 +69,7 @@ namespace CFU.Tiles
         {
 
             Player player = Main.LocalPlayer;
-            player.cursorItemIconID = ModContent.ItemType<Items.AltSandstoneTorch>();
+            player.cursorItemIconID = ModContent.ItemType<Items.SandstoneTorch>();
             player.cursorItemIconText = "";
             player.noThrow = 2;
             player.cursorItemIconEnabled = true;

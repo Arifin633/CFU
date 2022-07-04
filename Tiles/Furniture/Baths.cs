@@ -37,7 +37,7 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinBath>(),
                              ModContent.ItemType<Items.MysticBath>(),
                              0, /* ModContent.ItemType<Items.RoyalBath>(), */
-                             ModContent.ItemType<Items.AltSandstoneBath>()};
+                             ModContent.ItemType<Items.SandstoneBath>()};
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 38)]);
         }
     }

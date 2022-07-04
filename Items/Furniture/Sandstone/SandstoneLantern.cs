@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstoneSink : ModItem
+    public class SandstoneLantern : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneSink";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneLantern";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Sink");
+            DisplayName.SetDefault("Ancient Sandstone Lantern");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,7 +25,7 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Sinks>();
+            Item.createTile = ModContent.TileType<Tiles.Lanterns>();
             Item.placeStyle = 3;
         }
 
@@ -33,8 +33,8 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 6)
-            .AddIngredient(ItemID.WaterBucket, 1)
-            .AddTile(TileID.Sawmill)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneTorch>(), 3)
+            .AddTile(TileID.WorkBenches)
             .Register();
         }
     }

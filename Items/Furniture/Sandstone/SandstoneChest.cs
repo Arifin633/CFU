@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstonePiano : ModItem
+    public class SandstoneChest : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstonePiano";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneChest";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Piano");
+            DisplayName.SetDefault("Ancient Sandstone Urn");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,17 +25,16 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Pianos>();
+            Item.createTile = ModContent.TileType<Tiles.Chests>();
             Item.placeStyle = 3;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 15)
-            .AddIngredient(ItemID.Bone, 4)
-            .AddIngredient(ItemID.Book, 1)
-            .AddTile(TileID.Sawmill)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 8)
+            .AddRecipeGroup(RecipeGroupID.IronBar, 2)
+            .AddTile(TileID.WorkBenches)
             .Register();
         }
     }

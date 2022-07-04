@@ -65,7 +65,7 @@ namespace CFU.Tiles
               ModContent.ItemType<Items.WardrobeShade>(),
               ModContent.ItemType<Items.WardrobeWood>(),
               ModContent.ItemType<Items.WardrobePrincess>(),
-              ModContent.ItemType<Items.WardrobeAltSandstone>() };
+              ModContent.ItemType<Items.WardrobeSandstone>() };
 
         public override void MouseOver(int i, int j)
         {

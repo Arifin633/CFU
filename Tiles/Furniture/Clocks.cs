@@ -43,7 +43,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinClock>(),
               ModContent.ItemType<Items.MysticClock>(),
               ModContent.ItemType<Items.RoyalClock>(),
-              ModContent.ItemType<Items.AltSandstoneClock>() };
+              ModContent.ItemType<Items.SandstoneClock>() };
 
         public override void MouseOver(int i, int j)
         {

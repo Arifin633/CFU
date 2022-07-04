@@ -27,7 +27,7 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinPiano>(),
                              ModContent.ItemType<Items.MysticPiano>(),
                              ModContent.ItemType<Items.RoyalPiano>(),
-                             ModContent.ItemType<Items.AltSandstonePiano>()};
+                             ModContent.ItemType<Items.SandstonePiano>()};
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 38)]);
         }
     }

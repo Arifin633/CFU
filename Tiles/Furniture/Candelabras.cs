@@ -83,7 +83,7 @@ namespace CFU.Tiles
             int[] styles = { ModContent.ItemType<Items.PrinCandelabra>(),
                              ModContent.ItemType<Items.MysticCandelabra>(),
                              ModContent.ItemType<Items.RoyalCandelabra>(),
-                             ModContent.ItemType<Items.AltSandstoneCandelabra>()};
+                             ModContent.ItemType<Items.SandstoneCandelabra>()};
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 38)]);
         }
 

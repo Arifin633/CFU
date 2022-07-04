@@ -79,7 +79,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinChest>(),
               ModContent.ItemType<Items.MysticChest>(),
               ModContent.ItemType<Items.RoyalChest>(),
-              ModContent.ItemType<Items.AltSandstoneChest>() };
+              ModContent.ItemType<Items.SandstoneChest>() };
 
 
         public override bool CreateDust(int i, int j, ref int type)

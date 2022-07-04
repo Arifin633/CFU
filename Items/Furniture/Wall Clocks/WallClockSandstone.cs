@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstoneCandle : ModItem
+    public class WallClockSandstone : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneCandle";
+        public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockSandstone";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Candle");
+            DisplayName.SetDefault("Sandstone Clock");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,17 +25,20 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Candles>();
-            Item.placeStyle = 3;
+            Item.createTile = ModContent.TileType<Tiles.WallClocks>();
+            Item.placeStyle = 28;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 4)
-            .AddIngredient(ModContent.ItemType<Items.AltSandstoneTorch>(), 1)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 5)
+            .AddIngredient(ItemID.Glass, 6)
+            .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddTile(TileID.WorkBenches)
             .Register();
+
+
         }
     }
 }

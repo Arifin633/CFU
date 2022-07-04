@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wardrobes/WardrobeBoreal";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Boreal Wardrobe");
+            DisplayName.SetDefault("Boreal Wood Wardrobe");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

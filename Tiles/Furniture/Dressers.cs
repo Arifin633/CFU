@@ -109,7 +109,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinDresser>(),
               ModContent.ItemType<Items.MysticDresser>(),
               ModContent.ItemType<Items.RoyalDresser>(),
-              ModContent.ItemType<Items.AltSandstoneDresser>() };
+              ModContent.ItemType<Items.SandstoneDresser>() };
 
 
         public override void MouseOver(int i, int j)

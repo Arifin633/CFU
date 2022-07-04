@@ -70,7 +70,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinChair>(),
               0, /* ModContent.ItemType<Items.MysticChair>(), */
               ModContent.ItemType<Items.RoyalChair>(),
-              ModContent.ItemType<Items.AltSandstoneChair>(),
+              ModContent.ItemType<Items.SandstoneChair>(),
               ModContent.ItemType<Items.DiningChair>(),
               ModContent.ItemType<Items.RushChair>(),
               ModContent.ItemType<Items.IronChair>() };

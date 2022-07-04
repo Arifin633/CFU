@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstoneDoor : ModItem
+    public class SandstonePlatform : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneDoor";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstonePlatform";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Door");
+            DisplayName.SetDefault("Ancient Sandstone Platform");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,14 +25,14 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.DoorsClosed>();
+            Item.createTile = ModContent.TileType<Tiles.Platforms>();
             Item.placeStyle = 3;
         }
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 6)
+            CreateRecipe(2)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 1)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

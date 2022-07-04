@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class AltSandstoneBath : ModItem
+    public class SandstoneDresser : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/AltSandstoneBath";
+        public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneDresser";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ancient Sandstone Bathtub");
+            DisplayName.SetDefault("Ancient Sandstone Dresser");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -25,14 +25,14 @@ namespace CFU.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.value = 0;
-            Item.createTile = ModContent.TileType<Tiles.Baths>();
+            Item.createTile = ModContent.TileType<Tiles.Dressers>();
             Item.placeStyle = 3;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 14)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 16)
             .AddTile(TileID.Sawmill)
             .Register();
         }

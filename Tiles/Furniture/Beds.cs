@@ -88,7 +88,7 @@ namespace CFU.Tiles
             { ModContent.ItemType<Items.PrinBed>(),
               ModContent.ItemType<Items.MysticBed>(),
               0, /* ModContent.ItemType<Items.RoyalBed>(), */
-              ModContent.ItemType<Items.AltSandstoneBed>()};
+              ModContent.ItemType<Items.SandstoneBed>()};
 
         public override void MouseOver(int i, int j)
         {
