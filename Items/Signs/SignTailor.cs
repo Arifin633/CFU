@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tailor Sign");
-            Tooltip.SetDefault("'Shows a roll of thread.'");
+            Tooltip.SetDefault("'Shows a roll of thread'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

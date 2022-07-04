@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Small Stained Glass Window");
-            Tooltip.SetDefault("'It depicts the Solar Pillar.'");
+            Tooltip.SetDefault("'It depicts the Solar Pillar'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

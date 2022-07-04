@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Jewelry Sign");
-            Tooltip.SetDefault("'Shows a diamond.'");
+            Tooltip.SetDefault("'Shows a diamond'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

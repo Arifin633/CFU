@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Library Sign");
-            Tooltip.SetDefault("'Shows an open book.'");
+            Tooltip.SetDefault("'Shows an open book'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

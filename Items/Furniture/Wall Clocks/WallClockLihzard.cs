@@ -9,8 +9,8 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockLihzard";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Lihzahrd Clock");
-            Tooltip.SetDefault("'Hanging from the wall.'");
+            DisplayName.SetDefault("Lihzahrd Wall Clock");
+            Tooltip.SetDefault("'Hanging from the wall'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

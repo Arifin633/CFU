@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tapestry");
-            Tooltip.SetDefault("'Depicts King Jacques facing off against the Crimson menace.'");
+            Tooltip.SetDefault("'Depicts King Jacques facing off against the Crimson menace'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

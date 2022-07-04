@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Hairspray");
-            Tooltip.SetDefault("'Right-click after placing if you dislike the smell'");
+            Tooltip.SetDefault("Right-click after placing if you dislike the smell");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

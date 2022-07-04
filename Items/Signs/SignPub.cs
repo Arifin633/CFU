@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Pub Sign");
-            Tooltip.SetDefault("'Shows a mug of beer.'");
+            Tooltip.SetDefault("'Shows a mug of beer'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

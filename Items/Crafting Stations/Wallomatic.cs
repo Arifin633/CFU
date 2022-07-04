@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Wall-O-Matic");
-            Tooltip.SetDefault("'For crafting special walls.'");
+            Tooltip.SetDefault("Used for crafting special walls");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

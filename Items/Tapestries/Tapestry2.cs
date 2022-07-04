@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tapestry");
-            Tooltip.SetDefault("'Depicts King Jacques being knighted by the Dryad.'");
+            Tooltip.SetDefault("'Depicts King Jacques being knighted by the Dryad'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

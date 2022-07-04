@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Rabbit Hole");
-            Tooltip.SetDefault("'An elegant property located in a garden near sources\nof food and water, yet capturing the rough and tough\ncountry-feel of European-style rabbit architecture.\nYear built: 1854\n4 beds\n2 baths\nIncludes pre-built kitchen with appliances.'");
+            Tooltip.SetDefault("'An elegant property located in a garden near sources\nof food and water, yet capturing the rough and tough\ncountry-feel of European-style rabbit architecture.\nYear built: 1854\n4 beds\n2 baths\nIncludes pre-built kitchen with appliances'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

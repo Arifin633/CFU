@@ -9,8 +9,8 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockGranite";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Granite Clock");
-            Tooltip.SetDefault("'Hanging from the wall.'");
+            DisplayName.SetDefault("Granite Wall Clock");
+            Tooltip.SetDefault("'Hanging from the wall'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

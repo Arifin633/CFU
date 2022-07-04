@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Golden Birdhouse");
-            Tooltip.SetDefault("'Any bird's dream home.'");
+            Tooltip.SetDefault("'Any bird's dream home'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

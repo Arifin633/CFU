@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Eye of Horus");
-            Tooltip.SetDefault("Holds religious (and decorative) connotation.");
+            Tooltip.SetDefault("Holds religious (and decorative) connotation");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

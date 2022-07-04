@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bust");
-            Tooltip.SetDefault("'It's some Roman emperor or something.'");
+            Tooltip.SetDefault("'It's some Roman Emperor or something'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

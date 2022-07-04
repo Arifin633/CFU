@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Rumpelstiltskin's Spinning Wheel");
-            Tooltip.SetDefault("'Used for crafting furniture'");
+            Tooltip.SetDefault("Used for crafting furniture");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

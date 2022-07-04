@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Jar O' Mints");
-            Tooltip.SetDefault("'Purely for decorational purposes.'");
+            Tooltip.SetDefault("'Purely for decorational purposes'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

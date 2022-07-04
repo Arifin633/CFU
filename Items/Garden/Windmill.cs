@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Windmill");
-            Tooltip.SetDefault("'A small one, that is.'");
+            Tooltip.SetDefault("'A small one, that is'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

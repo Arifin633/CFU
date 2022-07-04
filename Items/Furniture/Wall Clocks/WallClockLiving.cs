@@ -9,8 +9,8 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockLiving";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Living Wood Clock");
-            Tooltip.SetDefault("'Hanging from the wall.'");
+            DisplayName.SetDefault("Living Wood Wall Clock");
+            Tooltip.SetDefault("'Hanging from the wall'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

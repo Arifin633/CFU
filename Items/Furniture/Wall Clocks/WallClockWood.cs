@@ -9,8 +9,8 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockWood";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Wood Clock");
-            Tooltip.SetDefault("'Hanging from the wall.'");
+            DisplayName.SetDefault("Wood Wall Clock");
+            Tooltip.SetDefault("'Hanging from the wall'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -39,8 +39,6 @@ namespace CFU.Items
             .AddIngredient(ItemID.Wood, 5)
             .AddTile(TileID.Sawmill)
             .Register();
-
-
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Blacksmith Sign");
-            Tooltip.SetDefault("'Shows an anvil.'");
+            Tooltip.SetDefault("'Shows an anvil'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

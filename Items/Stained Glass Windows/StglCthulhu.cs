@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Large Stained Glass Window");
-            Tooltip.SetDefault("'It depicts the Moon Lord.'");
+            Tooltip.SetDefault("'It depicts the Moon Lord'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

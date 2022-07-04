@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tapestry");
-            Tooltip.SetDefault("'Depicts King Jacques having met an accidental end to a catapult manned by his wife.'");
+            Tooltip.SetDefault("'Depicts King Jacques having met an accidental end to a catapult manned by his wife'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

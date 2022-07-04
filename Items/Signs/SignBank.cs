@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bank Sign");
-            Tooltip.SetDefault("'Shows a pile of coins.'");
+            Tooltip.SetDefault("'Shows a pile of coins'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

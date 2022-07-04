@@ -11,7 +11,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Bottle of Alcohol");
-            Tooltip.SetDefault("'Right-click after placing if you dislike the taste'");
+            Tooltip.SetDefault("Right-click after placing if you dislike the taste");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

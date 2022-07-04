@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Coatrack");
-            Tooltip.SetDefault("'A small Coatrack.'");
+            Tooltip.SetDefault("'A small coatrack'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

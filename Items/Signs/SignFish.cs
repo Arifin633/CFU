@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Fish Sign");
-            Tooltip.SetDefault("'Shows a bass.'");
+            Tooltip.SetDefault("'Shows a bass'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

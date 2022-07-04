@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Radiator");
-            Tooltip.SetDefault("'A rusty radiator.'");
+            Tooltip.SetDefault("'A rusty radiator'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

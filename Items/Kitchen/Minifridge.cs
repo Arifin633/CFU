@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Minifridge");
-            Tooltip.SetDefault("'Generally used for food.'");
+            Tooltip.SetDefault("'Generally used for food'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

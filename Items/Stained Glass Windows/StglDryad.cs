@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Stained Glass Window");
-            Tooltip.SetDefault("'It depicts the Dryad.'");
+            Tooltip.SetDefault("'It depicts the Dryad'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

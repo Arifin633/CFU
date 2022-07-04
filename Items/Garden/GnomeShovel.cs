@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Gnome");
-            Tooltip.SetDefault("'Holding a little shovel.'");
+            Tooltip.SetDefault("'Holding a little shovel'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
