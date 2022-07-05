@@ -4,12 +4,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class OrnatePlate : ModItem
+    public class OrnatePlatinumPlate : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Kitchen/OrnatePlate";
+        public override string Texture => "CFU/Textures/Items/Kitchen/OrnatePlatinumPlate";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Golden Plate");
+            DisplayName.SetDefault("Ornate Platinum Plate");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -26,12 +26,13 @@ namespace CFU.Items
             Item.consumable = true;
             Item.value = 0;
             Item.createTile = ModContent.TileType<Tiles.OrnatePlate>();
+            Item.placeStyle = 1;
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.GoldBar)
+            .AddIngredient(ItemID.PlatinumBar)
             .AddTile(TileID.Anvils)
             .Register();
         }

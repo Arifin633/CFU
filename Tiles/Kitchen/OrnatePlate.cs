@@ -26,7 +26,9 @@ namespace CFU.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.OrnatePlate>());
+            int[] styles = { ModContent.ItemType<Items.OrnateGoldPlate>(),
+                             ModContent.ItemType<Items.OrnatePlatinumPlate>()};
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 20)]);
         }
     }
 }
