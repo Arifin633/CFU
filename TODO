@@ -61,6 +61,10 @@ The potted plants are good candidates to join the
 ranks of tiles affected by wind.  That would require
 a system for drawing the pots themselves, as the
 plants would overlap with them otherwise.
+Further note: although the overlap itself would be minimal,
+the drawing order situation will still produce undesirable
+results, such as an object being drawn under the plants
+but over the plant pots.
 
 * Rabbit Hole
 The rabbit hole should "display" a rabbit,

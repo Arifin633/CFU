@@ -11,7 +11,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Marble Brick Wall");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
         }
 
         public override void SetDefaults()

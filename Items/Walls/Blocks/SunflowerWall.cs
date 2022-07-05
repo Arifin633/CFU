@@ -10,7 +10,7 @@ namespace CFU.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Sunflower Wall");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 40;
         }
 
         public override void SetDefaults()

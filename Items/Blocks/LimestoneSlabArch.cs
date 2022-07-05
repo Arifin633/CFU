@@ -12,7 +12,7 @@ namespace CFU.Items
         {
             DisplayName.SetDefault("Limestone Slab Arch");
             Tooltip.SetDefault("'Best used in combination with Limestone Slab'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         }
 
         public override void SetDefaults()

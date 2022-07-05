@@ -12,7 +12,7 @@ namespace CFU.Items
         {
             DisplayName.SetDefault("Stone Slab Entablature");
             Tooltip.SetDefault("'Best used in combination with Stone Slab'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         }
 
         public override void SetDefaults()

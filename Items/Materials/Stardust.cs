@@ -11,7 +11,7 @@ namespace CFU.Items
         {
             DisplayName.SetDefault("Stardust");
             Tooltip.SetDefault("'Probably great stuff for making furniture...'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         }
 
         public override void SetDefaults()
@@ -25,9 +25,9 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe(10)
-                .AddIngredient(ItemID.FallenStar)
-                .AddTile(TileID.Bottles)
-                .Register();
+            .AddIngredient(ItemID.FallenStar)
+            .AddTile(TileID.Bottles)
+            .Register();
         }
     }
 }

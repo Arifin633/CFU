@@ -11,7 +11,7 @@ namespace CFU.Items
         {
             DisplayName.SetDefault("Sturdy Cobweb");
             Tooltip.SetDefault("'Doesn't break as easily'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         }
 
         public override void SetDefaults()

@@ -31,9 +31,9 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe(2)
-                .AddRecipeGroup(RecipeGroupID.Wood)
-                .AddTile(TileID.Sawmill)
-                .Register();
+            .AddRecipeGroup(RecipeGroupID.Wood)
+            .AddTile(TileID.Sawmill)
+            .Register();
         }
     }
 }

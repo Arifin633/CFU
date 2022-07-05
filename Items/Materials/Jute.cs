@@ -24,14 +24,14 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.Rope, 5)
-                .AddTile(TileID.Loom)
-                .Register();
+            .AddIngredient(ItemID.Rope, 5)
+            .AddTile(TileID.Loom)
+            .Register();
 
             CreateRecipe(2)
-                .AddIngredient(ItemID.RopeCoil)
-                .AddTile(TileID.Loom)
-                .Register();
+            .AddIngredient(ItemID.RopeCoil)
+            .AddTile(TileID.Loom)
+            .Register();
         }
     }
 }
