@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -72,6 +73,22 @@ namespace CFU.Tiles
             return true;
         }
 
+        public override void PostDraw(int i, int j, SpriteBatch spritebatch)
+        {
+            if ((Main.rand.Next(4) == 0) && (Main.rand.Next(20) == 0))
+            {
+                if (Main.tile[i, j].TileFrameX >= 36)
+                {
+                    int n = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Blood, 0f, 0f, 100);
+                    Main.dust[n].velocity.Y = 0f;
+                    Main.dust[n].velocity.X *= 0.3f;
+                }
+                else
+                {
+                    Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Demonite, 0f, 0f, 100);
+                }
+            }
+        }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {

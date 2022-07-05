@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -63,6 +64,74 @@ namespace CFU.Tiles
                 case 6:
                     type = DustID.Shiverthorn;
                     break;
+            }
+            return true;
+        }
+
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch)
+        {
+            if (Main.tile[i, j].TileFrameY == 0 && Main.rand.Next(4) == 0)
+            {
+                switch (Main.tile[i, j].TileFrameX / 18)
+                {
+                    case 0:
+                        if (Main.rand.Next(100) == 0)
+                        {
+                            int num = Dust.NewDust(new Vector2(i * 16, j * 16 - 4), 16, 16, DustID.Sunflower, 0f, 0f, 160, default(Color), 0.1f);
+                            Main.dust[num].velocity.X /= 2f;
+                            Main.dust[num].velocity.Y /= 2f;
+                            Main.dust[num].noGravity = true;
+                            Main.dust[num].fadeIn = 1f;
+                        }
+                        break;
+                    case 1:
+                        if (Main.rand.Next(100) == 0)
+                        {
+                            Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.GlowingMushroom, 0f, 0f, 250, default(Color), 0.8f);
+                        }
+                        break;
+                    case 3:
+                        if (Main.rand.Next(200) == 0)
+                        {
+                            int num2 = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Demonite, 0f, 0f, 100, default(Color), 0.2f);
+                            Main.dust[num2].fadeIn = 1.2f;
+                        }
+                        if (Main.rand.Next(75) == 0)
+                        {
+                            int num3 = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, 27, 0f, 0f, 100);
+                            Main.dust[num3].velocity.X /= 2f;
+                            Main.dust[num3].velocity.Y /= 2f;
+                        }
+                        break;
+                    case 4:
+                        if (Main.rand.Next(150) == 0)
+                        {
+                            int num4 = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 8, DustID.Cloud);
+                            Main.dust[num4].velocity.X /= 3f;
+                            Main.dust[num4].velocity.Y /= 3f;
+                            Main.dust[num4].velocity.Y -= 0.7f;
+                            Main.dust[num4].alpha = 50;
+                            Main.dust[num4].scale *= 0.1f;
+                            Main.dust[num4].fadeIn = 0.9f;
+                            Main.dust[num4].noGravity = true;
+                        }
+                        break;
+                    case 5:
+                        if (Main.rand.Next(40) == 0)
+                        {
+                            int num5 = Dust.NewDust(new Vector2(i * 16, j * 16 - 6), 16, 16, DustID.Torch, 0f, 0f, 0, default(Color), 1.5f);
+                            Main.dust[num5].velocity.Y -= 2f;
+                            Main.dust[num5].noGravity = true;
+                        }
+                        break;
+                    case 6:
+                        if (Main.rand.Next(30) == 0)
+                        {
+                            int num6 = Dust.NewDust(newColor: new Color(50, 255, 255, 255), Position: new Vector2(i * 16, j * 16), Width: 16, Height: 16, Type: DustID.TintableDustLighted, SpeedX: 0f, SpeedY: 0f, Alpha: 254, Scale: 0.5f);
+                            Main.dust[num6].velocity *= 0f;
+                        }
+                        break;
+                }
             }
             return true;
         }

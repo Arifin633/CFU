@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -14,6 +15,7 @@ namespace CFU.Tiles
 
         public override void SetStaticDefaults()
         {
+            Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
             TileID.Sets.SwaysInWindBasic[Type] = true;
@@ -101,24 +103,18 @@ namespace CFU.Tiles
                 case 7 or 8:
                 case 17:
                     return 1;
-                    break;
                 case 9 or 10:
                 case 18:
                     return 2;
-                    break;
                 case 11:
                     return 3;
-                    break;
                 case 12 or 13:
                     return 4;
-                    break;
                 case 14 or 15:
                 case 19:
                     return 5;
-                    break;
                 default:
                     return 0;
-                    break;
             }
         }
 
@@ -151,6 +147,60 @@ namespace CFU.Tiles
                     break;
             }
             return true;
+        }
+
+        /* We have to draw the dust in `PreDraw' because
+           `PostDraw' is never called for tiles in the
+           `SwaysInWindBasic' set. */
+        public override bool PreDraw(int i, int j, SpriteBatch spritebatch)
+        {
+            if (Main.rand.Next(4) == 0)
+            {
+                /* Corrupt Plants */
+                int frameY = (Main.tile[i, j].TileFrameY / 22);
+                if (frameY is 7 or 8 or 17 &&
+                    (Main.rand.Next(500) == 0))
+                {
+                    Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Demonite);
+                }
+
+                /* Jungle Spore */
+                else if (frameY is 18 &&
+                         (Main.rand.Next(60) == 0))
+                {
+                    int n = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.JungleSpore, 0f, 0f, 250, default(Color), 0.4f);
+                    Main.dust[n].fadeIn = 0.7f;
+                }
+
+                /* Glowing Mushroom */
+                else if (frameY is 11 &&
+                         (Main.rand.Next(500) == 0))
+                {
+                    Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.GlowingMushroom, 0f, 0f, 250, default(Color), 0.8f);
+                }
+            }
+            return true;
+        }
+
+        public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
+        {
+            int frameY = (Main.tile[i, j].TileFrameY / 22);
+            if (frameY == 18)
+            {
+                float m = 1f + (float)(270 - Main.mouseTextColor) / 400f;
+                float p = 0.8f - (float)(270 - Main.mouseTextColor) / 400f;
+                r = 0.42f * p;
+                g = 0.81f * m;
+                b = 0.52f * p;
+            }
+            else if (frameY == 11)
+            {
+                float q = (float)Main.rand.Next(28, 42) * 0.005f;
+                q += (float)(270 - Main.mouseTextColor) / 1000f;
+                r = 0f;
+                g = 0.2f + q / 2f;
+                b = 1f;
+            }
         }
 
         public override bool Drop(int i, int j)

@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.Audio;
@@ -62,6 +63,24 @@ namespace CFU.Tiles
                 type = (Main.rand.NextBool(2)) ? DustID.Stone : DustID.Demonite;
             }
             return true;
+        }
+
+        public override void PostDraw(int i, int j, SpriteBatch spritebatch)
+        {
+            if ((Main.rand.Next(4) == 0) && (Main.rand.Next(20) == 0))
+            {
+                if (Main.tile[i, j].TileFrameX >= 54)
+                {
+                    int n = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Blood, 0f, 0f, 100);
+                    Main.dust[n].scale = 1.5f;
+                    Main.dust[n].noGravity = true;
+                    Main.dust[n].velocity *= 0.75f;
+                }
+                else
+                {
+                    Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Demonite, 0f, 0f, 100);
+                }
+            }
         }
 
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)

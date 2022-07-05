@@ -70,13 +70,10 @@ namespace CFU.Tiles
             {
                 case 7 or 8:
                     return 1;
-                    break;
                 case 9 or 10:
                     return 2;
-                    break;
                 default:
                     return 0;
-                    break;
             }
         }
 

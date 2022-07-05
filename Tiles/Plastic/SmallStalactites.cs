@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -88,7 +89,22 @@ namespace CFU.Tiles
             return true;
         }
 
-
+        public override void PostDraw(int i, int j, SpriteBatch spritebatch)
+        {
+            /* The Honey stalactite (hanging) drips honey. */
+            if ((Main.tile[i, j].TileFrameX == 0) &&
+                ((Main.tile[i, j].TileFrameX / 54) == 7) &&
+                (Main.rand.Next(4) == 0) &&
+                (Main.rand.Next(60) == 0))
+            {
+                int n = Dust.NewDust(new Vector2(i * 16 + 2, j * 16 + 6), 8, 4, DustID.Honey2);
+                Main.dust[n].scale -= (float)Main.rand.Next(3) * 0.1f;
+                Main.dust[n].velocity.Y = 0f;
+                Main.dust[n].velocity.X *= 0.05f;
+                Main.dust[n].alpha = 100;
+            }
+        }
+        
         public override bool Drop(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.StoneSmallStalactite>(),

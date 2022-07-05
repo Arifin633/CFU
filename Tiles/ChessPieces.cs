@@ -61,10 +61,8 @@ namespace CFU.Tiles
                 case 13:
                 case 15:
                     return 1;
-                    break;
                 default:
                     return 0;
-                    break;
             }
         }
 
