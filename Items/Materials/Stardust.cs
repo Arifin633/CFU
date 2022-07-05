@@ -25,7 +25,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe(10)
-                .AddIngredient(ItemID.FallenStar, 1)
+                .AddIngredient(ItemID.FallenStar)
                 .AddTile(TileID.Bottles)
                 .Register();
         }

@@ -33,7 +33,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.Hive, 1)
+            .AddIngredient(ItemID.Hive)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();

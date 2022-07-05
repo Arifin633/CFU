@@ -34,7 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.Wood, 40)
-            .AddIngredient(ItemID.FairyCritterPink, 1)
+            .AddIngredient(ItemID.FairyCritterPink)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();

@@ -9,7 +9,7 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Miracle Plants/Sea Oats/MiracleMediumSeaOats";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Miracle Medium Sea Oats Seeds");
+            DisplayName.SetDefault("Miracle Medium Beach Sea Oats Seeds");
             Tooltip.SetDefault("'Can grow anywhere!'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }

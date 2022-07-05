@@ -31,14 +31,14 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.CopperBar, 10)
-                .AddTile(TileID.HeavyWorkBench)
-                .Register();
+            .AddIngredient(ItemID.CopperBar, 10)
+            .AddTile(TileID.HeavyWorkBench)
+            .Register();
 
             CreateRecipe()
-                .AddIngredient(ItemID.TinBar, 10)
-                .AddTile(TileID.HeavyWorkBench)
-                .Register();
+            .AddIngredient(ItemID.TinBar, 10)
+            .AddTile(TileID.HeavyWorkBench)
+            .Register();
         }
     }
 }

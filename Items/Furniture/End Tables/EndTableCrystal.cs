@@ -32,7 +32,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.CrystalBlock, 12)
+            .AddIngredient(ItemID.CrystalBlock, 30)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

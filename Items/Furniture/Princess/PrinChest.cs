@@ -31,6 +31,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
+            .AddIngredient(ModContent.ItemType<Items.Stardust>())
             .AddIngredient(ItemID.Pearlwood, 8)
             .AddRecipeGroup(RecipeGroupID.IronBar, 2)
             .AddTile(TileID.WorkBenches)

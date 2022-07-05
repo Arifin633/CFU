@@ -35,7 +35,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.Hellsmith>())
             .AddIngredient(ItemID.AdamantiteOre, 30)
-            .AddIngredient(ItemID.MythrilAnvil, 1)
+            .AddIngredient(ItemID.MythrilAnvil)
             .AddTile(TileID.WorkBenches)
             .Register();
 

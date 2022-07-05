@@ -34,7 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.Bone, 3)
-            .AddRecipeGroup(RecipeGroupID.IronBar, 1)
+            .AddRecipeGroup(RecipeGroupID.IronBar)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();

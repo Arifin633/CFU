@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.JungleGrassSeeds, 10)
-            .AddIngredient(ItemID.ChlorophyteOre, 1)
+            .AddIngredient(ItemID.ChlorophyteOre)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();

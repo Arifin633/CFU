@@ -33,6 +33,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
+            .AddIngredient(ModContent.ItemType<Items.Paper>())
             .AddTile(ModContent.TileType<Tiles.Easel>())
             .Register();
         }

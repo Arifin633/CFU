@@ -33,15 +33,15 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.CopperCoin, 10)
-                .AddIngredient(ModContent.ItemType<Items.Jute>(), 5)
-                .AddTile(TileID.WorkBenches)
-                .Register();
+            .AddIngredient(ItemID.CopperCoin, 10)
+            .AddIngredient(ModContent.ItemType<Items.Jute>(), 5)
+            .AddTile(TileID.WorkBenches)
+            .Register();
 
             Recipe.Create(ItemID.CopperCoin, 10)
-                .AddIngredient(Type)
-                .AddTile(TileID.WorkBenches)
-                .Register();
+            .AddIngredient(Type)
+            .AddTile(TileID.WorkBenches)
+            .Register();
         }
     }
 }

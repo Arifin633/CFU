@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.SlimeBlock, 12)
-            .AddTile(TileID.WorkBenches)
+            .AddTile(TileID.Solidifier)
             .Register();
         }
     }

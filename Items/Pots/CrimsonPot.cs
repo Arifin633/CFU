@@ -34,7 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.ClayBlock, 5)
-            .AddIngredient(ItemID.CrimstoneBlock, 5)
+            .AddIngredient(ItemID.FleshBlock, 5)
             .AddTile(TileID.Furnaces)
             .AddTile(TileID.FleshCloningVat)
             .Register();

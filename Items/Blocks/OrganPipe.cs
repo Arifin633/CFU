@@ -30,7 +30,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddRecipeGroup(RecipeGroupID.IronBar, 1)
+            .AddRecipeGroup(RecipeGroupID.IronBar)
             .AddTile(TileID.Anvils)
             .Register();
         }

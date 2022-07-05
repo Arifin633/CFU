@@ -34,7 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.LesionBlock, 12)
-            .AddTile(TileID.WorkBenches)
+            .AddTile(TileID.LesionStation)
             .Register();
         }
     }

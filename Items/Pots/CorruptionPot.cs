@@ -34,8 +34,9 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.ClayBlock, 5)
-            .AddIngredient(ItemID.EbonstoneBlock, 5)
+            .AddIngredient(ItemID.LesionBlock, 5)
             .AddTile(TileID.Furnaces)
+            .AddTile(TileID.LesionStation)
             .Register();
         }
     }

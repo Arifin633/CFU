@@ -34,7 +34,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 15)
             .AddIngredient(ItemID.Bone, 4)
-            .AddIngredient(ItemID.Book, 1)
+            .AddIngredient(ItemID.Book)
             .AddTile(TileID.Sawmill)
             .Register();
         }

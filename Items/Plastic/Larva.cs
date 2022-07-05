@@ -32,7 +32,16 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.Abeemination, 1)
+            .AddIngredient(ItemID.Abeemination)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
+
+            CreateRecipe()
+            .AddIngredient(ItemID.HoneyBlock, 5)
+            .AddIngredient(ItemID.Stinger, 1)
+            .AddIngredient(ItemID.Hive, 5)
+            .AddIngredient(ItemID.BottledHoney, 1)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();

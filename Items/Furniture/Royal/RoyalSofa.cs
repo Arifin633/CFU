@@ -32,8 +32,8 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.Silk, 7)
-            .AddRecipeGroup(RecipeGroupID.Wood, 15)
+            .AddIngredient(ItemID.Silk, 3)
+            .AddRecipeGroup(RecipeGroupID.Wood, 8)
             .AddTile(ModContent.TileType<Tiles.SpinningWheel>())
             .Register();
         }

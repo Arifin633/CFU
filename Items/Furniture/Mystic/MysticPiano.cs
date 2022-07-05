@@ -34,7 +34,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.Stardust>(), 15)
             .AddIngredient(ItemID.Bone, 4)
-            .AddIngredient(ItemID.Book, 1)
+            .AddIngredient(ItemID.Book)
             .AddTile(TileID.Sawmill)
             .Register();
         }

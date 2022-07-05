@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.DirtBlock, 10)
-            .AddIngredient(ItemID.Bunny, 1)
+            .AddIngredient(ItemID.Bunny)
             .Register();
         }
     }

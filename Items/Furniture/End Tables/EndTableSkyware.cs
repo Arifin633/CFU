@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.SunplateBlock, 12)
-            .AddTile(TileID.WorkBenches)
+            .AddTile(TileID.SkyMill)
             .Register();
         }
     }

@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.Blacksmith>())
-            .AddIngredient(ItemID.Hellforge, 1)
+            .AddIngredient(ItemID.Hellforge)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

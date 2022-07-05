@@ -33,7 +33,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.EbonstoneBlock, 100)
+            .AddIngredient(ItemID.EbonstoneBlock, 20)
             .AddIngredient(ItemID.SoulofNight, 5)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)

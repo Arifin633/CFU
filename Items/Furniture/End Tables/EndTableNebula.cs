@@ -34,7 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.NebulaBrick, 12)
-            .AddTile(TileID.WorkBenches)
+            .AddTile(TileID.LunarCraftingStation)
             .Register();
         }
     }

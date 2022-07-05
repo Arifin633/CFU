@@ -29,8 +29,8 @@ namespace CFU.Items
 
         public override void AddRecipes()
         {
-            CreateRecipe(4)
-            .AddIngredient(ItemID.Sunflower, 1)
+            CreateRecipe(32)
+            .AddIngredient(ItemID.Sunflower)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

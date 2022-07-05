@@ -34,7 +34,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddRecipeGroup(RecipeGroupID.IronBar, 1)
+            .AddRecipeGroup(RecipeGroupID.IronBar)
             .AddIngredient(ModContent.ItemType<Items.Paper>(), 2)
             .AddIngredient(ItemID.Torch, 1)
             .AddTile(TileID.WorkBenches)

@@ -35,7 +35,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddIngredient(ModContent.ItemType<Items.Paper>(), 2)
-            .AddIngredient(ItemID.Torch, 1)
+            .AddIngredient(ItemID.Torch)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

@@ -37,6 +37,14 @@ namespace CFU.Items
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
+
+            CreateRecipe()
+            .AddIngredient(ItemID.GoldBar, 4)
+            .AddIngredient(ItemID.Torch, 4)
+            .AddIngredient(ItemID.Chain)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
         }
     }
 }

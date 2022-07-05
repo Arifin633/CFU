@@ -31,7 +31,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.Sandstone, 1)
+            .AddIngredient(ItemID.Sandstone)
             .AddIngredient(ItemID.StoneBlock, 1)
             .AddTile(TileID.Furnaces)
             .Register();

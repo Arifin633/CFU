@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.Bone, 4)
-            .AddIngredient(ItemID.Book, 1)
+            .AddIngredient(ItemID.Book)
             .AddRecipeGroup(RecipeGroupID.Wood, 15)
             .AddTile(ModContent.TileType<Tiles.SpinningWheel>())
             .Register();

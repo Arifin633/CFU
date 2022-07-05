@@ -34,7 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.IronBar, 2)
-            .AddIngredient(ItemID.WaterBucket, 1)
+            .AddIngredient(ItemID.WaterBucket)
             .AddTile(TileID.Sawmill)
             .Register();
         }

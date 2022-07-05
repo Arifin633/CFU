@@ -37,6 +37,13 @@ namespace CFU.Items
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();
+
+            CreateRecipe()
+            .AddRecipeGroup(RecipeGroupID.IronBar, 15)
+            .AddRecipeGroup(RecipeGroupID.Wood, 10)
+            .AddTile(ModContent.TileType<Tiles.Printer3D>())
+            .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
+            .Register();
         }
     }
 }

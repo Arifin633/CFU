@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 4)
-            .AddIngredient(ModContent.ItemType<Items.SandstoneTorch>(), 1)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneTorch>())
             .AddTile(TileID.WorkBenches)
             .Register();
         }

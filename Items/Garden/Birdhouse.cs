@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.Wood, 10)
-            .AddIngredient(ItemID.Bird, 1)
+            .AddIngredient(ItemID.Bird)
             .AddTile(TileID.Sawmill)
             .Register();
         }

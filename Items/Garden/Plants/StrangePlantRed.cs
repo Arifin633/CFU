@@ -33,7 +33,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.StrangePlant4, 1)
+            .AddIngredient(ItemID.StrangePlant4)
             .AddTile(ModContent.TileType<Tiles.CultivationBox>())
             .Register();
         }

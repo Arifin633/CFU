@@ -76,7 +76,7 @@ namespace CFU.Items
         {
             CreateRecipe(3)
             .AddIngredient(ItemID.Torch, 3)
-            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>(), 1)
+            .AddIngredient(ModContent.ItemType<Items.SandstoneBrick>())
             .Register();
         }
     }

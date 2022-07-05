@@ -31,9 +31,9 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.Stardust>(), 1)
-            .AddIngredient(ItemID.Pearlwood, 15)
-            .AddIngredient(ItemID.Silk, 5)
+            .AddIngredient(ModContent.ItemType<Items.Stardust>())
+            .AddIngredient(ItemID.Pearlwood, 5)
+            .AddIngredient(ItemID.Silk, 2)
             .AddTile(TileID.Sawmill)
             .Register();
         }

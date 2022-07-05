@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.Stardust>(), 6)
-            .AddIngredient(ItemID.DemonTorch, 1)
+            .AddIngredient(ItemID.DemonTorch)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

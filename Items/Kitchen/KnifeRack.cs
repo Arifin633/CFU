@@ -32,7 +32,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.Wood, 6)
-            .AddRecipeGroup(RecipeGroupID.IronBar, 1)
+            .AddRecipeGroup(RecipeGroupID.IronBar)
             .AddTile(TileID.Sawmill)
             .Register();
         }

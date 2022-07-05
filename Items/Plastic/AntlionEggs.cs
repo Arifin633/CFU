@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.Sandstone, 10)
-            .AddIngredient(ItemID.AntlionMandible, 1)
+            .AddIngredient(ItemID.AntlionMandible)
             .AddTile(ModContent.TileType<Tiles.Printer3D>())
             .AddConsumeItemCallback(ChadsFurnitureUpdated.CFUtils.Print)
             .Register();

@@ -33,7 +33,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.Granite, 20)
+            .AddIngredient(ItemID.Granite, 15)
             .AddTile(TileID.HeavyWorkBench)
             .Register();
         }

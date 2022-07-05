@@ -32,7 +32,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ModContent.ItemType<Items.Stardust>(), 10)
+            .AddIngredient(ModContent.ItemType<Items.Stardust>(), 8)
             .AddRecipeGroup(RecipeGroupID.IronBar, 2)
             .AddTile(TileID.WorkBenches)
             .Register();

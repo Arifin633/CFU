@@ -35,14 +35,14 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.Hellsmith>())
             .AddIngredient(ItemID.TitaniumOre, 30)
-            .AddIngredient(ItemID.OrichalcumAnvil, 1)
+            .AddIngredient(ItemID.OrichalcumAnvil)
             .AddTile(TileID.WorkBenches)
             .Register();
 
             CreateRecipe()
             .AddIngredient(ModContent.ItemType<Items.Blacksmith>())
-            .AddIngredient(ItemID.OrichalcumAnvil, 1)
             .AddIngredient(ItemID.TitaniumForge, 1)
+            .AddIngredient(ItemID.OrichalcumAnvil, 1)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

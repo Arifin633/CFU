@@ -34,7 +34,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.Wood, 10)
-            .AddIngredient(ItemID.BlueJay, 1)
+            .AddIngredient(ItemID.BlueJay)
             .AddTile(TileID.Sawmill)
             .Register();
         }

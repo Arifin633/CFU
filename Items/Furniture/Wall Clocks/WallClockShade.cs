@@ -35,7 +35,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddIngredient(ItemID.Glass, 6)
-              .AddIngredient(ItemID.Shadewood, 5)
+            .AddIngredient(ItemID.Shadewood, 5)
             .AddTile(TileID.Sawmill)
             .Register();
 
