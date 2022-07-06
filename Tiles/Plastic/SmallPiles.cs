@@ -42,9 +42,47 @@ namespace CFU.Tiles
             }
             TileObjectData.addTile(Type);
 
-            ModTranslation name = CreateMapEntryName();
-            AddMapEntry(new Color(128, 128, 128));
+            AddMapEntry(new Color(99, 99, 99));
+            AddMapEntry(new Color(114, 81, 56));
+            AddMapEntry(new Color(133, 133, 101));
+            AddMapEntry(new Color(151, 200, 211));
+            AddMapEntry(new Color(177, 183, 161));
+            AddMapEntry(new Color(134, 114, 38));
+            AddMapEntry(new Color(50, 46, 104));
+            AddMapEntry(new Color(168, 178, 204));
+            AddMapEntry(new Color(191, 142, 111));
+            AddMapEntry(new Color(186, 168, 84));
             TileID.Sets.DisableSmartCursor[Type] = true;
+        }
+
+        public override ushort GetMapOption(int i, int j)
+        {
+            switch (Main.tile[i, j].TileFrameX / 18)
+            {
+                case <= 5:
+                case > 27 and <= 35:
+                    return 0;
+                case > 5 and <= 11:
+                    return 1;
+                case > 11 and <= 27:
+                    return 2;
+                case > 35 and <= 47:
+                    return 3;
+                case > 47 and <= 53:
+                    return 4;
+                case > 53 and <= 59:
+                    return 5;
+                case > 59 and <= 65:
+                    return 6;
+                case > 65 and <= 71:
+                    return 7;
+                case 72:
+                    return 8;
+                case > 72 and <= 76:
+                    return 9;
+                default:
+                    return 0;
+            }
         }
 
         public override bool CreateDust(int i, int j, ref int type)

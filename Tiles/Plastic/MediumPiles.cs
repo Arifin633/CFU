@@ -50,10 +50,78 @@ namespace CFU.Tiles
             }
 
             TileObjectData.addTile(Type);
+            AddMapEntry(new Color(99, 99, 99));
+            AddMapEntry(new Color(133, 133, 101));
+            AddMapEntry(new Color(226, 118, 76));
+            AddMapEntry(new Color(161, 172, 173));
+            AddMapEntry(new Color(204, 181, 72));
+            AddMapEntry(new Color(208, 94, 201));
+            AddMapEntry(new Color(233, 146, 69));
+            AddMapEntry(new Color(71, 146, 251));
+            AddMapEntry(new Color(60, 226, 133));
+            AddMapEntry(new Color(250, 30, 71));
+            AddMapEntry(new Color(166, 176, 204));
+            AddMapEntry(new Color(151, 200, 211));
             AddMapEntry(new Color(191, 142, 111));
+            AddMapEntry(new Color(177, 183, 161));
+            AddMapEntry(new Color(134, 114, 38));
+            AddMapEntry(new Color(50, 46, 104));
+            AddMapEntry(new Color(168, 178, 204));
+            AddMapEntry(new Color(186, 168, 84));
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
+        public override ushort GetMapOption(int i, int j)
+        {
+            int style = (Main.tile[i, j].TileFrameX / 36);
+            if (Main.tile[i, j].TileFrameY != 0) style += 53;
+            switch (style)
+            {
+                case <= 5:
+                case > 37 and <= 40:
+                    return 0;
+                case > 5 and <= 10:
+                    return 1;
+                case > 10 and <= 15:
+                    return 2;
+                case 16:
+                    return 3;
+                case 17:
+                    return 4;
+                case 18:
+                    return 5;
+                case 19:
+                    return 6;
+                case 20:
+                    return 7;
+                case 21:
+                    return 8;
+                case 22:
+                    return 9;
+                case 23:
+                    return 10;
+                case 24:
+                    return 11;
+                case > 24 and <= 30:
+                    return 12;
+                case > 30 and <= 33:
+                case > 58 and <= 61:
+                    return 13;
+                case > 33 and <= 37:
+                    return 14;
+                case > 40 and <= 46:
+                    return 15;
+                case > 46 and <= 52:
+                    return 16;
+                case > 52 and <= 58:
+                    return 17;
+                case > 61 and <= 64:
+                    return 18;
+                default:
+                    return 0;
+            }
+        }
+        
         public override bool CreateDust(int i, int j, ref int type)
         {
             int style = (Main.tile[i, j].TileFrameX / 36);

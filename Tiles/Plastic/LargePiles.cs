@@ -14,6 +14,7 @@ namespace CFU.Tiles
         {
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
@@ -69,8 +70,76 @@ namespace CFU.Tiles
             }
 
             TileObjectData.addTile(Type);
+            AddMapEntry(new Color(99, 99, 99));
+            AddMapEntry(new Color(82, 62, 66));
+            AddMapEntry(new Color(101, 90, 102));
+            AddMapEntry(new Color(177, 183, 161));
+            AddMapEntry(new Color(144, 148, 144));
             AddMapEntry(new Color(191, 142, 111));
-            TileID.Sets.DisableSmartCursor[Type] = true;
+            AddMapEntry(new Color(114, 81, 56));
+            AddMapEntry(new Color(134, 114, 38));
+            AddMapEntry(new Color(50, 46, 104));
+            AddMapEntry(new Color(168, 178, 204));
+            AddMapEntry(new Color(25, 189, 81));
+            AddMapEntry(new Color(133, 133, 101));
+            AddMapEntry(new Color(226, 118, 76));
+            AddMapEntry(new Color(161, 172, 173));
+            AddMapEntry(new Color(204, 181, 72));
+            AddMapEntry(new Color(253, 221, 3));
+            AddMapEntry(new Color(151, 200, 211));
+            AddMapEntry(new Color(98, 111, 223));
+        }
+
+        public override ushort GetMapOption(int i, int j)
+        {
+            int style = (Main.tile[i, j].TileFrameX / 54);
+            style += (35 * (Main.tile[i, j].TileFrameY / 36));
+            switch (style)
+            {
+                case <= 2:
+                case > 13 and <= 17:
+                case > 61 and <= 70:
+                case 23 or 24:
+                    return 0;
+                case > 2 and <= 5:
+                    return 1;
+                case > 5 and <= 8:
+                    return 2;
+                case > 8 and <= 13:
+                    return 3;
+                case > 17 and <= 20:
+                    return 4;
+                case 21 or 22:
+                case > 46 and <= 49:
+                case > 76 and <= 79:
+                    return 5;
+                case > 24 and <= 28:
+                    return 6;
+                case > 28 and <= 34:
+                    return 7;
+                case > 34 and <= 40:
+                    return 8;
+                case > 40 and <= 46:
+                    return 9;
+                case > 49 and <= 51:
+                    return 10;
+                case > 51 and <= 61:
+                    return 11;
+                case 71 or 72:
+                    return 12;
+                case 73 or 74:
+                    return 13;
+                case 75 or 76:
+                    return 14;
+                case 80:
+                    return 15;
+                case > 80 and <= 86:
+                    return 16;
+                case > 86 and <= 89:
+                    return 17;
+                default:
+                    return 0;
+            }
         }
 
         public override bool CreateDust(int i, int j, ref int type)
