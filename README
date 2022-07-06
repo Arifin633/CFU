@@ -1,0 +1,34 @@
+This is a port of "Chad's Furniture" mod
+to Terraria 1.4.3.6 (tModLoader 0.12 Alpha).
+
+It features an entire rewrite of the codebase, and thus the
+performance pitfalls of the original mod have not carried over.
+This version also seeks to bring all items and textures up to
+date with 1.4; one example of this being the place-able ambient
+objects, which have been brought in sync with their 1.4 vanilla
+counterparts.
+
+For all the additions of the original mod, consult the now inactive homepage:
+https://forums.terraria.org/index.php?threads/chads-furniture-and-more-mod.57562/
+
+The following list contains the main features not implemented in
+the updated version.  They may or may not be added in the future.
+
+* Carpets
+Not implemented.
+
+* Watering Can
+Not implemented.
+
+* Vanilla Background Walls
+Not implemented (already added by 1.4).
+
+* Rabbit Hole
+Accompanying bunny not implemented.
+
+* Mannequin Head
+Hair placement not implemented.
+
+
+Please report any bugs or make any suggestions on the Terraria General.
+https://boards.4channel.org/vg/catalog#s=/tg/

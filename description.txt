@@ -1,1 +1,7 @@
-Chad's Furniture Updated is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+This is an updated version of the classic "Chad's Furniture" mod.
+Original description:
+
+Furniture!!!
+This mod currently adds over 700 blocks, walls, and furniture items, including but not limited to:
+-Everything you've ever wanted
+-More
