@@ -17,7 +17,7 @@ namespace CFU.Items
         {
             Item.width = 16;
             Item.height = 22;
-            Item.maxStack = 99;
+            Item.maxStack = 9999;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;

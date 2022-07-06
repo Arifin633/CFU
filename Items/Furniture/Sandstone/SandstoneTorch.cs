@@ -35,7 +35,7 @@ namespace CFU.Items
             Item.flame = true;
             Item.width = 10;
             Item.height = 12;
-            Item.maxStack = 99;
+            Item.maxStack = 9999;
             Item.holdStyle = 1;
             Item.noWet = true;
             Item.useTurn = true;
