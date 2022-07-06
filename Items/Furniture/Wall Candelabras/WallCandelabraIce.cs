@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.IceBlock, 5)
-            .AddIngredient(ItemID.Torch, 3)
+            .AddIngredient(ItemID.IceTorch, 3)
             .AddTile(TileID.IceMachine)
             .Register();
         }

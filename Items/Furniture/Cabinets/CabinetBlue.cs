@@ -33,7 +33,7 @@ namespace CFU.Items
         {
             CreateRecipe()
             .AddIngredient(ItemID.BlueBrick, 10)
-            .AddTile(TileID.BoneWelder)
+            .AddTile(TileID.WorkBenches)
             .Register();
         }
     }

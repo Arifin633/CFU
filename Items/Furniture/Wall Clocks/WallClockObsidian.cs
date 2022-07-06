@@ -35,7 +35,8 @@ namespace CFU.Items
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddIngredient(ItemID.Glass, 6)
-            .AddIngredient(ItemID.ObsidianBrick, 5)
+            .AddIngredient(ItemID.Obsidian, 4)
+            .AddIngredient(ItemID.Hellstone, 1)
             .AddTile(TileID.Hellforge)
             .Register();
 

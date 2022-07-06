@@ -34,7 +34,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddIngredient(ItemID.PinkBrick, 5)
             .AddIngredient(ItemID.Torch, 3)
-            .AddTile(TileID.BoneWelder)
+            .AddTile(TileID.WorkBenches)
             .Register();
         }
     }

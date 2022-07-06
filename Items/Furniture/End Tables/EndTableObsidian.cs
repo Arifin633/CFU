@@ -32,8 +32,9 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            .AddIngredient(ItemID.ObsidianBrick, 12)
-            .AddTile(TileID.Hellforge)
+            .AddIngredient(ItemID.Obsidian, 8)
+            .AddIngredient(ItemID.Hellstone, 4)
+            .AddTile(TileID.WorkBenches)
             .Register();
         }
     }
