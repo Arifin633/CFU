@@ -80,43 +80,41 @@ namespace CFU.Tiles
                 case <= 5:
                 case > 37 and <= 40:
                     return 0;
-                case > 5 and <= 10:
+                case > 5 and <= 15:
                     return 1;
-                case > 10 and <= 15:
-                    return 2;
                 case 16:
-                    return 3;
+                    return 2;
                 case 17:
-                    return 4;
+                    return 3;
                 case 18:
-                    return 5;
+                    return 4;
                 case 19:
-                    return 6;
+                    return 5;
                 case 20:
-                    return 7;
+                    return 6;
                 case 21:
-                    return 8;
+                    return 7;
                 case 22:
-                    return 9;
+                    return 8;
                 case 23:
-                    return 10;
+                    return 9;
                 case 24:
-                    return 11;
+                    return 10;
                 case > 24 and <= 30:
-                    return 12;
+                    return 11;
                 case > 30 and <= 33:
                 case > 58 and <= 61:
-                    return 13;
+                    return 12;
                 case > 33 and <= 37:
-                    return 14;
+                    return 13;
                 case > 40 and <= 46:
-                    return 15;
+                    return 14;
                 case > 46 and <= 52:
-                    return 16;
+                    return 15;
                 case > 52 and <= 58:
-                    return 17;
+                    return 16;
                 case > 61 and <= 64:
-                    return 18;
+                    return 17;
                 default:
                     return 0;
             }
