@@ -165,7 +165,7 @@ namespace ChadsFurnitureUpdated
             {
                 int diff = (count / 3);
                 count -= diff;
-                int count2 = diff;
+                int count2 = (diff <= 0) ? 1 : diff;
                 recipe.AddIngredient(materialType, count);
                 recipe.AddIngredient(ItemID.Hellstone, count2);
             }
