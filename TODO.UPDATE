@@ -1,0 +1,29 @@
+This file includes a list of planned changes and additions related to 1.4.4
+
+* Miracle Plants
+Add Ash Plants
+
+* Miracles Vines
+Add both Corruption and Ash Vines
+
+* Wind
+Check over the source of all wind-related code originally
+copied from vanilla to make sure nothing changed:
+- Hanging Tiles
+- Hanging Vines
+- Rising Vines
+
+* Mirrors
+* Wardrobes
+Add style for Ash Wood.
+
+* Cabinets
+* End Tables
+Add styles for each new furniture set (Coral, Ash Wood, Ballon).
+
+* Birdhouses
+Add new Jungle birds.
+
+;; Local Variables:
+;; mode: outline
+;; End:
