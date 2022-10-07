@@ -116,15 +116,7 @@ namespace ChadsFurnitureUpdated
               (RecipePiano, ItemID.ObsidianPiano, ItemID.Obsidian),
               (RecipePiano, ItemID.GoldenPiano, ItemID.GoldBar),
 
-              (RecipePlatform, ItemID.BlueBrickPlatform, ItemID.BlueBrick),
-              (RecipePlatform, ItemID.GreenBrickPlatform, ItemID.GreenBrick),
-              (RecipePlatform, ItemID.PinkBrickPlatform, ItemID.PinkBrick),
-              (RecipePlatform, ItemID.ObsidianPlatform, ItemID.Obsidian),
               (RecipePlatform, ItemID.GoldenPlatform, ItemID.GoldBar),
-              (RecipePlatform, ItemID.DungeonShelf, ItemID.GrayBrick),
-              (RecipePlatform, ItemID.BrassShelf, ItemID.CopperBar),
-              (RecipePlatform, ItemID.MetalShelf, ItemID.IronBar),
-              (RecipePlatform, ItemID.WoodShelf, ItemID.Wood),
 
               (RecipeSink, ItemID.GoldenSink, ItemID.GoldBar),
 
