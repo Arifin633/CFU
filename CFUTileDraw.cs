@@ -37,6 +37,8 @@ namespace ChadsFurnitureUpdated
 
         public static double WindCounterVine;
 
+        public static bool ShouldSeeInvisibleBlocks = true;
+
         public static int[] SpecialPositionsCount = new int[5] { 0, 0, 0, 0, 0 };
 
         public static Point[][] SpecialPositions = new Point[5][]
@@ -56,6 +58,15 @@ namespace ChadsFurnitureUpdated
             int i = (int)type;
             if (SpecialPositionsCount[i] < 5000)
                 SpecialPositions[i][SpecialPositionsCount[i]++] = new Point(x, y);
+        }
+
+        public static bool IsVisible(Tile tile)
+        {
+            return true;
+            /* TODO: Uncomment in 1.4.4
+            flag = tile.invisibleBlock();
+            return (!flag || (flag && ShouldSeeInvisibleBlocks));
+            */
         }
 
         public static bool TileWindData(int x, int y, int type, out float? n, out float m, out float l, out float j, out int sizeX, out int sizeY)
@@ -470,18 +481,30 @@ namespace ChadsFurnitureUpdated
 
         public static float GetWindCycle(int x, int y, double windCounter)
         {
-            if (Main.SettingsEnabled_TilesSwayInWind)
+            if (Main.SettingsEnabled_TilesSwayInWind &&
+                (((double)y >= Main.worldSurface) ||
+                 (((double)y <= Main.worldSurface) && false /* Main.remixWorld */))) // TODO: Uncomment in 1.4.4
             {
                 float num = (float)x * 0.5f + (float)(y / 100) * 0.5f;
                 float num2 = (float)Math.Cos(windCounter * 6.2831854820251465 + (double)num) * 0.5f;
-                if ((double)y < Main.worldSurface)
-                {
-                    num2 += Main.WindForVisuals;
-                    float lerpValue = Utils.GetLerpValue(0.08f, 0.18f, Math.Abs(Main.WindForVisuals), clamped: true);
-                    return num2 * lerpValue;
-                }
+                float lerpValue = Utils.GetLerpValue(0.08f, 0.18f, Math.Abs(Main.WindForVisuals), clamped: true);
+                return num2 * lerpValue;
             }
             return 0f;
+        }
+
+        private static bool IsBelowANonHammeredPlatform(int x, int y)
+        {
+            if (y < 1)
+            {
+                return false;
+            }
+            Tile tile = Main.tile[x, y - 1];
+            if (tile == null || !TileID.Sets.Platforms[tile.TileType] || tile.IsHalfBlock|| tile.Slope != 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         public static void DrawHangingTile(Point topLeft)
@@ -508,6 +531,12 @@ namespace ChadsFurnitureUpdated
             Vector2 vector = new Vector2(0f, -2f);
             value += vector;
 
+            if (sizeX == 1 && IsBelowANonHammeredPlatform(topLeftX, topLeftY))
+            {
+                value.Y -= 8f;
+                vector.Y -= 8f;
+            }
+            
             if (flag)
                 value += new Vector2(0f, 16f);
 
@@ -516,7 +545,7 @@ namespace ChadsFurnitureUpdated
                 {
                     Tile tile2 = Main.tile[i, j];
                     ushort type2 = tile2.TileType;
-                    if (type2 != type)
+                    if (type2 != type || !IsVisible(tile))
                         continue;
                     Math.Abs(((float)(i - topLeftX) + 0.5f) / (float)sizeX - 0.5f);
                     short tileFrameX = tile2.TileFrameX;
@@ -578,7 +607,7 @@ namespace ChadsFurnitureUpdated
                 {
                     Tile tile = Main.tile[i, j];
                     ushort type2 = tile.TileType;
-                    if (type2 != type)
+                    if (type2 != type || !IsVisible(tile))
                     {
                         continue;
                     }
@@ -626,6 +655,12 @@ namespace ChadsFurnitureUpdated
             float num4 = 0f;
             float num5 = 0f;
 
+            /* Experimental, not in vanilla */
+            if (IsBelowANonHammeredPlatform(x, startY))
+            {
+                value.Y -= 8f;
+            }
+
             for (int i = startY; i < Main.maxTilesY - 10; i++)
             {
                 Tile tile = Main.tile[x, i];
@@ -644,6 +679,13 @@ namespace ChadsFurnitureUpdated
                     {
                         num3 += 0.0025f;
                     }
+                    if (false /*Main.remixWorld*/) // TODO: Uncomment in 1.4.4
+                    {
+                        if (WallID.Sets.AllowsWind[tile.WallType] && (double)i > Main.worldSurface)
+                        {
+                            num2++;
+                        }
+                    }
                     if (WallID.Sets.AllowsWind[tile.WallType] && (double)i < Main.worldSurface)
                     {
                         num2++;
@@ -658,7 +700,10 @@ namespace ChadsFurnitureUpdated
                     TileDrawData(x, i, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * num3 * windCycle + num4;
-                    Main.spriteBatch.Draw(texture, position, new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), color, num6, new Vector2(tileWidth / 2, tileTop), 1f, tileSpriteEffects, 0f);
+                    if (IsVisible(tile))
+                    {
+                        Main.spriteBatch.Draw(texture, position, new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), color, num6, new Vector2(tileWidth / 2, tileTop), 1f, tileSpriteEffects, 0f);
+                    }
                     value += (num6 + (float)Math.PI / 2f).ToRotationVector2() * 16f;
                 }
             }
@@ -704,6 +749,8 @@ namespace ChadsFurnitureUpdated
                     {
                         num3 += 0.0025f;
                     }
+                    /* There should probably be a reverse check below when
+                       the Remix seed is active, but vanilla doesn't have it. */
                     if (WallID.Sets.AllowsWind[tile.WallType] && (double)i < Main.worldSurface)
                     {
                         num2++;
@@ -718,7 +765,10 @@ namespace ChadsFurnitureUpdated
                     TileDrawData(x, i, tile, type, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out var addFrX, out var addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * (0f - num3) * windCycle + num4;
-                    Main.spriteBatch.Draw(texture, position, new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), color, num6, new Vector2(tileWidth / 2, tileTop + tileHeight), 1f, tileSpriteEffects, 0f);
+                    if (IsVisible(tile))
+                    {
+                        Main.spriteBatch.Draw(texture, position, new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), color, num6, new Vector2(tileWidth / 2, tileTop + tileHeight), 1f, tileSpriteEffects, 0f);
+                    }
                     value += (num6 - (float)Math.PI / 2f).ToRotationVector2() * 16f;
                 }
             }

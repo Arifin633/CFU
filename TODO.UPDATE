@@ -6,13 +6,6 @@ Add Ash Plants
 * Miracles Vines
 Add both Corruption and Ash Vines
 
-* Wind
-Check over the source of all wind-related code originally
-copied from vanilla to make sure nothing changed:
-- Hanging Tiles
-- Hanging Vines
-- Rising Vines
-
 * Cabinets
 * End Tables
 Add styles for each new furniture set (Coral, Ash Wood, Ballon).

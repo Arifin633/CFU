@@ -77,9 +77,11 @@ namespace ChadsFurnitureUpdated
                             double num = Math.Abs(Main.WindForVisuals);
                             num = Utils.GetLerpValue(0.08f, 1.2f, (float)num, clamped: true);
                             CFUTileDraw.WindCounter += 1.0 / 420.0 + 1.0 / 420.0 * num * 5.0;
-                            CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.4000000059604645;
+                            CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.40000000596046448;
                             CFUTileDraw.EnsureWindGridSize();
                             CFUTileDraw.WindGrid.Update();
+                            // TODO: Uncomment in 1.4.4
+                            /* CFUTileDraw.ShouldSeeInvisibleBlocks = Main.ShouldShowInvisibleWalls(); */
                         }
                     });
                 }));
