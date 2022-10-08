@@ -37,6 +37,7 @@ namespace CFU.Tiles
                 ModContent.ItemType<Items.MirrorShade>(),
                 ModContent.ItemType<Items.MirrorPearl>(),
                 ModContent.ItemType<Items.MirrorPrin>(),
+                ModContent.ItemType<Items.MirrorAsh>()
             };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 36, 48, styles[(frameX / 36)]);
         }
