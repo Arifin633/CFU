@@ -42,6 +42,8 @@ namespace CFU.Tiles
             AddMapEntry(new Color(121, 176, 24));
             AddMapEntry(new Color(182, 175, 130));
             AddMapEntry(new Color(182, 175, 130));
+            AddMapEntry(new Color(122, 116, 218));
+            AddMapEntry(new Color(100, 90, 190));
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 18);
@@ -98,6 +100,12 @@ namespace CFU.Tiles
                 case 6:
                     type = DustID.Bone;
                     break;
+                case 7:
+                    type = DustID.CorruptPlants;
+                    break;
+                case 8:
+                    type = DustID.Mothron;
+                    break;
             }
 
             return true;
@@ -135,7 +143,9 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.MiracleHallowedVine>(),
                              ModContent.ItemType<Items.MiracleJungleVine>(),
                              ModContent.ItemType<Items.MiracleGlowingMushroomVine>(),
-                             ModContent.ItemType<Items.MiracleGlowingMushroomVine>() };
+                             ModContent.ItemType<Items.MiracleGlowingMushroomVine>(),
+                             ModContent.ItemType<Items.MiracleCorruptVine>(),
+                             ModContent.ItemType<Items.MiracleAshVine>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[Main.tile[i, j].TileFrameY / 18]);
             return true;
         }
