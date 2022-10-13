@@ -85,6 +85,12 @@ namespace CFU.Tiles
             TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
             TileObjectData.newSubTile.RandomStyleRange = 1;
             TileObjectData.addSubTile(19);
+            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            TileObjectData.newSubTile.RandomStyleRange = 12;
+            TileObjectData.addSubTile(20);
+            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            TileObjectData.newSubTile.RandomStyleRange = 10;
+            TileObjectData.addSubTile(21);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(26, 196, 84));          
@@ -93,6 +99,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(182, 175, 130));
             AddMapEntry(new Color(48, 186, 135));
             AddMapEntry(new Color(203, 61, 64));
+            AddMapEntry(new Color(100, 90, 190));
             HitSound = SoundID.Grass;
         }
 
@@ -113,6 +120,8 @@ namespace CFU.Tiles
                 case 14 or 15:
                 case 19:
                     return 5;
+                case 20 or 21:
+                    return 6;
                 default:
                     return 0;
             }
@@ -144,6 +153,9 @@ namespace CFU.Tiles
                 case 14 or 15:
                 case 19:
                     type = DustID.CrimsonPlants;
+                    break;
+                case 20 or 21:
+                    type = DustID.Mothron;
                     break;
             }
             return true;
@@ -224,7 +236,9 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.MiracleMushroom>(),
                              ModContent.ItemType<Items.MiracleVileMushroom>(),
                              ModContent.ItemType<Items.MiracleJungleSpore>(),
-                             ModContent.ItemType<Items.MiracleViciousMushroom>() };
+                             ModContent.ItemType<Items.MiracleViciousMushroom>(),
+                             ModContent.ItemType<Items.MiracleAshGrass>(),
+                             ModContent.ItemType<Items.MiracleAshFlower>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 22)]);
             return true;
         }
