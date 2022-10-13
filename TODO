@@ -29,7 +29,8 @@ and Cabinets is no longer separated into two sections
 * Wall Candelabras
 * Cabinets
 Add proper glow to Martian and Meteorite furniture.
-Add missing furniture types: Spider, Sandstone, Bamboo, Lesion, Lunar stuff.
+Add missing furniture types: Coral, Ash Wood, Balloon,
+Spider, Sandstone, Bamboo, Lesion, Lunar stuff.
 
 * Items
 The following item textures don't match the corresponding tile:
@@ -83,8 +84,13 @@ as opposed to being purely random like the rest of the animation frames.
 These conditions could include: Only come in if the path isn't obstructed
 by walls or solid tiles; fly away at night, or if the player gets too close.
 
+The new birds added in 1.4.4 (Cockatiels, Macaws, Toucans) need birdhouses.
+
 * Ornaments
 Originally, the ornaments "blended" with any solid tile placed below them.
+
+* Ash Plants
+Ash grass plants are missing their glow texture.
 
 * Original Chad's Furniture TODO list
 Gardening Updates:
