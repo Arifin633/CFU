@@ -7,7 +7,6 @@ using MonoMod.RuntimeDetour.HookGen;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.GameContent;
-using Terraria.GameContent.Drawing;
 using Tiles = CFU.Tiles;
 using Items = CFU.Items;
 
@@ -44,7 +43,7 @@ namespace ChadsFurnitureUpdated
                type in the occasion when the event which causes
                fairies to spawn from logs is scanning the world
                for appropriate tiles. */
-            HookEndpointManager.Modify(typeof(Terraria.GameContent.Events.MysticLogFairiesEvent).FindMethod("ScanWholeOverworldForLogs"), new Action<ILContext>((il) =>
+            IL.Terraria.GameContent.Events.MysticLogFairiesEvent.ScanWholeOverworldForLogs += (il) =>
             {
                 var c = new ILCursor(il);
                 c.GotoNext(MoveType.Before, i => i.MatchLdcI4(488));
@@ -58,7 +57,7 @@ namespace ChadsFurnitureUpdated
                         type = 488;
                     return type;
                 });
-            }));
+            };
 
             /* The `TileDrawing.Update' function updates both the
                internal WindGrid and the various wind counters.
@@ -67,7 +66,7 @@ namespace ChadsFurnitureUpdated
                with their `TileDrawing' vanilla counterparts. */
             if (CFUConfig.WindEnabled())
             {
-                HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("Update"), new Action<ILContext>((il) =>
+                IL.Terraria.GameContent.Drawing.TileDrawing.Update += (il) =>
                 {
                     var c = new ILCursor(il);
                     c.EmitDelegate<Action>(() =>
@@ -84,7 +83,7 @@ namespace ChadsFurnitureUpdated
                             /* CFUTileDraw.ShouldSeeInvisibleBlocks = Main.ShouldShowInvisibleWalls(); */
                         }
                     });
-                }));
+                };
             }
 
             /* tModLoader has no pre-existing hook for `PreDrawTiles'.
@@ -92,7 +91,7 @@ namespace ChadsFurnitureUpdated
                sure our array will get reset neither too early nor too late. */
             if (CFUConfig.WindEnabled())
             {
-                HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PreDrawTiles"), new Action<ILContext>((il) =>
+                IL.Terraria.GameContent.Drawing.TileDrawing.PreDrawTiles += (il) =>
                 {
                     var c = new ILCursor(il);
                     c.GotoNext(MoveType.Before, i => i.MatchLdarg(0));
@@ -104,7 +103,7 @@ namespace ChadsFurnitureUpdated
                         CFUTileDraw.SpecialPositionsCount[3] = 0;
                         CFUTileDraw.SpecialPositionsCount[4] = 0;
                     });
-                }));
+                };
             }
 
             /* The point in time a drawing function is called
@@ -114,7 +113,7 @@ namespace ChadsFurnitureUpdated
                and draw our tiles at the same time as their equivalents.*/
             if (CFUConfig.WindEnabled())
             {
-                HookEndpointManager.Modify(typeof(TileDrawing).FindMethod("PostDrawTiles"), new Action<ILContext>((il) =>
+                IL.Terraria.GameContent.Drawing.TileDrawing.PostDrawTiles += (il) =>
                 {
                     var c = new ILCursor(il);
                     c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileVines"));
@@ -152,7 +151,7 @@ namespace ChadsFurnitureUpdated
                                 CFUTileDraw.SpecialPositions[3][i] != new Point()) // Don't draw empty coordinates.
                                 CFUTileDraw.DrawRisingVine(CFUTileDraw.SpecialPositions[3][i]);
                     });
-                }));
+                };
             }
 
             /* The hook below allows the player to place Cobweb and Ivy
@@ -161,7 +160,7 @@ namespace ChadsFurnitureUpdated
                As these tiles aren't frame-important, I find this to be
                the only perceivable way to unconditionally decide where
                they may or may not be placed. */
-            HookEndpointManager.Modify(typeof(Player).FindMethod("PlaceThing_Tiles_BlockPlacementForAssortedThings"), new Action<ILContext>((il) =>
+            IL.Terraria.Player.PlaceThing_Tiles_BlockPlacementForAssortedThings += (il) =>
             {
                 var c = new ILCursor(il);
                 c.Next = null;
@@ -187,33 +186,33 @@ namespace ChadsFurnitureUpdated
                     }
                     else return canPlace;
                 });
-            }));
+            };
 
             /* The following hook hijacks the return value of
                `TileLoader.ContainerName' and, if matching one
                of our tile types, sets it to the correct value.
                This is done so different styles of the same tile
                type can have different default container names. */
-            HookEndpointManager.Modify(typeof(TileLoader).FindMethod("ContainerName"), new Action<ILContext>((il) =>
-            {
-                var c = new ILCursor(il);
-                c.Next = null;
-                c.GotoPrev(MoveType.Before, i => i.MatchRet());
-                c.EmitDelegate<Func<string, string>>(name =>
-                {
-                    Player player = Main.LocalPlayer;
-                    int i = player.chestX;
-                    int j = player.chestY;
-                    Tile tile = Main.tile[i, j];
-                    if (tile.TileType == ModContent.TileType<Tiles.Chests>())
-                        return Tiles.Chests.Names[(tile.TileFrameX / 36)];
-                    else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
-                        return Tiles.Dressers.Names[(tile.TileFrameX / 54)];
-                    else if (tile.TileType == ModContent.TileType<Tiles.Cabinets>())
-                        return Tiles.Cabinets.Names[(tile.TileFrameX / 36)];
-                    else return name;
-                });
-            }));
+            // IL.Terraria.ModLoader.TileLoader.ContainerName += (il) =>
+            // {
+            //     var c = new ILCursor(il);
+            //     c.Next = null;
+            //     c.GotoPrev(MoveType.Before, i => i.MatchRet());
+            //     c.EmitDelegate<Func<string, string>>(name =>
+            //     {
+            //         Player player = Main.LocalPlayer;
+            //         int i = player.chestX;
+            //         int j = player.chestY;
+            //         Tile tile = Main.tile[i, j];
+            //         if (tile.TileType == ModContent.TileType<Tiles.Chests>())
+            //             return Tiles.Chests.Names[(tile.TileFrameX / 36)];
+            //         else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
+            //             return Tiles.Dressers.Names[(tile.TileFrameX / 54)];
+            //         else if (tile.TileType == ModContent.TileType<Tiles.Cabinets>())
+            //             return Tiles.Cabinets.Names[(tile.TileFrameX / 36)];
+            //         else return name;
+            //     });
+            // };
         }
     }
 }
