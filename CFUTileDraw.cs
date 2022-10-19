@@ -679,13 +679,13 @@ namespace ChadsFurnitureUpdated
                     {
                         num3 += 0.0025f;
                     }
-                    if (false /*Main.remixWorld*/) // TODO: Uncomment in 1.4.4
+                    /* if (Main.remixWorld) TODO: Uncomment in 1.4.4
                     {
                         if (WallID.Sets.AllowsWind[tile.WallType] && (double)i > Main.worldSurface)
                         {
                             num2++;
                         }
-                    }
+                    } */
                     if (WallID.Sets.AllowsWind[tile.WallType] && (double)i < Main.worldSurface)
                     {
                         num2++;
