@@ -29,7 +29,6 @@ namespace CFU.Tiles
             
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(Chest.FindEmptyChest, -1, 0, true);
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(Chest.AfterPlacement_Hook, -1, 0, false);
@@ -131,7 +130,18 @@ namespace CFU.Tiles
               "Crystal Cabinet",
               "Dynasty Cabinet",
               "Frozen Cabinet",
-              "Living Wood Cabinet" };
+              "Living Wood Cabinet",
+              "Spider Cabinet",
+              "Lesion Cabinet",
+              "Solar Cabinet",
+              "Vortex Cabinet",
+              "Nebula Cabinet",
+              "Stardust Cabinet",
+              "Sandstone Cabinet",
+              "Bamboo Cabinet",
+              "Reef Cabinet",
+              "Balloon Cabinet",
+              "Ash Wood Cabinet" };
 
         static readonly int[] Styles =
             { ModContent.ItemType<Items.CabinetWood>(),
@@ -165,7 +175,18 @@ namespace CFU.Tiles
               ModContent.ItemType<Items.CabinetCrystal>(),
               ModContent.ItemType<Items.CabinetDynasty>(),
               ModContent.ItemType<Items.CabinetFrozen>(),
-              ModContent.ItemType<Items.CabinetLiving>() };
+              ModContent.ItemType<Items.CabinetLiving>(),
+              ModContent.ItemType<Items.CabinetSpider>(),
+              ModContent.ItemType<Items.CabinetLesion>(),
+              ModContent.ItemType<Items.CabinetSolar>(),
+              ModContent.ItemType<Items.CabinetVortex>(),
+              ModContent.ItemType<Items.CabinetNebula>(),
+              ModContent.ItemType<Items.CabinetStardust>(),
+              ModContent.ItemType<Items.CabinetSandstone>(),
+              ModContent.ItemType<Items.CabinetBamboo>(),
+              ModContent.ItemType<Items.CabinetCoral>(),
+              ModContent.ItemType<Items.CabinetBalloon>(),
+              ModContent.ItemType<Items.CabinetAsh>() };
 
         public override void MouseOver(int i, int j)
         {
