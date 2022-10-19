@@ -22,7 +22,7 @@ namespace ChadsFurnitureUpdated
                 c.EmitDelegate<Func<ushort, ushort>>(type =>
                 {
                     /* The next value pushed to the stack must be 518
-                       for a fairy to be able to spawn.
+                       for the tile to be drawn as a lily pad.
                        As such, when the type just read matches our tile,
                        we pretend that its value is actually 518. */
                     if (type == ModContent.TileType<Tiles.MiracleLilyPads>())
@@ -41,7 +41,7 @@ namespace ChadsFurnitureUpdated
                 c.GotoNext(MoveType.Before, i => i.MatchLdcI4(488));
                 c.EmitDelegate<Func<ushort, ushort>>(type =>
                 {
-                    /* See above hook. */
+                    /* See comment on the hook above. */
                     if (type == ModContent.TileType<Tiles.FallenLog>())
                         type = 488;
                     return type;
@@ -177,31 +177,33 @@ namespace ChadsFurnitureUpdated
                 });
             };
 
-            /* The following hook hijacks the return value of
+            /* This hook does not work on the "new" MonoMod.
+
+               The following hook hijacks the return value of
                `TileLoader.ContainerName' and, if matching one
                of our tile types, sets it to the correct value.
                This is done so different styles of the same tile
-               type can have different default container names. */
-            // IL.Terraria.ModLoader.TileLoader.ContainerName += (il) =>
-            // {
-            //     var c = new ILCursor(il);
-            //     c.Next = null;
-            //     c.GotoPrev(MoveType.Before, i => i.MatchRet());
-            //     c.EmitDelegate<Func<string, string>>(name =>
-            //     {
-            //         Player player = Main.LocalPlayer;
-            //         int i = player.chestX;
-            //         int j = player.chestY;
-            //         Tile tile = Main.tile[i, j];
-            //         if (tile.TileType == ModContent.TileType<Tiles.Chests>())
-            //             return Tiles.Chests.Names[(tile.TileFrameX / 36)];
-            //         else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
-            //             return Tiles.Dressers.Names[(tile.TileFrameX / 54)];
-            //         else if (tile.TileType == ModContent.TileType<Tiles.Cabinets>())
-            //             return Tiles.Cabinets.Names[(tile.TileFrameX / 36)];
-            //         else return name;
-            //     });
-            // };
+               type can have different default container names.
+            IL.Terraria.ModLoader.TileLoader.ContainerName += (il) =>
+            {
+                var c = new ILCursor(il);
+                c.Next = null;
+                c.GotoPrev(MoveType.Before, i => i.MatchRet());
+                c.EmitDelegate<Func<string, string>>(name =>
+                {
+                    Player player = Main.LocalPlayer;
+                    int i = player.chestX;
+                    int j = player.chestY;
+                    Tile tile = Main.tile[i, j];
+                    if (tile.TileType == ModContent.TileType<Tiles.Chests>())
+                        return Tiles.Chests.Names[(tile.TileFrameX / 36)];
+                    else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
+                        return Tiles.Dressers.Names[(tile.TileFrameX / 54)];
+                    else if (tile.TileType == ModContent.TileType<Tiles.Cabinets>())
+                        return Tiles.Cabinets.Names[(tile.TileFrameX / 36)];
+                    else return name;
+                });
+            };*/
         }
     }
 }
