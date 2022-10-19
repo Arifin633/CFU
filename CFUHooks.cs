@@ -1,12 +1,8 @@
 using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using MonoMod.Cil;
-using MonoMod.Utils;
-using MonoMod.RuntimeDetour.HookGen;
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.GameContent;
 using Tiles = CFU.Tiles;
 using Items = CFU.Items;
 
@@ -19,25 +15,21 @@ namespace ChadsFurnitureUpdated
             /* This hook allows the mod's Miracle Lily Pads to be drawn in
                the same manner as vanilla Lily Pads, that is, not being
                obstructed by water and reacting to ripples and waves. */
-            HookEndpointManager.Add(typeof(Main).FindMethod("DrawTileInWater"), new Action<Vector2, int, int>((drawOffset, x, y) =>
+            IL.Terraria.Main.DrawTileInWater += (il) =>
             {
-                if (Main.tile[x, y] != null && Main.tile[x, y].HasTile
-                    && (Main.tile[x, y].TileType == ModContent.TileType<Tiles.MiracleLilyPads>() ||
-                        Main.tile[x, y].TileType == 518))
+                var c = new ILCursor(il);
+                c.GotoNext(MoveType.Before, i => i.MatchLdcI4(518));
+                c.EmitDelegate<Func<ushort, ushort>>(type =>
                 {
-                    Main.instance.LoadTiles(Main.tile[x, y].TileType);
-                    Tile tile = Main.tile[x, y];
-                    int num = tile.LiquidAmount / 16;
-                    num -= 3;
-                    if (WorldGen.SolidTile(x, y - 1) && num > 8)
-                        num = 8;
-
-                    Rectangle value = new Rectangle(tile.TileFrameX, tile.TileFrameY, 16, 16);
-                    Main.spriteBatch.Draw(TextureAssets.Tile[tile.TileType].Value,
-                                          new Vector2(x * 16, y * 16 - num) + drawOffset,
-                                          value, Lighting.GetColor(x, y), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
-                }
-            }));
+                    /* The next value pushed to the stack must be 518
+                       for a fairy to be able to spawn.
+                       As such, when the type just read matches our tile,
+                       we pretend that its value is actually 518. */
+                    if (type == ModContent.TileType<Tiles.MiracleLilyPads>())
+                        type = 518;
+                    return type;
+                });
+            };
 
             /* Here we insert a check for our our Fallen Log tile
                type in the occasion when the event which causes
@@ -49,10 +41,7 @@ namespace ChadsFurnitureUpdated
                 c.GotoNext(MoveType.Before, i => i.MatchLdcI4(488));
                 c.EmitDelegate<Func<ushort, ushort>>(type =>
                 {
-                    /* The next value pushed to the stack must be 488
-                       for a fairy to be able to spawn.
-                       As such, when the type just read matches our tile,
-                       we pretend that its value is actually 488. */
+                    /* See above hook. */
                     if (type == ModContent.TileType<Tiles.FallenLog>())
                         type = 488;
                     return type;
