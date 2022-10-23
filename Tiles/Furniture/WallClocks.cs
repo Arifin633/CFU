@@ -122,7 +122,26 @@ namespace CFU.Tiles
             ModContent.ItemType<Items.WallClockPrincess>(),
             ModContent.ItemType<Items.WallClockMystic>(),
             ModContent.ItemType<Items.WallClockRoyal>(),
-            ModContent.ItemType<Items.WallClockSandstone>() };
+            ModContent.ItemType<Items.WallClockSandstone>(),
+            ModContent.ItemType<Items.WallClockGlass>(),
+            ModContent.ItemType<Items.WallClockSlime>(),
+            ModContent.ItemType<Items.WallClockMartian>(),
+            ModContent.ItemType<Items.WallClockCrystal>(),
+            ModContent.ItemType<Items.WallClockSunplate>(),
+            ModContent.ItemType<Items.WallClockBlue>(),
+            ModContent.ItemType<Items.WallClockGreen>(),
+            ModContent.ItemType<Items.WallClockPink>(),
+            ModContent.ItemType<Items.WallClockSpider>(),
+            ModContent.ItemType<Items.WallClockLesion>(),
+            ModContent.ItemType<Items.WallClockSolar>(),
+            ModContent.ItemType<Items.WallClockVortex>(),
+            ModContent.ItemType<Items.WallClockNebula>(),
+            ModContent.ItemType<Items.WallClockStardust>(),
+            ModContent.ItemType<Items.WallClockNewSandstone>(),
+            ModContent.ItemType<Items.WallClockBamboo>(),
+            ModContent.ItemType<Items.WallClockCoral>(),
+            ModContent.ItemType<Items.WallClockBalloon>(),
+            ModContent.ItemType<Items.WallClockAsh>() };
 
         public override void MouseOver(int i, int j)
         {
