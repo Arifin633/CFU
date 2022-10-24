@@ -1,6 +1,8 @@
 using System;
 using Microsoft.Xna.Framework;
 using MonoMod.Cil;
+using MonoMod.Utils;
+using MonoMod.RuntimeDetour.HookGen;
 using Terraria;
 using Terraria.ModLoader;
 using Tiles = CFU.Tiles;
@@ -177,33 +179,27 @@ namespace ChadsFurnitureUpdated
                 });
             };
 
-            /* This hook does not work on the "new" MonoMod.
+            /* The following hook replaces `TileLoader.ContainerName' and,
+               if the container currently in use matches one of our tile
+               types, returns a default name based on the tile's style.
 
-               The following hook hijacks the return value of
-               `TileLoader.ContainerName' and, if matching one
-               of our tile types, sets it to the correct value.
-               This is done so different styles of the same tile
-               type can have different default container names.
-            IL.Terraria.ModLoader.TileLoader.ContainerName += (il) =>
+               NB: It's necessary for this to be an "add" hook, which
+               specifically must be added by `HookEndpointManager'.
+               Otherwise it just won't work with the new MonoMod. */
+            HookEndpointManager.Add(typeof(TileLoader).FindMethod("ContainerName"), new Func<int, string>((type) =>
             {
-                var c = new ILCursor(il);
-                c.Next = null;
-                c.GotoPrev(MoveType.Before, i => i.MatchRet());
-                c.EmitDelegate<Func<string, string>>(name =>
-                {
-                    Player player = Main.LocalPlayer;
-                    int i = player.chestX;
-                    int j = player.chestY;
-                    Tile tile = Main.tile[i, j];
-                    if (tile.TileType == ModContent.TileType<Tiles.Chests>())
-                        return Tiles.Chests.Names[(tile.TileFrameX / 36)];
-                    else if (tile.TileType == ModContent.TileType<Tiles.Dressers>())
-                        return Tiles.Dressers.Names[(tile.TileFrameX / 54)];
-                    else if (tile.TileType == ModContent.TileType<Tiles.Cabinets>())
-                        return Tiles.Cabinets.Names[(tile.TileFrameX / 36)];
-                    else return name;
-                });
-            };*/
+                Player player = Main.LocalPlayer;
+                int i = player.chestX;
+                int j = player.chestY;
+                int frameX = Main.tile[i, j].TileFrameX;
+                if (type == ModContent.TileType<Tiles.Chests>())
+                    return Tiles.Chests.Names[(frameX / 36)];
+                else if (type == ModContent.TileType<Tiles.Dressers>())
+                    return Tiles.Dressers.Names[(frameX / 54)];
+                else if (type == ModContent.TileType<Tiles.Cabinets>())
+                    return Tiles.Cabinets.Names[(frameX / 36)];
+                else return TileLoader.GetTile(type)?.ContainerName?.GetTranslation(Terraria.Localization.Language.ActiveCulture) ?? string.Empty;;
+            }));
         }
     }
 }
