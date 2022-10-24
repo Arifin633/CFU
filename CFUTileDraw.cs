@@ -82,12 +82,6 @@ namespace ChadsFurnitureUpdated
                 sizeX = 3;
                 flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY);
             }
-            else if (type == ModContent.TileType<Tiles.MiracleJungleVegetation>())
-            {
-                sizeY = 2;
-                sizeX = (Main.tile[x, y].TileFrameY == 0) ? 3 : 2;
-                flag = WorldGen.InAPlaceWithWind(x, y, sizeX, sizeY);
-            }
             else if (type == ModContent.TileType<Tiles.PlanteraBulb>() ||
                 type == ModContent.TileType<Tiles.LifeFruit>() ||
                 type == ModContent.TileType<Tiles.AntlionEggs>())
@@ -184,16 +178,6 @@ namespace ChadsFurnitureUpdated
             if (type == ModContent.TileType<Tiles.MiracleOasisVegetation>())
             {
                 tileTop = 2;
-            }
-            else if (type == ModContent.TileType<Tiles.MiracleJungleVegetation>())
-            {
-                tileTop = 2;
-                int potType = ModContent.TileType<Tiles.PlantPots>();
-                if ((tileFrameY >= 36) &&
-                    ((Main.tile[x, y + 1].TileType == potType) ||
-                     ((Main.tile[x, y + 1].TileType == type) &&
-                      (Main.tile[x, y + 2].TileType == potType))))
-                    tileTop = -4;
             }
             else if (type == ModContent.TileType<Tiles.AntlionEggs>())
             {
