@@ -14,11 +14,6 @@ Add one for each furniture type.
 Current ones: Wood, Boreal Wood, Palm Wood, Rich Mahogany, Shade Wood, Ebonwood,
 Pearlwood, Princess.
 
-* Doors
-In vanilla, doors will attempt to open towards the opposite direction the player
-is facing if the preferred direction is obstructed; the same is not true for any
-modded doors.  This is a tModloader issue.
-
 * Dressers
 * Cabinets
 Highlight is broken -- only the top is highlighted, and I have no idea why.
