@@ -72,7 +72,7 @@ namespace CFU.Tiles
                 spriteBatch.Draw(
                     ModContent.Request<Texture2D>("CFU/Textures/Tiles/Furniture/WallClocksPendulum").Value,
                     new Vector2(i * 16 + 12 + 4 - (int)Main.screenPosition.X, j * 16 + 32 - 16 - (int)Main.screenPosition.Y) + zero,
-                    new Rectangle(((tile.TileFrameX / 36) * 10), 0, 10, 48),
+                    new Rectangle(((tile.TileFrameX / 36) * 12), 0, 10, 48),
                     Lighting.GetColor(i, j),
                     /* 0.0205 times 6 frames is 0.123, which translates to roughly 6°.  Probably. */
                     (0.0205f * Main.tileFrame[Type]),

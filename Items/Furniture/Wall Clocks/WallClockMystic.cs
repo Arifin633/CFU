@@ -9,7 +9,8 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockMystic";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mystical Clock");
+            DisplayName.SetDefault("Mystical Wall Clock");
+            Tooltip.SetDefault("'Hanging from the wall'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 

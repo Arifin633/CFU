@@ -9,7 +9,8 @@ namespace CFU.Items
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockSandstone";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Sandstone Clock");
+            DisplayName.SetDefault("Ancient Sandstone Wall Clock");
+            Tooltip.SetDefault("'Hanging from the wall'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
