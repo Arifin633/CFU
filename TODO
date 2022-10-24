@@ -26,11 +26,11 @@ As a temporary workaround, highlighting for Dressers
 and Cabinets is no longer separated into two sections
 (the dresser, below, and the container, on the top).
 
-* Wall Candelabras
+* End Tables
 * Cabinets
-Add proper glow to Martian and Meteorite furniture.
-Add missing furniture types: Coral, Ash Wood, Balloon,
-Spider, Sandstone, Bamboo, Lesion, Lunar stuff.
+* Wall Candelabras
+* Wall Clocks
+Add proper glow for Martian and Meteorite furniture.
 
 * Items
 The following item textures don't match the corresponding tile:

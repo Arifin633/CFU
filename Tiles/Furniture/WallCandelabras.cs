@@ -20,7 +20,6 @@ namespace CFU.Tiles
             TileID.Sets.FramesOnKillWall[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.newTile.Width = 2;
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
@@ -75,7 +74,18 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.WallCandelabraObsidian>(),
                              ModContent.ItemType<Items.WallCandelabraGolden>(),
                              ModContent.ItemType<Items.WallCandelabraMartian>(),
-                             ModContent.ItemType<Items.WallCandelabraCrystal>() };
+                             ModContent.ItemType<Items.WallCandelabraCrystal>(),
+                             ModContent.ItemType<Items.WallCandelabraSpider>(),
+                             ModContent.ItemType<Items.WallCandelabraLesion>(),
+                             ModContent.ItemType<Items.WallCandelabraSolar>(),
+                             ModContent.ItemType<Items.WallCandelabraVortex>(),
+                             ModContent.ItemType<Items.WallCandelabraNebula>(),
+                             ModContent.ItemType<Items.WallCandelabraStardust>(),
+                             ModContent.ItemType<Items.WallCandelabraNewSandstone>(),
+                             ModContent.ItemType<Items.WallCandelabraBamboo>(),
+                             ModContent.ItemType<Items.WallCandelabraCoral>(),
+                             ModContent.ItemType<Items.WallCandelabraBalloon>(),
+                             ModContent.ItemType<Items.WallCandelabraAsh>() };
 
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, styles[(frameX / 36)]);
         }
@@ -166,6 +176,51 @@ namespace CFU.Tiles
                         r = vector.X;
                         g = vector.Y;
                         b = vector.Z;
+                        break;
+                    case 33: /* Spider */
+                        r = 1f;
+                        g = 0.97f;
+                        b = 0.85f;
+                        break;
+                    case 34: /* Lesion */
+                        r = 0.55f;
+                        g = 0.45f;
+                        b = 0.95f;
+                        break;
+                    case 35: /* Solar */
+                        r = 1f;
+                        g = 0.6f;
+                        b = 0.1f;
+                        break;
+                    case 36: /* Vortex */
+                        r = 0.3f;
+                        g = 0.75f;
+                        b = 0.55f;
+                        break;
+                    case 37: /* Nebula */
+                        r = 0.9f;
+                        g = 0.55f;
+                        b = 0.7f;
+                        break;
+                    case 38: /* Stardust */
+                        r = 0.55f;
+                        g = 0.85f;
+                        b = 1f;
+                        break;
+                    case 41: /* Coral */
+                        r = 0.4f;
+                        g = 0.8f;
+                        b = 0.9f;
+                        break;
+                    case 42: /* Balloon */
+                        r = 1f;
+                        g = 1f;
+                        b = 1f;
+                        break;
+                    case 43: /* Ash Wood */
+                        r = 0.95f;
+                        g = 0.5f;
+                        b = 0.4f;
                         break;
                     default:
                         r = 1f;
