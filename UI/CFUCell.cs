@@ -82,6 +82,7 @@ namespace CFU.UI
         public override void OnDeactivate()
         {
             Hovered = false;
+            Selected = false;
         }
 
         protected override void DrawSelf(SpriteBatch spriteBatch)

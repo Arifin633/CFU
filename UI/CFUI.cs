@@ -20,28 +20,72 @@ namespace CFU.UI
                non-trivial to be checked, or have been overlooked. */
             Player player = Main.LocalPlayer;
             if ((player.dead) || (player.mouseInterface) ||
-                /* (player.inventory[player.selectedItem].type != item || */
+                !(BagItems.Exists(item => item.Type == player.inventory[player.selectedItem].type)) ||
                 (Main.mouseLeft && !Grid.ContainsPoint(Main.MouseScreen)))
                 UI.UISystem.Interface.SetState(null);
+            base.Update(time);
         }
 
-        /* public override void OnInitialize()
+        public static readonly List<ModItem> BagItems = new List<ModItem>
+        { ModContent.GetModItem(ModContent.ItemType<Items.BagCattails>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagFlowers>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagGrass>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagHerbs>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagLilyPads>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagOasisVegetation>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagSeaOats>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagSeaweed>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagTallPlants>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagVines>())};
+
+        public bool inSelection = false;
+
+        void SetupCell(ref CFUCell cell, int i)
         {
-            var asset = ModContent.Request<Texture2D>("CFU/Textures/Unused/Bags/Bag", AssetRequestMode.ImmediateLoad);
+            var item = BagItems[i];
+            var asset = ModContent.Request<Texture2D>(item.Texture, AssetRequestMode.ImmediateLoad);
+            var image = new UIImage(asset);
+            image.ScaleToFit = true;
+            cell.Append(image);
+            cell.OnMouseDown += (_, _) => inSelection = true;
+            cell.OnMouseUp += (_, _) => inSelection = false;
+            cell.OnMouseUp += (_, _) =>
+            {
+                UI.UISystem.Interface.SetState(null);
+                Player player = Main.LocalPlayer;
+                player.inventory[player.selectedItem].SetDefaults(BagItems[i].Type);
+            };
+            cell.OnUpdate += (elt) =>
+            {
+                if (!inSelection)
+                {
+                    Player player = Main.LocalPlayer;
+                    if (player.inventory[player.selectedItem].type == item.Type)
+                    {
+                        foreach (CFUCell sis in elt.Parent.Children)
+                        {
+                            sis.Selected = false;
+                        }
+                        var cell = (CFUCell)elt;
+                        cell.Selected = true;
+                    }
+                }
+            };
+        }
+
+        public override void OnInitialize()
+        {
             Grid = new CFUGrid();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < BagItems.Count; i++)
             {
                 var cell = new CFUCell();
-                var image = new UIImage(asset);
-                image.ScaleToFit = true;
                 cell.SetPadding(6);
-                cell.Append(image);
-                cell.OnMouseUp += (_, _) => { UI.UISystem.Interface.SetState(null); };
+                SetupCell(ref cell, i);
                 Grid.Append(cell);
             }
             Grid.SetPadding(6);
-            Append(Grid); 
-        } */
+            Append(Grid);
+        }
     }
 
     public class UISystem : ModSystem
