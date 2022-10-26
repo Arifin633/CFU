@@ -6,18 +6,27 @@ using Terraria.ID;
 using Terraria.UI;
 using Terraria.Audio;
 
+/* This file defines a basic grid framework,
+   intended to be used with `CFUCells' (which see)
+   or other more derived types.
+
+   TODO: Cell span, Right-to-left orientations,
+   a proper constructor to ensure no invalid types
+   are appended as children nor its fields are
+   modified after initialization. */
+
 namespace CFU.UI
 {
     public class CFUGrid : UIElement
     {
         public enum GridOrientation
         {
-            LeftToRight,
-            TopToBottom
+            Horizontal,
+            Vertical
         }
 
-        /* */
-        public GridOrientation Orientation = GridOrientation.LeftToRight;
+        /* The direction cells will be laid out. */
+        public GridOrientation Orientation = GridOrientation.Horizontal;
 
         /* The color of the grid. */
         public Color BackgroundColor = new Color(23, 25, 81, 255) * 0.925f;
@@ -39,7 +48,7 @@ namespace CFU.UI
         {
             get
             {
-                if (Orientation == GridOrientation.LeftToRight)
+                if (Orientation == GridOrientation.Horizontal)
                 {
                     if (RowConstraints <= 0)
                         return Elements.Count;
@@ -67,7 +76,7 @@ namespace CFU.UI
         {
             get
             {
-                if (Orientation == GridOrientation.LeftToRight)
+                if (Orientation == GridOrientation.Horizontal)
                 {
                     if (RowConstraints <= 0)
                         return 1;
@@ -115,7 +124,7 @@ namespace CFU.UI
                 Elements[i].HAlign = (float)x / ((columns <= 1) ? 1 : (columns - 1));
                 Elements[i].VAlign = (float)y / ((rows <= 1) ? 1 : (rows - 1));
 
-                if (Orientation == GridOrientation.LeftToRight)
+                if (Orientation == GridOrientation.Horizontal)
                 {
                     if (++x >= columns)
                     {
@@ -143,6 +152,14 @@ namespace CFU.UI
         public override void OnActivate()
         {
             SoundEngine.PlaySound(SoundID.MenuOpen);
+
+            /* At this point in time, the values reported by
+             mouse X and Y, as well as screen width and height,
+             are inaccurate.  Both correcting the values manually
+             and trying to update them through the functions in
+             `PlayerInput' present issues.
+             FIXME: Move these calculations to `DrawSelf',
+                    where the values are already accurate. */
             float scale = (1f / Main.UIScale);
             float mouseX = Main.mouseX * scale;
             float mouseY = Main.mouseY * scale;

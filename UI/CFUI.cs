@@ -15,6 +15,9 @@ namespace CFU.UI
 
         public override void Update(GameTime time)
         {
+            /* The checks below are not exhaustive; some conditions
+               on which this UI should automatically close are either
+               non-trivial to be checked, or have been overlooked. */
             Player player = Main.LocalPlayer;
             if ((player.dead) || (player.mouseInterface) ||
                 /* (player.inventory[player.selectedItem].type != item || */
