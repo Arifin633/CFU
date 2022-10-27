@@ -217,28 +217,28 @@ namespace CFU.Tiles
 
         public override bool Drop(int i, int j)
         {
-            int[] styles = { ModContent.ItemType<Items.MiracleGrass>(),
-                             ModContent.ItemType<Items.MiracleYellowFlower>(),
-                             ModContent.ItemType<Items.MiracleWhiteFlower>(),
-                             ModContent.ItemType<Items.MiracleRedFlower>(),
-                             ModContent.ItemType<Items.MiracleBlueFlower>(),
-                             ModContent.ItemType<Items.MiraclePurpleFlower>(),
-                             ModContent.ItemType<Items.MiraclePinkFlower>(),
-                             ModContent.ItemType<Items.MiracleCorruptGrass>(),
-                             ModContent.ItemType<Items.MiracleCorruptFlower>(),
-                             ModContent.ItemType<Items.MiracleJungleGrass>(),
-                             ModContent.ItemType<Items.MiracleJungleFlower>(),
-                             ModContent.ItemType<Items.MiracleGlowingMushroom>(),
-                             ModContent.ItemType<Items.MiracleHallowedGrass>(),
-                             ModContent.ItemType<Items.MiracleHallowedFlower>(),
-                             ModContent.ItemType<Items.MiracleCrimsonGrass>(),
-                             ModContent.ItemType<Items.MiracleCrimsonFlower>(),
-                             ModContent.ItemType<Items.MiracleMushroom>(),
-                             ModContent.ItemType<Items.MiracleVileMushroom>(),
-                             ModContent.ItemType<Items.MiracleJungleSpore>(),
-                             ModContent.ItemType<Items.MiracleViciousMushroom>(),
-                             ModContent.ItemType<Items.MiracleAshGrass>(),
-                             ModContent.ItemType<Items.MiracleAshFlower>() };
+            int[] styles = { ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.CorruptSeeds,
+                             ItemID.CorruptSeeds,
+                             ItemID.JungleGrassSeeds,
+                             ItemID.JungleGrassSeeds,
+                             ItemID.GlowingMushroom,
+                             ItemID.HallowedSeeds,
+                             ItemID.HallowedSeeds,
+                             ItemID.CrimsonSeeds,
+                             ItemID.CrimsonSeeds,
+                             ItemID.Mushroom,
+                             ItemID.VileMushroom,
+                             ItemID.JungleSpores,
+                             ItemID.ViciousMushroom/*, TODO: Uncomment in 1.4.4
+                             ItemID.AshGrassSeeds
+                             ItemID.AshGrassSeeds */ };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 22)]);
             return true;
         }

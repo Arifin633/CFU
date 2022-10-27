@@ -68,28 +68,12 @@ namespace CFU.Tiles
 
         public override bool Drop(int i, int j)
         {
-            int[,] styles =
-                { { ModContent.ItemType<Items.MiracleShortOasisSeaOats>(),
-                    ModContent.ItemType<Items.MiracleMediumOasisSeaOats>(),
-                    ModContent.ItemType<Items.MiracleTallOasisSeaOats>() },
-
-                  { ModContent.ItemType<Items.MiracleShortSeaOats>(),
-                    ModContent.ItemType<Items.MiracleMediumSeaOats>(),
-                    ModContent.ItemType<Items.MiracleTallSeaOats>() },
-
-                  { ModContent.ItemType<Items.MiracleShortHallowedSeaOats>(),
-                    ModContent.ItemType<Items.MiracleMediumHallowedSeaOats>(),
-                    ModContent.ItemType<Items.MiracleTallHallowedSeaOats>() },
-
-                  { ModContent.ItemType<Items.MiracleShortCrimsonSeaOats>(),
-                    ModContent.ItemType<Items.MiracleMediumCrimsonSeaOats>(),
-                    ModContent.ItemType<Items.MiracleTallCrimsonSeaOats>() },
-
-                  { ModContent.ItemType<Items.MiracleShortCorruptSeaOats>(),
-                    ModContent.ItemType<Items.MiracleMediumCorruptSeaOats>(),
-                    ModContent.ItemType<Items.MiracleTallCorruptSeaOats>() } };
-
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 34), ((Main.tile[i, j].TileFrameX / 18) / 5)]);
+            int[] styles = { ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.HallowedSeeds,
+                             ItemID.CrimsonSeeds,
+                             ItemID.CorruptSeeds };
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 34)]);
             return true;
         }
     }

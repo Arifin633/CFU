@@ -101,17 +101,17 @@ namespace CFU.Tiles
 
         public override bool Drop(int i, int j)
         {
-            int[] styles = { ModContent.ItemType<Items.MiracleTallGrass>(),
-                             ModContent.ItemType<Items.MiracleTallWhiteFlower>(),
-                             ModContent.ItemType<Items.MiracleTallYellowFlower>(),
-                             ModContent.ItemType<Items.MiracleTallRedFlower>(),
-                             ModContent.ItemType<Items.MiracleTallPurpleFlower>(),
-                             ModContent.ItemType<Items.MiracleTallPinkFlower>(),
-                             ModContent.ItemType<Items.MiracleTallBlueFlower>(),
-                             ModContent.ItemType<Items.MiracleTallJungleGrass>(),
-                             ModContent.ItemType<Items.MiracleTallJungleFlower>(),
-                             ModContent.ItemType<Items.MiracleTallHallowedGrass>(),
-                             ModContent.ItemType<Items.MiracleTallHallowedFlower>() };
+            int[] styles = { ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.GrassSeeds,
+                             ItemID.JungleGrassSeeds,
+                             ItemID.JungleGrassSeeds,
+                             ItemID.HallowedSeeds,
+                             ItemID.HallowedSeeds  };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 34)]);
             return true;
         }

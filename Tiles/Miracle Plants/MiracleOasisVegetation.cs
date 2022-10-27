@@ -104,47 +104,11 @@ namespace CFU.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            int[,] styles = {
-                { ModContent.ItemType<Items.MiracleOasisVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCactus>() },
-
-                { ModContent.ItemType<Items.MiracleOasisHallowedVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisHallowedCactus>() },
-
-                { ModContent.ItemType<Items.MiracleOasisCrimsonVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCrimsonCactus>() },
-
-                { ModContent.ItemType<Items.MiracleOasisCorruptVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptVegetation>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptCactus>(),
-                  ModContent.ItemType<Items.MiracleOasisCorruptCactus>() } };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 36), (frameX / 54)]);
+            int[] styles = { ItemID.GrassSeeds,
+                             ItemID.HallowedSeeds,
+                             ItemID.CrimsonSeeds,
+                             ItemID.CorruptSeeds };
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 36)]);
         }
     }
 }
