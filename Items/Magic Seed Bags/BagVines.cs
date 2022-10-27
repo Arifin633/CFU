@@ -7,7 +7,7 @@ namespace CFU.Items
 {
     public class BagVines : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Miracle Plants/Bags/BagVines";
+        public override string Texture => "CFU/Textures/Items/Magic Seed Bags/BagVines";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Magic Seed Bag (Vine)");

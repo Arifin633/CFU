@@ -5,12 +5,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class BagCattails : ModItem
+    public class BagOasisVegetation : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Miracle Plants/Bags/BagCattails";
+        public override string Texture => "CFU/Textures/Items/Magic Seed Bags/BagOasisVegetation";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Magic Seed Bag (Cattail)");
+            DisplayName.SetDefault("Magic Seed Bag (Oasis Plants)");
             Tooltip.SetDefault("Used with seeds to place matching plants\n<right> while holding to choose plant type\nPress Up/Down to cycle through styles\n'Can grow anywhere!'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
@@ -29,7 +29,7 @@ namespace CFU.Items
             Item.value = 0;
             Item.placeStyle = 0;
         }
-
+        
         public override bool AltFunctionUse(Player player)
         {
             if (UI.UISystem.Interface.CurrentState != null)

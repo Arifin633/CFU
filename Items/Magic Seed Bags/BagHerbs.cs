@@ -1,15 +1,16 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class BagPlaceholder : ModItem
+    public class BagHerbs : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Miracle Plants/Bags/Bag";
+        public override string Texture => "CFU/Textures/Items/Magic Seed Bags/BagHerbs";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Magic Seed Bag");
+            DisplayName.SetDefault("Magic Seed Bag (Herb)");
             Tooltip.SetDefault("Used with seeds to place matching plants\n<right> while holding to choose plant type\nPress Up/Down to cycle through styles\n'Can grow anywhere!'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
@@ -29,12 +30,17 @@ namespace CFU.Items
             Item.placeStyle = 0;
         }
 
-        public override void AddRecipes()
+        public override bool AltFunctionUse(Player player)
         {
-            CreateRecipe()
-            .AddIngredient(ItemID.GrassSeeds)
-            .AddTile(ModContent.TileType<Tiles.CultivationBox>())
-            .Register();
+            if (UI.UISystem.Interface.CurrentState != null)
+            {
+                UI.UISystem.Interface.SetState(null);
+            }
+            else
+            {
+                UI.UISystem.Interface.SetState(UI.UISystem.State);
+            }
+            return false;
         }
     }
 }

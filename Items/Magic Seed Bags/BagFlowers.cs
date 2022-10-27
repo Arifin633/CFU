@@ -5,12 +5,12 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class BagHerbs : ModItem
+    public class BagFlowers : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Miracle Plants/Bags/BagHerbs";
+        public override string Texture => "CFU/Textures/Items/Magic Seed Bags/BagFlowers";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Magic Seed Bag (Herb)");
+            DisplayName.SetDefault("Magic Seed Bag (Flower)");
             Tooltip.SetDefault("Used with seeds to place matching plants\n<right> while holding to choose plant type\nPress Up/Down to cycle through styles\n'Can grow anywhere!'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
