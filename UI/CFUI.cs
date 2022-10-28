@@ -32,10 +32,10 @@ namespace CFU.UI
           ModContent.GetModItem(ModContent.ItemType<Items.BagGrass>()),
           ModContent.GetModItem(ModContent.ItemType<Items.BagHerbs>()),
           ModContent.GetModItem(ModContent.ItemType<Items.BagLilyPads>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagMushrooms>()),
           ModContent.GetModItem(ModContent.ItemType<Items.BagOasisVegetation>()),
           ModContent.GetModItem(ModContent.ItemType<Items.BagSeaOats>()),
           ModContent.GetModItem(ModContent.ItemType<Items.BagSeaweed>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagTallPlants>()),
           ModContent.GetModItem(ModContent.ItemType<Items.BagVines>())};
 
         public bool inSelection = false;
