@@ -71,12 +71,8 @@ namespace CFU.Tiles
             return true;
         }
 
-        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
-        {
-            if ((!CFUConfig.WindEnabled()) ||
-                (frameX >= 270))
-                offsetY = 2;
-        }
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) =>
+            offsetY = 2;
 
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) =>
             (!(CFUConfig.WindEnabled()) || (Main.tile[i, j].TileFrameX >= 270));

@@ -93,7 +93,7 @@ namespace ChadsFurnitureUpdated
             {
                 n = 1f;
                 m = 0f;
-                sizeY = 3;
+                sizeY = (Main.tile[x, y].TileFrameX == 24) ? 1 : 3;
             }
             else if (type == ModContent.TileType<Tiles.Brazier>())
             {
@@ -167,88 +167,26 @@ namespace ChadsFurnitureUpdated
             return flag;
         }
 
-        public static void TileDrawData(int x, int y, Tile tile, ushort type, ref short tileFrameX, ref short tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects)
+        public static void TileDrawData(int x, int y, Tile tile, ushort type, ref short tileFrameX, ref short tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int halfBrickHeight, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects)
+        {
+            TileDrawData(x, y, tile, type, ref tileFrameX, ref tileFrameY, out tileWidth, out tileHeight, out tileTop, out halfBrickHeight, out addFrX, out addFrY, out tileSpriteEffects, out _, out _, out _);
+        }
+
+        public static void TileDrawData(int x, int y, Tile tile, ushort type, ref short tileFrameX, ref short tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int halfBrickHeight, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects, out Texture2D glowTexture, out Rectangle glowSourceRect, out Color glowColor)
         {
             tileTop = 0;
             tileWidth = 16;
             tileHeight = 16;
+            halfBrickHeight = 0;
             addFrY = Main.tileFrame[type] * 38;
             addFrX = 0;
             tileSpriteEffects = SpriteEffects.None;
-            if (type == ModContent.TileType<Tiles.MiracleOasisVegetation>())
-            {
-                tileTop = 2;
-            }
-            else if (type == ModContent.TileType<Tiles.AntlionEggs>())
-            {
-                tileTop = 2;
-                int a = (Main.tileFrameCounter[type] / 5);
-                int b = y - tileFrameY / 18;
-                int c = x - tileFrameX / 18;
-                a += b + c;
-                a %= 4;
-                addFrY = a * 36;
-            }
-            else if (type == ModContent.TileType<Tiles.LifeFruit>())
-            {
-                int potType = ModContent.TileType<Tiles.PlantPots>();
-                if ((Main.tile[x, y + 1].TileType == potType) ||
-                    ((Main.tile[x, y + 1].TileType == type) &&
-                     (Main.tile[x, y + 2].TileType == potType)))
-                    tileTop = -4;
-            }
-            else if (type == ModContent.TileType<Tiles.PlanteraBulb>())
-            {
-                int potType = ModContent.TileType<Tiles.PlantPots>();
-                if ((Main.tile[x, y + 1].TileType == potType) ||
-                    ((Main.tile[x, y + 1].TileType == type) &&
-                     (Main.tile[x, y + 2].TileType == potType)))
-                    tileTop = -4;
-                else
-                    tileTop = 2;
-                addFrY = Main.tileFrame[type] * 36;
-            }
-            else if (type == ModContent.TileType<Tiles.MiracleVines>())
-            {
-                tileTop = 2;
-                tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-            }
-            else if (type == ModContent.TileType<Tiles.MiracleCattails>())
-            {
-                tileTop = 2;
-                tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-            }
-            else if (type == ModContent.TileType<Tiles.Fishhook>())
-            {
-                tileWidth = 22;
-            }
-            // else if (type == ModContent.TileType<Tiles.BiomeJars>())
-            // {
-            //     tileSpriteEffects = (x % 2 == 0) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-            // }
-            // else if (type == ModContent.TileType<Tiles.Chandeliers>())
-            // {
-            // }
-            // else if (type == ModContent.TileType<Tiles.Lanterns>())
-            // {
-            // }
-            // else if (type == ModContent.TileType<Tiles.Banners>())
-            // {
-            // }
-            // else if (type == ModContent.TileType<Tiles.BannersLarge>())
-            // {
-            // }
-
-            /* These are more than likely unnecessary.
-               Since we are only dealing with a handful of tiles, it's
-               easier to just set the sprite effects and draw position
-               here instead of using the designated methods that the
-               functions below would usually call.
-               The animation frame is also useless, as none
-               of the tiles here are animated conventionally. */
-            // TileLoader.SetSpriteEffects(x, y, type, ref tileSpriteEffects);
-            // TileLoader.SetDrawPositions(x, y, ref tileWidth, ref tileTop, ref tileHeight, ref tileFrameX, ref tileFrameY);
-            // TileLoader.SetAnimationFrame(type, x, y, ref addFrX, ref addFrY);
+            glowTexture = null;
+            glowSourceRect = Rectangle.Empty;
+            glowColor = Color.Transparent;
+            TileLoader.SetSpriteEffects(x, y, type, ref tileSpriteEffects);
+            TileLoader.SetDrawPositions(x, y, ref tileWidth, ref tileTop, ref tileHeight, ref tileFrameX, ref tileFrameY);
+            TileLoader.SetAnimationFrame(type, x, y, ref addFrX, ref addFrY);
         }
 
         public static bool TileFlameData(int type, int x, int y, out string texture, out int count, out Color color, out int rangeXMin, out int rangeXMax, out int rangeYMin, out int rangeYMax, out float rangeMultX, out float rangeMultY)
@@ -466,8 +404,8 @@ namespace ChadsFurnitureUpdated
         public static float GetWindCycle(int x, int y, double windCounter)
         {
             if (Main.SettingsEnabled_TilesSwayInWind &&
-                (((double)y >= Main.worldSurface) ||
-                 (((double)y <= Main.worldSurface) && false /* Main.remixWorld */))) // TODO: Uncomment in 1.4.4
+                (((double)y <= Main.worldSurface) ||
+                 (((double)y >= Main.worldSurface) && false /* Main.remixWorld */))) // TODO: Uncomment in 1.4.4
             {
                 float num = (float)x * 0.5f + (float)(y / 100) * 0.5f;
                 float num2 = (float)Math.Cos(windCounter * 6.2831854820251465 + (double)num) * 0.5f;
@@ -544,7 +482,7 @@ namespace ChadsFurnitureUpdated
                         num7 = 0.1f;
 
                     var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile2, i, j);
-                    TileDrawData(i, j, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
+                    TileDrawData(i, j, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out _, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
 
                     Color tileLight = Lighting.GetColor(i, j);
                     Vector2 value2 = new Vector2(i * 16 - (int)screenPosition.X, j * 16 - (int)screenPosition.Y + tileTop) + offSet;
@@ -607,7 +545,7 @@ namespace ChadsFurnitureUpdated
                     {
                         num2 = 0f;
                     }
-                    TileDrawData(i, j, tile, type2, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out var addFrX, out var addFrY, out var tileSpriteEffect);
+                    TileDrawData(i, j, tile, type2, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out _, out var addFrX, out var addFrY, out var tileSpriteEffect);
 
                     Color tileLight = Lighting.GetColor(i, j);
                     Vector2 value2 = new Vector2(i * 16 - (int)screenPosition.X, j * 16 - (int)screenPosition.Y + tileTop) + offSet;
@@ -681,7 +619,7 @@ namespace ChadsFurnitureUpdated
                     short tileFrameY = tile.TileFrameY;
                     Color color = Lighting.GetColor(x, i);
                     var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, x, i);
-                    TileDrawData(x, i, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
+                    TileDrawData(x, i, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out _, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * num3 * windCycle + num4;
                     if (IsVisible(tile))
@@ -746,7 +684,7 @@ namespace ChadsFurnitureUpdated
                     short tileFrameY = tile.TileFrameY;
                     Color color = Lighting.GetColor(x, i);
                     var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, x, i);
-                    TileDrawData(x, i, tile, type, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out var addFrX, out var addFrY, out SpriteEffects tileSpriteEffects);
+                    TileDrawData(x, i, tile, type, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out _, out var addFrX, out var addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * (0f - num3) * windCycle + num4;
                     if (IsVisible(tile))

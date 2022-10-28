@@ -35,15 +35,22 @@ namespace CFU.Tiles
                 frameCounter = 0;
         }
 
-        // public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
-        // {
-        //     if (!CFUConfig.WindEnabled())
-        //     {
-        //         offsetY = 2;
-        //     }
-        // }
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) =>
+            offsetY = 2;
 
-        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => false;
+        public override void AnimateIndividualTile (int type, int i, int j, ref int addFrX, ref int addFrY)
+        {
+            int frameX = Main.tile[i, j].TileFrameX;
+            int frameY = Main.tile[i, j].TileFrameY;
+            int a = (Main.tileFrameCounter[Type] / 5);
+            int b = j - frameY / 18;
+            int c = i - frameX / 18;
+            a += b + c;
+            a %= 4;
+            addFrY = a * 36;
+        }
+        
+        public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
@@ -54,23 +61,6 @@ namespace CFU.Tiles
                 {
                     CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
                 }
-            }
-            else
-            {
-                int frameX = Main.tile[i, j].TileFrameX;
-                int frameY = Main.tile[i, j].TileFrameY;
-                int a = (Main.tileFrameCounter[Type] / 5);
-                int b = j - frameY / 18;
-                int c = i - frameX / 18;
-                a += b + c;
-                a %= 4;
-                int addFrY = a * 36;
-                Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
-                spriteBatch.Draw(
-                    ModContent.Request<Texture2D>(Texture).Value,
-                    new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 + 2 - (int)Main.screenPosition.Y) + zero,
-                    new Rectangle(frameX, frameY + addFrY, 16, 16),
-                    Lighting.GetColor(i, j), 0f, default(Vector2), 1f, SpriteEffects.None, 0f);
             }
         }
 

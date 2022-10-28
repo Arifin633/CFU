@@ -51,16 +51,15 @@ namespace CFU.Tiles
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
         {
-            if (!CFUConfig.WindEnabled())
-            {
-                offsetY = 2;
-                int potType = ModContent.TileType<Tiles.PlantPots>();
-                if ((Main.tile[i, j + 1].TileType == potType) ||
-                     ((Main.tile[i, j + 1].TileType == Type) &&
-                      (Main.tile[i, j + 2].TileType == potType)))
-                    offsetY = -4;
-            }
+            int potType = ModContent.TileType<Tiles.PlantPots>();
+            if ((Main.tile[i, j + 1].TileType == potType) ||
+                ((Main.tile[i, j + 1].TileType == Type) &&
+                 (Main.tile[i, j + 2].TileType == potType)))
+                offsetY = -4;
+            else offsetY = 2;
         }
+
+        public override void AnimateIndividualTile (int type, int i, int j, ref int addFrX, ref int addFrY) => addFrY = Main.tileFrame[type] * 36;
 
         public override bool CreateDust(int i, int j, ref int type)
         {

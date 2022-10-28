@@ -152,17 +152,12 @@ namespace CFU.Tiles
 
         public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
         {
-            if (!CFUConfig.WindEnabled() && (i % 2 == 0))
+            if (i % 2 == 0)
                 spriteEffects = SpriteEffects.FlipHorizontally;
         }
 
-        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
-        {
-            if (!CFUConfig.WindEnabled())
-            {
-                offsetY = -2;
-            }
-        }
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) =>
+            offsetY = -2;
 
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 

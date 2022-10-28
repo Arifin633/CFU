@@ -33,14 +33,11 @@ namespace CFU.Tiles
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY)
         {
-            if (!CFUConfig.WindEnabled())
-            {
-                int potType = ModContent.TileType<Tiles.PlantPots>();
-                if ((Main.tile[i, j + 1].TileType == potType) ||
-                     ((Main.tile[i, j + 1].TileType == Type) &&
-                      (Main.tile[i, j + 2].TileType == potType)))
-                    offsetY = -4;
-            }
+            int potType = ModContent.TileType<Tiles.PlantPots>();
+            if ((Main.tile[i, j + 1].TileType == potType) ||
+                ((Main.tile[i, j + 1].TileType == Type) &&
+                 (Main.tile[i, j + 2].TileType == potType)))
+                offsetY = -4;
         }
 
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
