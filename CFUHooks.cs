@@ -50,33 +50,6 @@ namespace ChadsFurnitureUpdated
                 });
             };
 
-            /* The `TileDrawing.Update' function updates both the
-               internal WindGrid and the various wind counters.
-               By hooking into this function and updating our own
-               Grid/counters, we can ensure they will be in sync
-               with their `TileDrawing' vanilla counterparts. */
-            if (CFUConfig.WindEnabled())
-            {
-                IL.Terraria.GameContent.Drawing.TileDrawing.Update += (il) =>
-                {
-                    var c = new ILCursor(il);
-                    c.EmitDelegate<Action>(() =>
-                    {
-                        if (!Main.dedServ)
-                        {
-                            double num = Math.Abs(Main.WindForVisuals);
-                            num = Utils.GetLerpValue(0.08f, 1.2f, (float)num, clamped: true);
-                            CFUTileDraw.WindCounter += 1.0 / 420.0 + 1.0 / 420.0 * num * 5.0;
-                            CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.40000000596046448;
-                            CFUTileDraw.EnsureWindGridSize();
-                            CFUTileDraw.WindGrid.Update();
-                            // TODO: Uncomment in 1.4.4
-                            /* CFUTileDraw.ShouldSeeInvisibleBlocks = Main.ShouldShowInvisibleWalls(); */
-                        }
-                    });
-                };
-            }
-
             /* tModLoader has no pre-existing hook for `PreDrawTiles'.
                Thus to hook into this function is the most sensible way to make
                sure our array will get reset neither too early nor too late. */

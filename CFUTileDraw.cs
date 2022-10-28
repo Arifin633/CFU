@@ -6,12 +6,11 @@
    drawing of simple post draw effects and animations, such as
    `DrawFlame' and `ForgeDrawSmoke'.
    
-   Tile animations which require rotation (spec. wind swaying and
-   the clock pendulum swinging) should be drawn by adding the tile
-   coordinates to the `SpecialPositions' array.  Then, CFUSystem's
-   `PostDrawTiles', which is automatically called by tModLoader,
-   will set the correct drawing filter and call the appropriate
-   drawing function.  Otherwise, the texture will appear blurry.
+   Tile animations which require rotation (spec. wind swaying) should be
+   drawn by adding the tile coordinates to the `SpecialPositions' array.
+   Then, CFUSystem's `PostDrawTiles', which is automatically called by
+   tModLoader, will set the correct drawing filter and call the appro-
+   priate drawing function.  Otherwise, the texture will appear blurry.
 
    The actual drawing machinations of wind-affected tiles were just
    copied and slightly simplified from vanilla.  Mostly because I
@@ -29,9 +28,33 @@ using Tiles = CFU.Tiles;
 
 namespace ChadsFurnitureUpdated
 {
+    public class CFUWindSystem : ModSystem
+    {
+        /* Previously, the contents of this function
+           lived on a hook targeting `TileDrawing.Update',
+           the very function it seeks to emulate.
+           Since the "PostUpdateEverything" tML hook is
+           called relatively close `Update' there should
+           be no issue in using it instead of a real hook. */
+        public override void PostUpdateEverything()
+        {
+            if (!Main.dedServ)
+            {
+                double num = Math.Abs(Main.WindForVisuals);
+                num = Utils.GetLerpValue(0.08f, 1.2f, (float)num, clamped: true);
+                CFUTileDraw.WindCounter += 1.0 / 420.0 + 1.0 / 420.0 * num * 5.0;
+                CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.40000000596046448;
+                // TODO: Uncomment in 1.4.4
+                /* CFUTileDraw.ShouldSeeInvisibleBlocks = Main.ShouldShowInvisibleWalls(); */
+            }
+        }
+    }
+    
     static class CFUTileDraw
     {
-        public static WindGrid WindGrid = new WindGrid();
+        private static TileDrawing TilesRenderer = Main.instance.TilesRenderer;
+
+        public static WindGrid WindGrid => TilesRenderer.Wind;
 
         public static double WindCounter;
 
@@ -320,69 +343,6 @@ namespace ChadsFurnitureUpdated
             return flag;
         }
 
-        public static void GetScreenDrawArea(Vector2 screenPosition, Vector2 offSet, out int firstTileX, out int lastTileX, out int firstTileY, out int lastTileY)
-        {
-            firstTileX = (int)((screenPosition.X - offSet.X) / 16f - 1f);
-            lastTileX = (int)((screenPosition.X + (float)Main.screenWidth + offSet.X) / 16f) + 2;
-            firstTileY = (int)((screenPosition.Y - offSet.Y) / 16f - 1f);
-            lastTileY = (int)((screenPosition.Y + (float)Main.screenHeight + offSet.Y) / 16f) + 5;
-            if (firstTileX < 4)
-            {
-                firstTileX = 4;
-            }
-            if (lastTileX > Main.maxTilesX - 4)
-            {
-                lastTileX = Main.maxTilesX - 4;
-            }
-            if (firstTileY < 4)
-            {
-                firstTileY = 4;
-            }
-            if (lastTileY > Main.maxTilesY - 4)
-            {
-                lastTileY = Main.maxTilesY - 4;
-            }
-            if (Main.sectionManager.FrameSectionsLeft > 0)
-            {
-                TimeLogger.DetailedDrawReset();
-                WorldGen.SectionTileFrameWithCheck(firstTileX, firstTileY, lastTileX, lastTileY);
-                TimeLogger.DetailedDrawTime(5);
-            }
-        }
-
-        public static void EnsureWindGridSize()
-        {
-            Vector2 unscaledPosition = Main.Camera.UnscaledPosition;
-            Vector2 offSet = (Main.drawToScreen) ? Vector2.Zero : new Vector2(Main.offScreenRange, Main.offScreenRange);
-            GetScreenDrawArea(unscaledPosition, offSet, out var firstTileX, out var lastTileX, out var firstTileY, out var lastTileY);
-            WindGrid.SetSize(lastTileX - firstTileX, lastTileY - firstTileY);
-        }
-
-        public static float GetWindGridPush(int i, int j, int pushAnimationTimeTotal, float pushForcePerFrame)
-        {
-            WindGrid.GetWindTime(i, j, pushAnimationTimeTotal, out var windTimeLeft, out var direction);
-            if (windTimeLeft >= pushAnimationTimeTotal / 2)
-            {
-                return (float)(pushAnimationTimeTotal - windTimeLeft) * pushForcePerFrame * (float)direction;
-            }
-            return (float)windTimeLeft * pushForcePerFrame * (float)direction;
-        }
-
-        public static float GetWindGridPushComplex(int i, int j, int pushAnimationTimeTotal, float totalPushForce, int loops, bool flipDirectionPerLoop)
-        {
-            WindGrid.GetWindTime(i, j, pushAnimationTimeTotal, out var windTimeLeft, out var direction);
-            float num4 = (float)windTimeLeft / (float)pushAnimationTimeTotal;
-            int num2 = (int)(num4 * (float)loops);
-            float num3 = num4 * (float)loops % 1f;
-            if (flipDirectionPerLoop && num2 % 2 == 1)
-                direction *= -1;
-
-            if (num4 * (float)loops % 1f > 0.5f)
-                return (1f - num3) * totalPushForce * (float)direction * (float)(loops - num2);
-
-            return num3 * totalPushForce * (float)direction * (float)(loops - num2);
-        }
-
         public static float GetHighestWindGridPushComplex(int topLeftX, int topLeftY, int sizeX, int sizeY, int totalPushTime, float pushForcePerFrame, int loops, bool swapLoopDir)
         {
             float result = 0f;
@@ -391,7 +351,7 @@ namespace ChadsFurnitureUpdated
                 for (int j = 0; j < sizeY; j++)
                 {
                     WindGrid.GetWindTime(topLeftX + i + sizeX / 2, topLeftY + j, totalPushTime, out var windTimeLeft, out var _);
-                    float windGridPushComplex = GetWindGridPushComplex(topLeftX + i, topLeftY + j, totalPushTime, pushForcePerFrame, loops, swapLoopDir);
+                    float windGridPushComplex = TilesRenderer.GetWindGridPushComplex(topLeftX + i, topLeftY + j, totalPushTime, pushForcePerFrame, loops, swapLoopDir);
                     if (windTimeLeft < num && windTimeLeft != 0)
                     {
                         result = windGridPushComplex;
@@ -399,20 +359,6 @@ namespace ChadsFurnitureUpdated
                     }
                 }
             return result;
-        }
-
-        public static float GetWindCycle(int x, int y, double windCounter)
-        {
-            if (Main.SettingsEnabled_TilesSwayInWind &&
-                (((double)y <= Main.worldSurface) ||
-                 (((double)y >= Main.worldSurface) && false /* Main.remixWorld */))) // TODO: Uncomment in 1.4.4
-            {
-                float num = (float)x * 0.5f + (float)(y / 100) * 0.5f;
-                float num2 = (float)Math.Cos(windCounter * 6.2831854820251465 + (double)num) * 0.5f;
-                float lerpValue = Utils.GetLerpValue(0.08f, 0.18f, Math.Abs(Main.WindForVisuals), clamped: true);
-                return num2 * lerpValue;
-            }
-            return 0f;
         }
 
         private static bool IsBelowANonHammeredPlatform(int x, int y)
@@ -446,7 +392,7 @@ namespace ChadsFurnitureUpdated
 
             float windCycle = GetHighestWindGridPushComplex(topLeftX, topLeftY, sizeX, sizeY, 60, 1.26f, 3, swapLoopDir: true);
             if (WorldGen.InAPlaceWithWind(topLeftX, topLeftY, sizeX, sizeY))
-                windCycle += GetWindCycle(topLeftX, topLeftY, WindCounter);
+                windCycle += TilesRenderer.GetWindCycle(topLeftX, topLeftY, WindCounter);
 
             Vector2 value = new Vector2((float)(topLeftX * 16 - (int)screenPosition.X) + (float)sizeX * 16f * 0.5f, topLeftY * 16 - (int)screenPosition.Y) + offSet;
 
@@ -481,7 +427,7 @@ namespace ChadsFurnitureUpdated
                     else if (num7 == 0f)
                         num7 = 0.1f;
 
-                    var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile2, i, j);
+                    var texture = TilesRenderer.GetTileDrawTexture(tile2, i, j);
                     TileDrawData(i, j, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out _, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
 
                     Color tileLight = Lighting.GetColor(i, j);
@@ -520,7 +466,7 @@ namespace ChadsFurnitureUpdated
 
             bool flag = TileWindData(topLeftX, topLeftY, type, out _, out float _, out float num, out float _, out int sizeX, out int sizeY);
 
-            float windCycle = GetWindCycle(topLeftX, topLeftY, WindCounter);
+            float windCycle = TilesRenderer.GetWindCycle(topLeftX, topLeftY, WindCounter);
 
             Vector2 value = new Vector2((float)(topLeftX * 16 - (int)screenPosition.X) + (float)sizeX * 16f * 0.5f, topLeftY * 16 - (int)screenPosition.Y + 16 * sizeY) + offSet;
             for (int i = topLeftX; i < topLeftX + sizeX; i++)
@@ -550,7 +496,7 @@ namespace ChadsFurnitureUpdated
                     Color tileLight = Lighting.GetColor(i, j);
                     Vector2 value2 = new Vector2(i * 16 - (int)screenPosition.X, j * 16 - (int)screenPosition.Y + tileTop) + offSet;
                     Vector2 vector = new Vector2(windCycle * 1f, Math.Abs(windCycle) * 2f * num2);
-                    Texture2D tileDrawTexture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, i, j);
+                    Texture2D tileDrawTexture = TilesRenderer.GetTileDrawTexture(tile, i, j);
                     Vector2 origin = value - value2;
                     Main.spriteBatch.Draw(tileDrawTexture, value + new Vector2(0f, vector.Y), new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), tileLight, windCycle * num * num2, origin, 1f, tileSpriteEffect, 0f);
                 }
@@ -573,7 +519,7 @@ namespace ChadsFurnitureUpdated
             float amount = Math.Abs(Main.WindForVisuals) / 1.2f;
             amount = MathHelper.Lerp(0.2f, 1f, amount);
             float num3 = -0.08f * amount;
-            float windCycle = GetWindCycle(x, startY, WindCounterVine);
+            float windCycle = TilesRenderer.GetWindCycle(x, startY, WindCounterVine);
             float num4 = 0f;
             float num5 = 0f;
 
@@ -612,13 +558,13 @@ namespace ChadsFurnitureUpdated
                     {
                         num2++;
                     }
-                    float windGridPush = GetWindGridPush(x, i, 20, 0.01f);
+                    float windGridPush = TilesRenderer.GetWindGridPush(x, i, 20, 0.01f);
                     num4 = ((windGridPush != 0f || num5 == 0f) ? (num4 - windGridPush) : (num4 * -0.78f));
                     num5 = windGridPush;
                     short tileFrameX = tile.TileFrameX;
                     short tileFrameY = tile.TileFrameY;
                     Color color = Lighting.GetColor(x, i);
-                    var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, x, i);
+                    var texture = TilesRenderer.GetTileDrawTexture(tile, x, i);
                     TileDrawData(x, i, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out _, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * num3 * windCycle + num4;
@@ -649,7 +595,7 @@ namespace ChadsFurnitureUpdated
             float amount = Math.Abs(Main.WindForVisuals) / 1.2f;
             amount = MathHelper.Lerp(0.2f, 1f, amount);
             float num3 = -0.08f * amount;
-            float windCycle = GetWindCycle(x, startY, WindCounterVine);
+            float windCycle = TilesRenderer.GetWindCycle(x, startY, WindCounterVine);
             float num4 = 0f;
             float num5 = 0f;
 
@@ -677,13 +623,13 @@ namespace ChadsFurnitureUpdated
                     {
                         num2++;
                     }
-                    float windGridPush = GetWindGridPush(x, i, 40, -0.004f);
+                    float windGridPush = TilesRenderer.GetWindGridPush(x, i, 40, -0.004f);
                     num4 = ((windGridPush != 0f || num5 == 0f) ? (num4 - windGridPush) : (num4 * -0.78f));
                     num5 = windGridPush;
                     short tileFrameX = tile.TileFrameX;
                     short tileFrameY = tile.TileFrameY;
                     Color color = Lighting.GetColor(x, i);
-                    var texture = Main.instance.TilesRenderer.GetTileDrawTexture(tile, x, i);
+                    var texture = TilesRenderer.GetTileDrawTexture(tile, x, i);
                     TileDrawData(x, i, tile, type, ref tileFrameX, ref tileFrameY, out var tileWidth, out var tileHeight, out var tileTop, out _, out var addFrX, out var addFrY, out SpriteEffects tileSpriteEffects);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * (0f - num3) * windCycle + num4;
