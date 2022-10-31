@@ -215,6 +215,18 @@ namespace CFU.Tiles
             }
         }
 
+        public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData)
+        {
+            int frameX = Main.tile[i, j].TileFrameX;
+            int frameY = Main.tile[i, j].TileFrameY;
+            if (frameY / 18 is 20 or 21) /* Ash Grass & Flowers */
+            {
+                drawData.glowTexture = ModContent.Request<Texture2D>(Texture).Value;
+                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                drawData.glowColor = Color.Lerp(Color.White, Lighting.GetColor(i, j), 0.75f);
+            }
+        }
+
         public override bool Drop(int i, int j)
         {
             int[] styles = { ItemID.GrassSeeds,

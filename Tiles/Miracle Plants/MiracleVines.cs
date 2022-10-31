@@ -161,6 +161,18 @@ namespace CFU.Tiles
 
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 
+        public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData)
+        {
+            int frameX = Main.tile[i, j].TileFrameX;
+            int frameY = Main.tile[i, j].TileFrameY;
+            if (frameY / 18 == 8) /* Ash Grass Vines */
+            {
+                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                drawData.glowColor = Color.Lerp(Color.White, Lighting.GetColor(i, j), 0.75f);
+            }
+        }
+
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
             if ((CFUConfig.WindEnabled()) &&

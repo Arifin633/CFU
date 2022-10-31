@@ -23,6 +23,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
 using Tiles = CFU.Tiles;
 
@@ -53,6 +54,15 @@ namespace ChadsFurnitureUpdated
     static class CFUTileDraw
     {
         private static TileDrawing TilesRenderer = Main.instance.TilesRenderer;
+
+        public static Color MartianGlow
+        {
+            get => new Color((byte)(100f + 150f * Main.martianLight),
+                             (byte)(100f + 150f * Main.martianLight),
+                             (byte)(100f + 150f * Main.martianLight), 0);
+        }
+
+        public static Color MeteorGlow = new Color(100, 100, 100, 0);
 
         public static WindGrid WindGrid => TilesRenderer.Wind;
 
@@ -204,9 +214,11 @@ namespace ChadsFurnitureUpdated
             addFrY = Main.tileFrame[type] * 38;
             addFrX = 0;
             tileSpriteEffects = SpriteEffects.None;
-            glowTexture = null;
-            glowSourceRect = Rectangle.Empty;
-            glowColor = Color.Transparent;
+            TileDrawInfo drawData = new TileDrawInfo();
+            TileLoader.GetTile(type)?.DrawEffects(x, y, null, ref drawData);
+            glowTexture = drawData.glowTexture;
+            glowSourceRect = drawData.glowSourceRect;
+            glowColor = drawData.glowColor;
             TileLoader.SetSpriteEffects(x, y, type, ref tileSpriteEffects);
             TileLoader.SetDrawPositions(x, y, ref tileWidth, ref tileTop, ref tileHeight, ref tileFrameX, ref tileFrameY);
             TileLoader.SetAnimationFrame(type, x, y, ref addFrX, ref addFrY);
@@ -565,12 +577,16 @@ namespace ChadsFurnitureUpdated
                     short tileFrameY = tile.TileFrameY;
                     Color color = Lighting.GetColor(x, i);
                     var texture = TilesRenderer.GetTileDrawTexture(tile, x, i);
-                    TileDrawData(x, i, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out _, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects);
+                    TileDrawData(x, i, tile, (ushort)type, ref tileFrameX, ref tileFrameY, out int tileWidth, out int tileHeight, out int tileTop, out _, out int addFrX, out int addFrY, out SpriteEffects tileSpriteEffects, out Texture2D glowTexture, out Rectangle glowSourceRect, out Color glowColor);
                     Vector2 position = new Vector2(-(int)screenPosition.X, -(int)screenPosition.Y) + offSet + value;
                     float num6 = (float)num2 * num3 * windCycle + num4;
                     if (IsVisible(tile))
                     {
                         Main.spriteBatch.Draw(texture, position, new Rectangle(tileFrameX + addFrX, tileFrameY + addFrY, tileWidth, tileHeight), color, num6, new Vector2(tileWidth / 2, tileTop), 1f, tileSpriteEffects, 0f);
+                        if (glowTexture != null)
+                        {
+                            Main.spriteBatch.Draw(glowTexture, position, glowSourceRect, glowColor, num6, new Vector2(tileWidth / 2, tileTop), 1f, tileSpriteEffects, 0f);
+                        }
                     }
                     value += (num6 + (float)Math.PI / 2f).ToRotationVector2() * 16f;
                 }

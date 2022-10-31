@@ -152,6 +152,25 @@ namespace CFU.Tiles
             player.cursorItemIconEnabled = true;
         }
 
+        public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData)
+        {
+            int frameX = Main.tile[i, j].TileFrameX;
+            int frameY = Main.tile[i, j].TileFrameY;
+            switch (frameX / 36)
+            {
+            case 14: /* Meteor */
+                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                drawData.glowColor = CFUTileDraw.MeteorGlow;
+                break;
+            case 31: /* Martian */
+                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                drawData.glowColor = CFUTileDraw.MartianGlow;
+                break;
+            }
+        }        
+
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameX / 36)]);

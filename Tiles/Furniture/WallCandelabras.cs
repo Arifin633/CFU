@@ -231,6 +231,26 @@ namespace CFU.Tiles
             }
         }
 
+        public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData)
+        {
+            int frameX = Main.tile[i, j].TileFrameX;
+            int frameY = Main.tile[i, j].TileFrameY;
+            switch (frameX / 36)
+            {
+            case 20: /* Meteor */
+                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                drawData.glowColor = CFUTileDraw.MeteorGlow;
+                break;
+            case 31: /* Martian */
+                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                drawData.glowColor = CFUTileDraw.MartianGlow;
+                break;
+            }
+        }
+
+
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             if (Main.tile[i, j].TileFrameY < 36)

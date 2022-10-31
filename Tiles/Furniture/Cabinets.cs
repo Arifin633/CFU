@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
@@ -210,6 +211,24 @@ namespace CFU.Tiles
             else player.cursorItemIconID = ItemID.FamiliarShirt;
         }
 
+        public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref TileDrawInfo drawData)
+        {
+            int frameX = Main.tile[i, j].TileFrameX;
+            int frameY = Main.tile[i, j].TileFrameY;
+            switch (frameX / 36)
+            {
+                case 16: /* Meteor */
+                    drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                    drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                    drawData.glowColor = CFUTileDraw.MeteorGlow;
+                    break;
+                case 24: /* Martian */
+                    drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                    drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                    drawData.glowColor = CFUTileDraw.MartianGlow;
+                    break;
+            }
+        }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
