@@ -193,7 +193,31 @@ namespace ChadsFurnitureUpdated
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldloc_0);
                 c.EmitDelegate<Func<int, FlexibleTileWand>>(type =>
                 {
-                    if (type == ModContent.ItemType<Items.BagCattails>())
+                    if (type == ModContent.ItemType<Items.RubblemakerPileSmall>())
+                    {
+                        return FlexibleTileWand.RubblePlacementSmall;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerPileMedium>())
+                    {
+                        return FlexibleTileWand.RubblePlacementMedium;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerPileLarge>())
+                    {
+                        return FlexibleTileWand.RubblePlacementLarge;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerStalactiteSmall>())
+                    {
+                        return CFUTileWand.StalactitesSmall;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerStalactiteMedium>())
+                    {
+                        return CFUTileWand.StalactitesBig;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerPot>())
+                    {
+                        return CFUTileWand.Pots;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagCattails>())
                     {
                         return CFUTileWand.BagCattails;
                     }
