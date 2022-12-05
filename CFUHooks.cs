@@ -152,6 +152,89 @@ namespace ChadsFurnitureUpdated
                 });
             };
 
+            /* Here we insert checks for our own "Flexible Tile Wands"
+               (the mechanism behind the "Rubblemaker" items) alongside
+               vanilla's.
+
+               TODO: Uncomment in 1.4.4 (untested)
+
+            IL.Terraria.Item.GetFlexibleTileWand += (il) =>
+            {
+                var c = new ILCursor(il);
+                c.GotoNext(MoveType.Before, i => i.MatchLdnull());
+                c.Remove();
+                c.Emit(Mono.Cecil.Cil.OpCodes.Ldloc_0);
+                c.EmitDelegate<Func<int, FlexibleTileWand>>(type =>
+                {
+                    if (type == ModContent.ItemType<Items.RubblemakerPileSmall>())
+                    {
+                        return FlexibleTileWand.RubblePlacementSmall;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerPileMedium>())
+                    {
+                        return FlexibleTileWand.RubblePlacementMedium;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerPileLarge>())
+                    {
+                        return FlexibleTileWand.RubblePlacementLarge;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerStalactiteSmall>())
+                    {
+                        return CFUTileWand.StalactitesSmall;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerStalactiteMedium>())
+                    {
+                        return CFUTileWand.StalactitesBig;
+                    }
+                    else if (type == ModContent.ItemType<Items.RubblemakerPot>())
+                    {
+                        return CFUTileWand.Pots;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagCattails>())
+                    {
+                        return CFUTileWand.BagCattails;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagFlowers>())
+                    {
+                        return CFUTileWand.BagFlowers;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagGrass>())
+                    {
+                        return CFUTileWand.BagGrass;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagHerbs>())
+                    {
+                        return CFUTileWand.BagHerbs;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagLilyPads>())
+                    {
+                        return CFUTileWand.BagLilyPads;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagMushrooms>())
+                    {
+                        return CFUTileWand.BagMushrooms;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagOasisVegetation>())
+                    {
+                        return CFUTileWand.BagOasisVegetation;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagSeaOats>())
+                    {
+                        return CFUTileWand.BagSeaOats;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagSeaweed>())
+                    {
+                        return CFUTileWand.BagSeaweed;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagVines>())
+                    {
+                        return CFUTileWand.BagVines;
+                    }
+                    else return null;
+                });
+            };
+            */
+
             /* The following hook replaces `TileLoader.ContainerName' and,
                if the container currently in use matches one of our tile
                types, returns a default name based on the tile's style.
