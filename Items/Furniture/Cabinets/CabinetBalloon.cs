@@ -32,7 +32,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            //.AddRecipeGroup(RecipeGroupID.Balloons, 10) TODO: Uncomment in 1.4.4
+            .AddRecipeGroup(RecipeGroupID.Balloons, 10)
             .AddTile(TileID.Sawmill)
             .Register();
         }

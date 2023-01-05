@@ -31,24 +31,23 @@ namespace CFU.Items
 
         public override void AddRecipes()
         {
-            /* TODO: Uncomment in 1.4.4
             CreateRecipe()
-            .AddIngredient(ItemID.RubbleMakerSmall)
+            .AddIngredient(ItemID.RubblemakerSmall)
             .AddIngredient(ItemID.MythrilBar, 5)
             .AddTile(TileID.MythrilAnvil)
             .Register();
 
             CreateRecipe()
-            .AddIngredient(ItemID.RubbleMakerMedium)
+            .AddIngredient(ItemID.RubblemakerMedium)
             .AddIngredient(ItemID.MythrilBar, 5)
             .AddTile(TileID.MythrilAnvil)
             .Register();
 
             CreateRecipe()
-            .AddIngredient(ItemID.RubbleMakerLarge)
+            .AddIngredient(ItemID.RubblemakerLarge)
             .AddIngredient(ItemID.MythrilBar, 5)
             .AddTile(TileID.MythrilAnvil)
-            .Register();*/
+            .Register();
         }
     }
 }

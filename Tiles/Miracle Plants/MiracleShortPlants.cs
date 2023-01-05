@@ -248,9 +248,9 @@ namespace CFU.Tiles
                              ItemID.Mushroom,
                              ItemID.VileMushroom,
                              ItemID.JungleSpores,
-                             ItemID.ViciousMushroom/*, TODO: Uncomment in 1.4.4
-                             ItemID.AshGrassSeeds
-                             ItemID.AshGrassSeeds */ };
+                             ItemID.ViciousMushroom,
+                             ItemID.AshGrassSeeds,
+                             ItemID.AshGrassSeeds };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 22)]);
             return true;
         }

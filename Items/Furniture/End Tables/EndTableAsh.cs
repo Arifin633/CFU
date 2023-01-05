@@ -32,7 +32,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            //.AddIngredient(ItemID.AshWood, 12) TODO: Uncomment in 1.4.4
+            .AddIngredient(ItemID.AshWood, 12)
             .AddTile(TileID.WorkBenches)
             .Register();
         }

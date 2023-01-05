@@ -34,8 +34,7 @@ namespace CFU.Tiles
 
         public override bool Drop(int i, int j)
         {
-            /* TODO: Uncomment in 1.4.4
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ItemID.AbigailsFlower);*/
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ItemID.AbigailsFlower);
             return true;
         }
     }

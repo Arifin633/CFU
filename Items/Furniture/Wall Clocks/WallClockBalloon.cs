@@ -35,7 +35,7 @@ namespace CFU.Items
             CreateRecipe()
             .AddRecipeGroup(RecipeGroupID.IronBar, 3)
             .AddIngredient(ItemID.Glass, 6)
-            /*.AddRecipeGroup(RecipeID.Balloon, 5) TODO: Uncomment in 1.4.4*/
+            .AddRecipeGroup(RecipeGroupID.Balloons, 5)
             .AddTile(TileID.Sawmill)
             .Register();
         }

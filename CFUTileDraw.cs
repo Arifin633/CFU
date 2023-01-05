@@ -45,8 +45,7 @@ namespace ChadsFurnitureUpdated
                 num = Utils.GetLerpValue(0.08f, 1.2f, (float)num, clamped: true);
                 CFUTileDraw.WindCounter += 1.0 / 420.0 + 1.0 / 420.0 * num * 5.0;
                 CFUTileDraw.WindCounterVine += 1.0 / 120.0 + 1.0 / 120.0 * num * 0.40000000596046448;
-                // TODO: Uncomment in 1.4.4
-                /* CFUTileDraw.ShouldSeeInvisibleBlocks = Main.ShouldShowInvisibleWalls(); */
+                CFUTileDraw.ShouldSeeInvisibleBlocks = Main.ShouldShowInvisibleWalls();
             }
         }
     }
@@ -95,11 +94,8 @@ namespace ChadsFurnitureUpdated
 
         public static bool IsVisible(Tile tile)
         {
-            return true;
-            /* TODO: Uncomment in 1.4.4
-            flag = tile.invisibleBlock();
+            bool flag = tile.IsTileInvisible;
             return (!flag || (flag && ShouldSeeInvisibleBlocks));
-            */
         }
 
         public static bool TileWindData(int x, int y, int type, out float? n, out float m, out float l, out float j, out int sizeX, out int sizeY)
@@ -425,7 +421,7 @@ namespace ChadsFurnitureUpdated
                 {
                     Tile tile2 = Main.tile[i, j];
                     ushort type2 = tile2.TileType;
-                    if (type2 != type || !IsVisible(tile))
+                    if (type2 != type || !IsVisible(tile2))
                         continue;
                     Math.Abs(((float)(i - topLeftX) + 0.5f) / (float)sizeX - 0.5f);
                     short tileFrameX = tile2.TileFrameX;

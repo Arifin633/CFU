@@ -30,28 +30,6 @@ namespace CFU.Items
             Item.placeStyle = 0;
         }
 
-        public override void AddRecipes()
-        {
-            /* TODO: Uncomment in 1.4.4
-            CreateRecipe()
-            .AddIngredient(ItemID.RubbleMakerSmall)
-            .AddIngredient(ItemID.MythrilBar, 5)
-            .AddTile(TileID.MythrilAnvil)
-            .Register();
-
-            CreateRecipe()
-            .AddIngredient(ItemID.RubbleMakerMedium)
-            .AddIngredient(ItemID.MythrilBar, 5)
-            .AddTile(TileID.MythrilAnvil)
-            .Register();
-
-            CreateRecipe()
-            .AddIngredient(ItemID.RubbleMakerLarge)
-            .AddIngredient(ItemID.MythrilBar, 5)
-            .AddTile(TileID.MythrilAnvil)
-            .Register();*/
-        }
-
         public override bool CanRightClick() => true;
 
         public override bool ConsumeItem(Player player) => false;

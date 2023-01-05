@@ -32,7 +32,7 @@ namespace CFU.Items
         public override void AddRecipes()
         {
             CreateRecipe()
-            /*.AddIngredient(ItemID.ReefBlock, 5) TODO: Uncomment in 1.4.4 */
+            .AddIngredient(ItemID.ReefBlock, 5)
             .AddIngredient(ItemID.Torch, 3)
             .AddTile(TileID.WorkBenches)
             .Register();
