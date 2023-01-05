@@ -362,7 +362,7 @@ namespace ChadsFurnitureUpdated
             for (int i = 0; i < 1; i++)
                 for (int j = 0; j < sizeY; j++)
                 {
-                    WindGrid.GetWindTime(topLeftX + i + sizeX / 2, topLeftY + j, totalPushTime, out var windTimeLeft, out var _);
+                    WindGrid.GetWindTime(topLeftX + i + sizeX / 2, topLeftY + j, totalPushTime, out var windTimeLeft, out var _, out var _);
                     float windGridPushComplex = TilesRenderer.GetWindGridPushComplex(topLeftX + i, topLeftY + j, totalPushTime, pushForcePerFrame, loops, swapLoopDir);
                     if (windTimeLeft < num && windTimeLeft != 0)
                     {

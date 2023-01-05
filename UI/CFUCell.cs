@@ -55,7 +55,7 @@ namespace CFU.UI
             spriteBatch.Draw(texture, new Rectangle(point.X + CornerSize, point.Y + CornerSize, width, height), new Rectangle(CornerSize, CornerSize, BarSize, BarSize), color);
         }
 
-        public override void MouseDown(UIMouseEvent evt)
+        public override void LeftMouseDown(UIMouseEvent evt)
         {
             foreach (CFUCell elt in Parent.Children)
             {
@@ -63,7 +63,7 @@ namespace CFU.UI
             }
             Selected = true;
             SoundEngine.PlaySound(SoundID.MenuTick);
-            base.MouseDown(evt);
+            base.LeftMouseDown(evt);
         }
 
         public override void MouseOver(UIMouseEvent evt)

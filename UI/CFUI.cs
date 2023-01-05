@@ -47,9 +47,9 @@ namespace CFU.UI
             var image = new UIImage(asset);
             image.ScaleToFit = true;
             cell.Append(image);
-            cell.OnMouseDown += (_, _) => inSelection = true;
-            cell.OnMouseUp += (_, _) => inSelection = false;
-            cell.OnMouseUp += (_, _) =>
+            cell.OnLeftMouseDown += (_, _) => inSelection = true;
+            cell.OnLeftMouseUp += (_, _) => inSelection = false;
+            cell.OnLeftMouseUp += (_, _) =>
             {
                 UI.UISystem.Interface.SetState(null);
                 Player player = Main.LocalPlayer;

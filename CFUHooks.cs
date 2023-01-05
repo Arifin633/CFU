@@ -17,7 +17,7 @@ namespace ChadsFurnitureUpdated
             /* This hook allows the mod's Miracle Lily Pads to be drawn in
                the same manner as vanilla Lily Pads, that is, not being
                obstructed by water and reacting to ripples and waves. */
-            IL.Terraria.Main.DrawTileInWater += (il) =>
+            Terraria.IL_Main.DrawTileInWater += (il) =>
             {
                 var c = new ILCursor(il);
                 c.GotoNext(MoveType.Before, i => i.MatchLdcI4(518));
@@ -37,7 +37,7 @@ namespace ChadsFurnitureUpdated
                type in the occasion when the event which causes
                fairies to spawn from logs is scanning the world
                for appropriate tiles. */
-            IL.Terraria.GameContent.Events.MysticLogFairiesEvent.ScanWholeOverworldForLogs += (il) =>
+            Terraria.GameContent.Events.IL_MysticLogFairiesEvent.ScanWholeOverworldForLogs += (il) =>
             {
                 var c = new ILCursor(il);
                 c.GotoNext(MoveType.Before, i => i.MatchLdcI4(488));
@@ -55,7 +55,7 @@ namespace ChadsFurnitureUpdated
                sure our array will get reset neither too early nor too late. */
             if (CFUConfig.WindEnabled())
             {
-                IL.Terraria.GameContent.Drawing.TileDrawing.PreDrawTiles += (il) =>
+                Terraria.GameContent.Drawing.IL_TileDrawing.PreDrawTiles += (il) =>
                 {
                     var c = new ILCursor(il);
                     c.GotoNext(MoveType.Before, i => i.MatchLdarg(0));
@@ -77,7 +77,7 @@ namespace ChadsFurnitureUpdated
                and draw our tiles at the same time as their equivalents.*/
             if (CFUConfig.WindEnabled())
             {
-                IL.Terraria.GameContent.Drawing.TileDrawing.PostDrawTiles += (il) =>
+                Terraria.GameContent.Drawing.IL_TileDrawing.PostDrawTiles += (il) =>
                 {
                     var c = new ILCursor(il);
                     c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawMultiTileVines"));
@@ -124,7 +124,7 @@ namespace ChadsFurnitureUpdated
                As these tiles aren't frame-important, I find this to be
                the only perceivable way to unconditionally decide where
                they may or may not be placed. */
-            IL.Terraria.Player.PlaceThing_Tiles_BlockPlacementForAssortedThings += (il) =>
+            Terraria.IL_Player.PlaceThing_Tiles_BlockPlacementForAssortedThings += (il) =>
             {
                 var c = new ILCursor(il);
                 c.Next = null;
