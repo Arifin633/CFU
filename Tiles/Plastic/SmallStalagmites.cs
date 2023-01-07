@@ -1,31 +1,31 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
-    public class SmallStalactites : ModTile
+    public class SmallStalagmites : ModTile
     {
-        public override string Texture => "CFU/Textures/Tiles/Plastic/SmallStalactites";
+        public override string Texture => "CFU/Textures/Tiles/Plastic/SmallStalagmites";
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
-            TileObjectData.newTile.Height = 1;
-            TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(128, 128, 128));
 
             TileID.Sets.DisableSmartCursor[Type] = true;
         }
 
-        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) => offsetY = -2;
+        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) => offsetY = 2;
 
         public override bool CreateDust(int i, int j, ref int type)
         {
@@ -53,35 +53,8 @@ namespace CFU.Tiles
                 case 7:
                     type = DustID.Hive;
                     break;
-                case 8:
-                    type = DustID.Ice_Pink;
-                    break;
-                case 9:
-                    type = DustID.Ice_Purple;
-                    break;
-                case 10:
-                    type = DustID.Ice_Red;
-                    break;
-                case 11:
-                    type = DustID.Ice;
-                    break;
             }
             return true;
-        }
-
-        public override void PostDraw(int i, int j, SpriteBatch spritebatch)
-        {
-            /* The Honey stalactite (hanging) drips honey. */
-            if (((Main.tile[i, j].TileFrameX / 54) == 7) &&
-                (Main.rand.Next(4) == 0) &&
-                (Main.rand.Next(60) == 0))
-            {
-                int n = Dust.NewDust(new Vector2(i * 16 + 2, j * 16 + 6), 8, 4, DustID.Honey2);
-                Main.dust[n].scale -= (float)Main.rand.Next(3) * 0.1f;
-                Main.dust[n].velocity.Y = 0f;
-                Main.dust[n].velocity.X *= 0.05f;
-                Main.dust[n].alpha = 100;
-            }
         }
         
         public override bool Drop(int i, int j)
@@ -93,11 +66,7 @@ namespace CFU.Tiles
                              ItemID.Sandstone,
                              ItemID.GraniteBlock,
                              ItemID.MarbleBlock,
-                             ItemID.Hive,
-                             ItemID.PinkIceBlock,
-                             ItemID.PurpleIceBlock,
-                             ItemID.RedIceBlock,
-                             ItemID.IceBlock };
+                             ItemID.Hive };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameX / 54)]);
             return true;
         }

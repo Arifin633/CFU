@@ -74,6 +74,22 @@ The new birds added in 1.4.4 (Cockatiels, Macaws, Toucans) need birdhouses.
 * Ornaments
 Originally, the ornaments "blended" with any solid tile placed below them.
 
+* Tilewands
+Right clicking a Rubblemaker whilst the inventory is open will play
+the wrong sound.  This is a TML limitation.
+Tile wands do not play well with alternate tiles, specially when multiple
+anchor types are involved.  A lot of undesirable workarounds have been
+put in place to remedy the situation.
+The tilewands could use some usability/UI improvements, such as:
+- Type selection menu for the rubblemakers (like the bags)
+- Re-use the same UI for choosing what to place instead of cycling.
+  This would need a different keybind.
+
+* Plants
+A lot of plant styles are duplicates, originally intended to pad
+the lines so they all had the same number of styles.  This is no
+longer necessary and they should be trimmed down.
+
 * Original Chad's Furniture TODO list
 Gardening Updates:
 General Improvements:

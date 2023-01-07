@@ -19,9 +19,9 @@ public static class CFUTileWand
     public static FlexibleTileWand BagVines = CreateWandVines(); /*!*/
 
     public static FlexibleTileWand Pots = CreateWandPots();
-    
-    public static FlexibleTileWand StalactitesBig = CreateWandStalactitesBig();
-    public static FlexibleTileWand StalactitesSmall = CreateWandStalactitesSmall();
+
+    public static FlexibleTileWand Stalactites = CreateWandStalactites();
+    public static FlexibleTileWand Stalagmites = CreateWandStalagmites();
     
     public static FlexibleTileWand CreateWandCattails()
     {
@@ -228,42 +228,61 @@ public static class CFUTileWand
         wand.AddVariations_ByRow(ItemID.SandstoneBrick, pots, 3, 34, 35, 36);
         return wand;
     }
-    
-    public static FlexibleTileWand CreateWandStalactitesBig()
+
+    public static FlexibleTileWand CreateWandStalactites()
     {
         FlexibleTileWand wand = new FlexibleTileWand();
-        int stalactite = ModContent.TileType<Tiles.Stalactites>();
-        wand.AddVariations(ItemID.StoneBlock, stalactite, 0, 1, 2, 36, 37, 38);
-        wand.AddVariations(ItemID.PearlstoneBlock, stalactite, 3, 4, 5, 39, 40, 41);
-        wand.AddVariations(ItemID.EbonstoneBlock, stalactite, 6, 7, 8, 42, 43, 44);
-        wand.AddVariations(ItemID.CrimstoneBlock, stalactite, 9, 10, 11, 45, 46, 47);
-        wand.AddVariations(ItemID.Sandstone, stalactite, 12, 13, 14, 48, 49, 50);
-        wand.AddVariations(ItemID.GraniteBlock, stalactite, 15, 16, 17, 51, 52, 53);
-        wand.AddVariations(ItemID.MarbleBlock, stalactite, 18, 19, 20, 54, 55, 56);
-        wand.AddVariations(ItemID.Cobweb, stalactite, 21, 22, 23);
-        wand.AddVariations(ItemID.PinkIceBlock, stalactite, 24, 25, 26);
-        wand.AddVariations(ItemID.PurpleIceBlock, stalactite, 27, 28, 29);
-        wand.AddVariations(ItemID.RedIceBlock, stalactite, 30, 31, 32);
-        wand.AddVariations(ItemID.IceBlock, stalactite, 33, 34, 35);
+        int stalac = ModContent.TileType<Tiles.Stalactites>();
+        int stalacsmall = ModContent.TileType<Tiles.SmallStalactites>();
+        wand.AddVariations(ItemID.StoneBlock, stalac, 0, 1, 2);
+        wand.AddVariations(ItemID.PearlstoneBlock, stalac, 3, 4, 5);
+        wand.AddVariations(ItemID.EbonstoneBlock, stalac, 6, 7, 8);
+        wand.AddVariations(ItemID.CrimstoneBlock, stalac, 9, 10, 11);
+        wand.AddVariations(ItemID.Sandstone, stalac, 12, 13, 14);
+        wand.AddVariations(ItemID.GraniteBlock, stalac, 15, 16, 17);
+        wand.AddVariations(ItemID.MarbleBlock, stalac, 18, 19, 20);
+        wand.AddVariations(ItemID.Cobweb, stalac, 21, 22, 23);
+        wand.AddVariations(ItemID.PinkIceBlock, stalac, 24, 25, 26);
+        wand.AddVariations(ItemID.PurpleIceBlock, stalac, 27, 28, 29);
+        wand.AddVariations(ItemID.RedIceBlock, stalac, 30, 31, 32);
+        wand.AddVariations(ItemID.IceBlock, stalac, 33, 34, 35);
+
+        wand.AddVariations(ItemID.StoneBlock, stalacsmall, 0, 1, 2);
+        wand.AddVariations(ItemID.PearlstoneBlock, stalacsmall, 3, 4, 5);
+        wand.AddVariations(ItemID.EbonstoneBlock, stalacsmall, 6, 7, 8);
+        wand.AddVariations(ItemID.CrimstoneBlock, stalacsmall, 9, 10, 11);
+        wand.AddVariations(ItemID.Sandstone, stalacsmall, 12, 13, 14);
+        wand.AddVariations(ItemID.GraniteBlock, stalacsmall, 15, 16, 17);
+        wand.AddVariations(ItemID.MarbleBlock, stalacsmall, 18, 19, 20);
+        wand.AddVariations(ItemID.Hive, stalacsmall, 21, 22, 23);
+        wand.AddVariations(ItemID.PinkIceBlock, stalacsmall, 24, 25, 26);
+        wand.AddVariations(ItemID.PurpleIceBlock, stalacsmall, 27, 28, 29);
+        wand.AddVariations(ItemID.RedIceBlock, stalacsmall, 30, 31, 32);
+        wand.AddVariations(ItemID.IceBlock, stalacsmall, 33, 34, 35);
         return wand;
     }
-    
-    public static FlexibleTileWand CreateWandStalactitesSmall()
+
+    public static FlexibleTileWand CreateWandStalagmites()
     {
         FlexibleTileWand wand = new FlexibleTileWand();
-        int stalactite = ModContent.TileType<Tiles.Stalactites>();
-        wand.AddVariations(ItemID.StoneBlock, stalactite, 0, 1, 2, 36, 37, 38);
-        wand.AddVariations(ItemID.PearlstoneBlock, stalactite, 3, 4, 5, 39, 40, 41);
-        wand.AddVariations(ItemID.EbonstoneBlock, stalactite, 6, 7, 8, 42, 43, 44);
-        wand.AddVariations(ItemID.CrimstoneBlock, stalactite, 9, 10, 11, 45, 46, 47);
-        wand.AddVariations(ItemID.Sandstone, stalactite, 12, 13, 14, 48, 49, 50);
-        wand.AddVariations(ItemID.GraniteBlock, stalactite, 15, 16, 17, 51, 52, 53);
-        wand.AddVariations(ItemID.MarbleBlock, stalactite, 18, 19, 20, 54, 55, 56);
-        wand.AddVariations(ItemID.Hive, stalactite, 21, 22, 23, 57, 58, 59);
-        wand.AddVariations(ItemID.PinkIceBlock, stalactite, 24, 25, 26);
-        wand.AddVariations(ItemID.PurpleIceBlock, stalactite, 27, 28, 29);
-        wand.AddVariations(ItemID.RedIceBlock, stalactite, 30, 31, 32);
-        wand.AddVariations(ItemID.IceBlock, stalactite, 33, 34, 35);
+        int stalag = ModContent.TileType<Tiles.Stalagmites>();
+        int stalagsmall = ModContent.TileType<Tiles.SmallStalagmites>();
+        wand.AddVariations(ItemID.StoneBlock, stalag, 0, 1, 2);
+        wand.AddVariations(ItemID.PearlstoneBlock, stalag, 3, 4, 5);
+        wand.AddVariations(ItemID.EbonstoneBlock, stalag, 6, 7, 8);
+        wand.AddVariations(ItemID.CrimstoneBlock, stalag, 9, 10, 11);
+        wand.AddVariations(ItemID.Sandstone, stalag, 12, 13, 14);
+        wand.AddVariations(ItemID.GraniteBlock, stalag, 15, 16, 17);
+        wand.AddVariations(ItemID.MarbleBlock, stalag, 18, 19, 20);
+
+        wand.AddVariations(ItemID.StoneBlock, stalagsmall, 0, 1, 2);
+        wand.AddVariations(ItemID.PearlstoneBlock, stalagsmall, 3, 4, 5);
+        wand.AddVariations(ItemID.EbonstoneBlock, stalagsmall, 6, 7, 8);
+        wand.AddVariations(ItemID.CrimstoneBlock, stalagsmall, 9, 10, 11);
+        wand.AddVariations(ItemID.Sandstone, stalagsmall, 12, 13, 14);
+        wand.AddVariations(ItemID.GraniteBlock, stalagsmall, 15, 16, 17);
+        wand.AddVariations(ItemID.MarbleBlock, stalagsmall, 18, 19, 20);
+        wand.AddVariations(ItemID.Hive, stalagsmall, 21, 22, 23);
         return wand;
     }
 }
