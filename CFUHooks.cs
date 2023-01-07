@@ -12,6 +12,21 @@ namespace ChadsFurnitureUpdated
 {
     static class CFUHooks
     {
+        /* Not yet added by TerrariaHooks. TODO: Remove this in the future. */
+        public static event ILContext.Manipulator GetFlexibleTileWand
+        {
+            add
+            {
+                HookEndpointManager.Modify(typeof(Item).GetMethod("GetFlexibleTileWand"), value);
+            }
+
+            remove
+            {
+                HookEndpointManager.Unmodify(typeof(Item).GetMethod("GetFlexibleTileWand"), value);
+            }
+
+        }
+
         /* This allows the tML function `ContainerName' to be hooked into.
            See the actual hook below for more details. */
         public static event ILContext.Manipulator ContainerName
@@ -26,6 +41,7 @@ namespace ChadsFurnitureUpdated
                 HookEndpointManager.Unmodify(typeof(TileLoader).GetMethod("ContainerName"), value);
             }
         }
+
         public static void SetupHooks()
         {
             /* This hook allows the mod's Miracle Lily Pads to be drawn in
@@ -168,11 +184,9 @@ namespace ChadsFurnitureUpdated
 
             /* Here we insert checks for our own "Flexible Tile Wands"
                (the mechanism behind the "Rubblemaker" items) alongside
-               vanilla's.
+               vanilla's. */
 
-               TODO: Uncomment in 1.4.4 (untested)
-
-            IL.Terraria.Item.GetFlexibleTileWand += (il) =>
+            GetFlexibleTileWand += (il) =>
             {
                 var c = new ILCursor(il);
                 c.GotoNext(MoveType.Before, i => i.MatchLdnull());
@@ -192,62 +206,61 @@ namespace ChadsFurnitureUpdated
                     {
                         return FlexibleTileWand.RubblePlacementLarge;
                     }
-                    else if (type == ModContent.ItemType<Items.RubblemakerStalactiteSmall>())
+                    else if (type == ModContent.ItemType<Items.RubblemakerStalagmite>())
                     {
-                        return CFUTileWand.StalactitesSmall;
+                        return CFUTileWand.Stalagmites;
                     }
-                    else if (type == ModContent.ItemType<Items.RubblemakerStalactiteMedium>())
+                    else if (type == ModContent.ItemType<Items.RubblemakerStalactite>())
                     {
-                        return CFUTileWand.StalactitesBig;
+                        return CFUTileWand.Stalactites;
                     }
                     else if (type == ModContent.ItemType<Items.RubblemakerPot>())
                     {
                         return CFUTileWand.Pots;
                     }
-                    else if (type == ModContent.ItemType<Items.BagCattails>())
-                    {
-                        return CFUTileWand.BagCattails;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagFlowers>())
-                    {
-                        return CFUTileWand.BagFlowers;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagGrass>())
-                    {
-                        return CFUTileWand.BagGrass;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagHerbs>())
-                    {
-                        return CFUTileWand.BagHerbs;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagLilyPads>())
-                    {
-                        return CFUTileWand.BagLilyPads;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagMushrooms>())
-                    {
-                        return CFUTileWand.BagMushrooms;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagOasisVegetation>())
-                    {
-                        return CFUTileWand.BagOasisVegetation;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagSeaOats>())
-                    {
-                        return CFUTileWand.BagSeaOats;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagSeaweed>())
-                    {
-                        return CFUTileWand.BagSeaweed;
-                    }
-                    else if (type == ModContent.ItemType<Items.BagVines>())
-                    {
-                        return CFUTileWand.BagVines;
-                    }
+                    // else if (type == ModContent.ItemType<Items.BagCattails>())
+                    // {
+                    //     return CFUTileWand.BagCattails;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagFlowers>())
+                    // {
+                    //     return CFUTileWand.BagFlowers;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagGrass>())
+                    // {
+                    //     return CFUTileWand.BagGrass;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagHerbs>())
+                    // {
+                    //     return CFUTileWand.BagHerbs;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagLilyPads>())
+                    // {
+                    //     return CFUTileWand.BagLilyPads;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagMushrooms>())
+                    // {
+                    //     return CFUTileWand.BagMushrooms;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagOasisVegetation>())
+                    // {
+                    //     return CFUTileWand.BagOasisVegetation;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagSeaOats>())
+                    // {
+                    //     return CFUTileWand.BagSeaOats;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagSeaweed>())
+                    // {
+                    //     return CFUTileWand.BagSeaweed;
+                    // }
+                    // else if (type == ModContent.ItemType<Items.BagVines>())
+                    // {
+                    //     return CFUTileWand.BagVines;
+                    // }
                     else return null;
                 });
             };
-            */
 
             /* The following hook replaces `TileLoader.ContainerName' and,
                if the container currently in use matches one of our tile

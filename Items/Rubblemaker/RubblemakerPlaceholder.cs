@@ -1,6 +1,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
+using Terraria.DataStructures;
 
 namespace CFU.Items
 {
@@ -20,6 +21,8 @@ namespace CFU.Items
             Item.height = 22;
             Item.maxStack = 1;
             Item.useTurn = true;
+            Item.createTile = TileID.Dirt; /* Placeholder so the description
+                                              displays "Can be placed". */
             Item.autoReuse = true;
             Item.useAnimation = 15;
             Item.useTime = 10;
@@ -27,6 +30,8 @@ namespace CFU.Items
             Item.consumable = false;
             Item.value = 0;
             Item.placeStyle = 0;
+            Item.tileBoost = 3;
+            Item.rare = ItemRarityID.Red;
         }
 
         public override void AddRecipes()
@@ -49,5 +54,12 @@ namespace CFU.Items
             .AddTile(TileID.MythrilAnvil)
             .Register();
         }
+
+        /* This doesn't work because of loading order nonsense.
+           Its working equivalent lives in `GlobalCFUItem'.
+        public override void OnCreated (ItemCreationContext context)
+        {
+            this.Item.SetDefaults(ModContent.ItemType<Items.RubblemakerPileSmall>());
+        } */
     }
 }

@@ -1,7 +1,9 @@
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Tiles = CFU.Tiles;
+using Items = CFU.Items;
 
 namespace ChadsFurnitureUpdated
 {
@@ -23,6 +25,12 @@ namespace ChadsFurnitureUpdated
                 Item.consumable = true;
                 Item.createTile = ModContent.TileType<Tiles.Ink>();
             }
+        }
+
+        public override void OnCreated(Item item, ItemCreationContext context)
+        {
+            if (item.type == ModContent.ItemType<Items.RubblemakerPlaceholder>())
+                item.SetDefaults(ModContent.ItemType<Items.RubblemakerPileSmall>());
         }
     }
 

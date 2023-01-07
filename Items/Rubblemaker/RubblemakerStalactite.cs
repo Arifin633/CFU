@@ -8,13 +8,13 @@ using Terraria.GameContent.Creative;
 
 namespace CFU.Items
 {
-    public class RubblemakerPileSmall : ModItem
+    public class RubblemakerStalactite : ModItem
     {
-        public override string Texture => "CFU/Textures/Items/Rubblemaker/RubblemakerPileSmall";
+        public override string Texture => "CFU/Textures/Items/Rubblemaker/RubblemakerStalactite";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Rubblemaker 2.0 (Small Piles)");
-            Tooltip.SetDefault("Used with materials to place matching piles\n<right> to toggle placement type and size\nPress Up/Down to cycle through styles\n'Not a piledriver nor a placeinator: It's a Rubblemaker'");
+            DisplayName.SetDefault("Rubblemaker 2.0 (Stalactites)");
+            Tooltip.SetDefault("Used with materials to place matching stalactites\n<right> to toggle placement type and size\nPress Up/Down to cycle through styles\n'Not a piledriver nor a placeinator: It's a Rubblemaker'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -24,7 +24,7 @@ namespace CFU.Items
             Item.height = 22;
             Item.maxStack = 1;
             Item.useTurn = true;
-            Item.createTile = TileID.SmallPiles1x1Echo;
+            Item.createTile = ModContent.TileType<Tiles.Stalactites>();
             Item.autoReuse = true;
             Item.useAnimation = 15;
             Item.useTime = 10;
@@ -33,7 +33,7 @@ namespace CFU.Items
             Item.tileBoost = 3;
             Item.value = 0;
             Item.placeStyle = 0;
-            Item.rare = ItemRarityID.Red;
+            Item.rare = ItemRarityID.Cyan;
         }
 
         public override bool CanRightClick() => true;
@@ -42,13 +42,13 @@ namespace CFU.Items
 
         public override void RightClick(Player player)
         {
-            this.Item.SetDefaults(ModContent.ItemType<Items.RubblemakerPileMedium>());
+            this.Item.SetDefaults(ModContent.ItemType<Items.RubblemakerPot>());
             this.Item.stack = 1;
         }
 
         public override bool AltFunctionUse(Player player)
         {
-            this.Item.SetDefaults(ModContent.ItemType<Items.RubblemakerPileMedium>());
+            this.Item.SetDefaults(ModContent.ItemType<Items.RubblemakerPot>());
             this.Item.stack = 1;
             SoundEngine.PlaySound(SoundID.Unlock);
             return false;
@@ -59,7 +59,7 @@ namespace CFU.Items
             float inventoryScale = Main.inventoryScale;
             Vector2 offset = new Vector2((12f * (inventoryScale * inventoryScale)), (-2f * (1f / (float)System.Math.Pow(inventoryScale, 3))));
             spriteBatch.Draw(ModContent.Request<Texture2D>("CFU/Textures/Items/Rubblemaker/RubblemakerBar").Value,
-                             position + offset, new Rectangle(50, 0, 8, 20), drawColor, 0f, default, 1f, SpriteEffects.None, 0f);
+                             position + offset, new Rectangle(20, 0, 8, 20), drawColor, 0f, default, 1f, SpriteEffects.None, 0f);
         }
     }
 }
