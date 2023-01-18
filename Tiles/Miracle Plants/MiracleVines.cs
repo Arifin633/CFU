@@ -20,7 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 24;
-            TileObjectData.newTile.RandomStyleRange = 24;
+            // TileObjectData.newTile.RandomStyleRange = 24;
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { Type };
             TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.AnchorBottom = AnchorData.Empty;
@@ -150,14 +150,14 @@ namespace CFU.Tiles
             return true;
         }
 
-        public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
-        {
-            if (i % 2 == 0)
-                spriteEffects = SpriteEffects.FlipHorizontally;
-        }
+        // public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
+        // {
+        //     if (i % 2 == 0)
+        //         spriteEffects = SpriteEffects.FlipHorizontally;
+        // }
 
-        public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) =>
-            offsetY = -2;
+        // public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) =>
+        //     offsetY = -2;
 
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch) => !(CFUConfig.WindEnabled());
 

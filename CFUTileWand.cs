@@ -22,17 +22,33 @@ public static class CFUTileWand
 
     public static FlexibleTileWand Stalactites = CreateWandStalactites();
     public static FlexibleTileWand Stalagmites = CreateWandStalagmites();
+
+    /* Vanilla's `AddVariations_ByRow' assumes that every row has
+       the same width (namely, the same value as `variationsPerRow'.
+       This function has an additional argument, `rowLength',
+       to demarcate the largest row.  */
+    public static void AddVariationsByRowVariable(FlexibleTileWand wand, int itemType, int tileIdToPlace, int rowLength, int variationsPerRow, params int[] rows)
+    {
+        for (int i = 0; i < rows.Length; i++)
+        {
+            for (int j = 0; j < variationsPerRow; j++)
+            {
+                int tileStyleToPlace = rows[i] * rowLength + j;
+                wand.AddVariation(itemType, tileIdToPlace, tileStyleToPlace);
+            }
+        }
+    }
     
     public static FlexibleTileWand CreateWandCattails()
     {
         FlexibleTileWand wand = new FlexibleTileWand();
         int cat = ModContent.TileType<Tiles.MiracleCattails>();
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, cat, 9, 0);
-        wand.AddVariations_ByRow(ItemID.JungleGrassSeeds, cat, 9, 1);
-        wand.AddVariations_ByRow(ItemID.HallowedSeeds, cat, 9, 2);
-        wand.AddVariations_ByRow(ItemID.CrimsonSeeds, cat, 9, 3);
-        wand.AddVariations_ByRow(ItemID.CorruptSeeds, cat, 9, 4);
-        wand.AddVariations_ByRow(ItemID.GlowingMushroom, cat, 9, 5);
+        wand.AddVariations(ItemID.GrassSeeds, cat, 1, 2, 3, 6, 7, 8);
+        wand.AddVariations(ItemID.JungleGrassSeeds, cat, 10, 11, 12, 15, 16, 17);
+        wand.AddVariations(ItemID.HallowedSeeds, cat, 19, 20, 21, 24, 25, 26);
+        wand.AddVariations(ItemID.CrimsonSeeds, cat, 28, 29, 30, 33, 34, 35);
+        wand.AddVariations(ItemID.CorruptSeeds, cat, 37, 38, 39, 42, 43, 44);
+        wand.AddVariations(ItemID.GlowingMushroom, cat, 46, 47, 48, 51, 52, 53);
         return wand;
     }
 
@@ -45,45 +61,45 @@ public static class CFUTileWand
         int glowTulip = ModContent.TileType<Tiles.MiracleGlowTulip>();
 
         /* Yellow Flowers */
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, shortFlowers, 14, 1);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, tallFlowers, 14, 2);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketYellow, shortFlowers, 32, 14, 1);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketYellow, tallFlowers, 20, 14, 2);
 
         /* White Flowers */
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, shortFlowers, 16, 2);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, tallFlowers, 16, 1);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketWhite, shortFlowers, 32, 16, 2);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketWhite, tallFlowers, 20, 16, 1);
 
         /* Red Flowers */
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, shortFlowers, 14, 3);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, tallFlowers, 14, 3);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketRed, shortFlowers, 32, 14, 3);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketRed, tallFlowers, 20, 14, 3);
 
         /* Blue Flowers */
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, shortFlowers, 6, 4);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, tallFlowers, 6, 6);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketBlue, shortFlowers, 32, 6, 4);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketBlue, tallFlowers, 20, 6, 6);
 
         /* Purple Flowers */
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, shortFlowers, 14, 5);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, tallFlowers, 14, 4);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketMagenta, shortFlowers, 32, 14, 5);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketMagenta, tallFlowers, 20, 14, 4);
 
         /* Pink Flowers */
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, shortFlowers, 12, 6);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, tallFlowers, 12, 5);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketPink, shortFlowers, 32, 12, 6);
+        AddVariationsByRowVariable(wand, ItemID.FlowerPacketPink, tallFlowers, 20, 12, 5);
 
         /* Corruption Flowers */
-        wand.AddVariations_ByRow(ItemID.CorruptSeeds, shortFlowers, 32, 8);
+        AddVariationsByRowVariable(wand, ItemID.CorruptSeeds, shortFlowers, 32, 32, 8);
 
         /* Jungle Flowers */
-        wand.AddVariations_ByRow(ItemID.JungleGrassSeeds, shortFlowers, 32, 10);
-        wand.AddVariations_ByRow(ItemID.JungleGrassSeeds, tallFlowers, 20, 8);
+        AddVariationsByRowVariable(wand, ItemID.JungleGrassSeeds, shortFlowers, 32, 32, 10);
+        AddVariationsByRowVariable(wand, ItemID.JungleGrassSeeds, tallFlowers, 20, 20, 8);
 
         /* Hallowed Flowers */
-        wand.AddVariations_ByRow(ItemID.HallowedSeeds, shortFlowers, 32, 13);
-        wand.AddVariations_ByRow(ItemID.HallowedSeeds, tallFlowers, 10, 10);
+        AddVariationsByRowVariable(wand, ItemID.HallowedSeeds, shortFlowers, 32, 32, 13);
+        AddVariationsByRowVariable(wand, ItemID.HallowedSeeds, tallFlowers, 20, 10, 10);
 
         /* Crimson Flowers */
-        wand.AddVariations_ByRow(ItemID.CrimsonSeeds, shortFlowers, 14, 15);
+        AddVariationsByRowVariable(wand, ItemID.CrimsonSeeds, shortFlowers, 32, 14, 15);
 
         /* Ash Grass Flowers */
-        wand.AddVariations_ByRow(ItemID.AshGrassSeeds, shortFlowers, 10, 20);
+        AddVariationsByRowVariable(wand, ItemID.AshGrassSeeds, shortFlowers, 32, 10, 21);
 
         /* Abigail's Flower */
         wand.AddVariations(ItemID.AbigailsFlower, abigailFlower, 0, 1);
@@ -101,25 +117,25 @@ public static class CFUTileWand
         int tallGrass = ModContent.TileType<Tiles.MiracleTallPlants>();
 
         /* Forest Grass */
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, shortGrass, 12, 0);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, tallGrass, 12, 0);
+        AddVariationsByRowVariable(wand, ItemID.GrassSeeds, shortGrass, 32, 12, 0);
+        AddVariationsByRowVariable(wand, ItemID.GrassSeeds, tallGrass, 20, 12, 0);
 
         /* Corruption Grass */
-        wand.AddVariations_ByRow(ItemID.CorruptSeeds, shortGrass, 12, 7);
-
+        AddVariationsByRowVariable(wand, ItemID.CorruptSeeds, shortGrass, 32, 12, 7);
+        
         /* Jungle Grass */
-        wand.AddVariations_ByRow(ItemID.JungleGrassSeeds, shortGrass, 12, 9);
-        wand.AddVariations_ByRow(ItemID.JungleGrassSeeds, tallGrass, 12, 7);
-
+        AddVariationsByRowVariable(wand, ItemID.JungleGrassSeeds, shortGrass, 32, 12, 9);
+        AddVariationsByRowVariable(wand, ItemID.JungleGrassSeeds, tallGrass, 20, 12, 7);
+        
         /* Hallowed Grass */
-        wand.AddVariations_ByRow(ItemID.HallowedSeeds, shortGrass, 12, 12);
-        wand.AddVariations_ByRow(ItemID.HallowedSeeds, tallGrass, 6, 9);
-
+        AddVariationsByRowVariable(wand, ItemID.HallowedSeeds, shortGrass, 32, 12, 12);
+        AddVariationsByRowVariable(wand, ItemID.HallowedSeeds, tallGrass, 20, 6, 9);
+        
         /* Crimson Grass */
-        wand.AddVariations_ByRow(ItemID.CrimsonSeeds, shortGrass, 30, 14);
-
+        AddVariationsByRowVariable(wand, ItemID.CrimsonSeeds, shortGrass, 32, 30, 14);
+        
         /* Ash Grass */
-        wand.AddVariations_ByRow(ItemID.AshGrassSeeds, shortGrass, 12, 19);
+        AddVariationsByRowVariable(wand, ItemID.AshGrassSeeds, shortGrass, 32, 12, 20);
 
         return wand;
     }
@@ -128,13 +144,20 @@ public static class CFUTileWand
     {
         FlexibleTileWand wand = new FlexibleTileWand();
         int herbs = ModContent.TileType<Tiles.MiracleHerbs>();
-        wand.AddVariations_ByRow(ItemID.DaybloomSeeds, herbs, 3, 0);
-        wand.AddVariations_ByRow(ItemID.MoonglowSeeds, herbs, 3, 1);
-        wand.AddVariations_ByRow(ItemID.BlinkrootSeeds, herbs, 3, 2);
-        wand.AddVariations_ByRow(ItemID.DeathweedSeeds, herbs, 3, 3);
-        wand.AddVariations_ByRow(ItemID.WaterleafSeeds, herbs, 3, 4);
-        wand.AddVariations_ByRow(ItemID.FireblossomSeeds, herbs, 3, 5);
-        wand.AddVariations_ByRow(ItemID.ShiverthornSeeds, herbs, 3, 6);
+        wand.AddVariations_ByRow(ItemID.Daybloom, herbs, 3, 0);
+        wand.AddVariations_ByRow(ItemID.DaybloomSeeds, herbs, 3, 7);
+        wand.AddVariations_ByRow(ItemID.Moonglow, herbs, 3, 1);
+        wand.AddVariations_ByRow(ItemID.MoonglowSeeds, herbs, 3, 8);
+        wand.AddVariations_ByRow(ItemID.Blinkroot, herbs, 3, 2);
+        wand.AddVariations_ByRow(ItemID.BlinkrootSeeds, herbs, 3, 9);
+        wand.AddVariations_ByRow(ItemID.Deathweed, herbs, 3, 3);
+        wand.AddVariations_ByRow(ItemID.DeathweedSeeds, herbs, 3, 10);
+        wand.AddVariations_ByRow(ItemID.Waterleaf, herbs, 3, 4);
+        wand.AddVariations_ByRow(ItemID.WaterleafSeeds, herbs, 3, 11);
+        wand.AddVariations_ByRow(ItemID.Fireblossom, herbs, 3, 5);
+        wand.AddVariations_ByRow(ItemID.FireblossomSeeds, herbs, 3, 12);
+        wand.AddVariations_ByRow(ItemID.Shiverthorn, herbs, 3, 6);
+        wand.AddVariations_ByRow(ItemID.ShiverthornSeeds, herbs, 3, 13);
         return wand;
     }
 
@@ -142,11 +165,11 @@ public static class CFUTileWand
     {
         FlexibleTileWand wand = new FlexibleTileWand();
         int lily = ModContent.TileType<Tiles.MiracleLilyPads>();
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, lily, 17, 0);
-        wand.AddVariations_ByRow(ItemID.HallowedSeeds, lily, 17, 1);
-        wand.AddVariations_ByRow(ItemID.JungleGrassSeeds, lily, 17, 2);
-        wand.AddVariations_ByRow(ItemID.CrimsonSeeds, lily, 17, 3);
-        wand.AddVariations_ByRow(ItemID.CorruptSeeds, lily, 17, 4);
+        wand.AddVariations_ByRow(ItemID.GrassSeeds, lily, 18, 0);
+        wand.AddVariations_ByRow(ItemID.HallowedSeeds, lily, 18, 1);
+        wand.AddVariations_ByRow(ItemID.JungleGrassSeeds, lily, 18, 2);
+        wand.AddVariations_ByRow(ItemID.CrimsonSeeds, lily, 18, 3);
+        wand.AddVariations_ByRow(ItemID.CorruptSeeds, lily, 18, 4);
         return wand;
     }
 
@@ -154,11 +177,11 @@ public static class CFUTileWand
     {
         FlexibleTileWand wand = new FlexibleTileWand();
         int mushrooms = ModContent.TileType<Tiles.MiracleShortPlants>();
-        wand.AddVariations_ByRow(ItemID.Mushroom, mushrooms, 1, 16);
-        wand.AddVariations_ByRow(ItemID.VileMushroom, mushrooms, 1, 17);
-        wand.AddVariations_ByRow(ItemID.JungleSpores, mushrooms, 1, 18);
-        wand.AddVariations_ByRow(ItemID.ViciousMushroom, mushrooms, 1, 19);
-        wand.AddVariations_ByRow(ItemID.GlowingMushroom, mushrooms, 10, 11);
+        AddVariationsByRowVariable(wand, ItemID.Mushroom, mushrooms, 32, 1, 16);
+        AddVariationsByRowVariable(wand, ItemID.VileMushroom, mushrooms, 32, 1, 17);
+        AddVariationsByRowVariable(wand, ItemID.JungleSpores, mushrooms, 32, 1, 18);
+        AddVariationsByRowVariable(wand, ItemID.ViciousMushroom, mushrooms, 32, 1, 19);
+        AddVariationsByRowVariable(wand, ItemID.GlowingMushroom, mushrooms, 32, 10, 11);
         return wand;
     }
 
@@ -176,7 +199,7 @@ public static class CFUTileWand
     public static FlexibleTileWand CreateWandSeaOats()
     {
         FlexibleTileWand wand = new FlexibleTileWand();
-        int oats = ModContent.TileType<Tiles.MiracleOasisVegetation>();
+        int oats = ModContent.TileType<Tiles.MiracleSeaOats>();
         wand.AddVariations_ByRow(ItemID.GrassSeeds, oats, 15, 0);
         wand.AddVariations_ByRow(ItemID.GrassSeeds, oats, 15, 1);
         wand.AddVariations_ByRow(ItemID.HallowedSeeds, oats, 15, 2);
@@ -189,8 +212,8 @@ public static class CFUTileWand
     {
         FlexibleTileWand wand = new FlexibleTileWand();
         int seaweed = ModContent.TileType<Tiles.MiracleSeaweed>();
-        wand.AddVariations(ItemID.GrassSeeds, seaweed, 0, 8);
-        wand.AddVariations_ByRow(ItemID.GrassSeeds, seaweed, 15, 1, 2);
+        wand.AddVariations(ItemID.GrassSeeds, seaweed, 0, 1);
+        AddVariationsByRowVariable(wand, ItemID.GrassSeeds, seaweed, 14, 10, 2);
         return wand;
     }
 

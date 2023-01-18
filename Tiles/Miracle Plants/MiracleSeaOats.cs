@@ -19,13 +19,13 @@ namespace CFU.Tiles
             TileID.Sets.SwaysInWindBasic[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+            TileObjectData.newTile.CoordinateHeights = new int[] { 32 };
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { TileID.ClayPot };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 15;
-            TileObjectData.newTile.StyleMultiplier = 5;
-            TileObjectData.newTile.RandomStyleRange = 5;
-            TileObjectData.newTile.CoordinateHeights = new int[] { 32 };
+            // TileObjectData.newTile.StyleMultiplier = 5;
+            // TileObjectData.newTile.RandomStyleRange = 5;
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(99, 150, 8));
@@ -36,7 +36,7 @@ namespace CFU.Tiles
             HitSound = SoundID.Grass;
         }
 
-        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 34);
+        public override ushort GetMapOption(int i, int j) => 0;
 
         public override bool CreateDust(int i, int j, ref int type)
         {

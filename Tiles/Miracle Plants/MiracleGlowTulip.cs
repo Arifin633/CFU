@@ -23,7 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.CoordinateHeights = new int[] { 34 };
             TileObjectData.newTile.CoordinateWidth = 24;
-            TileObjectData.newTile.RandomStyleRange = 2;
+            // TileObjectData.newTile.RandomStyleRange = 2;
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();

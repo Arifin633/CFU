@@ -21,8 +21,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 18;
-            TileObjectData.newTile.StyleMultiplier = 18;
-            TileObjectData.newTile.RandomStyleRange = 18;
+            // TileObjectData.newTile.StyleMultiplier = 18;
+            // TileObjectData.newTile.RandomStyleRange = 18;
             TileObjectData.newTile.WaterPlacement = LiquidPlacement.OnlyInLiquid;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.EmptyTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
@@ -33,7 +33,7 @@ namespace CFU.Tiles
             HitSound = SoundID.Grass;
         }
 
-        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 18);
+        public override ushort GetMapOption(int i, int j) => 0;//(ushort)(Main.tile[i, j].TileFrameY / 18);
 
         public override bool CreateDust(int i, int j, ref int type)
         {

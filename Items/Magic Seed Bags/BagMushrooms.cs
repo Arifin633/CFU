@@ -21,12 +21,15 @@ namespace CFU.Items
             Item.height = 22;
             Item.maxStack = 1;
             Item.useTurn = true;
+            Item.createTile = ModContent.TileType<Tiles.MiracleShortPlants>();
             Item.autoReuse = true;
             Item.useAnimation = 15;
             Item.useTime = 10;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = false;
             Item.value = 0;
+            Item.rare = ItemRarityID.Green;
+            Item.tileBoost = 3;
             Item.placeStyle = 0;
         }
 

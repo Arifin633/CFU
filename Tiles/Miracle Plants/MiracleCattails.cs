@@ -21,19 +21,19 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 9;
-            TileObjectData.newTile.RandomStyleRange = 3;
-            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+            TileObjectData.newTile.AnchorAlternateTiles = new int[] { Type };
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(AfterPlacementHook, -1, 0, false);
-            TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newAlternate.AnchorAlternateTiles = new int[] { Type };
-            TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
-            TileObjectData.newAlternate.WaterPlacement = LiquidPlacement.OnlyInLiquid;
-            TileObjectData.addAlternate(3);
-            TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newAlternate.AnchorAlternateTiles = new int[] { Type };
-            TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
-            TileObjectData.newAlternate.WaterPlacement = LiquidPlacement.NotAllowed;
-            TileObjectData.addAlternate(6);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.AnchorAlternateTiles = new int[] { Type };
+            // TileObjectData.newSubTile.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
+            // TileObjectData.newSubTile.WaterPlacement = LiquidPlacement.OnlyInLiquid;
+            // TileObjectData.addSubTile(3);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.AnchorAlternateTiles = new int[] { Type };
+            // TileObjectData.newSubTile.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
+            // TileObjectData.newSubTile.WaterPlacement = LiquidPlacement.NotAllowed;
+            // TileObjectData.addSubTile(6);
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(28, 216, 109));
             AddMapEntry(new Color(107, 182, 0));
@@ -82,13 +82,27 @@ namespace CFU.Tiles
 
             */
 
-            /* Only proceed if we're not placing a base
-               as those don't need any special handling */
-            if (alternate != 0)
-            {
-                Tile tileBelow = Main.tile[i, (j + 1)];
-                Tile tile = Main.tile[i, j];
+            Tile tileBelow = Main.tile[i, (j + 1)];
+            Tile tile = Main.tile[i, j];
 
+            /* The following block was added as a workaround
+               to the tile object system not working in con-
+               junction with tile wands. */
+            if ((tile.TileFrameX / 18) is 0 or 1 or 2)
+            {
+                if (tileBelow.TileType == Type)
+                    if (tile.LiquidAmount > 1)
+                        tile.TileFrameX = (short)(18 * Main.rand.Next(3, 5));
+                    else
+                        tile.TileFrameX = (short)(18 * Main.rand.Next(6, 8));
+            }
+            else if (tileBelow.TileType != Type)
+                tile.TileFrameX = (short)(18 * Main.rand.Next(0, 2));
+            /**/
+
+            if ((tileBelow.TileType == Type) &&
+                (tile.TileFrameX / 18) is not 0 or 1 or 2) /* if (alternate != 0) */
+            {
                 /* If we're above a non-connecting base,
                    shift it to the connecting version. */
                 if ((tileBelow.TileFrameX / 18) is 0 or 1 or 2)
@@ -210,11 +224,11 @@ namespace CFU.Tiles
             }
         }
 
-        public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
-        {
-            if (i % 2 == 0)
-                spriteEffects = SpriteEffects.FlipHorizontally;
-        }
+        // public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
+        // {
+        //     if (i % 2 == 0)
+        //         spriteEffects = SpriteEffects.FlipHorizontally;
+        // }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) =>
             offsetY = 2;

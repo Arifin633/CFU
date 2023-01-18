@@ -20,15 +20,16 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16 };
             TileObjectData.newTile.StyleHorizontal = true;
-            TileObjectData.newTile.StyleWrapLimit = 15;
-            TileObjectData.newTile.StyleMultiplier = 15;
-            TileObjectData.newTile.RandomStyleRange = 15;
-            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
+            TileObjectData.newTile.StyleWrapLimit = 14;
+            // TileObjectData.newTile.StyleMultiplier = 15;
+            // TileObjectData.newTile.RandomStyleRange = 15;
+            TileObjectData.newTile.AnchorAlternateTiles = new int[] { Type };
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(AfterPlacementHook, -1, 0, false);
-            TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newAlternate.AnchorAlternateTiles = new int[] { Type };
-            TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
-            TileObjectData.addAlternate(30);
+            // TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newAlternate.AnchorAlternateTiles = new int[] { Type };
+            // TileObjectData.newAlternate.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
+            // TileObjectData.addAlternate(30);
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(54, 83, 20));
             HitSound = SoundID.Grass;
@@ -39,21 +40,19 @@ namespace CFU.Tiles
 
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {
-            /* Only proceed if we're not placing a base
-               as those don't need any special handling */
-            if (alternate != 0)
-            {
-                /* Seaweeds have no distinction past:
-                   stub (no connection above or below),
-                   top (no connection above),
-                   and middle (either no connection below,
-                               or connections on both ends).
+            /* Seaweeds have no distinction past:
+               stub (no connection above or below),
+               top (no connection above),
+               and middle (either no connection below,
+                           or connections on both ends).
 
-                   Thus, all we have to do is turn the seaweed
-                   below into a "middle" seaweed. */
-                Tile tileBelow = Main.tile[i, (j + 1)];
+               Thus, all we have to do is turn the seaweed
+               below into a "middle" seaweed. */
+            Tile tileBelow = Main.tile[i, (j + 1)];
+            if (tileBelow.TileType == Type)
+            {
                 tileBelow.TileFrameY = 18;
-                tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 15));
+                tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 14));
 
                 /* The tile below is always changed, so we always
                    update it assuming we're in multiplayer.*/
@@ -84,13 +83,13 @@ namespace CFU.Tiles
                 if (tileBelowBelow.TileType != Type)
                 {
                     tileBelow.TileFrameY = 0;
-                    tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 15));
+                    tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 1));
                 }
                 /* If it is, just turn it into a seaweed top. */
                 else
                 {
                     tileBelow.TileFrameY = 36;
-                    tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 15));
+                    tileBelow.TileFrameX = (short)(18 * Main.rand.Next(0, 10));
                 }
 
                 /* If we're in multiplayer update
@@ -111,7 +110,7 @@ namespace CFU.Tiles
 
         public override bool Drop(int i, int j)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ItemID.Seaweed);
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ItemID.GrassSeeds);
             return true;
         }
     }

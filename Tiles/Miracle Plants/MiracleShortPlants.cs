@@ -21,76 +21,76 @@ namespace CFU.Tiles
             TileID.Sets.SwaysInWindBasic[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
+            TileObjectData.newTile.CoordinateHeights = new int[] { 20 };
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { TileID.ClayPot };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 32;
-            TileObjectData.newTile.StyleMultiplier = 32;
-            TileObjectData.newTile.RandomStyleRange = 12;
-            TileObjectData.newTile.CoordinateHeights = new int[] { 20 };
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 14;
-            TileObjectData.addSubTile(1);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 16;
-            TileObjectData.addSubTile(2);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 14;
-            TileObjectData.addSubTile(3);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 6;
-            TileObjectData.addSubTile(4);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 14;
-            TileObjectData.addSubTile(5);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 12;
-            TileObjectData.addSubTile(6);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 12;
-            TileObjectData.addSubTile(7);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 32;
-            TileObjectData.addSubTile(8);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 12;
-            TileObjectData.addSubTile(9);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 32;
-            TileObjectData.addSubTile(10);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 10;
-            TileObjectData.addSubTile(11);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 12;
-            TileObjectData.addSubTile(12);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 32;
-            TileObjectData.addSubTile(13);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 30;
-            TileObjectData.addSubTile(14);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 14;
-            TileObjectData.addSubTile(15);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 1;
-            TileObjectData.addSubTile(16);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 1;
-            TileObjectData.addSubTile(17);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 1;
-            TileObjectData.addSubTile(18);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 1;
-            TileObjectData.addSubTile(19);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 12;
-            TileObjectData.addSubTile(20);
-            TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
-            TileObjectData.newSubTile.RandomStyleRange = 10;
-            TileObjectData.addSubTile(21);
+            // TileObjectData.newTile.StyleMultiplier = 32;
+            // TileObjectData.newTile.RandomStyleRange = 12;
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 14;
+            // TileObjectData.addSubTile(1);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 16;
+            // TileObjectData.addSubTile(2);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 14;
+            // TileObjectData.addSubTile(3);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 6;
+            // TileObjectData.addSubTile(4);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 14;
+            // TileObjectData.addSubTile(5);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 12;
+            // TileObjectData.addSubTile(6);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 12;
+            // TileObjectData.addSubTile(7);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 32;
+            // TileObjectData.addSubTile(8);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 12;
+            // TileObjectData.addSubTile(9);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 32;
+            // TileObjectData.addSubTile(10);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 10;
+            // TileObjectData.addSubTile(11);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 12;
+            // TileObjectData.addSubTile(12);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 32;
+            // TileObjectData.addSubTile(13);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 30;
+            // TileObjectData.addSubTile(14);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 14;
+            // TileObjectData.addSubTile(15);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 1;
+            // TileObjectData.addSubTile(16);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 1;
+            // TileObjectData.addSubTile(17);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 1;
+            // TileObjectData.addSubTile(18);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 1;
+            // TileObjectData.addSubTile(19);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 12;
+            // TileObjectData.addSubTile(20);
+            // TileObjectData.newSubTile.CopyFrom(TileObjectData.newTile);
+            // TileObjectData.newSubTile.RandomStyleRange = 10;
+            // TileObjectData.addSubTile(21);
             TileObjectData.addTile(Type);
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(26, 196, 84));          
@@ -230,12 +230,12 @@ namespace CFU.Tiles
         public override bool Drop(int i, int j)
         {
             int[] styles = { ItemID.GrassSeeds,
-                             ItemID.GrassSeeds,
-                             ItemID.GrassSeeds,
-                             ItemID.GrassSeeds,
-                             ItemID.GrassSeeds,
-                             ItemID.GrassSeeds,
-                             ItemID.GrassSeeds,
+                             ItemID.FlowerPacketYellow,
+                             ItemID.FlowerPacketWhite,
+                             ItemID.FlowerPacketRed,
+                             ItemID.FlowerPacketBlue,
+                             ItemID.FlowerPacketMagenta,
+                             ItemID.FlowerPacketPink,
                              ItemID.CorruptSeeds,
                              ItemID.CorruptSeeds,
                              ItemID.JungleGrassSeeds,

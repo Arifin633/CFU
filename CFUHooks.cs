@@ -218,46 +218,46 @@ namespace ChadsFurnitureUpdated
                     {
                         return CFUTileWand.Pots;
                     }
-                    // else if (type == ModContent.ItemType<Items.BagCattails>())
-                    // {
-                    //     return CFUTileWand.BagCattails;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagFlowers>())
-                    // {
-                    //     return CFUTileWand.BagFlowers;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagGrass>())
-                    // {
-                    //     return CFUTileWand.BagGrass;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagHerbs>())
-                    // {
-                    //     return CFUTileWand.BagHerbs;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagLilyPads>())
-                    // {
-                    //     return CFUTileWand.BagLilyPads;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagMushrooms>())
-                    // {
-                    //     return CFUTileWand.BagMushrooms;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagOasisVegetation>())
-                    // {
-                    //     return CFUTileWand.BagOasisVegetation;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagSeaOats>())
-                    // {
-                    //     return CFUTileWand.BagSeaOats;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagSeaweed>())
-                    // {
-                    //     return CFUTileWand.BagSeaweed;
-                    // }
-                    // else if (type == ModContent.ItemType<Items.BagVines>())
-                    // {
-                    //     return CFUTileWand.BagVines;
-                    // }
+                    else if (type == ModContent.ItemType<Items.BagCattails>())
+                    {
+                        return CFUTileWand.BagCattails;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagFlowers>())
+                    {
+                        return CFUTileWand.BagFlowers;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagGrass>())
+                    {
+                        return CFUTileWand.BagGrass;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagHerbs>())
+                    {
+                        return CFUTileWand.BagHerbs;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagLilyPads>())
+                    {
+                        return CFUTileWand.BagLilyPads;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagMushrooms>())
+                    {
+                        return CFUTileWand.BagMushrooms;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagOasisVegetation>())
+                    {
+                        return CFUTileWand.BagOasisVegetation;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagSeaOats>())
+                    {
+                        return CFUTileWand.BagSeaOats;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagSeaweed>())
+                    {
+                        return CFUTileWand.BagSeaweed;
+                    }
+                    else if (type == ModContent.ItemType<Items.BagVines>())
+                    {
+                        return CFUTileWand.BagVines;
+                    }
                     else return null;
                 });
             };

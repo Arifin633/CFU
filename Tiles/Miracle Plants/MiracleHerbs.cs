@@ -24,8 +24,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.AlternateTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.StyleHorizontal = false;
             TileObjectData.newTile.StyleWrapLimit = 3;
-            TileObjectData.newTile.StyleMultiplier = 3;
-            TileObjectData.newTile.RandomStyleRange = 3;
+            // TileObjectData.newTile.StyleMultiplier = 3;
+            // TileObjectData.newTile.RandomStyleRange = 3;
             TileObjectData.newTile.CoordinateHeights = new int[] { 20 };
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(246, 197, 26));
@@ -38,7 +38,7 @@ namespace CFU.Tiles
             HitSound = SoundID.Grass;
         }
 
-        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 18);
+        public override ushort GetMapOption(int i, int j) => 0;//(ushort)(Main.tile[i, j].TileFrameX / 18);
 
         public override bool CreateDust(int i, int j, ref int type)
         {
@@ -140,7 +140,14 @@ namespace CFU.Tiles
 
         public override bool Drop(int i, int j)
         {
-            int[] styles = { ItemID.DaybloomSeeds,
+            int[] styles = { ItemID.Daybloom,
+                             ItemID.Moonglow,
+                             ItemID.Blinkroot,
+                             ItemID.Deathweed,
+                             ItemID.Waterleaf,
+                             ItemID.Fireblossom,
+                             ItemID.Shiverthorn,
+                             ItemID.DaybloomSeeds,
                              ItemID.MoonglowSeeds,
                              ItemID.BlinkrootSeeds,
                              ItemID.DeathweedSeeds,
