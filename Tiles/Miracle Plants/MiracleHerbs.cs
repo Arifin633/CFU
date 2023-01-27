@@ -38,7 +38,7 @@ namespace CFU.Tiles
             HitSound = SoundID.Grass;
         }
 
-        public override ushort GetMapOption(int i, int j) => 0;//(ushort)(Main.tile[i, j].TileFrameX / 18);
+        public override ushort GetMapOption(int i, int j) => (ushort)((Main.tile[i, j].TileFrameX / 18) % 7);
 
         public override bool CreateDust(int i, int j, ref int type)
         {

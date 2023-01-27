@@ -29,6 +29,9 @@ namespace CFU.Tiles
             name = CreateMapEntryName("CookedFish");
             name.SetDefault("Cooked Fish");
             AddMapEntry(new Color(224, 219, 236), name);
+            name = CreateMapEntryName("CookedShrimp");
+            name.SetDefault("Cooked Shrimp");
+            AddMapEntry(new Color(224, 219, 236), name);
             name = CreateMapEntryName("PadThai");
             name.SetDefault("Pad Thai");
             AddMapEntry(new Color(224, 219, 236), name);

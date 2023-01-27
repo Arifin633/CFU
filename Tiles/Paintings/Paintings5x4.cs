@@ -37,7 +37,6 @@ namespace CFU.Tiles
         {
             int[] styles = { ModContent.ItemType<Items.PaintingAgony>(),
                              ModContent.ItemType<Items.PaintingFury>(),
-                             ModContent.ItemType<Items.PaintingRancher>(),
                              ModContent.ItemType<Items.PaintingRancher>() };
             Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 72)]);
         }

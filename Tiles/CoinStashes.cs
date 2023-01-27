@@ -24,13 +24,9 @@ namespace CFU.Tiles
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Coin Stash");
             AddMapEntry(new Color(107, 81, 65), name);
-            AddMapEntry(new Color(107, 81, 65), name);
-            AddMapEntry(new Color(107, 81, 65), name);
             HitSound = SoundID.Coins;
         }
-
-        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 38);
-
+        
         public override bool CreateDust(int i, int j, ref int type)
         {
             switch (Main.tile[i, j].TileFrameY / 38)

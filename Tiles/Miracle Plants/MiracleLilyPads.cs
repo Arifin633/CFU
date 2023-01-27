@@ -30,10 +30,12 @@ namespace CFU.Tiles
             AddMapEntry(new Color(26, 196, 84));
             AddMapEntry(new Color(48, 208, 234));
             AddMapEntry(new Color(135, 196, 26));
+            AddMapEntry(new Color(203, 61, 64));
+            AddMapEntry(new Color(122, 116, 218));
             HitSound = SoundID.Grass;
         }
 
-        public override ushort GetMapOption(int i, int j) => 0;//(ushort)(Main.tile[i, j].TileFrameY / 18);
+        public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 18);
 
         public override bool CreateDust(int i, int j, ref int type)
         {
