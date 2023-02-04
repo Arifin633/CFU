@@ -1,0 +1,2868 @@
+
+Mods: {
+	CFU: {
+		Items: {
+			Ale: {
+				DisplayName: Decorative Ale
+				Tooltip: "'*A plastic replica'"
+			}
+
+			AltarCrimson: {
+				DisplayName: Crimson Altar
+				Tooltip: "'*A plastic replica'"
+			}
+
+			AltarDemon: {
+				DisplayName: Demon Altar
+				Tooltip: "'*A plastic replica'"
+			}
+
+			AntlionEggs: {
+				DisplayName: Decorative Antlion Eggs
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Barberpole.DisplayName: Barber's Pole
+			BarberpoleLamp.DisplayName: Barber's Pole with Lamp
+			Bell.DisplayName: Clock Tower Bell
+			BiomeJarCorruption.DisplayName: Corruption Jar
+			BiomeJarCrimson.DisplayName: Crimson Jar
+			BiomeJarForest.DisplayName: Forest Jar
+			BiomeJarHallow.DisplayName: Hallow Jar
+			BiomeJarJungle.DisplayName: Jungle Jar
+
+			Birdhouse: {
+				DisplayName: Birdhouse
+				Tooltip: "'Any bird's dream home'"
+			}
+
+			BirdhouseCardinal: {
+				DisplayName: Cardinal Birdhouse
+				Tooltip: "'Any cardinal's dream home'"
+			}
+
+			BirdhouseJay: {
+				DisplayName: Bluejay Birdhouse
+				Tooltip: "'Any bluejay's dream home'"
+			}
+
+			BirdhouseRoyal: {
+				DisplayName: Golden Birdhouse
+				Tooltip: "'Any bird's dream home'"
+			}
+
+			BishopBlack.DisplayName: Black Bishop
+			BishopWhite.DisplayName: White Bishop
+
+			Blacksmith: {
+				DisplayName: Blacksmith's Forge
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used to craft items from metal bars
+					'''
+			}
+
+			BlueBanner.DisplayName: Vibrant Blue Banner
+			BlueBannerLarge.DisplayName: Large Blue Banner
+			BonsaiTree.DisplayName: Bonsai Tree
+			BorealWoodTrellis.DisplayName: Boreal Wood Trellis
+
+			Bottle: {
+				DisplayName: Bottle of Alcohol
+				Tooltip: Right-click after placing if you dislike the taste
+			}
+
+			BowlOfSoup: {
+				DisplayName: Decorative Bowl of Soup
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Brazier.DisplayName: Hanging Brazier
+
+			Bust: {
+				DisplayName: Bust
+				Tooltip: "'It's some Roman Emperor or something'"
+			}
+
+			CabinetBlue.DisplayName: Blue Dungeon Cabinet
+			CabinetBone.DisplayName: Bone Cabinet
+			CabinetBoreal.DisplayName: Boreal Wood Cabinet
+			CabinetCactus.DisplayName: Cactus Cabinet
+			CabinetCrystal.DisplayName: Crystal Cabinet
+			CabinetDynasty.DisplayName: Dynasty Cabinet
+			CabinetEbon.DisplayName: Ebonwood Cabinet
+			CabinetFlesh.DisplayName: Flesh Cabinet
+			CabinetFrozen.DisplayName: Frozen Cabinet
+			CabinetGlass.DisplayName: Glass Cabinet
+			CabinetGolden.DisplayName: Golden Cabinet
+			CabinetGranite.DisplayName: Granite Cabinet
+			CabinetGreen.DisplayName: Green Dungeon Cabinet
+			CabinetHoney.DisplayName: Honey Cabinet
+			CabinetLiving.DisplayName: Living Wood Cabinet
+			CabinetLizard.DisplayName: Lihzahrd Cabinet
+			CabinetMahogany.DisplayName: Rich Mahogany Cabinet
+			CabinetMarble.DisplayName: Marble Cabinet
+			CabinetMartian.DisplayName: Martian Cabinet
+			CabinetMeteor.DisplayName: Meteorite Cabinet
+			CabinetMushroom.DisplayName: Mushroom Cabinet
+			CabinetObsidian.DisplayName: Obsidian Cabinet
+			CabinetPalm.DisplayName: Palm Wood Cabinet
+			CabinetPearl.DisplayName: Pearlwood Cabinet
+			CabinetPink.DisplayName: Pink Dungeon Cabinet
+			CabinetPumpkin.DisplayName: Pumpkin Cabinet
+			CabinetShade.DisplayName: Shadewood Cabinet
+			CabinetSkyware.DisplayName: Skyware Cabinet
+			CabinetSlime.DisplayName: Slime Cabinet
+			CabinetSpooky.DisplayName: Spooky Cabinet
+			CabinetSteampunk.DisplayName: Steampunker Cabinet
+			CabinetWood.DisplayName: Cabinet
+			CanopyBed.DisplayName: Canopy Bed
+			ChaliceGold.DisplayName: Gold Chalice
+			ChalicePlatinum.DisplayName: Platinum Chalice
+
+			Coatrack: {
+				DisplayName: Coatrack
+				Tooltip: "'A small coatrack'"
+			}
+
+			CobWall.DisplayName: Cob Wall
+
+			Cobweb: {
+				DisplayName: Sturdy Cobweb
+				Tooltip: "'Doesn't break as easily'"
+			}
+
+			CoinStashCopper.DisplayName: Copper Coin Stash
+			CoinStashGold.DisplayName: Gold Coin Stash
+			CoinStashPlatinum.DisplayName: Platinum Coin Stash
+			CoinStashSilver.DisplayName: Silver Coin Stash
+
+			CookedFish: {
+				DisplayName: Decorative Cooked Fish
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CookedShrimp: {
+				DisplayName: Decorative Cooked Shrimp
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CorruptIceSmallStalactite: {
+				DisplayName: Small Purple Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CorruptIceStalactite: {
+				DisplayName: Purple Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CorruptionPot.DisplayName: Corruption Pot
+
+			CorruptSmallStalactite: {
+				DisplayName: Small Ebonstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CorruptStalactite: {
+				DisplayName: Ebonstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Counter.DisplayName: Kitchen Counter
+
+			CrimsonHeart: {
+				DisplayName: Crimson Heart
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CrimsonIceSmallStalactite: {
+				DisplayName: Small Red Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CrimsonIceStalactite: {
+				DisplayName: Red Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CrimsonPot.DisplayName: Crimson Pot
+
+			CrimsonSmallStalactite: {
+				DisplayName: Small Crimstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CrimsonStalactite: {
+				DisplayName: Crimstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			CultivationBox: {
+				DisplayName: Cultivation Box
+				Tooltip: Used to craft plants
+			}
+
+			CurtainBlue.DisplayName: Blue Curtain
+			CurtainGreen.DisplayName: Green Curtain
+			CurtainPink.DisplayName: Pink Curtain
+			CurtainRed.DisplayName: Red Curtain
+			CurtainRoyal.DisplayName: Royal Curtain
+			CurtainYellow.DisplayName: Yellow Curtain
+			DeerHead.DisplayName: Deer Head
+			DiningChair.DisplayName: Dining Chair
+			DiningTable.DisplayName: Dining Table
+			DungeonPot.DisplayName: Dungeon Pot
+
+			Easel: {
+				DisplayName: Easel
+				Tooltip: Used to make paintings
+			}
+
+			EbonwoodTrellis.DisplayName: Ebonwood Trellis
+
+			Eggnog: {
+				DisplayName: Decorative Eggnog
+				Tooltip: "'*A plastic replica'"
+			}
+
+			EndTableBamboo.DisplayName: Bamboo End Table
+			EndTableBlue.DisplayName: Blue Dungeon End Table
+			EndTableBone.DisplayName: Bone End Table
+			EndTableBoreal.DisplayName: Boreal Wood End Table
+			EndTableCactus.DisplayName: Cactus End Table
+			EndTableCrystal.DisplayName: Crystal End Table
+			EndTableDynasty.DisplayName: Dynasty End Table
+			EndTableEbon.DisplayName: Ebonwood End Table
+			EndTableFlesh.DisplayName: Flesh End Table
+			EndTableGlass.DisplayName: Glass End Table
+			EndTableGolden.DisplayName: Golden End Table
+			EndTableGothic.DisplayName: Gothic End Table
+			EndTableGranite.DisplayName: Granite End Table
+			EndTableGreen.DisplayName: Green Dungeon End Table
+			EndTableHoney.DisplayName: Honey End Table
+			EndTableIce.DisplayName: Frozen End Table
+			EndTableLesion.DisplayName: Lesion End Table
+			EndTableLihzard.DisplayName: Lihzahrd End Table
+			EndTableLiving.DisplayName: Living Wood End Table
+			EndTableMahogany.DisplayName: Rich Mahogany End Table
+			EndTableMarble.DisplayName: Marble End Table
+			EndTableMartian.DisplayName: Martian End Table
+			EndTableMeteor.DisplayName: Meteorite End Table
+			EndTableMushroom.DisplayName: Mushroom End Table
+			EndTableMystic.DisplayName: Mystical End Table
+			EndTableNebula.DisplayName: Nebula End Table
+			EndTableNewSandstone.DisplayName: Sandstone End Table
+			EndTableObsidian.DisplayName: Obsidian End Table
+			EndTablePalm.DisplayName: Palm Wood End Table
+			EndTablePearl.DisplayName: Pearlwood End Table
+			EndTablePink.DisplayName: Pink Dungeon End Table
+			EndTablePrincess.DisplayName: Princess End Table
+			EndTablePumpkin.DisplayName: Pumpkin End Table
+			EndTableRoyal.DisplayName: Royal End Table
+			EndTableRush.DisplayName: Rush End Table
+			EndTableSandstone.DisplayName: Ancient Sandstone End Table
+			EndTableShade.DisplayName: Shadewood End Table
+			EndTableSkyware.DisplayName: Skyware End Table
+			EndTableSlime.DisplayName: Slime End Table
+			EndTableSolar.DisplayName: Solar End Table
+			EndTableSpider.DisplayName: Spider End Table
+			EndTableSpooky.DisplayName: Spooky End Table
+			EndTableStardust.DisplayName: Stardust End Table
+			EndTableSteampunk.DisplayName: Steampunk End Table
+			EndTableVortex.DisplayName: Vortex End Table
+			EndTableWood.DisplayName: End Table
+
+			FallenLog: {
+				DisplayName: Fallen Log
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Fairies can't tell the difference!'
+					'''
+			}
+
+			FilingCabinet.DisplayName: Filing Cabinet
+
+			Fishhook: {
+				DisplayName: Fishhook
+				Tooltip: Right click to hang a fish
+			}
+
+			ForestPot.DisplayName: Pot
+			FountainGiant.DisplayName: Giant Moon Lord Fountain
+			FountainMarble.DisplayName: Marble Water Fountain
+			Fridge.DisplayName: Fridge
+			GiantButtercup.DisplayName: Giant Buttercup
+
+			GingerbreadCookie: {
+				DisplayName: Decorative Gingerbread Cookie
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Globe: {
+				DisplayName: Globe
+				Tooltip: "'Of a 2D world?'"
+			}
+
+			GnomeFishing: {
+				DisplayName: Gnome
+				Tooltip: "'Holding a little fishing rod'"
+			}
+
+			GnomeHouse: {
+				DisplayName: Gnome House
+				Tooltip: "'Not to be confused with a mushroom, which it looks like'"
+			}
+
+			GnomeShovel: {
+				DisplayName: Gnome
+				Tooltip: "'Holding a little shovel'"
+			}
+
+			GnomeWheelbarrow: {
+				DisplayName: Gnome
+				Tooltip: "'Holding a little wheelbarrow'"
+			}
+
+			GraniteBrick.DisplayName: Granite Bricks
+			GraniteBrickWall.DisplayName: Granite Brick Wall
+			GranitePillar.DisplayName: Granite Pillar
+
+			GraniteSmallStalactite: {
+				DisplayName: Small Granite Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			GraniteStalactite: {
+				DisplayName: Granite Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			GreenBanner.DisplayName: Vibrant Green Banner
+			GreenBannerLarge.DisplayName: Large Green Banner
+			GunRack.DisplayName: Gun Rack
+
+			Hairspray: {
+				DisplayName: Hairspray
+				Tooltip: Right-click after placing if you dislike the smell
+			}
+
+			HallowedIceSmallStalactite: {
+				DisplayName: Small Pink Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			HallowedIceStalactite: {
+				DisplayName: Pink Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			HallowedSmallStalactite: {
+				DisplayName: Small Pearlstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			HallowedStalactite: {
+				DisplayName: Pearlstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			HangingBlinkroot.DisplayName: Hanging Blinkroot
+			HangingDaybloom.DisplayName: Hanging Daybloom
+			HangingDeathweed.DisplayName: Hanging Deathweed
+			HangingFireblossom.DisplayName: Hanging Fireblossom
+			HangingLamp.DisplayName: Hanging Lamp
+			HangingMoonglow.DisplayName: Hanging Moonglow
+			HangingShiverthorn.DisplayName: Hanging Shiverthorn
+			HangingWaterleaf.DisplayName: Hanging Waterleaf
+
+			HardsmithAdmMyt: {
+				DisplayName: Hardmode Blacksmith's Forge
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used to craft items from metal bars
+					'''
+			}
+
+			HardsmithAdmOri: {
+				DisplayName: Hardmode Blacksmith's Forge
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used to craft items from metal bars
+					'''
+			}
+
+			HardsmithTitMyt: {
+				DisplayName: Hardmode Blacksmith's Forge
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used to craft items from metal bars
+					'''
+			}
+
+			HardsmithTitOri: {
+				DisplayName: Hardmode Blacksmith's Forge
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used to craft items from metal bars
+					'''
+			}
+
+			HarpGold: {
+				DisplayName: Decorative Gold Harp
+				Tooltip: "'*A plastic replica'"
+			}
+
+			HarpPlatinum: {
+				DisplayName: Decorative Platinum Harp
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Hellsmith: {
+				DisplayName: Hellsmith's Forge
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used to craft items from metal bars
+					'''
+			}
+
+			HieroglyphWall.DisplayName: Ancient Sandstone Wall
+
+			HoneySmallStalactite: {
+				DisplayName: Small Hive Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Horus: {
+				DisplayName: Eye of Horus
+				Tooltip: Holds religious (and decorative) connotation
+			}
+
+			IceSmallStalactite: {
+				DisplayName: Small Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			IceStalactite: {
+				DisplayName: Ice Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			IronChair.DisplayName: Wrought Iron Chair
+			Ivy.DisplayName: Ivy
+			JunglePot.DisplayName: Jungle Pot
+			Jute.DisplayName: Jute
+
+			KegLarge: {
+				DisplayName: Large Keg
+				Tooltip: Used for brewing ale
+			}
+
+			KegLargeFront: {
+				DisplayName: Large Forward-facing Keg
+				Tooltip: Used for brewing ale
+			}
+
+			KingBlack.DisplayName: Black King
+			KingWhite.DisplayName: White King
+
+			KitchenSink: {
+				DisplayName: Kitchen Sink
+				Tooltip: "'Can be installed in a Kitchen Counter'"
+			}
+
+			KnifeRack.DisplayName: Knife Rack
+			KnightBlack.DisplayName: Black Knight
+			KnightWhite.DisplayName: White Knight
+			KrampusHead.DisplayName: Krampus Head
+			Ladder.DisplayName: Ladder
+
+			LargeCoatrack: {
+				DisplayName: Coatrack
+				Tooltip: "'A large coatrack'"
+			}
+
+			LargeGlobe: {
+				DisplayName: Large Globe
+				Tooltip: "'Of a 2D world?'"
+			}
+
+			LargePileBone: {
+				DisplayName: Large Bone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileBoneAnimal: {
+				DisplayName: Large Animal Bone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileCage: {
+				DisplayName: Ruined Cage
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileChandelier: {
+				DisplayName: Ruined Chandelier
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileCopperCoin: {
+				DisplayName: Large Copper Coin Stash
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileDirt: {
+				DisplayName: Shoveled Dirt Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileEnchantedSword: {
+				DisplayName: Enchanted Sword in the Stone
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileFurniture: {
+				DisplayName: Large Ruined Furniture Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileGoldCoin: {
+				DisplayName: Large Gold Coin Stash
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileGraniteRock: {
+				DisplayName: Large Granite Rock Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileGraniteRuins: {
+				DisplayName: Large Granite Ruins Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileHellstone: {
+				DisplayName: Large Hellstone Vein
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileLeaf: {
+				DisplayName: Large Leaf Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileLihzahrd: {
+				DisplayName: Large Lihzahrd Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileLihzahrdAltar: {
+				DisplayName: Lihzahrd Sacrificial Altar
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileLihzahrdStatue: {
+				DisplayName: Lihzahrd Golem Head Statue
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMarbleRock: {
+				DisplayName: Large Marble Rock Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMarbleRuins: {
+				DisplayName: Large Marble Ruins Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMinecart: {
+				DisplayName: Ruined Minecart
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMiningHelmet: {
+				DisplayName: Large Stone Pile and Mining Helmet
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMossyJungleStone: {
+				DisplayName: Large Mossy Jungle Stone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMossyMud: {
+				DisplayName: Large Mossy Mud Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMossyStone: {
+				DisplayName: Large Mossy Stone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileMushroom: {
+				DisplayName: Large Glowing Mushroom Stone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePilePickaxe: {
+				DisplayName: Pickaxe in the Stone
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePilePoleRope: {
+				DisplayName: Ruined Pole with Rope
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSandstone: {
+				DisplayName: Large Sandstone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSandstoneHive: {
+				DisplayName: Large Sandstone Hive Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSilverCoin: {
+				DisplayName: Large Silver Coin Stash
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSnow: {
+				DisplayName: Large Snow Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSpider: {
+				DisplayName: Large Web Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSpiderBody: {
+				DisplayName: Large Web Pile with Body
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSpiderBone: {
+				DisplayName: Large Web and Bones Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileStabbedSkeleton: {
+				DisplayName: Sword in a Skeleton
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileStone: {
+				DisplayName: Large Stone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileSword: {
+				DisplayName: Sword in the Stone
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileTent: {
+				DisplayName: Ruined Tent
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileTree: {
+				DisplayName: Large Tree Roots Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileWell: {
+				DisplayName: Ruined Well
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LargePileWheelbarrow: {
+				DisplayName: Ruined Wheelbarrow
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Larva: {
+				DisplayName: Decorative Queen Bee Larva
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LeadGlass.DisplayName: Lead Glass
+			LeadGlassWall.DisplayName: Lead Glass Wall
+
+			LifeCrystal: {
+				DisplayName: Decorative Life Crystal
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LifeFruit: {
+				DisplayName: Decorative Life Fruit
+				Tooltip: "'*A plastic replica'"
+			}
+
+			LihzahrdPot.DisplayName: Lihzahrd Pot
+			LimestoneBrick.DisplayName: Limestone Brick
+			LimestoneBrickWall.DisplayName: Limestone Brick Wall
+
+			LimestoneFrieze: {
+				DisplayName: Limestone Slab Entablature
+				Tooltip: "'Best used in combination with Limestone Slab'"
+			}
+
+			LimestoneGargoyle: {
+				DisplayName: Limestone Standing Gargoyle
+				Tooltip: "'A limestone ornament'"
+			}
+
+			LimestoneHangingGargoyle: {
+				DisplayName: Limestone Hanging Gargoyle
+				Tooltip: "'A limestone ornament'"
+			}
+
+			LimestonePinnacle: {
+				DisplayName: Large Limestone Pinnacle
+				Tooltip: "'A limestone ornament'"
+			}
+
+			LimestoneSlab.DisplayName: Limestone Slab
+
+			LimestoneSlabArch: {
+				DisplayName: Limestone Slab Arch
+				Tooltip: "'Best used in combination with Limestone Slab'"
+			}
+
+			LimestoneSlabWall.DisplayName: Limestone Slab Wall
+
+			LimestoneSpire: {
+				DisplayName: Limestone Spire
+				Tooltip: "'A limestone ornament'"
+			}
+
+			LimestoneSpireLarge: {
+				DisplayName: Large Limestone Spire
+				Tooltip: "'A limestone ornament'"
+			}
+
+			LimestoneSpireSmall: {
+				DisplayName: Small Limestone Spire
+				Tooltip: "'A limestone ornament'"
+			}
+
+			MannequinHead.DisplayName: Mannequin Head
+			MarbleBrick.DisplayName: Marble Brick
+			MarbleBrickWall.DisplayName: Marble Brick Wall
+			MarbleCavePot.DisplayName: Marble Pot
+			MarblePillar.DisplayName: Marble Pillar
+
+			MarbleSmallStalactite: {
+				DisplayName: Small Marble Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MarbleStalactite: {
+				DisplayName: Marble Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileAmethyst: {
+				DisplayName: Amethyst Deposit
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileBloodyBone: {
+				DisplayName: Bloody Bone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileBone: {
+				DisplayName: Bone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileCopperCoin: {
+				DisplayName: Small Copper Coin Stash
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileDiamond: {
+				DisplayName: Diamond Deposit
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileEmerald: {
+				DisplayName: Emerald Deposit
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileGoldCoin: {
+				DisplayName: Small Gold Coin Stash
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileGranite: {
+				DisplayName: Granite Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileMarble: {
+				DisplayName: Marble Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileMossyStone: {
+				DisplayName: Mossy Stone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileRuby: {
+				DisplayName: Ruby Deposit
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileRuinedFurniture: {
+				DisplayName: Ruined Furniture Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileSand: {
+				DisplayName: Sand Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileSandstone: {
+				DisplayName: Sandstone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileSapphire: {
+				DisplayName: Sapphire Deposit
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileSilverCoin: {
+				DisplayName: Small Silver Coin Stash
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileSnow: {
+				DisplayName: Snow Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileSpider: {
+				DisplayName: Web Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileStone: {
+				DisplayName: Stone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileTopaz: {
+				DisplayName: Topaz Deposit
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MediumPileTree: {
+				DisplayName: Tree Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			MedusaHead: {
+				DisplayName: Decorative Medusa Head
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Minifridge: {
+				DisplayName: Minifridge
+				Tooltip: "'Generally used for food'"
+			}
+
+			MintJar: {
+				DisplayName: Jar O' Mints
+				Tooltip: "'Purely for decorational purposes'"
+			}
+
+			MiracleBlinkroot: {
+				DisplayName: Miracle Blinkroot
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleBlueFlower: {
+				DisplayName: Miracle Blue Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCattail: {
+				DisplayName: Miracle Cattail Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCorruptCattail: {
+				DisplayName: Miracle Corrupt Cattail Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCorruptFlower: {
+				DisplayName: Miracle Corrupt Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCorruptGrass: {
+				DisplayName: Miracle Corrupt Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCorruptLilyPad: {
+				DisplayName: Miracle Corrupt Lily Pad Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCrimsonCattail: {
+				DisplayName: Miracle Crimson Cattail Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCrimsonFlower: {
+				DisplayName: Miracle Crimson Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCrimsonGrass: {
+				DisplayName: Miracle Crimson Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCrimsonLilyPad: {
+				DisplayName: Miracle Crimson Lily Pad Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleCrimsonVine: {
+				DisplayName: Miracle Crimson Vine
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleDaybloom: {
+				DisplayName: Miracle Daybloom Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleDeathweed: {
+				DisplayName: Miracle Deathweed Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleFireblossom: {
+				DisplayName: Miracle Fireblossom Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleFlowerVine: {
+				DisplayName: Miracle Flower Vine
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleGlowingMushroom: {
+				DisplayName: Miracle Glowing Mushroom
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleGlowingMushroomCattail: {
+				DisplayName: Miracle Glowing Mushroom Cattail
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleGlowingMushroomVine: {
+				DisplayName: Miracle Glowing Mushroom Vine
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleGrass: {
+				DisplayName: Miracle Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleHallowedCattail: {
+				DisplayName: Miracle Hallowed Cattail Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleHallowedFlower: {
+				DisplayName: Miracle Hallowed Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleHallowedGrass: {
+				DisplayName: Miracle Hallowed Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleHallowedLilyPad: {
+				DisplayName: Miracle Hallowed Lily Pad Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleHallowedVine: {
+				DisplayName: Miracle Hallowed Vine
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleCattail: {
+				DisplayName: Miracle Jungle Cattail Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleFernBush: {
+				DisplayName: Miracle Jungle Fern Bush Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleFlower: {
+				DisplayName: Miracle Jungle Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleFlowerBush: {
+				DisplayName: Miracle Jungle Giant Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleGrass: {
+				DisplayName: Miracle Jungle Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleLargeFernBush: {
+				DisplayName: Miracle Large Jungle Fern Bush Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleLargeFlowerBush: {
+				DisplayName: Miracle Large Giant Jungle Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleLargeLeafBush: {
+				DisplayName: Miracle Large Jungle Bush Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleLeafBush: {
+				DisplayName: Miracle Jungle Bush Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleLilyPad: {
+				DisplayName: Miracle Jungle Lily Pad Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleSpore: {
+				DisplayName: Miracle Jungle Spore
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleJungleVine: {
+				DisplayName: Miracle Jungle Vine
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleLilyPad: {
+				DisplayName: Miracle Lily Pad Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleMediumCorruptSeaOats: {
+				DisplayName: Miracle Medium Corrupt Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleMediumCrimsonSeaOats: {
+				DisplayName: Miracle Medium Crimson Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleMediumHallowedSeaOats: {
+				DisplayName: Miracle Medium Hallowed Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleMediumOasisSeaOats: {
+				DisplayName: Miracle Medium Oasis Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleMediumSeaOats: {
+				DisplayName: Miracle Medium Beach Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleMoonglow: {
+				DisplayName: Miracle Moonglow Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleMushroom: {
+				DisplayName: Miracle Mushroom
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisCactus: {
+				DisplayName: Miracle Oasis Cactus Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisCorruptCactus: {
+				DisplayName: Miracle Oasis Corrupt Cactus Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisCorruptVegetation: {
+				DisplayName: Miracle Oasis Corrupt Vegetation Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisCrimsonCactus: {
+				DisplayName: Miracle Oasis Crimson Cactus Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisCrimsonVegetation: {
+				DisplayName: Miracle Oasis Crimson Vegetation Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisHallowedCactus: {
+				DisplayName: Miracle Oasis Hallowed Cactus Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisHallowedVegetation: {
+				DisplayName: Miracle Oasis Hallowed Vegetation Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleOasisVegetation: {
+				DisplayName: Miracle Oasis Vegetation Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiraclePinkFlower: {
+				DisplayName: Miracle Pink Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiraclePurpleFlower: {
+				DisplayName: Miracle Purple Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleRedFlower: {
+				DisplayName: Miracle Red Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleSeaweed: {
+				DisplayName: Miracle Seaweed
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleShiverthorn: {
+				DisplayName: Miracle Shiverthorn Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleShortCorruptSeaOats: {
+				DisplayName: Miracle Short Corrupt Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleShortCrimsonSeaOats: {
+				DisplayName: Miracle Short Crimson Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleShortHallowedSeaOats: {
+				DisplayName: Miracle Short Hallowed Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleShortOasisSeaOats: {
+				DisplayName: Miracle Short Oasis Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleShortSeaOats: {
+				DisplayName: Miracle Short Beach Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallBlueFlower: {
+				DisplayName: Miracle Tall Blue Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallCorruptSeaOats: {
+				DisplayName: Miracle Tall Corrupt Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallCrimsonSeaOats: {
+				DisplayName: Miracle Tall Crimson Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallGrass: {
+				DisplayName: Miracle Tall Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallHallowedFlower: {
+				DisplayName: Miracle Tall Hallowed Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallHallowedGrass: {
+				DisplayName: Miracle Tall Hallowed Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallHallowedSeaOats: {
+				DisplayName: Miracle Tall Hallowed Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallJungleFlower: {
+				DisplayName: Miracle Tall Jungle Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallJungleGrass: {
+				DisplayName: Miracle Tall Jungle Grass Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallOasisSeaOats: {
+				DisplayName: Miracle Tall Oasis Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallPinkFlower: {
+				DisplayName: Miracle Tall Pink Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallPurpleFlower: {
+				DisplayName: Miracle Tall Purple Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallRedFlower: {
+				DisplayName: Miracle Tall Red Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallSeaOats: {
+				DisplayName: Miracle Tall Beach Sea Oats Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallWhiteFlower: {
+				DisplayName: Miracle Tall White Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleTallYellowFlower: {
+				DisplayName: Miracle Tall Yellow Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleViciousMushroom: {
+				DisplayName: Miracle Vicious Mushroom
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleVileMushroom: {
+				DisplayName: Miracle Vile Mushroom
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleVine: {
+				DisplayName: Miracle Vine
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleWaterleaf: {
+				DisplayName: Miracle Waterleaf Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleWhiteFlower: {
+				DisplayName: Miracle White Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MiracleYellowFlower: {
+				DisplayName: Miracle Yellow Flower Seeds
+				Tooltip: "'Can grow anywhere!'"
+			}
+
+			MirrorBoreal.DisplayName: Boreal Wood Mirror
+			MirrorEbon.DisplayName: Ebonwood Mirror
+			MirrorMahogany.DisplayName: Rich Mahogany Mirror
+			MirrorPalm.DisplayName: Palm Wood Mirror
+			MirrorPearl.DisplayName: Pearlwood Mirror
+			MirrorPrin.DisplayName: Princess Mirror
+			MirrorShade.DisplayName: Shadewood Mirror
+			MirrorWood.DisplayName: Mirror
+			ModelCastle.DisplayName: Model Castle
+			MysteriousTablet.DisplayName: Decorative Mysterious Tablet
+			MysticBath.DisplayName: Mystical Bathtub
+			MysticBed.DisplayName: Mystical Bed
+			MysticBookcase.DisplayName: Mystical Bookcase
+			MysticCandelabra.DisplayName: Mystical Candelabra
+			MysticCandle.DisplayName: Mystical Candle
+			MysticChandelier.DisplayName: Mystical Chandelier
+			MysticChest.DisplayName: Mystical Chest
+			MysticClock.DisplayName: Mystical Clock
+			MysticDoor.DisplayName: Mystical Door
+			MysticDresser.DisplayName: Mystical Dresser
+			MysticLamp.DisplayName: Mystical Lamp
+			MysticLantern.DisplayName: Mystical Lantern
+			MysticPiano.DisplayName: Mystical Piano
+			MysticPlatform.DisplayName: Mystical Platform
+			MysticSink.DisplayName: Mystical Sink
+			MysticSofa.DisplayName: Mystical Sofa
+			MysticTable.DisplayName: Mystical Table
+			MysticWorkbench.DisplayName: Mystical Work Bench
+			NoticeBoard.DisplayName: Notice Board
+			OrganPipe.DisplayName: Organ Pipe
+			OrnateBookcase.DisplayName: Ornate Bookcase
+			OrnateCounter.DisplayName: Ornate Kitchen Counter
+			OrnateFridge.DisplayName: Ornate Fridge
+
+			OrnateGoldChandelier: {
+				DisplayName: Ornate Gold Chandelier
+				Tooltip: "'If one of those 'normal' gold chandeliers is not gold enough'"
+			}
+
+			OrnateGoldPlate.DisplayName: Ornate Gold Plate
+
+			OrnateGoldThrone: {
+				DisplayName: Tall Gold Throne
+				Tooltip: "'For the exceptionally regal and the exceptionally tall.'"
+			}
+
+			OrnateGoldToolrack.DisplayName: Golden Fireplace Rack
+
+			OrnateKitchenSink: {
+				DisplayName: Ornate Kitchen Sink
+				Tooltip: "'Can be installed in a Kitchen Counter'"
+			}
+
+			OrnatePlatinumChandelier: {
+				DisplayName: Ornate Platinum Chandelier
+				Tooltip: "'If one of those 'normal' platinum chandeliers is not platinum enough'"
+			}
+
+			OrnatePlatinumPlate.DisplayName: Ornate Platinum Plate
+
+			OrnatePlatinumThrone: {
+				DisplayName: Tall Platinum Throne
+				Tooltip: "'For the exceptionally regal and the exceptionally tall.'"
+			}
+
+			OrnatePlatinumToolrack.DisplayName: Platinum Fireplace Rack
+
+			OrnateStove: {
+				DisplayName: Ornate Stove
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used for cooking food
+					'Looks fancier and older than a normal stove'
+					'''
+			}
+
+			PadThai: {
+				DisplayName: Decorative Pad Thai
+				Tooltip: "'*A plastic replica'"
+			}
+
+			PaintableArmchair: {
+				DisplayName: Armchair
+				Tooltip: "'From the Paintables(R) Collection!'"
+			}
+
+			PaintableBeanbag: {
+				DisplayName: Bean Bag Chair
+				Tooltip: "'From the Paintables(R) Collection!'"
+			}
+
+			PaintableLamp: {
+				DisplayName: Lamp
+				Tooltip: "'From the Paintables(R) Collection!'"
+			}
+
+			PaintableLantern: {
+				DisplayName: Lantern
+				Tooltip: "'From the Paintables(R) Collection!'"
+			}
+
+			PaintableMug: {
+				DisplayName: Mug
+				Tooltip: "'From the Paintables(R) Collection!'"
+			}
+
+			PaintableSofa: {
+				DisplayName: Sofa
+				Tooltip: "'From the Paintables(R) Collection!'"
+			}
+
+			PaintingAgony: {
+				DisplayName: My Internet Connection Is Too Bad For Me To Do Anything Online
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingFace: {
+				DisplayName: Melting Faces
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingFlower: {
+				DisplayName: Very Lonely Flower
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingFlute: {
+				DisplayName: Flute Lady
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingFury: {
+				DisplayName: 100 Episodes of Fury's Modded Terraria!
+				Tooltip:
+					'''
+					A one-of-a-kind celebratory painting.
+					'Chadwick M. deVries'
+					'''
+			}
+
+			PaintingJaak: {
+				DisplayName: Jacques de Montfort
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingMount: {
+				DisplayName: Mountain
+				Tooltip: "'X. Zimur'"
+			}
+
+			PaintingPlant: {
+				DisplayName: The Plants Resist Him
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingRancher: {
+				DisplayName: Slime Rancher
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingSelf: {
+				DisplayName: Self Portrait
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingSlime: {
+				DisplayName: Pink Smile
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingSunflower: {
+				DisplayName: Sunflower
+				Tooltip: "'X. Zimur'"
+			}
+
+			PaintingTree: {
+				DisplayName: Big Tree
+				Tooltip: "'X. Zimur'"
+			}
+
+			PaintingVeil: {
+				DisplayName: Person Under a Veil
+				Tooltip: "'Chadwick M. deVries'"
+			}
+
+			PaintingWater: {
+				DisplayName: Water and Sky
+				Tooltip: "'X. Zimur'"
+			}
+
+			PalmWoodTrellis.DisplayName: Palm Wood Trellis
+			Paper.DisplayName: Paper
+			PawnBlack.DisplayName: Black Pawn
+			PawnWhite.DisplayName: White Pawn
+			PearlwoodTrellis.DisplayName: Pearlwood Trellis
+
+			Pho: {
+				DisplayName: Decorative Pho
+				Tooltip: "'*A plastic replica'"
+			}
+
+			PinkBanner.DisplayName: Vibrant Pink Banner
+			PinkBannerLarge.DisplayName: Large Pink Banner
+			Plant0.DisplayName: Plant
+			Plant1.DisplayName: Plant
+			Plant10.DisplayName: Plant
+			Plant11.DisplayName: Palm Tree
+			Plant12.DisplayName: Palm Tree
+			Plant13.DisplayName: Hallowed Flowerbush
+			Plant2.DisplayName: Plant
+			Plant3.DisplayName: Plant
+			Plant4.DisplayName: Plant
+			Plant5.DisplayName: Plant
+			Plant6.DisplayName: Cactus
+			Plant7.DisplayName: Cactus
+			Plant8.DisplayName: Cactus
+			Plant9.DisplayName: Plant
+
+			PlanteraBulb: {
+				DisplayName: Decorative Plantera's Bulb
+				Tooltip: "'*A plastic replica'"
+			}
+
+			PlantPotBasket.DisplayName: Basket Plant Pot
+			PlantPotBlackGold.DisplayName: Gold-striped Black Plant Pot
+			PlantPotBrown.DisplayName: Brown Plant Pot
+			PlantPotDarkBrown.DisplayName: Dark Brown Plant Pot
+			PlantPotOrange.DisplayName: Orange Plant Pot
+			PlantPotPurple.DisplayName: Purple Plant Pot
+			PlantPotTerracotta.DisplayName: Terracotta Plant Pot
+			PlantPotWhite.DisplayName: White Plant Pot
+			PlantPotWhiteBlue.DisplayName: Blue-striped White Plant Pot
+			PlantPotWhiteRed.DisplayName: Red-striped White Plant Pot
+
+			Poster: {
+				DisplayName: Poster
+				Tooltip: "'We can do it!'"
+			}
+
+			PosterMinecraft.DisplayName: Minecraft Poster
+
+			PosterTerraria: {
+				DisplayName: Terraria Poster
+				Tooltip: "'This looks familiar...'"
+			}
+
+			Pot.DisplayName: Cooking Pot
+
+			PotionHolder: {
+				DisplayName: Potion Holder
+				Tooltip: Right click to place a potion
+			}
+
+			PoufMystic.DisplayName: Mystical Pouf
+			PoufRoyal.DisplayName: Royal Pouf
+			PrinBath.DisplayName: Princess Bathtub
+			PrinBed.DisplayName: Princess Bed
+			PrinBookcase.DisplayName: Princess Bookcase
+			PrinCandelabra.DisplayName: Princess Candelabra
+			PrinCandle.DisplayName: Princess Candle
+			PrinChair.DisplayName: Princess Chair
+			PrinChandelier.DisplayName: Princess Chandelier
+			PrinChest.DisplayName: Princess Chest
+			PrinClock.DisplayName: Princess Clock
+			PrinDoor.DisplayName: Princess Door
+			PrinDresser.DisplayName: Princess Dresser
+			PrinLamp.DisplayName: Princess Lamp
+			PrinLantern.DisplayName: Princess Lantern
+			PrinPiano.DisplayName: Princess Piano
+			PrinPlatform.DisplayName: Princess Platform
+			PrinSink.DisplayName: Princess Sink
+			PrinSofa.DisplayName: Princess Sofa
+			PrinTable.DisplayName: Princess Table
+			Printer.DisplayName: Printer
+			Printer3D.DisplayName: 3D Printer
+			PrinWorkbench.DisplayName: Princess Work Bench
+
+			Pudding: {
+				DisplayName: Decorative Christmas Pudding
+				Tooltip: "'*A plastic replica'"
+			}
+
+			PylonBaseDesert: {
+				DisplayName: Decorative Desert Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseForest: {
+				DisplayName: Decorative Forest Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseHallowed: {
+				DisplayName: Decorative Hallow Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseIce: {
+				DisplayName: Decorative Snow Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseJungle: {
+				DisplayName: Decorative Jungle Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseMushroom: {
+				DisplayName: Decorative Mushroom Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseOcean: {
+				DisplayName: Decorative Ocean Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseUnderground: {
+				DisplayName: Decorative Cavern Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PylonBaseUniversal: {
+				DisplayName: Decorative Universal Pylon Base
+				Tooltip:
+					'''
+					'*A plastic replica'
+					'Crystal not included'
+					'''
+			}
+
+			PyramidPot.DisplayName: Pyramid Pot
+			QueenBlack.DisplayName: Black Queen
+			QueenWhite.DisplayName: White Queen
+
+			RabbitHole: {
+				DisplayName: Rabbit Hole
+				Tooltip:
+					'''
+					'An elegant property located in a garden near sources
+					of food and water, yet capturing the rough and tough
+					country-feel of European-style rabbit architecture.
+					Year built: 1854
+					4 beds
+					2 baths
+					Includes pre-built kitchen with appliances'
+					'''
+			}
+
+			Radiator: {
+				DisplayName: Radiator
+				Tooltip: "'A rusty radiator'"
+			}
+
+			RedBanner.DisplayName: Vibrant Red Banner
+			RedBannerLarge.DisplayName: Large Red Banner
+			RichMahoganyTrellis.DisplayName: Rich Mahogany Trellis
+			RookBlack.DisplayName: Black Rook
+			RookWhite.DisplayName: White Rook
+			RoyalBookcase.DisplayName: Royal Bookcase
+			RoyalCandelabra.DisplayName: Royal Candelabra
+			RoyalCandle.DisplayName: Royal Candle
+			RoyalCanopyBed.DisplayName: Royal Canopy Bed
+			RoyalChair.DisplayName: Royal Dining Chair
+			RoyalChest.DisplayName: Royal Chest
+			RoyalClock.DisplayName: Royal Clock
+			RoyalDiningTable.DisplayName: Royal Dining Table
+			RoyalDoor.DisplayName: Royal Door
+			RoyalDresser.DisplayName: Royal Dresser
+			RoyalLamp.DisplayName: Royal Lamp
+			RoyalLantern.DisplayName: Royal Lantern
+			RoyalPiano.DisplayName: Royal Piano
+			RoyalPlatform.DisplayName: Royal Platform
+			RoyalSink.DisplayName: Royal Sink
+			RoyalSofa.DisplayName: Royal Sofa
+			RoyalThrone.DisplayName: Platinum Throne
+			RoyalWorkbench.DisplayName: Royal Work Bench
+			RushChair.DisplayName: Rush Chair
+			RushTable.DisplayName: Rush Table
+			RushWorkbench.DisplayName: Rush Work Bench
+
+			Sake: {
+				DisplayName: Decorative Sake
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SandPillar.DisplayName: Sand Pillar
+			SandstoneBath.DisplayName: Ancient Sandstone Bathtub
+			SandstoneBed.DisplayName: Ancient Sandstone Sarcophagus
+			SandstoneBookcase.DisplayName: Ancient Sandstone Bookcase
+			SandstoneBrick.DisplayName: Ancient Sandstone Brick
+			SandstoneCandelabra.DisplayName: Ancient Sandstone Candelabra
+			SandstoneCandle.DisplayName: Ancient Sandstone Candle
+			SandstoneChair.DisplayName: Ancient Sandstone Chair
+			SandstoneChandelier.DisplayName: Ancient Sandstone Brazier
+			SandstoneChest.DisplayName: Ancient Sandstone Urn
+			SandstoneClock.DisplayName: Ancient Sandstone Clock
+			SandstoneDoor.DisplayName: Ancient Sandstone Door
+			SandstoneDresser.DisplayName: Ancient Sandstone Dresser
+			SandstoneLamp.DisplayName: Ancient Sandstone Lamp
+			SandstoneLantern.DisplayName: Ancient Sandstone Lantern
+			SandstonePiano.DisplayName: Ancient Sandstone Piano
+			SandstonePillar.DisplayName: Ancient Sandstone Pillar
+			SandstonePlatform.DisplayName: Ancient Sandstone Platform
+			SandstoneSink.DisplayName: Ancient Sandstone Sink
+
+			SandstoneSmallStalactite: {
+				DisplayName: Small Sandstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SandstoneSofa.DisplayName: Ancient Sandstone Sofa
+
+			SandstoneStalactite: {
+				DisplayName: Sandstone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SandstoneTable.DisplayName: Ancient Sandstone Table
+			SandstoneTorch.DisplayName: Ancient Sandstone Torch
+			SandstoneWorkbench.DisplayName: Ancient Sandstone Work Bench
+
+			Sashimi: {
+				DisplayName: Decorative Sashimi
+				Tooltip: "'*A plastic replica'"
+			}
+
+			ShadewoodTrellis.DisplayName: Shadewood Trellis
+
+			ShadowOrb: {
+				DisplayName: Shadow Orb
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Shingles.DisplayName: Black Shingles
+
+			SignBank: {
+				DisplayName: Bank Sign
+				Tooltip: "'Shows a pile of coins'"
+			}
+
+			SignBook: {
+				DisplayName: Library Sign
+				Tooltip: "'Shows an open book'"
+			}
+
+			SignEmpty.DisplayName: Empty Sign
+
+			SignFish: {
+				DisplayName: Fish Sign
+				Tooltip: "'Shows a bass'"
+			}
+
+			SignJewel: {
+				DisplayName: Jewelry Sign
+				Tooltip: "'Shows a diamond'"
+			}
+
+			SignPub: {
+				DisplayName: Pub Sign
+				Tooltip: "'Shows a mug of beer'"
+			}
+
+			SignSmith: {
+				DisplayName: Blacksmith Sign
+				Tooltip: "'Shows an anvil'"
+			}
+
+			SignTailor: {
+				DisplayName: Tailor Sign
+				Tooltip: "'Shows a roll of thread'"
+			}
+
+			SkyrimMap.DisplayName: Skyrim Map
+			SmallCactus.DisplayName: Small Cactus
+
+			SmallPileBloodyBone: {
+				DisplayName: Small Bloody Bone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileBone: {
+				DisplayName: Small Bone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileBrokenTool: {
+				DisplayName: Small Broken Tool Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileDirt: {
+				DisplayName: Small Dirt Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileGranite: {
+				DisplayName: Small Granite Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileIce: {
+				DisplayName: Small Ice Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileMarble: {
+				DisplayName: Small Marble Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileSand: {
+				DisplayName: Small Sand Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileSandstone: {
+				DisplayName: Small Sandstone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileSnow: {
+				DisplayName: Small Snow Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileSpider: {
+				DisplayName: Small Web Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileStone: {
+				DisplayName: Small Stone Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SmallPileTree: {
+				DisplayName: Small Tree Pile
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SpiderCavePot.DisplayName: Spider Pot
+
+			SpiderStalactite: {
+				DisplayName: Web Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SpinningWheel: {
+				DisplayName: Rumpelstiltskin's Spinning Wheel
+				Tooltip: Used for crafting furniture
+			}
+
+			Stardust: {
+				DisplayName: Stardust
+				Tooltip: "'Probably great stuff for making furniture...'"
+			}
+
+			StatueAzura.DisplayName: Statue of Azura
+			StatueBrainOfCthulhu.DisplayName: Brain of Cthulhu Collectable Inaction Figure
+			StatueClavicus.DisplayName: Statue of Clavicus Vile
+			StatueDestroyer.DisplayName: Destroyer Collectable Inaction Figure
+			StatueDukeFishron.DisplayName: Duke Fishron Collectable Inaction Figure
+			StatueEaterOfWorlds.DisplayName: Eater of Worlds Collectable Inaction Figure
+
+			StatueEquine: {
+				DisplayName: Horse Statue
+				Tooltip: "'Majestic'"
+			}
+
+			StatueEyeOfCthulhu.DisplayName: Eye of Cthulhu Collectable Inaction Figure
+			StatueGolem.DisplayName: Golem Collectable Inaction Figure
+			StatueLunaticCultist.DisplayName: Lunatic Cultist Collectable Inaction Figure
+			StatueMoonLord.DisplayName: Moon Lord Collectable Inaction Figure
+			StatuePlantera.DisplayName: Plantera Collectable Inaction Figure
+			StatueQueenBee.DisplayName: Queen Bee Collectable Inaction Figure
+			StatueRetinazer.DisplayName: Retinazer Collectable Inaction Figure
+			StatueSkeletron.DisplayName: Skeletron Collectable Inaction Figure
+			StatueSkeletronPrime.DisplayName: Skeletron Prime Collectable Inaction Figure
+			StatueSlimeKing.DisplayName: King Slime Collectable Inaction Figure
+			StatueSpazmatism.DisplayName: Spazmatism Collectable Inaction Figure
+			StatueTortoise.DisplayName: Giant Tortoise Collectable Inaction Figure
+			StatueWallOfFlesh.DisplayName: Wall of Flesh Collectable Inaction Figure
+
+			StglCthulhu: {
+				DisplayName: Large Stained Glass Window
+				Tooltip: "'It depicts the Moon Lord'"
+			}
+
+			StglDryad: {
+				DisplayName: Stained Glass Window
+				Tooltip: "'It depicts the Dryad'"
+			}
+
+			StglNebula: {
+				DisplayName: Small Stained Glass Window
+				Tooltip: "'It depicts the Nebula Pillar'"
+			}
+
+			StglSolar: {
+				DisplayName: Small Stained Glass Window
+				Tooltip: "'It depicts the Solar Pillar'"
+			}
+
+			StglStardust: {
+				DisplayName: Small Stained Glass Window
+				Tooltip: "'It depicts the Stardust Pillar'"
+			}
+
+			StglVortex: {
+				DisplayName: Small Stained Glass Window
+				Tooltip: "'It depicts the Vortex Pillar'"
+			}
+
+			StoneFrieze: {
+				DisplayName: Stone Slab Entablature
+				Tooltip: "'Best used in combination with Stone Slab'"
+			}
+
+			StoneGargoyle: {
+				DisplayName: Stone Standing Gargoyle
+				Tooltip: "'A stone ornament'"
+			}
+
+			StoneHangingGargoyle: {
+				DisplayName: Stone Hanging Gargoyle
+				Tooltip: "'A stone ornament'"
+			}
+
+			StonePillar.DisplayName: Stone Pillar
+
+			StonePinnacle: {
+				DisplayName: Large Stone Pinnacle
+				Tooltip: "'A stone ornament'"
+			}
+
+			StoneSlabArch: {
+				DisplayName: Stone Slab Arch
+				Tooltip: "'Best used in combination with Stone Slab'"
+			}
+
+			StoneSmallStalactite: {
+				DisplayName: Small Stone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			StoneSpire: {
+				DisplayName: Stone Spire
+				Tooltip: "'A stone ornament'"
+			}
+
+			StoneSpireLarge: {
+				DisplayName: Large Stone Spire
+				Tooltip: "'A stone ornament'"
+			}
+
+			StoneSpireSmall: {
+				DisplayName: Small Stone Spire
+				Tooltip: "'A stone ornament'"
+			}
+
+			StoneStalactite: {
+				DisplayName: Stone Stalactite
+				Tooltip: "'*A plastic replica'"
+			}
+
+			Stool: {
+				DisplayName: Stool
+				Tooltip: "'A small stool'"
+			}
+
+			Stove: {
+				DisplayName: Stove
+				Tooltip:
+					'''
+					Used for smelting ore
+					Used for cooking food
+					'''
+			}
+
+			StrangePlantGreen: {
+				DisplayName: Strange Seed
+				Tooltip: "'Grows a Strange Plant small enough to fit in a plant pot'"
+			}
+
+			StrangePlantOrange: {
+				DisplayName: Strange Seed
+				Tooltip: "'Grows a Strange Plant small enough to fit in a plant pot'"
+			}
+
+			StrangePlantPurple: {
+				DisplayName: Strange Seed
+				Tooltip: "'Grows a Strange Plant small enough to fit in a plant pot'"
+			}
+
+			StrangePlantRed: {
+				DisplayName: Strange Seed
+				Tooltip: "'Grows a Strange Plant small enough to fit in a plant pot'"
+			}
+
+			StuffedTurkey: {
+				DisplayName: Stuffed Turkey
+				Tooltip: "'Strictly decorative'"
+			}
+
+			SugarCookie: {
+				DisplayName: Decorative Sugar Cookie
+				Tooltip: "'*A plastic replica'"
+			}
+
+			SunflowerWall.DisplayName: Sunflower Wall
+
+			Tapestry: {
+				DisplayName: Tapestry
+				Tooltip: "'Depicts King Jacques having met an accidental end to a catapult manned by his wife'"
+			}
+
+			Tapestry1: {
+				DisplayName: Tapestry
+				Tooltip: "'Depicts King Jacques facing off against the Crimson menace'"
+			}
+
+			Tapestry2: {
+				DisplayName: Tapestry
+				Tooltip: "'Depicts King Jacques being knighted by the Dryad'"
+			}
+
+			TapestryLarge: {
+				DisplayName: Tapestry
+				Tooltip: "'Depicts the family tree of King Jacques'"
+			}
+
+			Telescope.DisplayName: Telescope
+			TelescopeGold.DisplayName: Golden Telescope
+			TelescopePlatinum.DisplayName: Platinum Telescope
+
+			TipJar: {
+				DisplayName: Tip Jar
+				Tooltip: "'Purely for decorational purposes'"
+			}
+
+			Toolrack.DisplayName: Fireplace Rack
+			TundraPot.DisplayName: Frozen Pot
+			UndergroundDesertPot.DisplayName: Desert Pot
+			UnderworldPot.DisplayName: Underworld Pot
+			WallCandelabraBlue.DisplayName: Blue Dungeon Wall Candelabra
+			WallCandelabraBone.DisplayName: Bone Wall Candelabra
+			WallCandelabraBoreal.DisplayName: Boreal Wood Wall Candelabra
+			WallCandelabraCactus.DisplayName: Cactus Wall Candelabra
+			WallCandelabraCrystal.DisplayName: Crystal Wall Candelabra
+			WallCandelabraDynasty.DisplayName: Large Dynasty Wall Candle
+			WallCandelabraEbon.DisplayName: Ebonwood Wall Candelabra
+			WallCandelabraFlesh.DisplayName: Flesh Wall Candelabra
+			WallCandelabraGel.DisplayName: Slime Wall Candelabra
+			WallCandelabraGlass.DisplayName: Glass Wall Candelabra
+			WallCandelabraGold.DisplayName: Wall Candelabra
+			WallCandelabraGolden.DisplayName: Golden Wall Candelabra
+			WallCandelabraGranite.DisplayName: Granite Wall Candelabra
+			WallCandelabraGreen.DisplayName: Green Dungeon Wall Candelabra
+			WallCandelabraHoney.DisplayName: Honey Wall Candelabra
+			WallCandelabraIce.DisplayName: Frozen Wall Candelabra
+			WallCandelabraLiving.DisplayName: Living Wood Wall Candelabra
+			WallCandelabraLizard.DisplayName: Lihzahrd Wall Candelabra
+			WallCandelabraMahogany.DisplayName: Rich Mahogany Wall Candelabra
+			WallCandelabraMarble.DisplayName: Marble Wall Candelabra
+			WallCandelabraMartian.DisplayName: Martian Wall Candelabra
+			WallCandelabraMeteor.DisplayName: Meteorite Wall Candelabra
+			WallCandelabraMushroom.DisplayName: Mushroom Wall Candelabra
+			WallCandelabraObsidian.DisplayName: Obsidian Wall Candelabra
+			WallCandelabraPalm.DisplayName: Palm Wood Wall Candelabra
+			WallCandelabraPearl.DisplayName: Pearlwood Wall Candelabra
+			WallCandelabraPink.DisplayName: Pink Dungeon Wall Candelabra
+			WallCandelabraPlatinum.DisplayName: Platinum Wall Candelabra
+			WallCandelabraPumpkin.DisplayName: Pumpkin Wall Candelabra
+			WallCandelabraShade.DisplayName: Shadewood Wall Candelabra
+			WallCandelabraSpooky.DisplayName: Spooky Wood Wall Candelabra
+			WallCandelabraSteampunk.DisplayName: Steampunker Wall Candelabra
+			WallCandelabraSunplate.DisplayName: Skyware Wall Candelabra
+
+			WallClockBone: {
+				DisplayName: Bone Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockBoreal: {
+				DisplayName: Boreal Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockCactus: {
+				DisplayName: Cactus Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockDynasty: {
+				DisplayName: Dynasty Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockEbon: {
+				DisplayName: Ebonwood Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockFlesh: {
+				DisplayName: Flesh Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockGold: {
+				DisplayName: Golden Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockGranite: {
+				DisplayName: Granite Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockHoney: {
+				DisplayName: Honey Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockIce: {
+				DisplayName: Frozen Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockLihzard: {
+				DisplayName: Lihzahrd Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockLiving: {
+				DisplayName: Living Wood Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockMahogany: {
+				DisplayName: Rich Mahogany Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockMarble: {
+				DisplayName: Marble Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockMeteor: {
+				DisplayName: Meteorite Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockMushroom: {
+				DisplayName: Mushroom Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockMystic: {
+				DisplayName: Mystical Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockObsidian: {
+				DisplayName: Obsidian Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockPalm: {
+				DisplayName: Palm Wood Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockPearl: {
+				DisplayName: Pearlwood Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockPrincess: {
+				DisplayName: Princess Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockPumpkin: {
+				DisplayName: Pumpkin Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockRoyal.DisplayName: Royal Clock
+
+			WallClockSandstone: {
+				DisplayName: Ancient Sandstone Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockShade: {
+				DisplayName: Shadewood Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockSpooky: {
+				DisplayName: Spooky Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockSteam: {
+				DisplayName: Steampunk Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockSun: {
+				DisplayName: Skyware Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockWood: {
+				DisplayName: Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			Wallomatic: {
+				DisplayName: Wall-O-Matic
+				Tooltip: Used for crafting special walls
+			}
+
+			WardrobeBoreal.DisplayName: Boreal Wood Wardrobe
+			WardrobeEbon.DisplayName: Ebonwood Wardrobe
+			WardrobeMahogany.DisplayName: Rich Mahogany Wardrobe
+			WardrobePalm.DisplayName: Palm Wood Wardrobe
+			WardrobePearl.DisplayName: Pearlwood Wardrobe
+			WardrobePrincess.DisplayName: Princess Wardrobe
+			WardrobeSandstone.DisplayName: Sandstone Wardrobe
+			WardrobeShade.DisplayName: Shadewood Wardrobe
+			WardrobeWood.DisplayName: Wardrobe
+
+			Windmill: {
+				DisplayName: Windmill
+				Tooltip: "'A small one, that is'"
+			}
+
+			WolfSkin.DisplayName: Wolf Skin
+
+			WoodenCrate: {
+				DisplayName: Ancient Wooden Crate
+				Tooltip: "'Can be stacked on top of eachother'"
+			}
+
+			WoodTrellis.DisplayName: Wood Trellis
+
+			WorldMap: {
+				DisplayName: World Map
+				Tooltip: "'It's old.'"
+			}
+
+			YellowBanner.DisplayName: Vibrant Yellow Banner
+			YellowBannerLarge.DisplayName: Large Yellow Banner
+
+			BagCattails: {
+				DisplayName: Magic Seed Bag (Cattail)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagFlowers: {
+				DisplayName: Magic Seed Bag (Flower)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagGrass: {
+				DisplayName: Magic Seed Bag (Grass)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagHerbs: {
+				DisplayName: Magic Seed Bag (Herb)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagLilyPads: {
+				DisplayName: Magic Seed Bag (Lily Pad)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagMushrooms: {
+				DisplayName: Magic Seed Bag (Mushrooms)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagOasisVegetation: {
+				DisplayName: Magic Seed Bag (Oasis Plants)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagPlaceholder: {
+				DisplayName: Magic Seed Bag
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagSeaOats: {
+				DisplayName: Magic Seed Bag (Sea Oat)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagSeaweed: {
+				DisplayName: Magic Seed Bag (Seaweed)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			BagVines: {
+				DisplayName: Magic Seed Bag (Vine)
+				Tooltip:
+					'''
+					Used with seeds to place matching plants
+					<right> while holding to choose plant type
+					Press Up/Down to cycle through styles
+					'Can grow anywhere!'
+					'''
+			}
+
+			CabinetAsh.DisplayName: Ash Wood Cabinet
+			CabinetBalloon.DisplayName: Balloon Cabinet
+			CabinetBamboo.DisplayName: Bamboo Cabinet
+			CabinetCoral.DisplayName: Reef Cabinet
+			CabinetLesion.DisplayName: Lesion Cabinet
+			CabinetNebula.DisplayName: Nebula Cabinet
+			CabinetSandstone.DisplayName: Sandstone Cabinet
+			CabinetSolar.DisplayName: Solar Cabinet
+			CabinetSpider.DisplayName: Spider Cabinet
+			CabinetStardust.DisplayName: Stardust Cabinet
+			CabinetVortex.DisplayName: Vortex Cabinet
+			EndTableAsh.DisplayName: Ash Wood End Table
+			EndTableBalloon.DisplayName: Balloon End Table
+			EndTableCoral.DisplayName: Reef End Table
+			MirrorAsh.DisplayName: Ash Wood Mirror
+			MossBrick.DisplayName: Decolored Moss Brick
+			MossBrickWall.DisplayName: Decolored Moss Brick Wall
+
+			RubblemakerPileLarge: {
+				DisplayName: Rubblemaker 2.0 (Large Piles)
+				Tooltip:
+					'''
+					Used with materials to place matching piles, stalactites, stalagmites, and pots
+					<right> to toggle placement type and size
+					Press Up/Down to cycle through styles
+					'Not a piledriver nor a placeinator: It's a Rubblemaker'
+					'''
+			}
+
+			RubblemakerPileMedium: {
+				DisplayName: Rubblemaker 2.0 (Medium Piles)
+				Tooltip:
+					'''
+					Used with materials to place matching piles, stalactites, stalagmites, and pots
+					<right> to toggle placement type and size
+					Press Up/Down to cycle through styles
+					'Not a piledriver nor a placeinator: It's a Rubblemaker'
+					'''
+			}
+
+			RubblemakerPileSmall: {
+				DisplayName: Rubblemaker 2.0 (Small Piles)
+				Tooltip:
+					'''
+					Used with materials to place matching piles, stalactites, stalagmites, and pots
+					<right> to toggle placement type and size
+					Press Up/Down to cycle through styles
+					'Not a piledriver nor a placeinator: It's a Rubblemaker'
+					'''
+			}
+
+			RubblemakerPlaceholder: {
+				DisplayName: Rubblemaker 2.0
+				Tooltip:
+					'''
+					Used with materials to place matching piles, stalactites, stalagmites, and pots
+					<right> to toggle placement type and size
+					Press Up/Down to cycle through styles
+					'Not a piledriver nor a placeinator: It's a Rubblemaker'
+					'''
+			}
+
+			RubblemakerPot: {
+				DisplayName: Rubblemaker 2.0 (Pots)
+				Tooltip:
+					'''
+					Used with materials to place matching piles, stalactites, stalagmites, and pots
+					<right> to toggle placement type and size
+					Press Up/Down to cycle through styles
+					'Not a piledriver nor a placeinator: It's a Rubblemaker'
+					'''
+			}
+
+			RubblemakerStalactiteMedium: {
+				DisplayName: Rubblemaker 2.0 (Stalactites & Stalagmites)
+				Tooltip:
+					'''
+					Used with materials to place matching piles, stalactites, stalagmites, and pots
+					<right> to toggle placement type and size
+					Press Up/Down to cycle through styles
+					'Not a piledriver nor a placeinator: It's a Rubblemaker'
+					'''
+			}
+
+			RubblemakerStalactiteSmall: {
+				DisplayName: Rubblemaker 2.0 (Small Stalactites & Stalagmites)
+				Tooltip:
+					'''
+					Used with materials to place matching piles, stalactites, stalagmites, and pots
+					<right> to toggle placement type and size
+					Press Up/Down to cycle through styles
+					'Not a piledriver nor a placeinator: It's a Rubblemaker'
+					'''
+			}
+
+			WallCandelabraAsh.DisplayName: Ash Wood Wall Candelabra
+			WallCandelabraBalloon.DisplayName: Balloon Wall Candelabra
+			WallCandelabraBamboo.DisplayName: Bamboo Wall Candelabra
+			WallCandelabraCoral.DisplayName: Reef Wall Candelabra
+			WallCandelabraLesion.DisplayName: Lesion Wall Candelabra
+			WallCandelabraNebula.DisplayName: Nebula Wall Candelabra
+			WallCandelabraNewSandstone.DisplayName: Sandstone Wall Candelabra
+			WallCandelabraSolar.DisplayName: Solar Wall Candelabra
+			WallCandelabraSpider.DisplayName: Spider Wall Candelabra
+			WallCandelabraStardust.DisplayName: Stardust Wall Candelabra
+			WallCandelabraVortex.DisplayName: Vortex Wall Candelabra
+
+			WallClockAsh: {
+				DisplayName: Ash Wood Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockBalloon: {
+				DisplayName: Balloon Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockBamboo: {
+				DisplayName: Bamboo Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockBlue: {
+				DisplayName: Blue Dungeon Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockCoral: {
+				DisplayName: Reef Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockCrystal: {
+				DisplayName: Crystal Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockGlass: {
+				DisplayName: Glass Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockGreen: {
+				DisplayName: Green Dungeon Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockLesion: {
+				DisplayName: Lesion Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockMartian: {
+				DisplayName: Martian Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockNebula: {
+				DisplayName: Nebula Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockNewSandstone: {
+				DisplayName: Sandstone Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockPink: {
+				DisplayName: Pink Dungeon Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockSlime: {
+				DisplayName: Slime Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockSolar: {
+				DisplayName: Solar Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockSpider: {
+				DisplayName: Spider Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockStardust: {
+				DisplayName: Stardust Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockSunplate: {
+				DisplayName: Sunplate Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WallClockVortex: {
+				DisplayName: Vortex Wall Clock
+				Tooltip: "'Hanging from the wall'"
+			}
+
+			WardrobeAsh.DisplayName: Ash Wood Wardrobe
+		}
+
+		Tiles: {
+			Minifridge: {
+				ContainerName: Minifridge
+				MapEntry: Minifridge
+			}
+
+			Altars.MapEntry: Demon Altar
+			CrimsonAltar.MapEntry: Crimson Altar
+			AntlionEggs.MapEntry: Antlion Eggs
+			Banners.MapEntry: Banner
+			BannersLarge.MapEntry: Banner
+			Barberpole.MapEntry: Barber's Pole
+			BarberpoleLamp.MapEntry: Barber's Pole
+			Baths.MapEntry: Bathtub
+			Beds.MapEntry: Bed
+			Bell.MapEntry: Bell
+			BigChairs.MapEntry: Beanbag Chair
+			Armchair.MapEntry: Armchair
+			BiomeJars.MapEntry: Biome Jar
+			Birdhouses.MapEntry: Birdhouse
+			Blacksmith.MapEntry: Blacksmith's Forge
+			BonsaiTree.MapEntry: Bonsai Tree
+			Bookcases.MapEntry: Bookcase
+			Bottle.MapEntry: Bottle
+			Brazier.MapEntry: Brazier
+			Bust.MapEntry: Bust
+			Cabinets.MapEntry: Mods.CFU.MapObject.Cabinets
+			Cabinet.MapEntry: Cabinet
+			BorealWoodCabinet.MapEntry: Boreal Wood Cabinet
+			PalmWoodCabinet.MapEntry: Palm Wood Cabinet
+			RichMahoganyCabinet.MapEntry: Rich Mahogany Cabinet
+			EbonwoodCabinet.MapEntry: Ebonwood Cabinet
+			ShadewoodCabinet.MapEntry: Shadewood Cabinet
+			PearlwoodCabinet.MapEntry: Pearlwood Cabinet
+			SpookyCabinet.MapEntry: Spooky Cabinet
+			CactusCabinet.MapEntry: Cactus Cabinet
+			PumpkinCabinet.MapEntry: Pumpkin Cabinet
+			MushroomCabinet.MapEntry: Mushroom Cabinet
+			GlassCabinet.MapEntry: Glass Cabinet
+			SteampunkCabinet.MapEntry: Steampunk Cabinet
+			SkywareCabinet.MapEntry: Skyware Cabinet
+			HoneyCabinet.MapEntry: Honey Cabinet
+			SlimeCabinet.MapEntry: Slime Cabinet
+			MeteoriteCabinet.MapEntry: Meteorite Cabinet
+			GraniteCabinet.MapEntry: Granite Cabinet
+			MarbleCabinet.MapEntry: Marble Cabinet
+			BoneCabinet.MapEntry: Bone Cabinet
+			FleshCabinet.MapEntry: Flesh Cabinet
+			LihzarhdCabinet.MapEntry: Lihzarhd Cabinet
+			ObsidianCabinet.MapEntry: Obsidian Cabinet
+			GoldenCabinet.MapEntry: Golden Cabinet
+			MartianCabinet.MapEntry: Martian Cabinet
+			BlueDungeonCabinet.MapEntry: Blue Dungeon Cabinet
+			GreenDungeonCabinet.MapEntry: Green Dungeon Cabinet
+			PinkDungeonCabinet.MapEntry: Pink Dungeon Cabinet
+			CrystalCabinet.MapEntry: Crystal Cabinet
+			DynastyCabinet.MapEntry: Dynasty Cabinet
+			FrozenCabinet.MapEntry: Frozen Cabinet
+			LivingWoodCabinet.MapEntry: Living Wood Cabinet
+			Candelabras.MapEntry: Candelabra
+			Candles.MapEntry: Candle
+			CanopyBeds.MapEntry: Bed
+			Chairs.MapEntry: Chair
+			Chalices.MapEntry: Chalices
+			Chandeliers.MapEntry: Chandelier
+			ChessPieces.MapEntry: Chess Piece
+			Chests.MapEntry: Princess Chest
+			MysticChest.MapEntry: Mystical Chest
+			RoyalChest.MapEntry: Royal Chest
+			SandstoneChest.MapEntry: Sandstone Urn
+			Clocks.MapEntry: Clock
+			Coatrack.MapEntry: Coatrack
+			CoinStashes.MapEntry: Coin Stash
+			Counters.MapEntry: Kitchen Counter
+			CultivationBox.MapEntry: Cultivation Box
+			DeerHead.MapEntry: Deer Head
+			DiningTable.MapEntry: Table
+			DoorsClosed.MapEntry: Door
+			DoorsOpen.MapEntry: Door
+			Dressers.MapEntry: Princess Dresser
+			MysticDresser.MapEntry: Mystical Dresser
+			RoyalDresser.MapEntry: Royal Dresser
+			SandstoneDresser.MapEntry: Sandstone Dresser
+			Easel.MapEntry: Easel
+			Eggnog.MapEntry: Eggnog
+			EndTables.MapEntry: End Table
+			EndTablesExtra.MapEntry: End Table
+			FallenLog.MapEntry: Fallen Log
+			FilingCabinet.MapEntry: Filing Cabinet
+			Fishhook.MapEntry: Fishhook
+			Food1x1.MapEntry: Sugar Cookie
+			GingerbreadCookie.MapEntry: Gingerbread Cookie
+			Ale.MapEntry: Ale
+			Sake.MapEntry: Sake
+			Food2x1.MapEntry: Bowl of Soup
+			CookedFish.MapEntry: Cooked Fish
+			PadThai.MapEntry: Pad Thai
+			Pho.MapEntry: Pho
+			Sashimi.MapEntry: Sashimi
+			FountainGiant.MapEntry: Fountain
+			FountainMarble.MapEntry: Fountain
+			Fridge.MapEntry: Fridge
+			Gargoyle.MapEntry: Gargoyle
+			GiantButtercup.MapEntry: Plant
+			Globe.MapEntry: Globe
+			GnomeHouse.MapEntry: Gnome House
+			Gnomes.MapEntry: Gnome
+			GunRack.MapEntry: Gun Rack
+			Hairspray.MapEntry: Bottle
+			HangingGargoyle.MapEntry: Gargoyle
+			HangingHerbs.MapEntry: Hanging Herb
+			Hardsmith.MapEntry: Blacksmith's Forge
+			Harps.MapEntry: Harp
+			Hellsmith.MapEntry: Hellsmith's Forge
+			Horus.MapEntry: Eye of Horus
+			Ink.MapEntry: Ink
+			Keg.MapEntry: Keg
+			KegLarge.MapEntry: Keg
+			KegLargeFront.MapEntry: Keg
+			KitchenSinks.MapEntry: Kitchen Sink
+			KnifeRack.MapEntry: Knife Rack
+			KrampusHead.MapEntry: Krampus Head
+			Ladder.MapEntry: Ladder
+			Lamps.MapEntry: Lamp
+			Lanterns.MapEntry: Lantern
+			LargeCoatrack.MapEntry: Coatrack
+			LargeGlobe.MapEntry: Globe
+			Larva.MapEntry: Queen Bee Larva
+			LifeCrystal.MapEntry: Life Crystal
+			LifeFruit.MapEntry: Life Fruit
+			MannequinHead.MapEntry: Mannequin Head
+			MedusaHead.MapEntry: Medusa Head
+			MintJar.MapEntry: Jar O' Mints
+			MiracleJungleVegetation.MapEntry: Mods.CFU.MapObject.MiracleJungleVegetation
+			MiracleLilyPads.MapEntry: Mods.CFU.MapObject.MiracleLilyPads
+			MiracleOasisVegetation.MapEntry: Mods.CFU.MapObject.MiracleOasisVegetation
+			MiracleSeaOats.MapEntry: Mods.CFU.MapObject.MiracleSeaOats
+			MiracleShortPlants.MapEntry: Mods.CFU.MapObject.MiracleShortPlants
+			MiracleTallPlants.MapEntry: Mods.CFU.MapObject.MiracleTallPlants
+			Mirrors.MapEntry: Mirror
+			ModelCastle.MapEntry: Model Castle
+			Mug.MapEntry: Mug
+			MysteriousTablet.MapEntry: Mysterious Tablet
+			NoticeBoard.MapEntry: Notice Board
+			OrnateBookcase.MapEntry: Bookcase
+			OrnateChandeliers.MapEntry: Chandelier
+			OrnateFridge.MapEntry: Fridge
+			OrnateThrones.MapEntry: Throne
+			OrnateToolracks.MapEntry: Fireplace Rack
+			Paintings2xX.MapEntry: Painting
+			Paintings3x2.MapEntry: Painting
+			Paintings4xX.MapEntry: Painting
+			Paintings5x4.MapEntry: Painting
+			Paper.MapEntry: Paper Stack
+			Pianos.MapEntry: Piano
+			PlanteraBulb.MapEntry: Plantera's Bulb
+			PlantPots.MapEntry: Plant Pot
+			Plants.MapEntry: Plants
+			Posters.MapEntry: Poster
+			PotionHolder.MapEntry: Potion Holder
+			Pots.MapEntry: Pot
+			Poufs.MapEntry: Pouf
+			Stool.MapEntry: Stool
+			Printer.MapEntry: Printer
+			Printer3D.MapEntry: 3D Printer
+			Pudding.MapEntry: Christmas Pudding
+			RabbitHole.MapEntry: Rabbit Hole
+			Radiator.MapEntry: Radiator
+			ShadowOrbCrimsonHeart.MapEntry: Shadow Orb
+			CrimsonHeart.MapEntry: Crimson Heart
+			Signs.MapEntry: Sign
+			Sinks.MapEntry: Sink
+			SkyrimMap.MapEntry: World Map
+			SmallCactus.MapEntry: Cactus
+			Sofas.MapEntry: Sofa
+			SpinningWheel.MapEntry: Spinning Wheel
+			Spire.MapEntry: Spire
+			SpireLarge.MapEntry: Spire
+			SpireSmall.MapEntry: Spire
+			StatueAzura.MapEntry: Statue
+			StatueClavicus.MapEntry: Statue
+			StatueEquine.MapEntry: Statue
+			Statues3x2.MapEntry: Collectable Inaction Figure
+			Statues3x3.MapEntry: Collectable Inaction Figure
+			Statues3x4.MapEntry: Collectable Inaction Figure
+			StglCthulhu.MapEntry: Stained Glass Window
+			StglDryad.MapEntry: Stained Glass Window
+			StglLunarPillars.MapEntry: Stained Glass Window
+			Stoves.MapEntry: Stove
+			StrangePlants.MapEntry: Plant
+			OrangePlant.MapEntry: Plant
+			GreenPlant.MapEntry: Plant
+			RedPlant.MapEntry: Plant
+			StuffedTurkey.MapEntry: Stuffed Turkey
+			Tables.MapEntry: Table
+			Tapestries.MapEntry: Tapestry
+			TapestriesLarge.MapEntry: Tapestry
+			Telescope.MapEntry: Telescope
+			TelescopesLarge.MapEntry: Telescope
+			Throne.MapEntry: Throne
+			TipJar.MapEntry: Tip Jar
+			Toolrack.MapEntry: Fireplace Rack
+			Torches.MapEntry: Torch
+			WallCandelabras.MapEntry: Wall Candelabra
+			WallClocks.MapEntry: Wall Clock
+			Wallomatic.MapEntry: Wall-O-Matic
+			Wardrobes.MapEntry: Wardrobe
+			Windmill.MapEntry: Windmill
+			WolfSkin.MapEntry: Animal Skin
+			WoodenCrate.MapEntry: Wooden Crate
+			Workbenches.MapEntry: Workbench
+			WorldMap.MapEntry: World Map
+			SpiderCabinet.MapEntry: Spider Cabinet
+			LesionCabinet.MapEntry: Lesion Cabinet
+			SolarCabinet.MapEntry: Solar Cabinet
+			VortexCabinet.MapEntry: Vortex Cabinet
+			NebulaCabinet.MapEntry: Nebula Cabinet
+			StardustCabinet.MapEntry: Stardust Cabinet
+			SandstoneCabinet.MapEntry: Sandstone Cabinet
+			BambooCabinet.MapEntry: Bamboo Cabinet
+			ReefCabinet.MapEntry: Reef Cabinet
+			BalloonCabinet.MapEntry: Balloon Cabinet
+			AshWoodCabinet.MapEntry: Ash Wood Cabinet
+			MiracleAbigailsFlower.MapEntry: Mods.CFU.MapObject.MiracleAbigailsFlower
+			MiracleGlowTulip.MapEntry: Mods.CFU.MapObject.MiracleGlowTulip
+		}
+	}
+}
