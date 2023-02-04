@@ -7,12 +7,7 @@ namespace CFU.Items
     public class OrganPipe : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Blocks/OrganPipe";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Organ Pipe");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         public override void SetDefaults()
         {
             Item.width = 12;

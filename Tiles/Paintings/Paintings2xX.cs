@@ -31,14 +31,12 @@ namespace CFU.Tiles
                 TileObjectData.addSubTile(i);
             }
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Painting");
-            AddMapEntry(new Color(95, 135, 36), name);
-            AddMapEntry(new Color(120, 189, 108), name);
-            AddMapEntry(new Color(75, 79, 89), name);
-            AddMapEntry(new Color(225, 195, 52), name);
-            AddMapEntry(new Color(1, 143, 246), name);
-            AddMapEntry(new Color(116, 96, 96), name);
+            AddMapEntry(new Color(95, 135, 36));
+            AddMapEntry(new Color(120, 189, 108));
+            AddMapEntry(new Color(75, 79, 89));
+            AddMapEntry(new Color(225, 195, 52));
+            AddMapEntry(new Color(1, 143, 246));
+            AddMapEntry(new Color(116, 96, 96));
             DustType = -1;
         }
 

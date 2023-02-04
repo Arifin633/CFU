@@ -40,9 +40,7 @@ namespace CFU.Tiles
             
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             AdjTiles = new int[] { TileID.Beds };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Bed");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
             DustType = -1;
         }
 

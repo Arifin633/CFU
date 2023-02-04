@@ -7,13 +7,7 @@ namespace CFU.Items
     public class StglDryad : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Stained Glass Windows/StglDryad";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Stained Glass Window");
-            Tooltip.SetDefault("'It depicts the Dryad'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

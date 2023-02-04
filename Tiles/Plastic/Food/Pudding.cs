@@ -18,9 +18,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Christmas Pudding");
-            AddMapEntry(new Color(224, 219, 236), name);
+            AddMapEntry(new Color(224, 219, 236));
             DustType = -1;
         }
 

@@ -7,13 +7,7 @@ namespace CFU.Items
     public class WallClockStardust : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockStardust";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Stardust Wall Clock");
-            Tooltip.SetDefault("'Hanging from the wall'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

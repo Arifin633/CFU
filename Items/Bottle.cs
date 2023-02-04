@@ -8,13 +8,7 @@ namespace CFU.Items
     public class Bottle : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Bottle";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Bottle of Alcohol");
-            Tooltip.SetDefault("Right-click after placing if you dislike the taste");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

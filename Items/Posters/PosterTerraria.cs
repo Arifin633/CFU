@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PosterTerraria : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Posters/PosterTerraria";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Terraria Poster");
-            Tooltip.SetDefault("'This looks familiar...'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

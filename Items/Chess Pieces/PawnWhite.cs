@@ -7,12 +7,7 @@ namespace CFU.Items
     public class PawnWhite : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Chess Pieces/PawnWhite";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("White Pawn");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

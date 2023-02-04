@@ -50,13 +50,11 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.AnchorBottom = AnchorData.Empty;
             TileObjectData.addAlternate(9);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Biome Jar");
-            AddMapEntry(new Color(28, 216, 94), name);
-            AddMapEntry(new Color(143, 215, 29), name);
-            AddMapEntry(new Color(141, 137, 223), name);
-            AddMapEntry(new Color(208, 80, 80), name);
-            AddMapEntry(new Color(78, 193, 227), name);
+            AddMapEntry(new Color(28, 216, 94));
+            AddMapEntry(new Color(143, 215, 29));
+            AddMapEntry(new Color(141, 137, 223));
+            AddMapEntry(new Color(208, 80, 80));
+            AddMapEntry(new Color(78, 193, 227));
             HitSound = SoundID.Shatter;
         }
 

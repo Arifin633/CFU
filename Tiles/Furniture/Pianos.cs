@@ -17,9 +17,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = false;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Piano");
-            AddMapEntry(new Color(127, 92, 69), name);
+            AddMapEntry(new Color(127, 92, 69));
             DustType = -1;
         }
 

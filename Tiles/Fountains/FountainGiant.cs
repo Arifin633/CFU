@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(2, 6);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Fountain");
-            AddMapEntry(new Color(128, 128, 128), name);
+            AddMapEntry(new Color(128, 128, 128));
             DustType = DustID.Stone;
         }
 

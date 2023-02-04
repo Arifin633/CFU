@@ -25,9 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Rabbit Hole");
-            AddMapEntry(new Color(151, 107, 75), name);
+            AddMapEntry(new Color(151, 107, 75));
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

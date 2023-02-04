@@ -7,12 +7,7 @@ namespace CFU.Items
     public class FountainGiant : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Fountains/FountainGiant";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Giant Moon Lord Fountain");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

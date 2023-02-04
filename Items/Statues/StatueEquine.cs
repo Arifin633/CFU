@@ -7,13 +7,7 @@ namespace CFU.Items
     public class StatueEquine : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Statues/StatueEquine";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Horse Statue");
-            Tooltip.SetDefault("'Majestic'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

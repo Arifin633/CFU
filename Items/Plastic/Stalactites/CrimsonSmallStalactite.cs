@@ -7,13 +7,7 @@ namespace CFU.Items
     public class CrimsonSmallStalactite : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Plastic/Stalactites/CrimsonSmallStalactite";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Small Crimstone Stalactite");
-            Tooltip.SetDefault("'*A plastic replica'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

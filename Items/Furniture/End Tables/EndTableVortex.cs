@@ -8,12 +8,7 @@ namespace CFU.Items
     public class EndTableVortex : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableVortex";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Vortex End Table");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

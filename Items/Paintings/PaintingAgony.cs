@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PaintingAgony : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Paintings/PaintingAgony";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("My Internet Connection Is Too Bad For Me To Do Anything Online");
-            Tooltip.SetDefault("'Chadwick M. deVries'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

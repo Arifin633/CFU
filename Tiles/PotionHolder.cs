@@ -90,10 +90,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 22 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Potion Holder");
-            AddMapEntry(new Color(191, 142, 111), name);
-            AddMapEntry(new Color(133, 213, 247), name);
+            AddMapEntry(new Color(191, 142, 111));
+            AddMapEntry(new Color(133, 213, 247));
             DustType = -1;
         }
 

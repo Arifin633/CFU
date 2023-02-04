@@ -27,9 +27,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Gnome");
-            AddMapEntry(new Color(222, 152, 127), name);
+            AddMapEntry(new Color(222, 152, 127));
             DustType = -1;
         }
 

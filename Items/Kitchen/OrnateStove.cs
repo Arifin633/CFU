@@ -7,13 +7,7 @@ namespace CFU.Items
     public class OrnateStove : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Kitchen/OrnateStove";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ornate Stove");
-            Tooltip.SetDefault("Used for smelting ore\nUsed for cooking food\n'Looks fancier and older than a normal stove'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

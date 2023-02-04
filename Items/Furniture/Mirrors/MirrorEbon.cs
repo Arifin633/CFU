@@ -7,12 +7,7 @@ namespace CFU.Items
     public class MirrorEbon : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Mirrors/MirrorEbon";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ebonwood Mirror");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -7,12 +7,7 @@ namespace CFU.Items
     public class StatueTortoise : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Statues/StatueTortoise";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Giant Tortoise Collectable Inaction Figure");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

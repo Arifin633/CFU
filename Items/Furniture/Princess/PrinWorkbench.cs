@@ -8,12 +8,7 @@ namespace CFU.Items
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Princess/PrinWorkbench";
 
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Princess Work Bench");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

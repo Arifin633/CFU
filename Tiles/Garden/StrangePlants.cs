@@ -27,18 +27,10 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Plant");
-            AddMapEntry(new Color(113, 45, 133), name);
-            name = CreateMapEntryName("OrangePlant");
-            name.SetDefault("Plant");
-            AddMapEntry(new Color(235, 137, 2), name);
-            name = CreateMapEntryName("GreenPlant");
-            name.SetDefault("Plant");
-            AddMapEntry(new Color(41, 152, 135), name);
-            name = CreateMapEntryName("RedPlant");
-            name.SetDefault("Plant");
-            AddMapEntry(new Color(198, 19, 78), name);
+            AddMapEntry(new Color(113, 45, 133));
+            AddMapEntry(new Color(235, 137, 2));
+            AddMapEntry(new Color(41, 152, 135));
+            AddMapEntry(new Color(198, 19, 78));
             HitSound = SoundID.Grass;
         }
 

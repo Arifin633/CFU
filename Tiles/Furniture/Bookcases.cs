@@ -19,9 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Bookcases };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Bookcase");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
             DustType = -1;
         }
 

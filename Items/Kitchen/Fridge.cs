@@ -7,12 +7,7 @@ namespace CFU.Items
     public class Fridge : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Kitchen/Fridge";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Fridge");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

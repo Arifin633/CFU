@@ -18,9 +18,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Chalices");
-            AddMapEntry(new Color(253, 221, 3), name);
+            AddMapEntry(new Color(253, 221, 3));
             DustType = -1;
         }
 

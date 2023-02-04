@@ -7,12 +7,7 @@ namespace CFU.Items
     public class StatueLunaticCultist : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Statues/StatueLunaticCultist";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Lunatic Cultist Collectable Inaction Figure");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -8,13 +8,7 @@ namespace CFU.Items
     public class BagMushrooms : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Magic Seed Bags/BagMushrooms";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Magic Seed Bag (Mushrooms)");
-            Tooltip.SetDefault("Used with seeds to place matching plants\n<right> while holding to choose plant type\nPress Up/Down to cycle through styles\n'Can grow anywhere!'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

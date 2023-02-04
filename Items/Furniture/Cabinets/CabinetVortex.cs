@@ -7,12 +7,7 @@ namespace CFU.Items
     public class CabinetVortex : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Cabinets/CabinetVortex";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Vortex Cabinet");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -7,12 +7,7 @@ namespace CFU.Items
     public class SunflowerWall : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Walls/Blocks/SunflowerWall";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Sunflower Wall");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 40;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 40;
         public override void SetDefaults()
         {
             Item.width = 12;

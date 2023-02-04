@@ -7,13 +7,7 @@ namespace CFU.Items
     public class MannequinHead : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Barber/MannequinHead";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Mannequin Head");
-            // Tooltip.SetDefault("'Right-click after placing to change hairstyle'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

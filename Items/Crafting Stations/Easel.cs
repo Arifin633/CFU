@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Easel : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Crafting Stations/Easel";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Easel");
-            Tooltip.SetDefault("Used to make paintings");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

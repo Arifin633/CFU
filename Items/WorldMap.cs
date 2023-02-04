@@ -7,13 +7,7 @@ namespace CFU.Items
     public class WorldMap : ModItem
     {
         public override string Texture => "CFU/Textures/Items/WorldMap";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("World Map");
-            Tooltip.SetDefault("'It's old.'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

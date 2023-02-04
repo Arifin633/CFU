@@ -22,9 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.RandomStyleRange = 4;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Antlion Eggs");
-            AddMapEntry(new Color(198, 134, 88), name);
+            AddMapEntry(new Color(198, 134, 88));
             DustType = DustID.Sand;
             HitSound = SoundID.NPCDeath1;
         }

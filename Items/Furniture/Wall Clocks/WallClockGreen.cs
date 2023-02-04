@@ -7,13 +7,7 @@ namespace CFU.Items
     public class WallClockGreen : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockGreen";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Green Dungeon Wall Clock");
-            Tooltip.SetDefault("'Hanging from the wall'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             ;

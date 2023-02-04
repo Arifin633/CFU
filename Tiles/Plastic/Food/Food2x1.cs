@@ -23,25 +23,10 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 0);
             TileObjectData.addTile(Type);
 
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Bowl of Soup");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("CookedFish");
-            name.SetDefault("Cooked Fish");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("CookedShrimp");
-            name.SetDefault("Cooked Shrimp");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("PadThai");
-            name.SetDefault("Pad Thai");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("Pho");
-            name.SetDefault("Pho");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("Sashimi");
-            name.SetDefault("Sashimi");
-            AddMapEntry(new Color(224, 219, 236), name);
-
+            for(int i = 0; i <= 3; i++)
+            {
+                AddMapEntry(new Color(224, 219, 236), this.GetLocalization("MapEntry" + i));
+            }
             DustType = -1;
             AnimationFrameHeight = 20;
         }

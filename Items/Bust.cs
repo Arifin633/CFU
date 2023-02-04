@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Bust : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Bust";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Bust");
-            Tooltip.SetDefault("'It's some Roman Emperor or something'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

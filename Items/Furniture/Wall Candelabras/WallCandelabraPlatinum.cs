@@ -7,12 +7,7 @@ namespace CFU.Items
     public class WallCandelabraPlatinum : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Candelabras/WallCandelabraPlatinum";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Platinum Wall Candelabra");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

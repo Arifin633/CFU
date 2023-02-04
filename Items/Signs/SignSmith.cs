@@ -7,13 +7,7 @@ namespace CFU.Items
     public class SignSmith : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Signs/SignSmith";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Blacksmith Sign");
-            Tooltip.SetDefault("'Shows an anvil'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

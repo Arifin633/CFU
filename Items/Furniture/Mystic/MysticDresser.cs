@@ -7,12 +7,7 @@ namespace CFU.Items
     public class MysticDresser : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticDresser";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Mystical Dresser");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 26;

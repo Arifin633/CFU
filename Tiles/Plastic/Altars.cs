@@ -24,12 +24,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { 26 };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Demon Altar");
-            AddMapEntry(new Color(119, 101, 125), name);
-            name = CreateMapEntryName("CrimsonAltar");
-            name.SetDefault("Crimson Altar");
-            AddMapEntry(new Color(214, 127, 133), name);
+            AddMapEntry(new Color(119, 101, 125), this.GetLocalization("MapEntry0"));
+            AddMapEntry(new Color(214, 127, 133), this.GetLocalization("MapEntry1"));
             HitSound = null;
         }
 

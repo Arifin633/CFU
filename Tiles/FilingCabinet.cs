@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Filing Cabinet");
-            AddMapEntry(new Color(115, 158, 115), name);
+            AddMapEntry(new Color(115, 158, 115));
             DustType = -1;
         }
 

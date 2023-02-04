@@ -7,12 +7,7 @@ namespace CFU.Items
     public class CabinetPink : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Cabinets/CabinetPink";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Pink Dungeon Cabinet");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

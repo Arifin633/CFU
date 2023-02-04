@@ -36,19 +36,10 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Containers };
             ChestDrop = ModContent.ItemType<Items.PrinChest>();
-
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault(Names[0]);
-            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
-            name = CreateMapEntryName("MysticChest");
-            name.SetDefault(Names[1]);
-            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
-            name = CreateMapEntryName("RoyalChest");
-            name.SetDefault(Names[2]);
-            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
-            name = CreateMapEntryName("SandstoneChest");
-            name.SetDefault(Names[3]);
-            AddMapEntry(new Color(174, 129, 92), name, MapChestName);
+            for(int i = 0; i <= 3; i++)
+            {
+                AddMapEntry(new Color(174, 129, 92), this.GetLocalization("MapEntry" + i), MapChestName);
+            }
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
@@ -71,9 +62,6 @@ namespace CFU.Tiles
 
             return name + ": " + Main.chest[chest].name;
         }
-
-        public static readonly string[] Names =
-            { "Princess Chest", "Mystical Chest", "Royal Chest", "Sandstone Urn" };
 
         static readonly int[] Styles =
             { ModContent.ItemType<Items.PrinChest>(),

@@ -27,20 +27,20 @@ namespace ChadsFurnitureUpdated
 
         }
 
-        /* This allows the tML function `ContainerName' to be hooked into.
-           See the actual hook below for more details. */
-        public static event ILContext.Manipulator ContainerName
-        {
-            add
-            {
-                HookEndpointManager.Modify(typeof(TileLoader).GetMethod("ContainerName"), value);
-            }
-
-            remove
-            {
-                HookEndpointManager.Unmodify(typeof(TileLoader).GetMethod("ContainerName"), value);
-            }
-        }
+        // /* This allows the tML function `ContainerName' to be hooked into.
+        //    See the actual hook below for more details. */
+        // public static event ILContext.Manipulator ContainerName
+        // {
+        //     add
+        //     {
+        //         HookEndpointManager.Modify(typeof(TileLoader).GetMethod("ContainerName"), value);
+        //     }
+        // 
+        //     remove
+        //     {
+        //         HookEndpointManager.Unmodify(typeof(TileLoader).GetMethod("ContainerName"), value);
+        //     }
+        // }
 
         public static void SetupHooks()
         {
@@ -262,31 +262,31 @@ namespace ChadsFurnitureUpdated
                 });
             };
 
-            /* The following hook replaces `TileLoader.ContainerName' and,
-               if the container currently in use matches one of our tile
-               types, returns a default name based on the tile's style. */
-            ContainerName += (il) =>
-            {
-                var c = new ILCursor(il);
-                c.Next = null;
-                c.GotoPrev(MoveType.Before, i => i.MatchRet());
-                c.EmitDelegate<Func<string, string>>(name =>
-                {
-                    Player player = Main.LocalPlayer;
-                    int i = player.chestX;
-                    int j = player.chestY;
-                    Tile tile = Main.tile[i, j];
-                    int frameX = tile.TileFrameX;
-                    int type = tile.TileType;
-                    if (type == ModContent.TileType<Tiles.Chests>())
-                        return Tiles.Chests.Names[(frameX / 36)];
-                    else if (type == ModContent.TileType<Tiles.Dressers>())
-                        return Tiles.Dressers.Names[(frameX / 54)];
-                    else if (type == ModContent.TileType<Tiles.Cabinets>())
-                        return Tiles.Cabinets.Names[(frameX / 36)];
-                    else return name;
-                });
-            };
+            // /* The following hook replaces `TileLoader.ContainerName' and,
+            //    if the container currently in use matches one of our tile
+            //    types, returns a default name based on the tile's style. */
+            // ContainerName += (il) =>
+            // {
+            //     var c = new ILCursor(il);
+            //     c.Next = null;
+            //     c.GotoPrev(MoveType.Before, i => i.MatchRet());
+            //     c.EmitDelegate<Func<string, string>>(name =>
+            //     {
+            //         Player player = Main.LocalPlayer;
+            //         int i = player.chestX;
+            //         int j = player.chestY;
+            //         Tile tile = Main.tile[i, j];
+            //         int frameX = tile.TileFrameX;
+            //         int type = tile.TileType;
+            //         if (type == ModContent.TileType<Tiles.Chests>())
+            //             return Tiles.Chests.Names[(frameX / 36)];
+            //         else if (type == ModContent.TileType<Tiles.Dressers>())
+            //             return Tiles.Dressers.Names[(frameX / 54)];
+            //         else if (type == ModContent.TileType<Tiles.Cabinets>())
+            //             return Tiles.Cabinets.Names[(frameX / 36)];
+            //         else return name;
+            //     });
+            // };
         }
     }
 }

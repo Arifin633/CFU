@@ -7,12 +7,7 @@ namespace CFU.Items
     public class RoyalPlatform : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalPlatform";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Royal Platform");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 26;

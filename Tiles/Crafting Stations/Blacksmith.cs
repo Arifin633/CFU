@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(1, 2);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Blacksmith's Forge");
-            AddMapEntry(new Color(144, 148, 144), name);
+            AddMapEntry(new Color(144, 148, 144));
             AdjTiles = new int[] { TileID.Furnaces, TileID.Anvils };
             AnimationFrameHeight = 56;
         }

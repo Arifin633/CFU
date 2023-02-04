@@ -7,13 +7,7 @@ namespace CFU.Items
     public class StrangePlantOrange : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Garden/Plants/StrangePlantOrange";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Strange Seed");
-            Tooltip.SetDefault("'Grows a Strange Plant small enough to fit in a plant pot'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

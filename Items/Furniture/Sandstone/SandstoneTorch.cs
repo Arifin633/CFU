@@ -24,12 +24,7 @@ namespace CFU.Items
             }
         }
 
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ancient Sandstone Torch");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         public override void SetDefaults()
         {
             Item.flame = true;

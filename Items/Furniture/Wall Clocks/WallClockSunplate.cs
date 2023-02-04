@@ -7,13 +7,7 @@ namespace CFU.Items
     public class WallClockSunplate : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Wall Clocks/WallClockSunplate";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Sunplate Wall Clock");
-            Tooltip.SetDefault("'Hanging from the wall'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             ;

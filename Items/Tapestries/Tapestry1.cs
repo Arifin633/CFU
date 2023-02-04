@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Tapestry1 : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Tapestries/Tapestry1";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Tapestry");
-            Tooltip.SetDefault("'Depicts King Jacques facing off against the Crimson menace'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -8,12 +8,7 @@ namespace CFU.Items
     public class LeadGlassWall : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Walls/Blocks/LeadGlassWall";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Lead Glass Wall");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
         public override void SetDefaults()
         {
             Item.width = 12;

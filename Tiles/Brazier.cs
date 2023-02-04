@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Width = 2;
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Brazier");
-            AddMapEntry(new Color(81, 81, 89), name);
+            AddMapEntry(new Color(81, 81, 89));
             DustType = -1;
         }
 

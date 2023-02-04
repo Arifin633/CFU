@@ -36,18 +36,10 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Dressers };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault(Names[0]);
-            AddMapEntry(new Color(127, 92, 69), name, MapChestName);
-            name = CreateMapEntryName("MysticDresser");
-            name.SetDefault(Names[1]);
-            AddMapEntry(new Color(127, 92, 69), name, MapChestName);
-            name = CreateMapEntryName("RoyalDresser");
-            name.SetDefault(Names[2]);
-            AddMapEntry(new Color(127, 92, 69), name, MapChestName);
-            name = CreateMapEntryName("SandstoneDresser");
-            name.SetDefault(Names[3]);
-            AddMapEntry(new Color(127, 92, 69), name, MapChestName);
+            for(int i = 0; i <= 3; i++)
+            {
+                AddMapEntry(new Color(127, 92, 69), this.GetLocalization("MapEntry" + i), MapChestName);
+            }
             DustType = -1;
         }
 
@@ -101,10 +93,7 @@ namespace CFU.Tiles
 
             return true;
         }
-
-        public static readonly string[] Names =
-            { "Princess Dresser", "Mystical Dresser", "Royal Dresser" ,"Sandstone Dresser" };
-
+        
         static readonly int[] Styles =
             { ModContent.ItemType<Items.PrinDresser>(),
               ModContent.ItemType<Items.MysticDresser>(),

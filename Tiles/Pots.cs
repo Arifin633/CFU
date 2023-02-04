@@ -28,9 +28,7 @@ namespace CFU.Tiles
             }
             TileObjectData.addTile(Type);
             HitSound = null;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Pot");
-            AddMapEntry(new Color(111, 71, 61), name);
+            AddMapEntry(new Color(111, 71, 61));
         }
 
         public override bool CreateDust(int i, int j, ref int type)

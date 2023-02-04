@@ -22,9 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("World Map");
-            AddMapEntry(new Color(147, 123, 51), name);
+            AddMapEntry(new Color(147, 123, 51));
             DustType = -1;
             HitSound = SoundID.Grass;
         }

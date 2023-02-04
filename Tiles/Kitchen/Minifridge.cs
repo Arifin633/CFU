@@ -37,10 +37,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Containers };
             ChestDrop = ModContent.ItemType<Items.Minifridge>();
-            ContainerName.SetDefault("Minifridge");
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Minifridge");
-            AddMapEntry(new Color(81, 81, 89), name, MapChestName);
+            AddMapEntry(new Color(81, 81, 89), this.GetLocalization("MapEntry"), MapChestName);
             DustType = -1;
         }
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;

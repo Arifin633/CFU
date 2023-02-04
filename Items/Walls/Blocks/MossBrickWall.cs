@@ -8,12 +8,7 @@ namespace CFU.Items
     public class MossBrickWall : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Walls/Blocks/MossBrickWall";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Decolored Moss Brick Wall");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
         public override void SetDefaults()
         {
             Item.width = 12;

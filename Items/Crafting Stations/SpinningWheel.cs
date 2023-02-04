@@ -7,13 +7,7 @@ namespace CFU.Items
     public class SpinningWheel : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Crafting Stations/SpinningWheel";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Rumpelstiltskin's Spinning Wheel");
-            Tooltip.SetDefault("Used for crafting furniture");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

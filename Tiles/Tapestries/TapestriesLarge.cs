@@ -20,9 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Height = 9;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16, 16, 16, 16 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Tapestry");
-            AddMapEntry(new Color(95, 44, 7), name);
+            AddMapEntry(new Color(95, 44, 7));
             DustType = -1;
         }
 

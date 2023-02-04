@@ -7,13 +7,7 @@ namespace CFU.Items
     public class GnomeFishing : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Garden/GnomeFishing";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Gnome");
-            Tooltip.SetDefault("'Holding a little fishing rod'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -26,9 +26,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
             AdjTiles = new int[] { TileID.Torches };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Candelabra");
-            AddMapEntry(new Color(253, 221, 3), name);
+            AddMapEntry(new Color(253, 221, 3));
             DustType = -1;
         }
 

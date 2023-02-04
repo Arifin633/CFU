@@ -25,9 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16 };
             TileObjectData.newTile.Origin = new Point16(1, 0);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Bell");
-            AddMapEntry(new Color(224, 160, 42), name);
+            AddMapEntry(new Color(224, 160, 42));
             DustType = -1;
             HitSound = SoundID.Item37;
         }

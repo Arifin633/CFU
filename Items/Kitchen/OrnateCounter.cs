@@ -7,12 +7,7 @@ namespace CFU.Items
     public class OrnateCounter : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Kitchen/OrnateCounter";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ornate Kitchen Counter");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

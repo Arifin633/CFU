@@ -29,9 +29,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Stained Glass Window");
-            AddMapEntry(new Color(133, 213, 247), name);
+            AddMapEntry(new Color(133, 213, 247));
             DustType = -1;
             HitSound = SoundID.Shatter;
         }

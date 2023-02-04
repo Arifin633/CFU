@@ -27,7 +27,6 @@ namespace CFU.Tiles
             // TileObjectData.newTile.StyleMultiplier = 5;
             // TileObjectData.newTile.RandomStyleRange = 5;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(99, 150, 8));
             AddMapEntry(new Color(139, 154, 64));
             AddMapEntry(new Color(34, 129, 168));

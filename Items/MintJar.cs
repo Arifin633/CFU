@@ -7,13 +7,7 @@ namespace CFU.Items
     public class MintJar : ModItem
     {
         public override string Texture => "CFU/Textures/Items/MintJar";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Jar O' Mints");
-            Tooltip.SetDefault("'Purely for decorational purposes'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

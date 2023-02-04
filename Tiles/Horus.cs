@@ -23,9 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Eye of Horus");
-            AddMapEntry(new Color(24, 78, 78), name);
+            AddMapEntry(new Color(24, 78, 78));
             DustType = -1;
         }
 

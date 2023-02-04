@@ -26,9 +26,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Bust");
-            AddMapEntry(new Color(168, 178, 204), name);
+            AddMapEntry(new Color(168, 178, 204));
             DustType = DustID.Marble;
         }
 

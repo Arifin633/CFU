@@ -23,12 +23,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Shadow Orb");
-            AddMapEntry(new Color(141, 120, 168), name);
-            name = CreateMapEntryName("CrimsonHeart");
-            name.SetDefault("Crimson Heart");
-            AddMapEntry(new Color(212, 105, 105), name);
+            AddMapEntry(new Color(141, 120, 168), this.GetLocalization("MapEntry0"));
+            AddMapEntry(new Color(212, 105, 105), this.GetLocalization("MapEntry1"));
             AnimationFrameHeight = 36;
         }
 

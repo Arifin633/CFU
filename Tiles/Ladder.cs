@@ -16,9 +16,7 @@ namespace CFU.Tiles
             Main.tileNoAttach[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Ladder");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
             DustType = DustID.Dirt;
         }
 

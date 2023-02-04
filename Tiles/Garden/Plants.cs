@@ -30,9 +30,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Plants");
-            AddMapEntry(new Color(14, 152, 64), name);
+            AddMapEntry(new Color(14, 152, 64));
             DustType = -1;
         }
 

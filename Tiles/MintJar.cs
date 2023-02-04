@@ -20,9 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Jar O' Mints");
-            AddMapEntry(new Color(133, 213, 247), name);
+            AddMapEntry(new Color(133, 213, 247));
             HitSound = SoundID.Shatter;
             DustType = DustID.Glass;
         }

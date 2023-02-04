@@ -7,13 +7,7 @@ namespace CFU.Items
     public class SignBank : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Signs/SignBank";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Bank Sign");
-            Tooltip.SetDefault("'Shows a pile of coins'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

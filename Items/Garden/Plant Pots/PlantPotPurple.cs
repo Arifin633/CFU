@@ -7,12 +7,7 @@ namespace CFU.Items
     public class PlantPotPurple : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Garden/Plant Pots/PlantPotPurple";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Purple Plant Pot");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

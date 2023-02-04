@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PylonBaseHallowed : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Plastic/Pylon Bases/PylonBaseHallowed";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Decorative Hallow Pylon Base");
-            Tooltip.SetDefault("'*A plastic replica'\n'Crystal not included'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

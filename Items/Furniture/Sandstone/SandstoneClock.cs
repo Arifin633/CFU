@@ -7,12 +7,7 @@ namespace CFU.Items
     public class SandstoneClock : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneClock";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ancient Sandstone Clock");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 26;

@@ -8,12 +8,7 @@ namespace CFU.Items
     public class GraniteBrick : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Blocks/GraniteBrick";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Granite Bricks");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         public override void SetDefaults()
         {
             Item.width = 12;

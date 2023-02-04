@@ -7,12 +7,7 @@ namespace CFU.Items
     public class KnightWhite : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Chess Pieces/KnightWhite";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("White Knight");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

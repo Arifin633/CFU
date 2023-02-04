@@ -55,10 +55,8 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(AfterPlacementHook, -1, 0, false);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Fishhook");
-            AddMapEntry(new Color(81, 81, 89), name);
-            AddMapEntry(new Color(100, 100, 74), name);
+            AddMapEntry(new Color(81, 81, 89));
+            AddMapEntry(new Color(100, 100, 74));
             DustType = -1;
         }
 

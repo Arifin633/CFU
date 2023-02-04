@@ -20,9 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { Type };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.Table | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Paper Stack");
-            AddMapEntry(new Color(197, 183, 166), name);
+            AddMapEntry(new Color(197, 183, 166));
             DustType = -1;
             HitSound = SoundID.Grass;
         }

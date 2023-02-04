@@ -8,12 +8,7 @@ namespace CFU.Items
     public class EndTableLesion : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableLesion";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Lesion End Table");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

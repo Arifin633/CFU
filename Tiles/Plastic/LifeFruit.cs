@@ -25,9 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.RandomStyleRange = 3;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Life Fruit");
-            AddMapEntry(new Color(149, 232, 87), name);
+            AddMapEntry(new Color(149, 232, 87));
             DustType = DustID.JunglePlants;
         }
 

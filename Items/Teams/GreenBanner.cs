@@ -7,12 +7,7 @@ namespace CFU.Items
     public class GreenBanner : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Teams/GreenBanner";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Vibrant Green Banner");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

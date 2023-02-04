@@ -19,9 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Model Castle");
-            AddMapEntry(new Color(128, 128, 128), name);
+            AddMapEntry(new Color(128, 128, 128));
             DustType = -1;
         }
 

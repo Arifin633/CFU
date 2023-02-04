@@ -7,13 +7,7 @@ namespace CFU.Items
     public class TapestryLarge : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Tapestries/TapestryLarge";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Tapestry");
-            Tooltip.SetDefault("'Depicts the family tree of King Jacques'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

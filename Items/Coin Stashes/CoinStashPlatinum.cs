@@ -8,12 +8,7 @@ namespace CFU.Items
     public class CoinStashPlatinum : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Coin Stashes/CoinStashPlatinum";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Platinum Coin Stash");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 10;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 10;
         public override void SetDefaults()
         {
             Item.width = 16;

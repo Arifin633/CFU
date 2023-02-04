@@ -7,12 +7,7 @@ namespace CFU.Items
     public class StatueQueenBee : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Statues/StatueQueenBee";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Queen Bee Collectable Inaction Figure");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

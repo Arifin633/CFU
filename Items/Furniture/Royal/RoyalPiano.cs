@@ -7,12 +7,7 @@ namespace CFU.Items
     public class RoyalPiano : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalPiano";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Royal Piano");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 26;

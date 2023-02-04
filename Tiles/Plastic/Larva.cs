@@ -23,9 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Queen Bee Larva");
-            AddMapEntry(new Color(224, 194, 101), name);
+            AddMapEntry(new Color(224, 194, 101));
             HitSound = SoundID.NPCDeath1;
             AnimationFrameHeight = 54;
         }

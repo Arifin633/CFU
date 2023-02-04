@@ -7,13 +7,7 @@ namespace CFU.Items
     public class LimestoneGargoyle : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Ornaments/LimestoneGargoyle";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Limestone Standing Gargoyle");
-            Tooltip.SetDefault("'A limestone ornament'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

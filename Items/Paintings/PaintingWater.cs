@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PaintingWater : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Paintings/PaintingWater";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Water and Sky");
-            Tooltip.SetDefault("'X. Zimur'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

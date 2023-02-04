@@ -22,12 +22,10 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinatePadding = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Painting");
-            AddMapEntry(new Color(137, 52, 26), name);
-            AddMapEntry(new Color(204, 198, 191), name);
-            AddMapEntry(new Color(145, 111, 145), name);
-            AddMapEntry(new Color(193, 47, 60), name);
+            AddMapEntry(new Color(137, 52, 26));
+            AddMapEntry(new Color(204, 198, 191));
+            AddMapEntry(new Color(145, 111, 145));
+            AddMapEntry(new Color(193, 47, 60));
             DustType = -1;
         }
 

@@ -22,9 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Banner");
-            AddMapEntry(new Color(13, 88, 130), name);
+            AddMapEntry(new Color(13, 88, 130));
             DustType = -1;
         }
 

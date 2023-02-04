@@ -7,13 +7,7 @@ namespace CFU.Items
     public class LimestoneSpireSmall : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Ornaments/LimestoneSpireSmall";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Small Limestone Spire");
-            Tooltip.SetDefault("'A limestone ornament'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

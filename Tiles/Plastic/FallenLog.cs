@@ -19,9 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Fallen Log");
-            AddMapEntry(new Color(127, 92, 69), name);
+            AddMapEntry(new Color(127, 92, 69));
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

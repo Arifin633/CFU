@@ -26,7 +26,6 @@ namespace CFU.Tiles
             TileObjectData.newTile.WaterPlacement = LiquidPlacement.OnlyInLiquid;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.EmptyTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(26, 196, 84));
             AddMapEntry(new Color(48, 208, 234));
             AddMapEntry(new Color(135, 196, 26));

@@ -34,9 +34,7 @@ namespace CFU.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             AdjTiles = new int[] { TileID.Chairs };
             TileID.Sets.DisableSmartCursor[Type] = true;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Chair");
-            AddMapEntry(new Color(127, 92, 69), name);
+            AddMapEntry(new Color(127, 92, 69));
             DustType = -1;
         }
 

@@ -7,12 +7,7 @@ namespace CFU.Items
     public class SandstoneSink : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Sandstone/SandstoneSink";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ancient Sandstone Sink");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 26;

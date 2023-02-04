@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Stardust : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Materials/Stardust";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Stardust");
-            Tooltip.SetDefault("'Probably great stuff for making furniture...'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
         public override void SetDefaults()
         {
             Item.width = 20;

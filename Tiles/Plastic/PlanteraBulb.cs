@@ -23,9 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Plantera's Bulb");
-            AddMapEntry(new Color(225, 128, 206), name);
+            AddMapEntry(new Color(225, 128, 206));
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

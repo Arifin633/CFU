@@ -7,13 +7,7 @@ namespace CFU.Items
     public class SignTailor : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Signs/SignTailor";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Tailor Sign");
-            Tooltip.SetDefault("'Shows a roll of thread'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

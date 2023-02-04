@@ -28,10 +28,8 @@ namespace CFU.Tiles
             TileObjectData.newSubTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16 };
             TileObjectData.addSubTile(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Painting");
-            AddMapEntry(new Color(56, 62, 79), name);
-            AddMapEntry(new Color(8, 41, 14), name);
+            AddMapEntry(new Color(56, 62, 79));
+            AddMapEntry(new Color(8, 41, 14));
             DustType = -1;
         }
 

@@ -8,12 +8,7 @@ namespace CFU.Items
     {
         public override string Texture => "CFU/Textures/Items/Biome Jars/BiomeJarHallow";
 
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Hallow Jar");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

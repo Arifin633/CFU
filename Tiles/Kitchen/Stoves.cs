@@ -23,9 +23,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Furnaces, TileID.CookingPots };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Stove");
-            AddMapEntry(new Color(144, 148, 144), name);
+            AddMapEntry(new Color(144, 148, 144));
             DustType = -1;
         }
 

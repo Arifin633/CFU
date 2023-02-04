@@ -31,11 +31,9 @@ namespace CFU.Tiles
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Dressers };
-            name.SetDefault("Wardrobe");
-            AddMapEntry(new Color(127, 92, 69), name);
+            AddMapEntry(new Color(127, 92, 69));
             DustType = -1;
         }
 

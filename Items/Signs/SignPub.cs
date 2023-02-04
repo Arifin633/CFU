@@ -7,13 +7,7 @@ namespace CFU.Items
     public class SignPub : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Signs/SignPub";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Pub Sign");
-            Tooltip.SetDefault("'Shows a mug of beer'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

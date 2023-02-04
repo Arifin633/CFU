@@ -22,9 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 0);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Hanging Herb");
-            AddMapEntry(new Color(72, 145, 125), name);
+            AddMapEntry(new Color(72, 145, 125));
             HitSound = SoundID.Grass;
             DustType = -1;
         }

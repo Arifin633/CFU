@@ -7,12 +7,7 @@ namespace CFU.Items
     public class MysticWorkbench : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Mystic/MysticWorkbench";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Mystical Work Bench");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -24,10 +24,8 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Spire");
-            AddMapEntry(new Color(160, 156, 146), name);
-            AddMapEntry(new Color(128, 128, 128), name);
+            AddMapEntry(new Color(160, 156, 146));
+            AddMapEntry(new Color(128, 128, 128));
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);

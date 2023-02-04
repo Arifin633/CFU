@@ -19,9 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 18;
             TileObjectData.newTile.CoordinateHeights = new int[] { 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Eggnog");
-            AddMapEntry(new Color(224, 219, 236), name);
+            AddMapEntry(new Color(224, 219, 236));
             DustType = -1;
         }
 

@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PaintingFury : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Paintings/PaintingFury";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("100 Episodes of Fury's Modded Terraria!");
-            Tooltip.SetDefault("A one-of-a-kind celebratory painting.\n'Chadwick M. deVries'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -7,12 +7,7 @@ namespace CFU.Items
     public class GiantButtercup : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Garden/Plants/GiantButtercup";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Giant Buttercup");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -7,12 +7,7 @@ namespace CFU.Items
     public class ChalicePlatinum : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Chalices/ChalicePlatinum";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Platinum Chalice");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

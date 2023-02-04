@@ -7,12 +7,7 @@ namespace CFU.Items
     public class StatueBrainOfCthulhu : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Statues/StatueBrainOfCthulhu";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Brain of Cthulhu Collectable Inaction Figure");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

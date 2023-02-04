@@ -20,9 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { TileID.ClayPot };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.Table | AnchorType.SolidWithTop | AnchorType.SolidSide | AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Cactus");
-            AddMapEntry(new Color(73, 120, 17), name);
+            AddMapEntry(new Color(73, 120, 17));
             DustType = -1;
         }
 

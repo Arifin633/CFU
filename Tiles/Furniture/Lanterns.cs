@@ -23,9 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleMultiplier = 2;
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Lantern");
-            AddMapEntry(new Color(251, 235, 127), name);
+            AddMapEntry(new Color(251, 235, 127));
             DustType = -1;
         }
 

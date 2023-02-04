@@ -26,7 +26,6 @@ namespace CFU.Tiles
             // TileObjectData.newTile.RandomStyleRange = 2;
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(21, 124, 212));
             HitSound = SoundID.Grass;
             DustType = -1;

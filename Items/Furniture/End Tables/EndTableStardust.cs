@@ -8,12 +8,7 @@ namespace CFU.Items
     public class EndTableStardust : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableStardust";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Stardust End Table");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

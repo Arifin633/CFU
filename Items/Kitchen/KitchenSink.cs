@@ -7,13 +7,7 @@ namespace CFU.Items
     public class KitchenSink : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Kitchen/KitchenSink";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Kitchen Sink");
-            Tooltip.SetDefault("'Can be installed in a Kitchen Counter'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

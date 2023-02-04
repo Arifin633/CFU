@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceLeft;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Windmill");
-            AddMapEntry(new Color(91, 78, 71), name);
+            AddMapEntry(new Color(91, 78, 71));
             DustType = -1;
             AnimationFrameHeight = 40;
         }

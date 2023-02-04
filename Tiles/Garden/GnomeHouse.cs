@@ -22,9 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Gnome House");
-            AddMapEntry(new Color(239, 38, 38), name);
+            AddMapEntry(new Color(239, 38, 38));
             DustType = DustID.Bone;
             TileID.Sets.DisableSmartCursor[Type] = true;
         }

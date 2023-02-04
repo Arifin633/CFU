@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Height = 4;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Mysterious Tablet");
-            AddMapEntry(new Color(104, 86, 84), name);
+            AddMapEntry(new Color(104, 86, 84));
         }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)

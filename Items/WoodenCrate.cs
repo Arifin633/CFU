@@ -7,13 +7,7 @@ namespace CFU.Items
     public class WoodenCrate : ModItem
     {
         public override string Texture => "CFU/Textures/Items/WoodenCrate";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ancient Wooden Crate");
-            Tooltip.SetDefault("'Can be stacked on top of eachother'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

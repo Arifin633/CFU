@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Coatrack : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Coatrack";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Coatrack");
-            Tooltip.SetDefault("'A small coatrack'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

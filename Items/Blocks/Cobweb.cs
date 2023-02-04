@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Cobweb : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Blocks/Cobweb";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Sturdy Cobweb");
-            Tooltip.SetDefault("'Doesn't break as easily'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         public override void SetDefaults()
         {
             Item.width = 16;

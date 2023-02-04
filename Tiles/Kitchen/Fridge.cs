@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Fridge");
-            AddMapEntry(new Color(81, 81, 89), name);
+            AddMapEntry(new Color(81, 81, 89));
             DustType = -1;
         }
 

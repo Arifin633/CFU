@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
 using Terraria;
@@ -28,9 +28,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Height = 2;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Wall Clock");
-            AddMapEntry(new Color(127, 92, 69), name);
+            AddMapEntry(new Color(127, 92, 69));
             DustType = -1;
         }
 

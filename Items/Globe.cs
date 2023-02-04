@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Globe : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Globe";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Globe");
-            Tooltip.SetDefault("'Of a 2D world?'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

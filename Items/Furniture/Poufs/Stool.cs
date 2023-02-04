@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Stool : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Poufs/Stool";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Stool");
-            Tooltip.SetDefault("'A small stool'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -7,12 +7,7 @@ namespace CFU.Items
     public class CobWall : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Walls/Blocks/CobWall";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Cob Wall");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
         public override void SetDefaults()
         {
             Item.width = 12;

@@ -7,13 +7,7 @@ namespace CFU.Items
     public class FallenLog : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Plastic/FallenLog";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Fallen Log");
-            Tooltip.SetDefault("'*A plastic replica'\n'Fairies can't tell the difference!'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

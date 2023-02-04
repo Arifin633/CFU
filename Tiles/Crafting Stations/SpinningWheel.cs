@@ -16,9 +16,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Loom };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Spinning Wheel");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
             DustType = -1;
             AnimationFrameHeight = 54;
         }

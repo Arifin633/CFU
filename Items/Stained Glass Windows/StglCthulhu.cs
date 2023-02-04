@@ -7,13 +7,7 @@ namespace CFU.Items
     public class StglCthulhu : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Stained Glass Windows/StglCthulhu";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Large Stained Glass Window");
-            Tooltip.SetDefault("'It depicts the Moon Lord'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -7,12 +7,7 @@ namespace CFU.Items
     public class KnifeRack : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Kitchen/KnifeRack";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Knife Rack");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

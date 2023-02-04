@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Wallomatic : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Crafting Stations/Wallomatic";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Wall-O-Matic");
-            Tooltip.SetDefault("Used for crafting special walls");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

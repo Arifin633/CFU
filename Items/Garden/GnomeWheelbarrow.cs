@@ -7,13 +7,7 @@ namespace CFU.Items
     public class GnomeWheelbarrow : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Garden/GnomeWheelbarrow";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Gnome");
-            Tooltip.SetDefault("'Holding a little wheelbarrow'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

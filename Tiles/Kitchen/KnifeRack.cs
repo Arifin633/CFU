@@ -22,9 +22,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             DustType = DustID.WoodFurniture;
             TileID.Sets.DisableSmartCursor[Type] = true;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Knife Rack");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

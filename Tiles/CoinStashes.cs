@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.StyleMultiplier = 6;
             TileObjectData.newTile.RandomStyleRange = 6;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Coin Stash");
-            AddMapEntry(new Color(107, 81, 65), name);
+            AddMapEntry(new Color(107, 81, 65));
             HitSound = SoundID.Coins;
         }
         

@@ -26,9 +26,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(3);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Bathtub");
-            AddMapEntry(new Color(144, 148, 144), name);
+            AddMapEntry(new Color(144, 148, 144));
             DustType = -1;
         }
 

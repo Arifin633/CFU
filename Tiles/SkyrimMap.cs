@@ -18,9 +18,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3Wall);
             TileObjectData.newTile.Width = 4;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("World Map");
-            AddMapEntry(new Color(204, 185, 153), name);
+            AddMapEntry(new Color(204, 185, 153));
             DustType = -1;
             HitSound = SoundID.Grass;
         }

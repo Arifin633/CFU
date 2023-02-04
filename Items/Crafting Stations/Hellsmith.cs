@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Hellsmith : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Crafting Stations/Hellsmith";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Hellsmith's Forge");
-            Tooltip.SetDefault("Used for smelting ore\nUsed to craft items from metal bars");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

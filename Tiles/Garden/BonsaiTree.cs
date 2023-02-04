@@ -25,9 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Bonsai Tree");
-            AddMapEntry(new Color(14, 152, 64), name);
+            AddMapEntry(new Color(14, 152, 64));
         }
 
         public override bool CreateDust(int i, int j, ref int type)

@@ -43,9 +43,7 @@ namespace CFU.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
             AdjTiles = new int[] { TileID.ClosedDoor };
             OpenDoorID = ModContent.TileType<Tiles.DoorsOpen>();
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Door");
-            AddMapEntry(new Color(181, 172, 190), name);
+            AddMapEntry(new Color(181, 172, 190));
             DustType = -1;
         }
 

@@ -7,13 +7,7 @@ namespace CFU.Items
     public class ShadowOrb : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Plastic/ShadowOrb";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Shadow Orb");
-            Tooltip.SetDefault("'*A plastic replica'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

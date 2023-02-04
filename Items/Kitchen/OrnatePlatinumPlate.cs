@@ -7,12 +7,7 @@ namespace CFU.Items
     public class OrnatePlatinumPlate : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Kitchen/OrnatePlatinumPlate";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ornate Platinum Plate");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

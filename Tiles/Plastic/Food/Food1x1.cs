@@ -20,18 +20,10 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinateHeights = new int[] { 22 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Sugar Cookie");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("GingerbreadCookie");
-            name.SetDefault("Gingerbread Cookie");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("Ale");
-            name.SetDefault("Ale");
-            AddMapEntry(new Color(224, 219, 236), name);
-            name = CreateMapEntryName("Sake");
-            name.SetDefault("Sake");
-            AddMapEntry(new Color(224, 219, 236), name);
+            for(int i = 0; i <= 3; i++)
+            {
+                AddMapEntry(new Color(224, 219, 236), this.GetLocalization("MapEntry" + i));
+            }
             DustType = -1;
         }
 

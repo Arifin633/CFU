@@ -42,10 +42,8 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Chess Piece");
-            AddMapEntry(new Color(168, 178, 204), name);
-            AddMapEntry(new Color(50, 46, 104), name);
+            AddMapEntry(new Color(168, 178, 204));
+            AddMapEntry(new Color(50, 46, 104));
         }
 
         public override ushort GetMapOption(int i, int j)

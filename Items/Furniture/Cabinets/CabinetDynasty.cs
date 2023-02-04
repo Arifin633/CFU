@@ -7,12 +7,7 @@ namespace CFU.Items
     public class CabinetDynasty : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Cabinets/CabinetDynasty";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Dynasty Cabinet");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

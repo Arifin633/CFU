@@ -7,12 +7,7 @@ namespace CFU.Items
     public class CabinetSlime : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Cabinets/CabinetSlime";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Slime Cabinet");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

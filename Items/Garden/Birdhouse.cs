@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Birdhouse : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Garden/Birdhouse";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Birdhouse");
-            Tooltip.SetDefault("'Any bird's dream home'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

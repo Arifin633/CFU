@@ -25,9 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.GrandfatherClocks };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Clock");
-            AddMapEntry(new Color(127, 92, 69), name);
+            AddMapEntry(new Color(127, 92, 69));
             DustType = -1;
         }
 

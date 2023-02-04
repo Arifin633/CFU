@@ -8,12 +8,7 @@ namespace CFU.Items
     public class ShadewoodTrellis : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Walls/Trellises/ShadewoodTrellis";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Shadewood Trellis");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
         public override void SetDefaults()
         {
             Item.width = 12;

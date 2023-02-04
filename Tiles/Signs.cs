@@ -65,9 +65,7 @@ namespace CFU.Tiles
             TileObjectData.addAlternate(4);
             TileObjectData.addTile(Type);
 
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Sign");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
             DustType = DustID.WoodFurniture;
         }
 

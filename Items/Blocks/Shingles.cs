@@ -8,12 +8,7 @@ namespace CFU.Items
     public class Shingles : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Blocks/Shingles";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Black Shingles");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         public override void SetDefaults()
         {
             Item.width = 12;

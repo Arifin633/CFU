@@ -19,9 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Height = 4;
             TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Mirror");
-            AddMapEntry(new Color(133, 213, 247), name);
+            AddMapEntry(new Color(133, 213, 247));
             DustType = -1;
             HitSound = SoundID.Shatter;
         }

@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorAlternateTiles = new int[] { ModContent.TileType<Tiles.KegLargeFront>() };
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Kegs };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Keg");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
             DustType = DustID.WoodFurniture;
         }
 

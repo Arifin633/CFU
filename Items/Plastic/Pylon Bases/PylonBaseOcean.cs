@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PylonBaseOcean : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Plastic/Pylon Bases/PylonBaseOcean";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Decorative Ocean Pylon Base");
-            Tooltip.SetDefault("'*A plastic replica'\n'Crystal not included'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -7,13 +7,7 @@ namespace CFU.Items
     public class OrnateGoldThrone : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Ornate/OrnateGoldThrone";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Tall Gold Throne");
-            Tooltip.SetDefault("'For the exceptionally regal and the exceptionally tall.'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

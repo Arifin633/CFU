@@ -7,12 +7,7 @@ namespace CFU.Items
     public class RoyalChair : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalChair";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Royal Dining Chair");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

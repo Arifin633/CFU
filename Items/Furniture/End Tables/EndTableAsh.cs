@@ -7,12 +7,7 @@ namespace CFU.Items
     public class EndTableAsh : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/End Tables/EndTableAsh";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Ash Wood End Table");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

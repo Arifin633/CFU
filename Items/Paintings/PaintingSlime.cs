@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PaintingSlime : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Paintings/PaintingSlime";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Pink Smile");
-            Tooltip.SetDefault("'Chadwick M. deVries'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

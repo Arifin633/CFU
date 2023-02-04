@@ -36,12 +36,8 @@ namespace CFU.Tiles
 
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             AdjTiles = new int[] { TileID.Chairs };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Beanbag Chair");
-            AddMapEntry(new Color(204, 204, 204), name);
-            name = CreateMapEntryName("Armchair");
-            name.SetDefault("Armchair");
-            AddMapEntry(new Color(204, 204, 204), name);
+            AddMapEntry(new Color(204, 204, 204), this.GetLocalization("MapEntry0"));
+            AddMapEntry(new Color(204, 204, 204), this.GetLocalization("MapEntry1"));
             DustType = -1;
         }
 

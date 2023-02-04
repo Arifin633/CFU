@@ -7,13 +7,7 @@ namespace CFU.Items
     public class Minifridge : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Kitchen/Minifridge";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Minifridge");
-            Tooltip.SetDefault("'Generally used for food'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

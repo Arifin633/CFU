@@ -39,12 +39,9 @@ namespace CFU.Tiles
             
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Dressers };
-            ModTranslation name = CreateMapEntryName();
-            foreach (string styleName in Names)
+            for(int i = 0; i <= 31; i++)
             {
-                name = CreateMapEntryName(styleName.Replace(" ", ""));
-                name.SetDefault(styleName);
-                AddMapEntry(new Color(127, 92, 69), name, MapChestName);
+                AddMapEntry(new Color(127, 92, 69), this.GetLocalization("MapEntry" + i), MapChestName);
             }
             DustType = -1;
         }

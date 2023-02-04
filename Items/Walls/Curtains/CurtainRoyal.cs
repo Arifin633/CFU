@@ -7,12 +7,7 @@ namespace CFU.Items
     public class CurtainRoyal : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Walls/Curtains/CurtainRoyal";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Royal Curtain");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 400;
         public override void SetDefaults()
         {
             Item.width = 12;

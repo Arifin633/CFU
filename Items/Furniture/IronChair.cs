@@ -7,12 +7,7 @@ namespace CFU.Items
     public class IronChair : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/IronChair";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Wrought Iron Chair");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

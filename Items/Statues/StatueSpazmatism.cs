@@ -7,12 +7,7 @@ namespace CFU.Items
     public class StatueSpazmatism : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Statues/StatueSpazmatism";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Spazmatism Collectable Inaction Figure");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

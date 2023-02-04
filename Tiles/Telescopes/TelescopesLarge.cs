@@ -24,9 +24,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Telescope");
-            AddMapEntry(new Color(253, 221, 3), name);
+            AddMapEntry(new Color(253, 221, 3));
             DustType = -1;
         }
 

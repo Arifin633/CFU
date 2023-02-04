@@ -7,12 +7,7 @@ namespace CFU.Items
     public class BarberpoleLamp : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Barber/BarberpoleLamp";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Barber's Pole with Lamp");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

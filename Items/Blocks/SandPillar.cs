@@ -8,12 +8,7 @@ namespace CFU.Items
     public class SandPillar : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Blocks/SandPillar";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Sand Pillar");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         public override void SetDefaults()
         {
             Item.width = 12;

@@ -11,13 +11,7 @@ namespace CFU.Items
     public class RubblemakerStalactite : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Rubblemaker/RubblemakerStalactite";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Rubblemaker 2.0 (Stalactites)");
-            Tooltip.SetDefault("Used with materials to place matching stalactites\n<right> to toggle placement type and size\nPress Up/Down to cycle through styles\n'Not a piledriver nor a placeinator: It's a Rubblemaker'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

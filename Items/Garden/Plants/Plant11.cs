@@ -7,12 +7,7 @@ namespace CFU.Items
     public class Plant11 : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Garden/Plants/Plant11";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Palm Tree");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -23,11 +23,9 @@ namespace CFU.Tiles
             DustType = -1;
             HitSound = SoundID.Grass;
             TileID.Sets.DisableSmartCursor[Type] = true;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Poster");
-            AddMapEntry(new Color(174, 162, 4), name);
-            AddMapEntry(new Color(151, 107, 75), name);
-            AddMapEntry(new Color(112, 170, 68), name);
+            AddMapEntry(new Color(174, 162, 4));
+            AddMapEntry(new Color(151, 107, 75));
+            AddMapEntry(new Color(112, 170, 68));
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 54);

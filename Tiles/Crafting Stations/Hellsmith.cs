@@ -22,9 +22,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Furnaces, TileID.Anvils, TileID.Hellforge };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Hellsmith's Forge");
-            AddMapEntry(new Color(238, 85, 70), name);
+            AddMapEntry(new Color(238, 85, 70));
             AnimationFrameHeight = 56;
         }
 

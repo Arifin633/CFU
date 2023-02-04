@@ -7,13 +7,7 @@ namespace CFU.Items
     public class StglVortex : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Stained Glass Windows/StglVortex";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Small Stained Glass Window");
-            Tooltip.SetDefault("'It depicts the Vortex Pillar'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

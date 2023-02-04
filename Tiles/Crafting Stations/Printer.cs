@@ -17,9 +17,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 1);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Printer");
-            AddMapEntry(new Color(204, 204, 204), name);
+            AddMapEntry(new Color(204, 204, 204));
             DustType = -1;
             AnimationFrameHeight = 36;
         }

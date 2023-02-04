@@ -7,13 +7,7 @@ namespace CFU.Items
     public class TipJar : ModItem
     {
         public override string Texture => "CFU/Textures/Items/TipJar";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Tip Jar");
-            Tooltip.SetDefault("'Purely for decorational purposes'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

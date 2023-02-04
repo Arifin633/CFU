@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PaintingJaak : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Paintings/PaintingJaak";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Jacques de Montfort");
-            Tooltip.SetDefault("'Chadwick M. deVries'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

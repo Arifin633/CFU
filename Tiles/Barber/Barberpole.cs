@@ -31,9 +31,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
 
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Barber's Pole");
-            AddMapEntry(new Color(133, 213, 247), name);
+            AddMapEntry(new Color(133, 213, 247));
             AnimationFrameHeight = 36;
             DustType = DustID.Glass;
             HitSound = SoundID.Shatter;

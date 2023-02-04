@@ -7,12 +7,7 @@ namespace CFU.Items
     public class TelescopeGold : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Telescopes/TelescopeGold";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Golden Telescope");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

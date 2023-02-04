@@ -21,9 +21,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
             TileObjectData.addTile(Type);
             DustType = -1;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Medusa Head");
-            AddMapEntry(new Color(191, 142, 111), name);
+            AddMapEntry(new Color(191, 142, 111));
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)

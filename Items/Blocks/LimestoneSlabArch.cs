@@ -8,13 +8,7 @@ namespace CFU.Items
     public class LimestoneSlabArch : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Blocks/LimestoneSlabArch";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Limestone Slab Arch");
-            Tooltip.SetDefault("'Best used in combination with Limestone Slab'");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
         public override void SetDefaults()
         {
             Item.width = 12;

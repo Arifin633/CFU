@@ -7,12 +7,7 @@ namespace CFU.Items
     public class RoyalThrone : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Royal/RoyalThrone";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Platinum Throne");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

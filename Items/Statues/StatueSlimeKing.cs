@@ -7,12 +7,7 @@ namespace CFU.Items
     public class StatueSlimeKing : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Statues/StatueSlimeKing";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("King Slime Collectable Inaction Figure");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

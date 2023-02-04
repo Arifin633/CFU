@@ -7,12 +7,7 @@ namespace CFU.Items
     public class CabinetBamboo : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Cabinets/CabinetBamboo";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Bamboo Cabinet");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;

@@ -16,9 +16,7 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Mug");
-            AddMapEntry(new Color(204, 204, 204), name);
+            AddMapEntry(new Color(204, 204, 204));
             DustType = -1;
             HitSound = SoundID.Shatter;
         }

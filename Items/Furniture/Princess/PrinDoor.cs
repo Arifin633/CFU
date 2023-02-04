@@ -7,12 +7,7 @@ namespace CFU.Items
     public class PrinDoor : ModItem
     {
         public override string Texture => "CFU/Textures/Items/Furniture/Princess/PrinDoor";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Princess Door");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 26;

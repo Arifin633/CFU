@@ -25,9 +25,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.AlternateTile, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Sinks };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Kitchen Sink");
-            AddMapEntry(new Color(144, 148, 144), name);
+            AddMapEntry(new Color(144, 148, 144));
             DustType = -1;
         }
 

@@ -7,13 +7,7 @@ namespace CFU.Items
     public class PotionHolder : ModItem
     {
         public override string Texture => "CFU/Textures/Items/PotionHolder";
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Potion Holder");
-            Tooltip.SetDefault("Right click to place a potion");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
-        }
-
+        public override void SetStaticDefaults() => CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         public override void SetDefaults()
         {
             Item.width = 16;
