@@ -31,6 +31,8 @@ namespace ChadsFurnitureUpdated
         {
             if (item.type == ModContent.ItemType<Items.RubblemakerPlaceholder>())
                 item.SetDefaults(ModContent.ItemType<Items.RubblemakerPileSmall>());
+            else if (item.type == ModContent.ItemType<Items.BagPlaceholder>())
+                item.SetDefaults(ModContent.ItemType<Items.BagGrass>());
         }
     }
 
