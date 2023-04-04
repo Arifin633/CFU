@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
@@ -57,10 +58,9 @@ namespace CFU.Tiles
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short _x, ref short _y)
             => offsetY = (WorldGen.SolidTile(i, j - 1)) ? 2 : 0;
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.SandstoneTorch>());
-            return true;
+            yield return new Item(ModContent.ItemType<Items.SandstoneTorch>());
         }
 
         public override void MouseOver(int i, int j)

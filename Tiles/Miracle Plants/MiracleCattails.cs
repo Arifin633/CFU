@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -242,7 +243,7 @@ namespace CFU.Tiles
                 CFUTileDraw.AddSpecialPosition(i, j, CFUTileDraw.SpecialPositionType.RisingTile);
         }
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ItemID.GrassSeeds,
                              ItemID.JungleGrassSeeds,
@@ -250,8 +251,7 @@ namespace CFU.Tiles
                              ItemID.CrimsonSeeds,
                              ItemID.CorruptSeeds,
                              ItemID.GlowingMushroom };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 18)]);
-            return true;
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 18)]);
         }
     }
 }

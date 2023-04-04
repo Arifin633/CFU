@@ -14,11 +14,5 @@ namespace CFU.Walls
             AddMapEntry(new Color(150, 143, 117));
             DustType = DustID.Bone;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.CobWall>();
-            return true;
-        }
     }
 }

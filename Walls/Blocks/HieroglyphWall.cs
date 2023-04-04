@@ -14,11 +14,5 @@ namespace CFU.Walls
             AddMapEntry(new Color(127, 43, 43));
             DustType = DustID.Sluggy;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.HieroglyphWall>();
-            return true;
-        }
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.Enums;
 using Terraria.ModLoader;
@@ -31,10 +32,9 @@ namespace CFU.Tiles
             DustType = -1;
         }
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ItemID.AbigailsFlower);
-            return true;
+            yield return new Item(ItemID.AbigailsFlower);
         }
     }
 }

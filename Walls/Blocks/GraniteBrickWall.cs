@@ -14,11 +14,5 @@ namespace CFU.Walls
             AddMapEntry(new Color(19, 18, 40));
             DustType = DustID.Granite;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.GraniteBrickWall>();
-            return true;
-        }
     }
 }

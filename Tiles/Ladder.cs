@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -18,12 +17,6 @@ namespace CFU.Tiles
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
             AddMapEntry(new Color(191, 142, 111));
             DustType = DustID.Dirt;
-        }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.Ladder>());
-            return true;
         }
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

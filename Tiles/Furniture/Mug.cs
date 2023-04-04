@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -19,12 +18,6 @@ namespace CFU.Tiles
             AddMapEntry(new Color(204, 204, 204));
             DustType = -1;
             HitSound = SoundID.Shatter;
-        }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.PaintableMug>());
-            return true;
         }
     }
 }

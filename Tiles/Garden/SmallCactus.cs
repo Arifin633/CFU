@@ -30,11 +30,5 @@ namespace CFU.Tiles
             if (Main.tile[i, (j + 1)].TileType != TileID.ClayPot)
                 offsetY = -2;
         }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.SmallCactus>());
-            return true;
-        }
     }
 }

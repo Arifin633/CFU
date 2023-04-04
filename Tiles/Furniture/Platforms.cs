@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -36,14 +36,13 @@ namespace CFU.Tiles
             DustType = -1;
         }
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.PrinPlatform>(),
                              ModContent.ItemType<Items.MysticPlatform>(),
                              ModContent.ItemType<Items.RoyalPlatform>(),
                              ModContent.ItemType<Items.SandstonePlatform>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(Main.tile[i, j].TileFrameY / 18)]);
-            return true;
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 18)]);
         }
     }
 }

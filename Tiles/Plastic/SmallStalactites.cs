@@ -1,10 +1,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -83,8 +83,8 @@ namespace CFU.Tiles
                 Main.dust[n].alpha = 100;
             }
         }
-        
-        public override bool Drop(int i, int j)
+
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ItemID.StoneBlock,
                              ItemID.PearlstoneBlock,
@@ -98,8 +98,7 @@ namespace CFU.Tiles
                              ItemID.PurpleIceBlock,
                              ItemID.RedIceBlock,
                              ItemID.IceBlock };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameX / 54)]);
-            return true;
+            yield return new Item(styles[(Main.tile[i, j].TileFrameX / 54)]);
         }
     }
 }

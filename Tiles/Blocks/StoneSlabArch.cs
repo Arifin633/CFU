@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -20,12 +19,6 @@ namespace CFU.Tiles
             DustType = DustID.Stone;
             HitSound = SoundID.Tink;
             AddMapEntry(new Color(128, 128, 128));
-        }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.StoneSlabArch>());
-            return true;
         }
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

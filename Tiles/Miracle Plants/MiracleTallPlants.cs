@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -98,7 +99,7 @@ namespace CFU.Tiles
             offsetY -= 12;
         }
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ItemID.GrassSeeds,
                              ItemID.FlowerPacketWhite,
@@ -110,9 +111,8 @@ namespace CFU.Tiles
                              ItemID.JungleGrassSeeds,
                              ItemID.JungleGrassSeeds,
                              ItemID.HallowedSeeds,
-                             ItemID.HallowedSeeds  };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 34)]);
-            return true;
+                             ItemID.HallowedSeeds };
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 34)]);
         }
     }
 }

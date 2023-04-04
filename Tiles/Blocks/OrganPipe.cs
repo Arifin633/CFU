@@ -2,7 +2,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
 
 namespace CFU.Tiles
@@ -15,12 +14,6 @@ namespace CFU.Tiles
             TileID.Sets.IsBeam[Type] = true;
             DustType = DustID.Bone;
             AddMapEntry(new Color(202, 197, 191));
-        }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.OrganPipe>());
-            return true;
         }
 
         /* This draws the Organ Pipe under the tile directly above it.

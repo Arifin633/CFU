@@ -17,12 +17,6 @@ namespace CFU.Walls
             DustType = DustID.GemSapphire;
         }
 
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.CurtainBlue>();
-            return true;
-        }
-
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
             CFUTileDraw.CurtainDrawEdges(i, j, spriteBatch, Type, Texture);

@@ -36,7 +36,6 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Containers };
-            ChestDrop = ModContent.ItemType<Items.Minifridge>();
             AddMapEntry(new Color(81, 81, 89), this.GetLocalization("MapEntry"), MapChestName);
             DustType = -1;
         }

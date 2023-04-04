@@ -13,11 +13,5 @@ namespace CFU.Walls
             HitSound = SoundID.Shatter;
             DustType = DustID.Glass;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.LeadGlassWall>();
-            return true;
-        }
     }
 }

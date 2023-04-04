@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -158,19 +159,12 @@ namespace CFU.Tiles
             if (tileFrameX > 0) offsetY -= 6;
         }
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int frameX = Main.tile[i, j].TileFrameX;
             if (frameX > 0)
-            {
-                int item = Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, Potions[(frameX / 18)]);
-                if (Main.netMode == NetmodeID.MultiplayerClient)
-                {
-                    NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item);
-                }
-            }
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.PotionHolder>());
-            return true;
+                yield return new Item(Potions[(frameX / 18)]);
+            yield return new Item(ModContent.ItemType<Items.PotionHolder>());
         }
     }
 }

@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -28,16 +27,6 @@ namespace CFU.Tiles
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 18);
-
-        public override bool Drop(int i, int j)
-        {
-            int[] styles = { ModContent.ItemType<Items.SugarCookie>(),
-                             ModContent.ItemType<Items.GingerbreadCookie>(),
-                             ModContent.ItemType<Items.Ale>(),
-                             ModContent.ItemType<Items.Sake>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, styles[(Main.tile[i, j].TileFrameX / 18)]);
-            return true;
-        }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
             => offsetY = -6;

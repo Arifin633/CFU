@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -20,15 +19,6 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(253, 221, 3));
             DustType = -1;
-        }
-
-        public override bool Drop(int i, int j)
-        {
-            int[] styles = {
-                ModContent.ItemType<Items.ChaliceGold>(),
-                ModContent.ItemType<Items.ChalicePlatinum>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameX / 16)]);
-            return true;
         }
     }
 }

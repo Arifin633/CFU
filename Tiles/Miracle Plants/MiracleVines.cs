@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -134,8 +135,7 @@ namespace CFU.Tiles
             }
         }
 
-
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ItemID.GrassSeeds,
                              ItemID.CrimsonSeeds,
@@ -146,8 +146,7 @@ namespace CFU.Tiles
                              ItemID.GlowingMushroom,
                              ItemID.CorruptSeeds,
                              ItemID.AshGrassSeeds };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[Main.tile[i, j].TileFrameY / 18]);
-            return true;
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 18)]);
         }
 
         // public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)

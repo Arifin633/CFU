@@ -24,11 +24,5 @@ namespace CFU.Tiles
             DustType = -1;
             HitSound = SoundID.Grass;
         }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.Paper>());
-            return true;
-        }
     }
 }

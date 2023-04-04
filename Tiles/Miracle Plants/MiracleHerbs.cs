@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -138,24 +139,24 @@ namespace CFU.Tiles
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) => offsetY -= 2;
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
-            int[] styles = { ItemID.Daybloom,
-                             ItemID.Moonglow,
-                             ItemID.Blinkroot,
-                             ItemID.Deathweed,
-                             ItemID.Waterleaf,
-                             ItemID.Fireblossom,
-                             ItemID.Shiverthorn,
-                             ItemID.DaybloomSeeds,
-                             ItemID.MoonglowSeeds,
-                             ItemID.BlinkrootSeeds,
-                             ItemID.DeathweedSeeds,
-                             ItemID.WaterleafSeeds,
-                             ItemID.FireblossomSeeds,
-                             ItemID.ShiverthornSeeds };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameX / 18)]);
-            return true;
+            int[] styles = {
+                ItemID.Daybloom,
+                ItemID.Moonglow,
+                ItemID.Blinkroot,
+                ItemID.Deathweed,
+                ItemID.Waterleaf,
+                ItemID.Fireblossom,
+                ItemID.Shiverthorn,
+                ItemID.DaybloomSeeds,
+                ItemID.MoonglowSeeds,
+                ItemID.BlinkrootSeeds,
+                ItemID.DeathweedSeeds,
+                ItemID.WaterleafSeeds,
+                ItemID.FireblossomSeeds,
+                ItemID.ShiverthornSeeds };
+            yield return new Item(styles[(Main.tile[i, j].TileFrameX / 18)]);
         }
     }
 }

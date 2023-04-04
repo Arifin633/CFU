@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -115,19 +116,12 @@ namespace CFU.Tiles
             return true;
         }
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int frameX = Main.tile[i, j].TileFrameX;
             if (frameX >= 48)
-            {
-                int item = Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, Fishes[(frameX / 24)]);
-                if (Main.netMode == NetmodeID.MultiplayerClient)
-                {
-                    NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item);
-                }
-            }
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.Fishhook>());
-            return true;
+                yield return new Item(Fishes[(frameX / 24)]);
+            yield return new Item(ModContent.ItemType<Items.Fishhook>());
         }
 
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) => width = 22;

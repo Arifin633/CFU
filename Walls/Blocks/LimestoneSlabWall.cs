@@ -14,11 +14,5 @@ namespace CFU.Walls
             AddMapEntry(new Color(91, 80, 69));
             DustType = DustID.MothronEgg;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.LimestoneSlabWall>();
-            return true;
-        }
     }
 }

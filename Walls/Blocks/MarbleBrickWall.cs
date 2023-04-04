@@ -14,11 +14,5 @@ namespace CFU.Walls
             AddMapEntry(new Color(134, 141, 160));
             DustType = DustID.Marble;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.MarbleBrickWall>();
-            return true;
-        }
     }
 }

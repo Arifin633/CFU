@@ -35,7 +35,6 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Containers };
-            ChestDrop = ModContent.ItemType<Items.PrinChest>();
             for(int i = 0; i <= 3; i++)
             {
                 AddMapEntry(new Color(174, 129, 92), this.GetLocalization("MapEntry" + i), MapChestName);

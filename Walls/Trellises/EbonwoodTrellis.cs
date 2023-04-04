@@ -14,11 +14,5 @@ namespace CFU.Walls
             WallID.Sets.AllowsWind[Type] = true;
             DustType = DustID.Ebonwood;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.EbonwoodTrellis>();
-            return true;
-        }
     }
 }

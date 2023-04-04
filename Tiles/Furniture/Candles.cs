@@ -1,11 +1,11 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -105,10 +105,9 @@ namespace CFU.Tiles
                 CFUTileDraw.DrawFlame(i, j, spriteBatch);
         }
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(Main.tile[i, j].TileFrameY / 18)]);
-            return true;
+            yield return new Item(Styles[(Main.tile[i, j].TileFrameY / 18)]);
         }
     }
 }

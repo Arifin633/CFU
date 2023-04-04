@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -21,12 +20,6 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(224, 219, 236));
             DustType = -1;
-        }
-
-        public override bool Drop(int i, int j)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<Items.Eggnog>());
-            return true;
         }
     }
 }

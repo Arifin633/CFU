@@ -23,6 +23,7 @@ namespace CFU.Tiles
             TileID.Sets.NotReallySolid[Type] = true;
             TileID.Sets.DrawsWalls[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
+            TileID.Sets.OpenDoorID[Type] = ModContent.TileType<Tiles.DoorsOpen>();
             TileObjectData.newTile.Width = 1;
             TileObjectData.newTile.Height = 3;
             TileObjectData.newTile.Origin = new Point16(0, 0);
@@ -42,7 +43,6 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
             AdjTiles = new int[] { TileID.ClosedDoor };
-            OpenDoorID = ModContent.TileType<Tiles.DoorsOpen>();
             AddMapEntry(new Color(181, 172, 190));
             DustType = -1;
         }

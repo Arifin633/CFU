@@ -14,11 +14,5 @@ namespace CFU.Walls
             AddMapEntry(new Color(164, 96, 1));
             DustType = DustID.Sunflower;
         }
-
-        public override bool Drop(int i, int j, ref int type)
-        {
-            type = ModContent.ItemType<Items.SunflowerWall>();
-            return true;
-        }
     }
 }

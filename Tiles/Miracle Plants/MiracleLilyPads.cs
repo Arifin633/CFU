@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -62,15 +63,14 @@ namespace CFU.Tiles
 
         public override bool PreDraw(int i, int j, SpriteBatch _) => (Main.tile[i, j].LiquidAmount == 0);
 
-        public override bool Drop(int i, int j)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ItemID.GrassSeeds,
                              ItemID.HallowedSeeds,
                              ItemID.JungleGrassSeeds,
                              ItemID.CrimsonSeeds,
                              ItemID.CorruptSeeds};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(Main.tile[i, j].TileFrameY / 16)]);
-            return true;
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 16)]);
         }
     }
 }
