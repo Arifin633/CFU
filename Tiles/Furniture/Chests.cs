@@ -6,6 +6,7 @@ using Terraria.GameContent.ObjectInteractions;
 using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -45,6 +46,9 @@ namespace CFU.Tiles
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
+        public override LocalizedText DefaultContainerName (int frameX, int frameY)
+            => this.GetLocalization("MapEntry" + (frameX / 36));
+        
         public static string MapChestName(string name, int i, int j)
         {
             Tile tile = Main.tile[i, j];

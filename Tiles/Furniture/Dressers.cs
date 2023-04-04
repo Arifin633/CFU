@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Terraria.Localization;
 using Terraria.DataStructures;
 using Terraria.GameContent.ObjectInteractions;
 
@@ -52,6 +53,9 @@ namespace CFU.Tiles
         //     width = 3;
         //     height = 1;
         // }
+
+        public override LocalizedText DefaultContainerName (int frameX, int frameY)
+            => this.GetLocalization("MapEntry" + (frameX / 54));
 
         public static string MapChestName(string name, int i, int j)
         {
