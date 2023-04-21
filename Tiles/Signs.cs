@@ -68,18 +68,5 @@ namespace CFU.Tiles
             AddMapEntry(new Color(191, 142, 111));
             DustType = DustID.WoodFurniture;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.SignBank>(),
-                             ModContent.ItemType<Items.SignBook>(),
-                             ModContent.ItemType<Items.SignEmpty>(),
-                             ModContent.ItemType<Items.SignFish>(),
-                             ModContent.ItemType<Items.SignJewel>(),
-                             ModContent.ItemType<Items.SignPub>(),
-                             ModContent.ItemType<Items.SignSmith>(),
-                             ModContent.ItemType<Items.SignTailor>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 36)]);
-        }
     }
 }

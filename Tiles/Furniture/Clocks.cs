@@ -3,7 +3,6 @@ using ChadsFurnitureUpdated;
 using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.ObjectInteractions;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -50,11 +49,6 @@ namespace CFU.Tiles
             player.cursorItemIconText = "";
             player.noThrow = 2;
             player.cursorItemIconEnabled = true;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameY / 92)]);
         }
     }
 }

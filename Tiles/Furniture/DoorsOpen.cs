@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.ObjectInteractions;
 using Terraria.DataStructures;
@@ -85,9 +86,9 @@ namespace CFU.Tiles
             player.cursorItemIconEnabled = true;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameY / 54)]);
+            yield return new Item(Styles[(Main.tile[i, j].TileFrameY / 54)]);
         }
     }
 }

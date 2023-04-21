@@ -4,7 +4,6 @@ using Terraria.ID;
 using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.GameContent.ObjectInteractions;
 using Terraria.Localization;
@@ -105,11 +104,5 @@ namespace CFU.Tiles
                 player.cursorItemIconID = ItemID.SleepingIcon;
             }
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameY / 38)]);
-        }
-
     }
 }

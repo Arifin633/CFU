@@ -4,7 +4,6 @@ using Terraria.ID;
 using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -28,15 +27,6 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(144, 148, 144));
             DustType = -1;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.PrinBath>(),
-                             ModContent.ItemType<Items.MysticBath>(),
-                             0, /* ModContent.ItemType<Items.RoyalBath>(), */
-                             ModContent.ItemType<Items.SandstoneBath>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 38)]);
         }
     }
 }

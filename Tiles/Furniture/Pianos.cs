@@ -20,14 +20,5 @@ namespace CFU.Tiles
             AddMapEntry(new Color(127, 92, 69));
             DustType = -1;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.PrinPiano>(),
-                             ModContent.ItemType<Items.MysticPiano>(),
-                             ModContent.ItemType<Items.RoyalPiano>(),
-                             ModContent.ItemType<Items.SandstonePiano>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 38)]);
-        }
     }
 }

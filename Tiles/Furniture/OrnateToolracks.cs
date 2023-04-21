@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -33,14 +32,6 @@ namespace CFU.Tiles
                 type = DustID.Gold;
             }
             return true;
-        }
-
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.OrnateGoldToolrack>(),
-                             ModContent.ItemType<Items.OrnatePlatinumToolrack>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 48, styles[(frameX / 36)]);
         }
     }
 }

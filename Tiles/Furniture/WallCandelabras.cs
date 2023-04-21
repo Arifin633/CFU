@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -38,7 +39,8 @@ namespace CFU.Tiles
                 CFUtils.ShiftTileY(i, j, 0, set: true, skipWire: true);
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.WallCandelabraGold>(),
                              ModContent.ItemType<Items.WallCandelabraPlatinum>(),
@@ -84,8 +86,7 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.WallCandelabraCoral>(),
                              ModContent.ItemType<Items.WallCandelabraBalloon>(),
                              ModContent.ItemType<Items.WallCandelabraAsh>() };
-
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, styles[(frameX / 36)]);
+            yield return new Item(styles[(Main.tile[i, j].TileFrameX / 36)]);
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

@@ -25,11 +25,6 @@ namespace CFU.Tiles
             HitSound = SoundID.Shatter;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 48, ModContent.ItemType<Items.Bottle>());
-        }
-
         public override bool RightClick(int i, int j)
         {
             if (Main.tile[i, j].TileFrameX >= 144)

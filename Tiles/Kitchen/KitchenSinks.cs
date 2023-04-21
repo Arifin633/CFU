@@ -28,12 +28,5 @@ namespace CFU.Tiles
             AddMapEntry(new Color(144, 148, 144));
             DustType = -1;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.KitchenSink>(),
-                             ModContent.ItemType<Items.OrnateKitchenSink>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, styles[(frameX / 36)]);
-        }
     }
 }

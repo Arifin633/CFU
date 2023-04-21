@@ -23,7 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 0);
             TileObjectData.addTile(Type);
 
-            for(int i = 0; i <= 3; i++)
+            for(int i = 0; i <= 5; i++)
             {
                 AddMapEntry(new Color(224, 219, 236), this.GetLocalization("MapEntry" + i));
             }
@@ -32,17 +32,6 @@ namespace CFU.Tiles
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.BowlOfSoup>(),
-                             ModContent.ItemType<Items.CookedFish>(),
-                             ModContent.ItemType<Items.CookedShrimp>(),
-                             ModContent.ItemType<Items.PadThai>(),
-                             ModContent.ItemType<Items.Pho>(),
-                             ModContent.ItemType<Items.Sashimi>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[frameX / 36]);
-        }
 
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {

@@ -40,7 +40,7 @@ namespace CFU.Tiles
             
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Dressers };
-            for(int i = 0; i <= 31; i++)
+            for(int i = 0; i <= 42; i++)
             {
                 AddMapEntry(new Color(127, 92, 69), this.GetLocalization("MapEntry" + i), MapChestName);
             }
@@ -232,9 +232,6 @@ namespace CFU.Tiles
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 32, Styles[(frameX / 36)]);
-            Chest.DestroyChest(i, j);
-        }
+            => Chest.DestroyChest(i, j);
     }
 }

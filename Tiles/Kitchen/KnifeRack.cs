@@ -24,10 +24,5 @@ namespace CFU.Tiles
             TileID.Sets.DisableSmartCursor[Type] = true;
             AddMapEntry(new Color(191, 142, 111));
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<Items.KnifeRack>());
-        }
     }
 }

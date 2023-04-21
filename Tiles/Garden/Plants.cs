@@ -54,24 +54,5 @@ namespace CFU.Tiles
                 Main.tile[i, j + 2].TileType == type)
                 offsetY = -4;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.Plant0>(),
-                             ModContent.ItemType<Items.Plant1>(),
-                             ModContent.ItemType<Items.Plant2>(),
-                             ModContent.ItemType<Items.Plant3>(),
-                             ModContent.ItemType<Items.Plant4>(),
-                             ModContent.ItemType<Items.Plant5>(),
-                             ModContent.ItemType<Items.Plant6>(),
-                             ModContent.ItemType<Items.Plant7>(),
-                             ModContent.ItemType<Items.Plant8>(),
-                             ModContent.ItemType<Items.Plant9>(),
-                             ModContent.ItemType<Items.Plant10>(),
-                             ModContent.ItemType<Items.Plant11>(),
-                             ModContent.ItemType<Items.Plant12>(),
-                             ModContent.ItemType<Items.Plant13>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 38)]);
-        }
     }
 }

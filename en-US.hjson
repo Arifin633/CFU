@@ -1,4 +1,3 @@
-
 Mods: {
 	CFU: {
 		Items: {
@@ -4299,6 +4298,17 @@ Mods: {
 				MapEntry29: Dynasty Cabinet
 				MapEntry30: Frozen Cabinet
 				MapEntry31: Living Wood Cabinet
+				MapEntry32: Spider Cabinet
+				MapEntry33: Lesion Cabinet
+				MapEntry34: Solar Cabinet
+				MapEntry35: Vortex Cabinet
+				MapEntry36: Nebula Cabinet
+				MapEntry37: Stardust Cabinet
+				MapEntry38: Sandstone Cabinet
+				MapEntry39: Bamboo Cabinet
+				MapEntry40: Coral Cabinet
+				MapEntry41: Balloon Cabinet
+				MapEntry42: Ash Wood Cabinet
 			}
 
 			Candelabras.MapEntry: Candelabra
@@ -4351,9 +4361,10 @@ Mods: {
 			Food2x1: {
 				MapEntry0: Bowl of Soup
 				MapEntry1: Cooked Fish
-				MapEntry2: Pad Thai
-				MapEntry3: Pho
-				MapEntry4: Sashimi
+				MapEntry2: Cooked Shrimp
+				MapEntry3: Pad Thai
+				MapEntry4: Pho
+				MapEntry5: Sashimi
 			}
 
 			FountainGiant.MapEntry: Fountain
@@ -4474,17 +4485,6 @@ Mods: {
 			WoodenCrate.MapEntry: Wooden Crate
 			Workbenches.MapEntry: Workbench
 			WorldMap.MapEntry: World Map
-			SpiderCabinet.MapEntry: Spider Cabinet
-			LesionCabinet.MapEntry: Lesion Cabinet
-			SolarCabinet.MapEntry: Solar Cabinet
-			VortexCabinet.MapEntry: Vortex Cabinet
-			NebulaCabinet.MapEntry: Nebula Cabinet
-			StardustCabinet.MapEntry: Stardust Cabinet
-			SandstoneCabinet.MapEntry: Sandstone Cabinet
-			BambooCabinet.MapEntry: Bamboo Cabinet
-			ReefCabinet.MapEntry: Reef Cabinet
-			BalloonCabinet.MapEntry: Balloon Cabinet
-			AshWoodCabinet.MapEntry: Ash Wood Cabinet
 			MiracleAbigailsFlower.MapEntry: Mods.CFU.MapObject.MiracleAbigailsFlower
 			MiracleGlowTulip.MapEntry: Mods.CFU.MapObject.MiracleGlowTulip
 		}

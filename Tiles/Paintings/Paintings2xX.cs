@@ -41,16 +41,5 @@ namespace CFU.Tiles
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.PaintingFlute>(),
-                             ModContent.ItemType<Items.PaintingTree>(),
-                             ModContent.ItemType<Items.PaintingJaak>(),
-                             ModContent.ItemType<Items.PaintingSunflower>(),
-                             ModContent.ItemType<Items.PaintingWater>(),
-                             ModContent.ItemType<Items.PaintingMount>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 36)]);
-        }
     }
 }

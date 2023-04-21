@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -69,11 +70,11 @@ namespace CFU.Tiles
             }
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.DiningTable>(),
                              ModContent.ItemType<Items.RoyalDiningTable>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 216)]);
+            yield return new Item(styles[(Main.tile[i, j].TileFrameX / 216)]);
         }
 
         void UpdateTables(int i, int j, bool fromLeft = false, bool fromRight = false, bool notFrom = false)

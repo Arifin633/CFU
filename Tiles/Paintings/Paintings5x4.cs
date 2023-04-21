@@ -30,13 +30,5 @@ namespace CFU.Tiles
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 72);
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.PaintingAgony>(),
-                             ModContent.ItemType<Items.PaintingFury>(),
-                             ModContent.ItemType<Items.PaintingRancher>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 72)]);
-        }
     }
 }

@@ -1,7 +1,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
@@ -22,15 +21,6 @@ namespace CFU.Tiles
             AdjTiles = new int[] { TileID.Sinks };
             AddMapEntry(new Color(191, 142, 111));
             DustType = -1;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.PrinSink>(),
-                             ModContent.ItemType<Items.MysticSink>(),
-                             ModContent.ItemType<Items.RoyalSink>(),
-                             ModContent.ItemType<Items.SandstoneSink>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 38)]);
         }
     }
 }

@@ -90,6 +90,10 @@ A lot of plant styles are duplicates, originally intended to pad
 the lines so they all had the same number of styles.  This is no
 longer necessary and they should be trimmed down.
 
+* Cabinets
+* Wardrobes
+Tile quick replacement is broken (likely tML issue).
+
 * Original Chad's Furniture TODO list
 Gardening Updates:
 General Improvements:

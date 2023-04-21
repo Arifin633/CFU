@@ -50,47 +50,6 @@ namespace CFU.Tiles
                     drawData.glowColor = CFUTileDraw.MartianGlow;
                     break;
             }
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.EndTableWood>(),
-                             ModContent.ItemType<Items.EndTableBoreal>(),
-                             ModContent.ItemType<Items.EndTablePalm>(),
-                             ModContent.ItemType<Items.EndTableMahogany>(),
-                             ModContent.ItemType<Items.EndTableEbon>(),
-                             ModContent.ItemType<Items.EndTableShade>(),
-                             ModContent.ItemType<Items.EndTablePearl>(),
-                             ModContent.ItemType<Items.EndTableSpooky>(),
-                             ModContent.ItemType<Items.EndTableCactus>(),
-                             ModContent.ItemType<Items.EndTablePumpkin>(),
-                             ModContent.ItemType<Items.EndTableMushroom>(),
-                             ModContent.ItemType<Items.EndTableGlass>(),
-                             ModContent.ItemType<Items.EndTableSteampunk>(),
-                             ModContent.ItemType<Items.EndTableSkyware>(),
-                             ModContent.ItemType<Items.EndTableHoney>(),
-                             ModContent.ItemType<Items.EndTableSlime>(),
-                             ModContent.ItemType<Items.EndTableMeteor>(),
-                             ModContent.ItemType<Items.EndTableGranite>(),
-                             ModContent.ItemType<Items.EndTableMarble>(),
-                             ModContent.ItemType<Items.EndTableBone>(),
-                             ModContent.ItemType<Items.EndTableFlesh>(),
-                             ModContent.ItemType<Items.EndTableLihzard>(),
-                             ModContent.ItemType<Items.EndTableObsidian>(),
-                             ModContent.ItemType<Items.EndTableGolden>(),
-                             ModContent.ItemType<Items.EndTableMartian>(),
-                             ModContent.ItemType<Items.EndTableBlue>(),
-                             ModContent.ItemType<Items.EndTableGreen>(),
-                             ModContent.ItemType<Items.EndTablePink>(),
-                             ModContent.ItemType<Items.EndTableCrystal>(),
-                             ModContent.ItemType<Items.EndTableDynasty>(),
-                             ModContent.ItemType<Items.EndTableIce>(),
-                             ModContent.ItemType<Items.EndTableLiving>(),
-                             ModContent.ItemType<Items.EndTableGothic>(),
-                             ModContent.ItemType<Items.EndTableSandstone>(),
-                             ModContent.ItemType<Items.EndTablePrincess>(),
-                             ModContent.ItemType<Items.EndTableMystic>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 54)]);
-        }
+        }        
     }
 }

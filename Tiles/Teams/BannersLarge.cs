@@ -29,16 +29,6 @@ namespace CFU.Tiles
             DustType = -1;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.RedBannerLarge>(),
-                             ModContent.ItemType<Items.GreenBannerLarge>(),
-                             ModContent.ItemType<Items.BlueBannerLarge>(),
-                             ModContent.ItemType<Items.YellowBannerLarge>(),
-                             ModContent.ItemType<Items.PinkBannerLarge>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 36)]);
-        }
-
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

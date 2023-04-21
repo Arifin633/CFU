@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
@@ -49,13 +50,13 @@ namespace CFU.Tiles
             return true;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.LimestoneSpireLarge>(),
                              ModContent.ItemType<Items.StoneSpireLarge>(),
                              ModContent.ItemType<Items.LimestonePinnacle>(),
                              ModContent.ItemType<Items.StonePinnacle>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 92)]);
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 92)]);
         }
     }
 }

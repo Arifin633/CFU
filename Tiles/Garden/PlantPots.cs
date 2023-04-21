@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -26,22 +25,6 @@ namespace CFU.Tiles
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short _1, ref short _2)
         {
             offsetY = -4;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = {
-                ModContent.ItemType<Items.PlantPotWhiteRed>(),
-                ModContent.ItemType<Items.PlantPotOrange>(),
-                ModContent.ItemType<Items.PlantPotWhite>(),
-                ModContent.ItemType<Items.PlantPotPurple>(),
-                ModContent.ItemType<Items.PlantPotBrown>(),
-                ModContent.ItemType<Items.PlantPotWhiteBlue>(),
-                ModContent.ItemType<Items.PlantPotBlackGold>(),
-                ModContent.ItemType<Items.PlantPotDarkBrown>(),
-                ModContent.ItemType<Items.PlantPotBasket>(),
-                ModContent.ItemType<Items.PlantPotTerracotta>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 48, styles[(frameX / 36)]);
         }
     }
 }

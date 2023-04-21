@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -26,8 +26,8 @@ namespace CFU.Tiles
             AddMapEntry(new Color(251, 235, 127));
             DustType = -1;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.PrinLantern>(),
                              ModContent.ItemType<Items.MysticLantern>(),
@@ -35,9 +35,8 @@ namespace CFU.Tiles
                              ModContent.ItemType<Items.SandstoneLantern>(),
                              ModContent.ItemType<Items.HangingLamp>(),
                              ModContent.ItemType<Items.PaintableLantern>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 36)]);
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 36)]);
         }
-
 
         public override void HitWire(int i, int j)
         {

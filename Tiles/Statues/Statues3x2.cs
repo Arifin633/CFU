@@ -28,13 +28,5 @@ namespace CFU.Tiles
         {
             offsetY = -4;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.StatueSpazmatism>(),
-                             ModContent.ItemType<Items.StatueRetinazer>(),
-                             ModContent.ItemType<Items.StatueTortoise>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 54)]);
-        }
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Enums;
@@ -39,10 +40,10 @@ namespace CFU.Tiles
         public static readonly int[] Styles = {
             ModContent.ItemType<Items.LimestoneHangingGargoyle>(),
             ModContent.ItemType<Items.StoneHangingGargoyle>() };
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, Styles[(frameX / 72)]);
+            yield return new Item(Styles[(Main.tile[i, j].TileFrameX / 72)]);
         }
 
         public override bool CreateDust(int i, int j, ref int type)

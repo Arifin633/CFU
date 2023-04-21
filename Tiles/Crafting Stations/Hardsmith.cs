@@ -80,27 +80,5 @@ namespace CFU.Tiles
             type = (Main.rand.NextBool(2)) ? dust2 : dust1;
             return true;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int item = 0;
-            switch (frameX / 72)
-            {
-                case 0:
-                    item = ModContent.ItemType<Items.HardsmithAdmMyt>();
-                    break;
-                case 1:
-                    item = ModContent.ItemType<Items.HardsmithAdmOri>();
-                    break;
-                case 2:
-                    item = ModContent.ItemType<Items.HardsmithTitMyt>();
-                    break;
-                case 3:
-                    item = ModContent.ItemType<Items.HardsmithTitOri>();
-                    break;
-            }
-
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, item);
-        }
     }
 }

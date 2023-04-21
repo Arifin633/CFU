@@ -82,14 +82,5 @@ namespace CFU.Tiles
                 CFUTileDraw.DrawFlame(i, j, spriteBatch);
             }
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.PrinChandelier>(),
-                             ModContent.ItemType<Items.MysticChandelier>(),
-                             0, /* ModContent.ItemType<Items.RoyalChandelier>(), */
-                             ModContent.ItemType<Items.SandstoneChandelier>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 54)]);
-        }
     }
 }

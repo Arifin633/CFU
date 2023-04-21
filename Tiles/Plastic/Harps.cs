@@ -35,13 +35,5 @@ namespace CFU.Tiles
             }
             return true;
         }
-
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.HarpGold>(),
-                             ModContent.ItemType<Items.HarpPlatinum>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 36)]);
-        }
     }
 }

@@ -38,19 +38,5 @@ namespace CFU.Tiles
         {
             offsetY = -8;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.PylonBaseForest>(),
-                             ModContent.ItemType<Items.PylonBaseJungle>(),
-                             ModContent.ItemType<Items.PylonBaseHallowed>(),
-                             ModContent.ItemType<Items.PylonBaseUnderground>(),
-                             ModContent.ItemType<Items.PylonBaseOcean>(),
-                             ModContent.ItemType<Items.PylonBaseDesert>(),
-                             ModContent.ItemType<Items.PylonBaseIce>(),
-                             ModContent.ItemType<Items.PylonBaseMushroom>(),
-                             ModContent.ItemType<Items.PylonBaseUniversal>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 54)]);
-        }
     }
 }

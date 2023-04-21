@@ -30,23 +30,5 @@ namespace CFU.Tiles
             AddMapEntry(new Color(191, 142, 111));
             DustType = -1;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.EndTableRoyal>(),
-                             ModContent.ItemType<Items.EndTableRush>(),
-                             ModContent.ItemType<Items.EndTableSpider>(),
-                             ModContent.ItemType<Items.EndTableLesion>(),
-                             ModContent.ItemType<Items.EndTableNewSandstone>(),
-                             ModContent.ItemType<Items.EndTableBamboo>(),
-                             ModContent.ItemType<Items.EndTableSolar>(),
-                             ModContent.ItemType<Items.EndTableVortex>(),
-                             ModContent.ItemType<Items.EndTableNebula>(),
-                             ModContent.ItemType<Items.EndTableStardust>(),
-                             ModContent.ItemType<Items.EndTableCoral>(),
-                             ModContent.ItemType<Items.EndTableBalloon>(),
-                             ModContent.ItemType<Items.EndTableAsh>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, styles[(frameX / 54)]);
-        }
     }
 }

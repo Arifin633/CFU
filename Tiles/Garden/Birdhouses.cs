@@ -1,12 +1,12 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ChadsFurnitureUpdated;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Enums;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -67,13 +67,13 @@ namespace CFU.Tiles
             }
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.Birdhouse>(),
                              ModContent.ItemType<Items.BirdhouseCardinal>(),
                              ModContent.ItemType<Items.BirdhouseJay>(),
                              ModContent.ItemType<Items.BirdhouseRoyal>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 72)]);
+            yield return new Item(styles[(Main.tile[i, j].TileFrameX / 72)]);
         }
 
         enum Animation

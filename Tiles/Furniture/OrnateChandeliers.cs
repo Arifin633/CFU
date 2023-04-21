@@ -53,14 +53,7 @@ namespace CFU.Tiles
             else
                 CFUtils.ShiftTileX(i, j, 0, set: true, skipWire: true);
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.OrnateGoldChandelier>(),
-                             ModContent.ItemType<Items.OrnatePlatinumChandelier>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 72)]);
-        }
-
+        
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

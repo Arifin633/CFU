@@ -90,12 +90,5 @@ namespace CFU.Tiles
                 SoundEngine.PlaySound(SoundID.Dig, new Vector2(i * 16, j * 16));
             }
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.AltarDemon>(),
-                             ModContent.ItemType<Items.AltarCrimson>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 54)]);
-        }
     }
 }

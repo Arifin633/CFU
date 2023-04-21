@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Audio;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -97,22 +97,23 @@ namespace CFU.Tiles
             }
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
-            int[] styles = { ModContent.ItemType<Items.ForestPot>(),
-                             ModContent.ItemType<Items.TundraPot>(),
-                             ModContent.ItemType<Items.JunglePot>(),
-                             ModContent.ItemType<Items.DungeonPot>(),
-                             ModContent.ItemType<Items.UnderworldPot>(),
-                             ModContent.ItemType<Items.CorruptionPot>(),
-                             ModContent.ItemType<Items.SpiderCavePot>(),
-                             ModContent.ItemType<Items.CrimsonPot>(),
-                             ModContent.ItemType<Items.PyramidPot>(),
-                             ModContent.ItemType<Items.LihzahrdPot>(),
-                             ModContent.ItemType<Items.MarbleCavePot>(),
-                             ModContent.ItemType<Items.UndergroundDesertPot>() };
+            int[] styles = { ItemID.ClayBlock,
+                             ItemID.IceBlock,
+                             ItemID.MudBlock,
+                             ItemID.Bone,
+                             ItemID.Obsidian,
+                             ItemID.EbonstoneBlock,
+                             ItemID.Cobweb,
+                             ItemID.CrimstoneBlock,
+                             ItemID.SandstoneBrick,
+                             ItemID.LihzahrdBrick,
+                             ItemID.Marble,
+                             ItemID.SandstoneBrick };
+            int frameY = Main.tile[i, j].TileFrameY;
             frameY = (frameY <= 36) ? frameY : (frameY - 36);
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 108)]);
+            yield return new Item((frameY / 108));
         }
     }
 }

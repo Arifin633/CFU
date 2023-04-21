@@ -34,15 +34,6 @@ namespace CFU.Tiles
             HitSound = SoundID.Shatter;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.StglNebula>(),
-                             ModContent.ItemType<Items.StglSolar>(),
-                             ModContent.ItemType<Items.StglStardust>(),
-                             ModContent.ItemType<Items.StglVortex>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 72)]);
-        }
-
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
             Tile tile = Main.tile[i, j];

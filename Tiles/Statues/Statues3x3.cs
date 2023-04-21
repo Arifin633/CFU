@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -20,24 +19,6 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(81, 81, 89));
             DustType = -1;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.StatueSlimeKing>(),
-                             ModContent.ItemType<Items.StatueEyeOfCthulhu>(),
-                             ModContent.ItemType<Items.StatueEaterOfWorlds>(),
-                             ModContent.ItemType<Items.StatueBrainOfCthulhu>(),
-                             ModContent.ItemType<Items.StatueQueenBee>(),
-                             ModContent.ItemType<Items.StatueSkeletron>(),
-                             ModContent.ItemType<Items.StatueWallOfFlesh>(),
-                             ModContent.ItemType<Items.StatueDestroyer>(),
-                             ModContent.ItemType<Items.StatueSkeletronPrime>(),
-                             ModContent.ItemType<Items.StatuePlantera>(),
-                             ModContent.ItemType<Items.StatueGolem>(),
-                             ModContent.ItemType<Items.StatueDukeFishron>(),
-                             ModContent.ItemType<Items.StatueLunaticCultist>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameX / 54)]);
         }
     }
 }

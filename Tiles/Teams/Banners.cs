@@ -5,7 +5,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -25,16 +24,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(13, 88, 130));
             DustType = -1;
         }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.RedBanner>(),
-                             ModContent.ItemType<Items.GreenBanner>(),
-                             ModContent.ItemType<Items.BlueBanner>(),
-                             ModContent.ItemType<Items.YellowBanner>(),
-                             ModContent.ItemType<Items.PinkBanner>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, styles[(frameX / 18)]);
-        }
+        
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

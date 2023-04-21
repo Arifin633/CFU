@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
 
 namespace CFU.Tiles
 {
@@ -25,13 +24,6 @@ namespace CFU.Tiles
             AdjTiles = new int[] { TileID.Furnaces, TileID.CookingPots };
             AddMapEntry(new Color(144, 148, 144));
             DustType = -1;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.Stove>(),
-                             ModContent.ItemType<Items.OrnateStove>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, styles[(frameX / 36)]);
         }
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

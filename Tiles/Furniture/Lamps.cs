@@ -1,8 +1,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using ChadsFurnitureUpdated;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -76,14 +76,14 @@ namespace CFU.Tiles
             }
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.PrinLamp>(),
                              ModContent.ItemType<Items.MysticLamp>(),
                              ModContent.ItemType<Items.RoyalLamp>(),
                              ModContent.ItemType<Items.SandstoneLamp>(),
-                             ModContent.ItemType<Items.PaintableLamp>()};
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, styles[(frameY / 56)]);
+                             ModContent.ItemType<Items.PaintableLamp>() };
+            yield return new Item(styles[(Main.tile[i, j].TileFrameY / 56)]);
         }
     }
 }

@@ -29,13 +29,5 @@ namespace CFU.Tiles
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameY / 54);
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            int[] styles = { ModContent.ItemType<Items.Poster>(),
-                             ModContent.ItemType<Items.PosterTerraria>(),
-                             ModContent.ItemType<Items.PosterMinecraft>() };
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, styles[(frameY / 54)]);
-        }
     }
 }
