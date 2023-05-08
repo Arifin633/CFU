@@ -28,6 +28,7 @@ namespace CFU.Tiles
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicDresser[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
+            TileID.Sets.DoesntGetReplacedWithTileReplacement[Type] = true;
             
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;

@@ -22,6 +22,7 @@ namespace CFU.Tiles
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicDresser[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
+            TileID.Sets.DoesntGetReplacedWithTileReplacement[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Height = 4;
             TileObjectData.newTile.Origin = new Point16(0, 3);
