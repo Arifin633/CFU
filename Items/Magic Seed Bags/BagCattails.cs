@@ -29,13 +29,13 @@ namespace CFU.Items
 
         public override bool AltFunctionUse(Player player)
         {
-            if (UI.UISystem.Interface.CurrentState != null)
+            if (UI.UISystem.BagInterface.CurrentState != null)
             {
-                UI.UISystem.Interface.SetState(null);
+                UI.UISystem.BagInterface.SetState(null);
             }
             else
             {
-                UI.UISystem.Interface.SetState(UI.UISystem.State);
+                UI.UISystem.BagInterface.SetState(UI.UISystem.BagState);
             }
             return false;
         }

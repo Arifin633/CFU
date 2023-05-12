@@ -9,7 +9,7 @@ using ReLogic.Content;
 
 namespace CFU.UI
 {
-    public class InterfaceState : UIState
+    public class BagInterfaceState : UIState
     {
         public CFUGrid Grid;
 
@@ -22,7 +22,7 @@ namespace CFU.UI
             if ((player.dead) || (player.mouseInterface) ||
                 !(BagItems.Exists(item => item.Type == player.inventory[player.selectedItem].type)) ||
                 (Main.mouseLeft && !Grid.ContainsPoint(Main.MouseScreen)))
-                UI.UISystem.Interface.SetState(null);
+                UI.UISystem.BagInterface.SetState(null);
             base.Update(time);
         }
 
@@ -51,7 +51,7 @@ namespace CFU.UI
             cell.OnLeftMouseUp += (_, _) => inSelection = false;
             cell.OnLeftMouseUp += (_, _) =>
             {
-                UI.UISystem.Interface.SetState(null);
+                UI.UISystem.BagInterface.SetState(null);
                 Player player = Main.LocalPlayer;
                 player.inventory[player.selectedItem].SetDefaults(BagItems[i].Type);
             };
@@ -90,23 +90,23 @@ namespace CFU.UI
 
     public class UISystem : ModSystem
     {
-        public static UserInterface Interface;
-        public static InterfaceState State;
+        public static UserInterface BagInterface;
+        public static BagInterfaceState BagState;
 
         public override void SetStaticDefaults()
         {
             if (!Main.dedServ)
             {
-                Interface = new UserInterface();
-                State = new InterfaceState();
+                BagInterface = new UserInterface();
+                BagState = new BagInterfaceState();
             }
         }
 
         public override void UpdateUI(GameTime gameTime)
         {
-            if (Interface?.CurrentState != null)
+            if (BagInterface?.CurrentState != null)
             {
-                Interface.Update(gameTime);
+                BagInterface.Update(gameTime);
             }
         }
 
@@ -119,8 +119,8 @@ namespace CFU.UI
                                   "CFU: Interface",
                                   delegate
                                   {
-                                      if (Interface?.CurrentState != null)
-                                          Interface.Draw(Main.spriteBatch, new GameTime());
+                                      if (BagInterface?.CurrentState != null)
+                                          BagInterface.Draw(Main.spriteBatch, new GameTime());
                                       return true;
                                   },
                                   InterfaceScaleType.UI));

@@ -662,7 +662,7 @@ namespace ChadsFurnitureUpdated
             Tile tile = Main.tile[x, y];
             if (tile.TileType == ModContent.TileType<Tiles.MannequinHead>())
             {
-                Main.PlayerRenderer.DrawPlayer(Main.Camera, Tiles.MannequinHead.p, Tiles.MannequinHead.p.position, 0f, Tiles.MannequinHead.p.fullRotationOrigin);
+                Main.PlayerRenderer.DrawPlayer(Main.Camera, Tiles.MannequinHead.Player, Tiles.MannequinHead.Player.position, 0f, Tiles.MannequinHead.Player.fullRotationOrigin);
             }
             Main.spriteBatch.End();
         }
