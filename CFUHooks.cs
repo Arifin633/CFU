@@ -114,6 +114,15 @@ namespace ChadsFurnitureUpdated
                                 CFUTileDraw.SpecialPositions[3][i] != new Point()) // Don't draw empty coordinates.
                                 CFUTileDraw.DrawRisingVine(CFUTileDraw.SpecialPositions[3][i]);
                     });
+
+                    c.GotoNext(MoveType.After, i => i.MatchCall("Terraria.GameContent.Drawing.TileDrawing", "DrawEntities_DisplayDolls"));
+                    c.EmitDelegate<Action>(() =>
+                    {
+                        for (int i = 0; i < CFUTileDraw.SpecialPositionsCount[4]; i++)
+                            if (CFUTileDraw.SpecialPositionsCount[4] < 5000 && // Don't draw past the array size.
+                                CFUTileDraw.SpecialPositions[4][i] != new Point()) // Don't draw empty coordinates.
+                                CFUTileDraw.DrawPlayer(CFUTileDraw.SpecialPositions[4][i]);
+                    });
                 };
             }
 

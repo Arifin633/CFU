@@ -82,7 +82,7 @@ namespace ChadsFurnitureUpdated
             HangingVine,
             RisingTile,
             RisingVine,
-            Unused
+            Player
         }
 
         public static void AddSpecialPosition(int x, int y, SpecialPositionType type)
@@ -652,6 +652,19 @@ namespace ChadsFurnitureUpdated
                     value += (num6 - (float)Math.PI / 2f).ToRotationVector2() * 16f;
                 }
             }
+        }
+
+        public static void DrawPlayer(Point coords)
+        {
+            Main.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.Transform);
+            int x = coords.X;
+            int y = coords.Y;
+            Tile tile = Main.tile[x, y];
+            if (tile.TileType == ModContent.TileType<Tiles.MannequinHead>())
+            {
+                Main.PlayerRenderer.DrawPlayer(Main.Camera, Tiles.MannequinHead.p, Tiles.MannequinHead.p.position, 0f, Tiles.MannequinHead.p.fullRotationOrigin);
+            }
+            Main.spriteBatch.End();
         }
 
         public static void DrawFlame(int i, int j, SpriteBatch spriteBatch)
