@@ -1,6 +1,7 @@
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
+using Terraria.UI;
+using Terraria.Audio;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.Localization;
@@ -237,6 +238,22 @@ namespace ChadsFurnitureUpdated
             {
                 Main.tileMerge[type][tile] = true;
             }
+        }
+
+        /* Set all height related fields of ELT to PIXEL. */
+        public static void SetHeight(UIElement elt, float pixel)
+        {
+            elt.Height.Set(pixel, 0);
+            elt.MaxHeight.Set(pixel, 0);
+            elt.MinHeight.Set(pixel, 0);
+        }
+
+        /* Set all width related fields of ELT to PIXEL. */
+        public static void SetWidth(UIElement elt, float pixel)
+        {
+            elt.Width.Set(pixel, 0);
+            elt.MaxWidth.Set(pixel, 0);
+            elt.MinWidth.Set(pixel, 0);
         }
     }
 }

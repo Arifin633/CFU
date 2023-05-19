@@ -57,10 +57,6 @@ namespace CFU.UI
 
         public override void LeftMouseDown(UIMouseEvent evt)
         {
-            foreach (CFUCell elt in Parent.Children)
-            {
-                elt.Selected = false;
-            }
             Selected = true;
             SoundEngine.PlaySound(SoundID.MenuTick);
             base.LeftMouseDown(evt);
