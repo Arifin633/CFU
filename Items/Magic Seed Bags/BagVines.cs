@@ -31,11 +31,11 @@ namespace CFU.Items
         {
             if (UI.UISystem.BagInterface.CurrentState != null)
             {
-                UI.UISystem.BagInterface.SetState(null);
+                UI.UISystem.BagState.CloseWindow();
             }
             else
             {
-                UI.UISystem.BagInterface.SetState(UI.UISystem.BagState);
+                UI.UISystem.BagState.OpenWindow();
             }
             return false;
         }

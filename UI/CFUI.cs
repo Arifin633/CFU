@@ -1,9 +1,11 @@
+using System.Linq;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.UI;
 using Terraria.ModLoader;
+using Terraria.GameContent;
 using Terraria.GameContent.UI.Elements;
 using ReLogic.Content;
 
@@ -11,7 +13,21 @@ namespace CFU.UI
 {
     public class BagInterfaceState : UIState
     {
-        public CFUGrid Grid;
+        CFUGrid Grid;
+
+        bool SetMousePosition = false;
+
+        static readonly List<ModItem> BagItems = new List<ModItem>
+        { ModContent.GetModItem(ModContent.ItemType<Items.BagCattails>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagFlowers>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagGrass>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagHerbs>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagLilyPads>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagMushrooms>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagOasisVegetation>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagSeaOats>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagSeaweed>()),
+          ModContent.GetModItem(ModContent.ItemType<Items.BagVines>())};
 
         public override void Update(GameTime time)
         {
@@ -26,19 +42,56 @@ namespace CFU.UI
             base.Update(time);
         }
 
-        public static readonly List<ModItem> BagItems = new List<ModItem>
-        { ModContent.GetModItem(ModContent.ItemType<Items.BagCattails>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagFlowers>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagGrass>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagHerbs>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagLilyPads>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagMushrooms>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagOasisVegetation>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagSeaOats>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagSeaweed>()),
-          ModContent.GetModItem(ModContent.ItemType<Items.BagVines>())};
+        public void OpenWindow()
+        {
+            UI.UISystem.BagInterface.SetState(UI.UISystem.BagState);
+            for (int i = 0; i < BagItems.Count; i++)
+            {
+                var elt = (CFUCell)Grid.Children.ElementAt(i);
+                Player player = Main.LocalPlayer;
+                if (player.inventory[player.selectedItem].type == BagItems[i].Type)
+                    elt.Selected = true;
+                else
+                    elt.Selected = false;
+            }
+            SetMousePosition = true;
+        }
 
-        public bool inSelection = false;
+        public void CloseWindow()
+        {
+            UI.UISystem.BagInterface.SetState(null);
+            /* Necessary to avoid the previous location
+               briefly flashing when a new window is open. */
+            Grid.Left.Set(-1000, 0);
+            Grid.Top.Set(-1000, 0);
+        }
+
+        protected override void DrawSelf(SpriteBatch spriteBatch)
+        {
+            if (SetMousePosition)
+            {
+                /* During the time `OnActivate' is called (where these
+                   calculations truly belong) mouse X and Y, as well
+                   as screen width and height, are inaccurate. */
+                float mouseX = Main.mouseX;
+                float mouseY = Main.mouseY;
+                float screenWidth = Main.screenWidth;
+                float screenHeight = Main.screenHeight;
+
+                Grid.Left.Set((mouseX - (Grid.Width.Pixels / 2)), 0);
+                Grid.Top.Set((mouseY - (Grid.Height.Pixels / 2)), 0);
+
+                if ((int)Left.Pixels + (int)Width.Pixels + 18 > screenWidth)
+                {
+                    Grid.Left.Set((float)(screenWidth - (int)Grid.Width.Pixels - 18), 0);
+                }
+                if ((int)Top.Pixels + (int)Height.Pixels + 18 > screenHeight)
+                {
+                    Grid.Top.Set((float)(screenHeight - (int)Grid.Height.Pixels - 18), 0);
+                }
+                SetMousePosition = false;
+            }
+        }
 
         void SetupCell(ref CFUCell cell, int i)
         {
@@ -47,35 +100,28 @@ namespace CFU.UI
             var image = new UIImage(asset);
             image.ScaleToFit = true;
             cell.Append(image);
-            cell.OnLeftMouseDown += (_, _) => inSelection = true;
-            cell.OnLeftMouseUp += (_, _) => inSelection = false;
-            cell.OnLeftMouseUp += (_, _) =>
+            cell.OnLeftMouseDown += (_, cell) =>
+            {
+                foreach (CFUCell elt in Grid.Children)
+                {
+                    if (elt != cell)
+                        elt.Selected = false;
+                }
+            };
+            cell.OnLeftMouseUp += (_, cell) =>
             {
                 UI.UISystem.BagInterface.SetState(null);
                 Player player = Main.LocalPlayer;
                 player.inventory[player.selectedItem].SetDefaults(BagItems[i].Type);
-            };
-            cell.OnUpdate += (elt) =>
-            {
-                if (!inSelection)
-                {
-                    Player player = Main.LocalPlayer;
-                    if (player.inventory[player.selectedItem].type == item.Type)
-                    {
-                        foreach (CFUCell sis in elt.Parent.Children)
-                        {
-                            sis.Selected = false;
-                        }
-                        var cell = (CFUCell)elt;
-                        cell.Selected = true;
-                    }
-                }
             };
         }
 
         public override void OnInitialize()
         {
             Grid = new CFUGrid();
+            Grid.Left.Set(-1000, 0); /* See: `CloseWindow' */
+            Grid.Top.Set(-1000, 0);
+            Grid.SetPadding(6);
             for (int i = 0; i < BagItems.Count; i++)
             {
                 var cell = new CFUCell();
@@ -83,7 +129,6 @@ namespace CFU.UI
                 SetupCell(ref cell, i);
                 Grid.Append(cell);
             }
-            Grid.SetPadding(6);
             Append(Grid);
         }
     }
