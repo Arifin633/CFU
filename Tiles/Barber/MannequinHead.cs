@@ -55,6 +55,10 @@ namespace CFU.Tiles
 
         public override bool RightClick(int i, int j)
         {
+            if (UI.UISystem.HairInterface?.CurrentState == null)
+                UI.UISystem.HairState.OpenWindow(Player);
+            else
+                UI.UISystem.HairState.CloseWindow(revert: true);
             return true;
         }
 
