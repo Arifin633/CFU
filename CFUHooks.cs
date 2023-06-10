@@ -72,7 +72,7 @@ namespace ChadsFurnitureUpdated
             /* The point in time a drawing function is called
                seems to be the sole determinant for drawing order.
                Therefore, to ensure our tiles' drawing order looks
-               just like vanilla, we must hook into this function
+               just like vanilla's, we must hook into this function
                and draw our tiles at the same time as their equivalents.*/
             if (CFUConfig.WindEnabled())
             {

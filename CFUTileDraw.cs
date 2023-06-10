@@ -35,7 +35,7 @@ namespace ChadsFurnitureUpdated
            lived on a hook targeting `TileDrawing.Update',
            the very function it seeks to emulate.
            Since the "PostUpdateEverything" tML hook is
-           called relatively close `Update' there should
+           called relatively close to `Update' there should
            be no issue in using it instead of a real hook. */
         public override void PostUpdateEverything()
         {
@@ -656,15 +656,19 @@ namespace ChadsFurnitureUpdated
 
         public static void DrawPlayer(Point coords)
         {
-            Main.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.Transform);
             int x = coords.X;
             int y = coords.Y;
             Tile tile = Main.tile[x, y];
             if (tile.TileType == ModContent.TileType<Tiles.MannequinHead>())
             {
-                Main.PlayerRenderer.DrawPlayer(Main.Camera, Tiles.MannequinHead.Player, Tiles.MannequinHead.Player.position, 0f, Tiles.MannequinHead.Player.fullRotationOrigin);
+                Player player = Tiles.MannequinHead.FindPlayer(x, y);
+                if (player != null)
+                {
+                    Main.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.Transform);
+                    Main.PlayerRenderer.DrawPlayer(Main.Camera, player, player.position, player.fullRotation, player.fullRotationOrigin);
+                    Main.spriteBatch.End();
+                }
             }
-            Main.spriteBatch.End();
         }
 
         public static void DrawFlame(int i, int j, SpriteBatch spriteBatch)
