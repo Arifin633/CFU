@@ -141,7 +141,7 @@ namespace CFU.UI
 
         CFUImage[] HairImages;
 
-        public Player Player;
+        Player Player;
         Color oldHairColor;
         int oldHairstyle;
 

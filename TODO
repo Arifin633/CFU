@@ -37,7 +37,7 @@ if the water gets too high/low.  Some mechanism should be put in place so
 the tile can physically change its position in that situation.
 
 * Mannequin Head
-Add hair-displaying capabilities as it had in the original mod.
+Likely doesn't work in multiplayer.
 
 * Paintable Sofa
 * Paintable Armchair
