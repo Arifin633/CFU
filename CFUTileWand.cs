@@ -38,7 +38,7 @@ public static class CFUTileWand
             }
         }
     }
-    
+
     public static FlexibleTileWand CreateWandCattails()
     {
         FlexibleTileWand wand = new FlexibleTileWand();
@@ -122,18 +122,18 @@ public static class CFUTileWand
 
         /* Corruption Grass */
         AddVariationsByRowVariable(wand, ItemID.CorruptSeeds, shortGrass, 32, 12, 7);
-        
+
         /* Jungle Grass */
         AddVariationsByRowVariable(wand, ItemID.JungleGrassSeeds, shortGrass, 32, 12, 9);
         AddVariationsByRowVariable(wand, ItemID.JungleGrassSeeds, tallGrass, 20, 12, 7);
-        
+
         /* Hallowed Grass */
         AddVariationsByRowVariable(wand, ItemID.HallowedSeeds, shortGrass, 32, 12, 12);
         AddVariationsByRowVariable(wand, ItemID.HallowedSeeds, tallGrass, 20, 6, 9);
-        
+
         /* Crimson Grass */
         AddVariationsByRowVariable(wand, ItemID.CrimsonSeeds, shortGrass, 32, 30, 14);
-        
+
         /* Ash Grass */
         AddVariationsByRowVariable(wand, ItemID.AshGrassSeeds, shortGrass, 32, 12, 20);
 

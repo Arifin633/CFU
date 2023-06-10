@@ -156,16 +156,16 @@ namespace CFU.Tiles
             int frameY = Main.tile[i, j].TileFrameY;
             switch (frameX / 36)
             {
-            case 14: /* Meteor */
-                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
-                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
-                drawData.glowColor = CFUTileDraw.MeteorGlow;
-                break;
-            case 31: /* Martian */
-                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
-                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
-                drawData.glowColor = CFUTileDraw.MartianGlow;
-                break;
+                case 14: /* Meteor */
+                    drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                    drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                    drawData.glowColor = CFUTileDraw.MeteorGlow;
+                    break;
+                case 31: /* Martian */
+                    drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                    drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                    drawData.glowColor = CFUTileDraw.MartianGlow;
+                    break;
             }
         }
     }

@@ -26,7 +26,7 @@ namespace CFU.Items
             Item.tileBoost = 3;
             Item.placeStyle = 0;
         }
-        
+
         public override bool AltFunctionUse(Player player)
         {
             if (UI.UISystem.BagInterface.CurrentState != null)

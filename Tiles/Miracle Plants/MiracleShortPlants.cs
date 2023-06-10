@@ -93,7 +93,7 @@ namespace CFU.Tiles
             // TileObjectData.newSubTile.RandomStyleRange = 10;
             // TileObjectData.addSubTile(21);
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(26, 196, 84));          
+            AddMapEntry(new Color(26, 196, 84));
             AddMapEntry(new Color(122, 116, 218));
             AddMapEntry(new Color(135, 196, 26));
             AddMapEntry(new Color(182, 175, 130));
@@ -166,19 +166,19 @@ namespace CFU.Tiles
            `SwaysInWindBasic' set. */
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if (Main.rand.Next(4) == 0)
+            if (Main.rand.NextBool(4))
             {
                 /* Corrupt Plants */
                 int frameY = (Main.tile[i, j].TileFrameY / 22);
                 if (frameY is 7 or 8 or 17 &&
-                    (Main.rand.Next(500) == 0))
+                    (Main.rand.NextBool(500)))
                 {
                     Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Demonite);
                 }
 
                 /* Jungle Spore */
                 else if (frameY is 18 &&
-                         (Main.rand.Next(60) == 0))
+                         (Main.rand.NextBool(60)))
                 {
                     int n = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.JungleSpore, 0f, 0f, 250, default(Color), 0.4f);
                     Main.dust[n].fadeIn = 0.7f;
@@ -186,7 +186,7 @@ namespace CFU.Tiles
 
                 /* Glowing Mushroom */
                 else if (frameY is 11 &&
-                         (Main.rand.Next(500) == 0))
+                         (Main.rand.NextBool(500)))
                 {
                     Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.GlowingMushroom, 0f, 0f, 250, default(Color), 0.8f);
                 }

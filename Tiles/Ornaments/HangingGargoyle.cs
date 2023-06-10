@@ -40,7 +40,7 @@ namespace CFU.Tiles
         public static readonly int[] Styles = {
             ModContent.ItemType<Items.LimestoneHangingGargoyle>(),
             ModContent.ItemType<Items.StoneHangingGargoyle>() };
-        
+
         public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             yield return new Item(Styles[(Main.tile[i, j].TileFrameX / 72)]);

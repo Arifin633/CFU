@@ -37,7 +37,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Dressers };
-            for(int i = 0; i <= 3; i++)
+            for (int i = 0; i <= 3; i++)
             {
                 AddMapEntry(new Color(127, 92, 69), this.GetLocalization("MapEntry" + i), MapChestName);
             }
@@ -54,7 +54,7 @@ namespace CFU.Tiles
         //     height = 1;
         // }
 
-        public override LocalizedText DefaultContainerName (int frameX, int frameY)
+        public override LocalizedText DefaultContainerName(int frameX, int frameY)
             => this.GetLocalization("MapEntry" + (frameX / 54));
 
         public static string MapChestName(string name, int i, int j)
@@ -97,7 +97,7 @@ namespace CFU.Tiles
 
             return true;
         }
-        
+
         static readonly int[] Styles =
             { ModContent.ItemType<Items.PrinDresser>(),
               ModContent.ItemType<Items.MysticDresser>(),

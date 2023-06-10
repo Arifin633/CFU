@@ -71,12 +71,12 @@ namespace CFU.Tiles
 
         public override bool PreDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if (Main.tile[i, j].TileFrameY == 0 && Main.rand.Next(4) == 0)
+            if (Main.tile[i, j].TileFrameY == 0 && Main.rand.NextBool(4))
             {
                 switch (Main.tile[i, j].TileFrameX / 18)
                 {
                     case 0:
-                        if (Main.rand.Next(100) == 0)
+                        if (Main.rand.NextBool(100))
                         {
                             int num = Dust.NewDust(new Vector2(i * 16, j * 16 - 4), 16, 16, DustID.Sunflower, 0f, 0f, 160, default(Color), 0.1f);
                             Main.dust[num].velocity.X /= 2f;
@@ -86,26 +86,26 @@ namespace CFU.Tiles
                         }
                         break;
                     case 1:
-                        if (Main.rand.Next(100) == 0)
+                        if (Main.rand.NextBool(100))
                         {
                             Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.GlowingMushroom, 0f, 0f, 250, default(Color), 0.8f);
                         }
                         break;
                     case 3:
-                        if (Main.rand.Next(200) == 0)
+                        if (Main.rand.NextBool(200))
                         {
                             int num2 = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Demonite, 0f, 0f, 100, default(Color), 0.2f);
                             Main.dust[num2].fadeIn = 1.2f;
                         }
-                        if (Main.rand.Next(75) == 0)
+                        if (Main.rand.NextBool(75))
                         {
-                            int num3 = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, 27, 0f, 0f, 100);
+                            int num3 = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Shadowflame, 0f, 0f, 100);
                             Main.dust[num3].velocity.X /= 2f;
                             Main.dust[num3].velocity.Y /= 2f;
                         }
                         break;
                     case 4:
-                        if (Main.rand.Next(150) == 0)
+                        if (Main.rand.NextBool(150))
                         {
                             int num4 = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 8, DustID.Cloud);
                             Main.dust[num4].velocity.X /= 3f;
@@ -118,7 +118,7 @@ namespace CFU.Tiles
                         }
                         break;
                     case 5:
-                        if (Main.rand.Next(40) == 0)
+                        if (Main.rand.NextBool(40))
                         {
                             int num5 = Dust.NewDust(new Vector2(i * 16, j * 16 - 6), 16, 16, DustID.Torch, 0f, 0f, 0, default(Color), 1.5f);
                             Main.dust[num5].velocity.Y -= 2f;
@@ -126,7 +126,7 @@ namespace CFU.Tiles
                         }
                         break;
                     case 6:
-                        if (Main.rand.Next(30) == 0)
+                        if (Main.rand.NextBool(30))
                         {
                             int num6 = Dust.NewDust(newColor: new Color(50, 255, 255, 255), Position: new Vector2(i * 16, j * 16), Width: 16, Height: 16, Type: DustID.TintableDustLighted, SpeedX: 0f, SpeedY: 0f, Alpha: 254, Scale: 0.5f);
                             Main.dust[num6].velocity *= 0f;

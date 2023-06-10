@@ -36,7 +36,7 @@ namespace CFU.Tiles
             TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceRight;
             TileObjectData.addAlternate(3);
             TileObjectData.addTile(Type);
-            
+
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
             AdjTiles = new int[] { TileID.Beds };
             AddMapEntry(new Color(191, 142, 111));

@@ -164,7 +164,7 @@ namespace ChadsFurnitureUpdated
                (the mechanism behind the "Rubblemaker" items) alongside
                vanilla's. */
 
-            Terraria.IL_Item.GetFlexibleTileWand  += (il) =>
+            Terraria.IL_Item.GetFlexibleTileWand += (il) =>
             {
                 var c = new ILCursor(il);
                 c.GotoNext(MoveType.Before, i => i.MatchLdnull());

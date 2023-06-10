@@ -24,12 +24,12 @@ namespace CFU.Tiles
             Main.tileNoAttach[Type] = true;
             Main.tileTable[Type] = true;
             Main.tileContainer[Type] = true;
-            
+
             TileID.Sets.HasOutlines[Type] = true;
             TileID.Sets.BasicDresser[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
             TileID.Sets.DoesntGetReplacedWithTileReplacement[Type] = true;
-            
+
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 18 };
@@ -38,10 +38,10 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorInvalidTiles = new int[] { TileID.MagicalIceBlock };
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
-            
+
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
             AdjTiles = new int[] { TileID.Dressers };
-            for(int i = 0; i <= 42; i++)
+            for (int i = 0; i <= 42; i++)
             {
                 AddMapEntry(new Color(127, 92, 69), this.GetLocalization("MapEntry" + i), MapChestName);
             }
@@ -58,9 +58,9 @@ namespace CFU.Tiles
         //     height = 1;
         // }
 
-        public override LocalizedText DefaultContainerName (int frameX, int frameY)
+        public override LocalizedText DefaultContainerName(int frameX, int frameY)
             => this.GetLocalization("MapEntry" + (frameX / 36));
-        
+
         public static string MapChestName(string name, int i, int j)
         {
             Tile tile = Main.tile[i, j];

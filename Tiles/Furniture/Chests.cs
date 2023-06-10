@@ -36,7 +36,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Containers };
-            for(int i = 0; i <= 3; i++)
+            for (int i = 0; i <= 3; i++)
             {
                 AddMapEntry(new Color(174, 129, 92), this.GetLocalization("MapEntry" + i), MapChestName);
             }
@@ -46,9 +46,9 @@ namespace CFU.Tiles
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
 
-        public override LocalizedText DefaultContainerName (int frameX, int frameY)
+        public override LocalizedText DefaultContainerName(int frameX, int frameY)
             => this.GetLocalization("MapEntry" + (frameX / 36));
-        
+
         public static string MapChestName(string name, int i, int j)
         {
             Tile tile = Main.tile[i, j];

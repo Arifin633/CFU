@@ -24,7 +24,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(13, 88, 130));
             DustType = -1;
         }
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

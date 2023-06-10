@@ -31,11 +31,11 @@ namespace CFU.Tiles
                 frame = ++frame % 4;
             }
         }
-		
+
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
-            Tile tile = Main.tile[i,j];
-            if(tile.TileFrameX == 0 && tile.TileFrameY == 0)
+            Tile tile = Main.tile[i, j];
+            if (tile.TileFrameX == 0 && tile.TileFrameY == 0)
             {
                 Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange);
                 spriteBatch.Draw(

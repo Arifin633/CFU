@@ -148,7 +148,7 @@ namespace CFU.UI
         public override void Update(GameTime time)
         {
             Player player = Main.LocalPlayer;
-            if(Main.npcChatText != "" || Main.playerInventory || player.chest != -1 || Main.npcShop != 0 || player.talkNPC != -1 || Main.InGuideCraftMenu)
+            if (Main.npcChatText != "" || Main.playerInventory || player.chest != -1 || Main.npcShop != 0 || player.talkNPC != -1 || Main.InGuideCraftMenu)
                 CloseWindow(revert: true);
             base.Update(time);
         }
@@ -175,7 +175,7 @@ namespace CFU.UI
                 Slider.HSL.Luminance = hsl.Z;
                 oldHairstyle = Player.hair;
 
-                foreach(var img in HairImages)
+                foreach (var img in HairImages)
                 {
                     img.Color = color;
                 }
@@ -208,7 +208,7 @@ namespace CFU.UI
             Box.Top.Set(((Main.screenHeight / 2) + (100 / Main.UIScale) / Main.UIScale), 0f);
         }
 
-        void SetupCell (ref CFUCell cell, int i)
+        void SetupCell(ref CFUCell cell, int i)
         {
             cell.OnLeftMouseDown += (_, _) => Player.hair = i;
         }
@@ -332,7 +332,7 @@ namespace CFU.UI
                 else
                 {
                     Grid.Index = 0;
-                    Grid.Recalculate();   
+                    Grid.Recalculate();
                 }
             };
 
@@ -380,7 +380,7 @@ namespace CFU.UI
                 accept.ShadowColor = Color.Black;
             accept.OnLeftClick += (_, _) =>
                 CloseWindow(revert: false);
-            
+
             cancel.MarginTop = 20;
             cancel.TextColor = new Color(249, 218, 121);
             cancel.OnMouseOver += (_, _) =>

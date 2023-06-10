@@ -49,7 +49,7 @@ namespace ChadsFurnitureUpdated
             }
         }
     }
-    
+
     static class CFUTileDraw
     {
         private static TileDrawing TilesRenderer = Main.instance.TilesRenderer;
@@ -376,7 +376,7 @@ namespace ChadsFurnitureUpdated
                 return false;
             }
             Tile tile = Main.tile[x, y - 1];
-            if (tile == null || !TileID.Sets.Platforms[tile.TileType] || tile.IsHalfBlock|| tile.Slope != 0)
+            if (tile == null || !TileID.Sets.Platforms[tile.TileType] || tile.IsHalfBlock || tile.Slope != 0)
             {
                 return false;
             }
@@ -412,7 +412,7 @@ namespace ChadsFurnitureUpdated
                 value.Y -= 8f;
                 vector.Y -= 8f;
             }
-            
+
             if (flag)
                 value += new Vector2(0f, 16f);
 

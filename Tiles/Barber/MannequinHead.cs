@@ -51,7 +51,7 @@ namespace CFU.Tiles
             tag.Set("HairStyle", Player.hair);
             tag.Set("HairColor", Player.hairColor);
         }
-        
+
         public override void LoadData(TagCompound tag)
         {
             Player.GetModPlayer<MannequinHeadPlayer>().IsMannequinHead = true;
@@ -78,7 +78,7 @@ namespace CFU.Tiles
             NetMessage.SendData(MessageID.TileEntitySharing, -1, -1, null, ID, Position.X, Position.Y);
         }
     }
-    
+
     public class MannequinHeadPlayer : ModPlayer
     {
         public bool IsMannequinHead = false;
@@ -103,7 +103,7 @@ namespace CFU.Tiles
     public class MannequinHead : ModTile
     {
         public override string Texture => "CFU/Textures/Tiles/Barber/MannequinHead";
-        
+
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;
@@ -144,7 +144,7 @@ namespace CFU.Tiles
             int frameX = tile.TileFrameX;
             int frameY = tile.TileFrameY;
             j = (frameY is 0) ? (j + 1) : j;
-            i = (frameX is not (0 or 36)) ? (i - 1): i;
+            i = (frameX is not (0 or 36)) ? (i - 1) : i;
 
             if (TileEntity.ByPosition.TryGetValue(new Point16(i, j), out var te))
             {
@@ -173,7 +173,7 @@ namespace CFU.Tiles
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
             j = (frameY is 0) ? (j + 1) : j;
-            i = (frameX is not (0 or 36)) ? (i - 1): i;
+            i = (frameX is not (0 or 36)) ? (i - 1) : i;
             if (TileEntity.ByPosition.TryGetValue(new Point16(i, j), out var te))
             {
                 MannequinHeadTE mte = (MannequinHeadTE)te;

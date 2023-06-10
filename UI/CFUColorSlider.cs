@@ -16,7 +16,7 @@ namespace CFU.UI
             public float Saturation;
             public float Luminance;
         }
-        
+
         public HSLColor HSL = new HSLColor
         { Hue = 0f, Saturation = 0f, Luminance = 0f };
 
@@ -58,7 +58,7 @@ namespace CFU.UI
         public override void OnInitialize()
         {
             HSL = new HSLColor();
-            
+
             var h = new UIColoredSlider(LocalizedText.Empty, () => HSL.Hue, delegate (float x)
             {
                 HSL.Hue = x;
@@ -74,16 +74,16 @@ namespace CFU.UI
                 ColorChanged();
             }, UpdateHSL_S, (float x) => Main.hslToRgb(HSL.Hue, x, HSL.Luminance * 0.85f + 0.15f), Color.Transparent);
             s.HAlign = 1f;
-            s.VAlign = 1/3f;
+            s.VAlign = 1 / 3f;
             Append(s);
-            
+
             var l = new UIColoredSlider(LocalizedText.Empty, () => HSL.Luminance, delegate (float x)
             {
                 HSL.Luminance = x;
                 ColorChanged();
             }, UpdateHSL_L, (float x) => Main.hslToRgb(HSL.Hue, HSL.Saturation, x * 0.85f + 0.15f), Color.Transparent);
             l.HAlign = 1f;
-            l.VAlign = 2/3f;
+            l.VAlign = 2 / 3f;
             Append(l);
         }
     }

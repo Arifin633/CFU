@@ -70,7 +70,7 @@ namespace CFU.Tiles
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if ((Main.rand.Next(4) == 0) && (Main.rand.Next(20) == 0))
+            if ((Main.rand.NextBool(4)) && (Main.rand.NextBool(20)))
             {
                 if (Main.tile[i, j].TileFrameX >= 36)
                 {

@@ -53,7 +53,7 @@ namespace CFU.Tiles
             else
                 CFUtils.ShiftTileX(i, j, 0, set: true, skipWire: true);
         }
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

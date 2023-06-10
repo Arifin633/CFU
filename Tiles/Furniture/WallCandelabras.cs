@@ -39,7 +39,7 @@ namespace CFU.Tiles
                 CFUtils.ShiftTileY(i, j, 0, set: true, skipWire: true);
         }
 
-        
+
         public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.WallCandelabraGold>(),
@@ -236,16 +236,16 @@ namespace CFU.Tiles
             int frameY = Main.tile[i, j].TileFrameY;
             switch (frameX / 36)
             {
-            case 20: /* Meteor */
-                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
-                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
-                drawData.glowColor = CFUTileDraw.MeteorGlow;
-                break;
-            case 31: /* Martian */
-                drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
-                drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
-                drawData.glowColor = CFUTileDraw.MartianGlow;
-                break;
+                case 20: /* Meteor */
+                    drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                    drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                    drawData.glowColor = CFUTileDraw.MeteorGlow;
+                    break;
+                case 31: /* Martian */
+                    drawData.glowTexture = ModContent.Request<Texture2D>(Texture + "Glow").Value;
+                    drawData.glowSourceRect = new Rectangle(frameX, frameY, drawData.tileWidth, drawData.tileHeight);
+                    drawData.glowColor = CFUTileDraw.MartianGlow;
+                    break;
             }
         }
 

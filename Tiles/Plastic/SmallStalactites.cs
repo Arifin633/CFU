@@ -73,8 +73,8 @@ namespace CFU.Tiles
         {
             /* The Honey stalactite (hanging) drips honey. */
             if (((Main.tile[i, j].TileFrameX / 54) == 7) &&
-                (Main.rand.Next(4) == 0) &&
-                (Main.rand.Next(60) == 0))
+                (Main.rand.NextBool(4)) &&
+                (Main.rand.NextBool(60)))
             {
                 int n = Dust.NewDust(new Vector2(i * 16 + 2, j * 16 + 6), 8, 4, DustID.Honey2);
                 Main.dust[n].scale -= (float)Main.rand.Next(3) * 0.1f;

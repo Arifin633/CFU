@@ -26,7 +26,7 @@ namespace CFU.Tiles
             AddMapEntry(new Color(251, 235, 127));
             DustType = -1;
         }
-        
+
         public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             int[] styles = { ModContent.ItemType<Items.PrinLantern>(),

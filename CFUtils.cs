@@ -233,7 +233,7 @@ namespace ChadsFurnitureUpdated
                   ModContent.TileType<Tiles.Shingles>(),
                   ModContent.TileType<Tiles.StoneFrieze>(),
                   ModContent.TileType<Tiles.StonePillar>() };
-            
+
             foreach (int tile in moddedTiles)
             {
                 Main.tileMerge[type][tile] = true;

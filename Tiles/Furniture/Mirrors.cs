@@ -16,7 +16,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2xX);
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Height = 4;
-            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 16, 18 };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 18 };
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(133, 213, 247));
             DustType = -1;

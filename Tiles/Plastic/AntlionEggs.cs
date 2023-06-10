@@ -35,7 +35,7 @@ namespace CFU.Tiles
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short frameX, ref short frameY) =>
             offsetY = 2;
 
-        public override void AnimateIndividualTile (int type, int i, int j, ref int addFrX, ref int addFrY)
+        public override void AnimateIndividualTile(int type, int i, int j, ref int addFrX, ref int addFrY)
         {
             int frameX = Main.tile[i, j].TileFrameX;
             int frameY = Main.tile[i, j].TileFrameY;
@@ -46,7 +46,7 @@ namespace CFU.Tiles
             a %= 4;
             addFrY = a * 36;
         }
-        
+
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch) => !(CFUConfig.WindEnabled());
 
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)

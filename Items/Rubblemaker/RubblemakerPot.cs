@@ -47,7 +47,7 @@ namespace CFU.Items
             SoundEngine.PlaySound(SoundID.Unlock);
             return false;
         }
-        
+
         public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
             float inventoryScale = Main.inventoryScale;

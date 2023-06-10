@@ -57,7 +57,7 @@ namespace CFU.Tiles
             else offsetY = 2;
         }
 
-        public override void AnimateIndividualTile (int type, int i, int j, ref int addFrX, ref int addFrY) => addFrY = Main.tileFrame[type] * 36;
+        public override void AnimateIndividualTile(int type, int i, int j, ref int addFrX, ref int addFrY) => addFrY = Main.tileFrame[type] * 36;
 
         public override bool CreateDust(int i, int j, ref int type)
         {
@@ -71,13 +71,13 @@ namespace CFU.Tiles
 
         public override void PostDraw(int i, int j, SpriteBatch spritebatch)
         {
-            if ((Main.rand.Next(4) == 0) && (Main.rand.Next(10) == 0))
+            if ((Main.rand.NextBool(4)) && (Main.rand.NextBool(10)))
             {
-                int num = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, 168);
+                int num = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.PlanteraBulb);
                 Main.dust[num].noGravity = true;
                 Main.dust[num].alpha = 200;
             }
-            
+
             if ((CFUConfig.WindEnabled()) &&
                 (Main.tile[i, j].TileFrameX == 0) &&
                 (Main.tile[i, j].TileFrameY == 0))

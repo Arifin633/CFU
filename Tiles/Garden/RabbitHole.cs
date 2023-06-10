@@ -27,7 +27,7 @@ namespace CFU.Tiles
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(151, 107, 75));
         }
-        
+
         /* TODO: Spawn a bunny. */
     }
 }

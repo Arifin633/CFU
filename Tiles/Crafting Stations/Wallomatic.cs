@@ -14,7 +14,7 @@ namespace CFU.Tiles
             Main.tileFrameImportant[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
             TileObjectData.newTile.Origin = new Point16(0, 2);
-            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 18 };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(155, 128, 132));
             DustType = -1;

@@ -108,7 +108,7 @@ namespace CFU.UI
             int y = 0;
             for (int i = 0; i < Elements.Count; i++)
             {
-                if (i >= Index  &&
+                if (i >= Index &&
                     ((Orientation == GridOrientation.Horizontal && y < rows) ||
                      (Orientation == GridOrientation.Vertical && x < columns)))
                 {

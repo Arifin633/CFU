@@ -19,7 +19,7 @@ namespace CFU.UI
                                           (int)dimensions.Height),
                             new Color(23, 25, 81, 255) * 0.925f);
         };
-        
+
         protected override void DrawSelf(SpriteBatch spriteBatch)
         {
             DrawFun(spriteBatch, this);

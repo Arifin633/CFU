@@ -20,7 +20,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Width = 4;
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.Origin = new Point16(1, 2);
-            TileObjectData.newTile.CoordinateHeights = new int[]{ 16, 16, 18 };
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 18 };
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.Furnaces, TileID.Anvils, TileID.AdamantiteForge, TileID.MythrilAnvil, TileID.Hellforge };
             AddMapEntry(new Color(231, 53, 56));

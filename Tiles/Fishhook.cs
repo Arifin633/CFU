@@ -62,7 +62,7 @@ namespace CFU.Tiles
         }
 
         public override ushort GetMapOption(int i, int j) => (ushort)((Main.tile[i, j].TileFrameY == 0) ? 0 : 1);
-        
+
         public int AfterPlacementHook(int i, int j, int type, int style = 0, int direction = 1, int alternate = 0)
         {
             CFUtils.ShiftTileX(i, j, 24, set: true);

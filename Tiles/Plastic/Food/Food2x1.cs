@@ -23,7 +23,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.Origin = new Point16(0, 0);
             TileObjectData.addTile(Type);
 
-            for(int i = 0; i <= 5; i++)
+            for (int i = 0; i <= 5; i++)
             {
                 AddMapEntry(new Color(224, 219, 236), this.GetLocalization("MapEntry" + i));
             }

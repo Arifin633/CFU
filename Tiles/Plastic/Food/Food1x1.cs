@@ -19,7 +19,7 @@ namespace CFU.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.newTile.CoordinateHeights = new int[] { 22 };
             TileObjectData.addTile(Type);
-            for(int i = 0; i <= 3; i++)
+            for (int i = 0; i <= 3; i++)
             {
                 AddMapEntry(new Color(224, 219, 236), this.GetLocalization("MapEntry" + i));
             }

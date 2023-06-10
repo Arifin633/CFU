@@ -50,6 +50,6 @@ namespace CFU.Tiles
                     drawData.glowColor = CFUTileDraw.MartianGlow;
                     break;
             }
-        }        
+        }
     }
 }
