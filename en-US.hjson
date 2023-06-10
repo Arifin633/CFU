@@ -4488,5 +4488,34 @@ Mods: {
 			MiracleAbigailsFlower.MapEntry: Mods.CFU.MapObject.MiracleAbigailsFlower
 			MiracleGlowTulip.MapEntry: Mods.CFU.MapObject.MiracleGlowTulip
 		}
+
+		Configs: {
+			Features: {
+				DisplayName: Features
+
+				WindEnabled: {
+					Label: Wind Swaying
+					Tooltip:
+						'''
+						Allows some items to be affected by the wind.
+						Might detrimentally affect performance.
+
+						Note that disabling the "Windy Environment" setting
+						from vanilla will take precedence over this option.
+						'''
+				}
+
+				CraftableFurniture: {
+					Label: Craftable Vanilla Furniture
+					Tooltip:
+						'''
+						Makes the following vanilla furniture sets craftable:
+						  Dungeon (Blue, Green, Pink, Gothic, Misc.)
+						  Golden
+						  Obsidian
+						'''
+				}
+			}
+		}
 	}
 }
