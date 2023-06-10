@@ -1,34 +1,39 @@
-This is a port of "Chad's Furniture" mod
-to Terraria 1.4.3.6 (tModLoader 0.12 Alpha).
+This is a port of "Chad's Furniture" mod to Terraria 1.4.4.
 
 It features an entire rewrite of the codebase, and thus the
 performance pitfalls of the original mod have not carried over.
 This version also seeks to bring all items and textures up to
-date with 1.4; one example of this being the place-able ambient
-objects, which have been brought in sync with their 1.4 vanilla
-counterparts.
+date with modern Terraria; new furniture sets have been added
+(such as Ashwood) and all vanilla texture changes since the
+original mod was released have been reflected on the mod's
+own textures.
 
 For all the additions of the original mod, consult the now inactive homepage:
 https://forums.terraria.org/index.php?threads/chads-furniture-and-more-mod.57562/
 
-The following list contains the main features not implemented in
-the updated version.  They may or may not be added in the future.
+The following list contains the main features
+and changes not included in the original:
+
+* Rubblemaker 2.0
+An improved version of vanilla's Rubblemaker that allows
+the player to place pots, stalagmites, and stalactites.
+
+* Magic Seed Bag
+Another Rubblemaker-type item that allows the player
+to place every type of plant, including vines.
+These plants are not destroyed by attacks
+and thus can safely be used when building.
 
 * Carpets
 Not implemented.
 
-* Watering Can
-Not implemented.
+* Vanilla Background Walls & Objects
+Not implemented (already added by vanilla).
 
-* Vanilla Background Walls
-Not implemented (already added by 1.4).
+Fixes and basic improvements are not listed.
+Please use the mod "Recipe Browser" to explore
+all the items this mod has to offer.
 
-* Rabbit Hole
-Accompanying bunny not implemented.
-
-* Mannequin Head
-Hair placement not implemented.
-
-
-Please report any bugs or make any suggestions on the Terraria General.
+Refer to the links below with regards to any bugs or suggestions:
+https://github.com/Arifin633/CFU
 https://boards.4channel.org/vg/catalog#s=/tg/

@@ -1,4 +1,6 @@
 This is an updated version of the classic "Chad's Furniture" mod.
+Check the README file for a more thorough description.
+
 Original description:
 
 Furniture!!!
