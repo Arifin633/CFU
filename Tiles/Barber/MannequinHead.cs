@@ -256,6 +256,16 @@ namespace CFU.Tiles
             }
         }
 
+        public override void MouseOver(int i, int j)
+        {
+            Player player = Main.LocalPlayer;
+            player.cursorItemIconID = ModContent.ItemType<Items.MannequinHead>();
+            player.cursorItemIconReversed = !(Main.tile[i, j].TileFrameX is 0 or 18);
+            player.cursorItemIconText = "";
+            player.noThrow = 2;
+            player.cursorItemIconEnabled = true;
+        }
+
         public override IEnumerable<Item> GetItemDrops(int i, int j)
         {
             yield return new Item(ModContent.ItemType<Items.MannequinHead>());
