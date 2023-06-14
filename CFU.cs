@@ -1,11 +1,19 @@
+using System.IO;
 using System.ComponentModel;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using Tiles = CFU.Tiles;
 
 namespace ChadsFurnitureUpdated
 {
     public class CFU : Mod
     {
+        public override void HandlePacket(BinaryReader reader, int whoAmI)
+        {
+            if (Terraria.Main.netMode == 2)
+                Tiles.MannequinHeadTE.ReceivePacket(reader);
+        }
+            
         public override void PostSetupContent()
         {
             CFUHooks.SetupHooks();

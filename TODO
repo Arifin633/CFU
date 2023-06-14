@@ -36,9 +36,6 @@ The lily pad will get stuck in place (either underwater or hovering in the air)
 if the water gets too high/low.  Some mechanism should be put in place so
 the tile can physically change its position in that situation.
 
-* Mannequin Head
-Likely doesn't work in multiplayer.
-
 * Paintable Sofa
 * Paintable Armchair
 Highlighting gets hidden under the wooden parts.

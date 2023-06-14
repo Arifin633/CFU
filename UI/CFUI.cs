@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.UI;
 using Terraria.ModLoader;
 using Terraria.GameContent;
@@ -197,6 +198,10 @@ namespace CFU.UI
             {
                 Player.hairColor = oldHairColor;
                 Player.hair = oldHairstyle;
+            }
+            else if (Main.netMode == NetmodeID.MultiplayerClient)
+            {
+                Tiles.MannequinHeadTE.SendPacket(Player);
             }
 
             UI.UISystem.HairInterface.SetState(null);
