@@ -151,6 +151,16 @@ namespace CFU.UI
             Player player = Main.LocalPlayer;
             if (Main.npcChatText != "" || Main.playerInventory || player.chest != -1 || Main.npcShop != 0 || player.talkNPC != -1 || Main.InGuideCraftMenu)
                 CloseWindow(revert: true);
+
+            if (this.Elements[0].IsMouseHovering)
+            {
+                player.mouseInterface = true;
+                /* Because of the stage `Update' is called, it
+                   doesn't appear possible to get rid of mouse
+                   icons. */
+                // player.cursorItemIconEnabled = false;
+            }
+
             base.Update(time);
         }
 
